@@ -3,7 +3,7 @@ homebysix-recipes
 
 My recipes for AutoPkg.
 
-Big thanks to @rtrouton for writing the AutoPkgr recipes.
+Big thanks to [@rtrouton](https://github.com/rtrouton) for writing the AutoPkgr recipes.
 
 
 ## Installation
@@ -22,7 +22,7 @@ autopkg repo-add https://github.com/autopkg/homebysix-recipes.git
 
 ## Dependencies
 
-My `GitHub.pkg` recipe requires @keeleysam's GitHub.download recipe, so be sure to add his repo:
+My `GitHub.pkg` recipe requires [@keeleysam](https://github.com/keeleysam)'s GitHub.download recipe, so be sure to add his repo:
 ```
 autopkg repo-add https://github.com/autopkg/keeleysam-recipes.git
 ```
