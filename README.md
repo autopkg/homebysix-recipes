@@ -22,7 +22,7 @@ autopkg repo-add https://github.com/autopkg/homebysix-recipes.git
 
 ## Dependencies
 
-My `GitHub.pkg` recipe requires [@keeleysam](https://github.com/keeleysam)'s GitHub.download recipe, so be sure to add his repo:
+My `GitHub.pkg` recipe requires [@keeleysam](https://github.com/keeleysam)'s `GitHub.download` recipe, so be sure to add his repo:
 ```
 autopkg repo-add https://github.com/autopkg/keeleysam-recipes.git
 ```
