@@ -3,7 +3,7 @@ homebysix-recipes
 
 My recipes for AutoPkg.
 
-Big thanks to [@rtrouton](https://github.com/rtrouton) for writing the AutoPkgr recipes.
+Big thanks to [@rtrouton](https://github.com/rtrouton) for writing the [AutoPkgr](https://github.com/lindegroup/autopkgr) recipes.
 
 
 ## Installation
