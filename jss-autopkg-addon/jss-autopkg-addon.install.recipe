@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Installs the current release of the jss-autopkg-addon from Github.</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.install.jss-autopkg-addon</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>jss-autopkg-addon</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.4.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.homebysix.download.jss-autopkg-addon</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>Installer</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
