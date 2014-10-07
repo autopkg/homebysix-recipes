@@ -30,16 +30,31 @@
                 <true/>
             </dict>
             
-<!-- Looking for help parsing the version of the flat pkg here.
+<!-- Looking for help parsing the version of the flat pkg here. I'm doing this wrong...
+        <dict>
+            <key>Processor</key>
+            <string>FlatPkgUnpacker</string>
+            <key>Arguments</key>
+            <dict>
+                <key>purge_destination</key>
+                <true/>
+                <key>flat_pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/pkg/*.pkg</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/pkg-unpacked/*.pkg</string>
+                <key>skip_payload</key>
+                <true/>
+            </dict>
+        </dict>
         <dict>
             <key>Processor</key>
             <string>Versioner</string>
             <key>Arguments</key>
             <dict>
                 <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/coconutBattery.app/Contents/Info.plist</string>
+                <string>%RECIPE_CACHE_DIR%/pkg-unpacked/*.pkg/PackageInfo</string>
                 <key>plist_version_key</key>
-                <string>CFBundleShortVersionString</string>
+                <string>???</string>
             </dict>
         </dict>
 -->
