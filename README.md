@@ -26,10 +26,15 @@ My `GitHub.pkg` recipe requires [@keeleysam](https://github.com/keeleysam)'s `Gi
 ```
 autopkg repo-add https://github.com/autopkg/keeleysam-recipes.git
 ```
-And my `BonjourBrowser.pkg` recipe requires [@jleggat](https://github.com/jleggat)'s `BonjourBrowser.download`:
+My `BonjourBrowser.pkg` recipe requires [@jleggat](https://github.com/jleggat)'s `BonjourBrowser.download`:
 ```
 autopkg repo-add https://github.com/autopkg/jleggat-recipes.git
 ```
+And my `Divvy.pkg` recipe requires [@jaharmi](https://github.com/jaharmi)'s `Divvy.download`:
+```
+autopkg repo-add https://github.com/autopkg/jaharmi-recipes.git
+```
+
 
 ## Submissions
 
