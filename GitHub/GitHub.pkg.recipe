@@ -11,6 +11,8 @@
         <key>NAME</key>
         <string>GitHub</string>
     </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
     <key>ParentRecipe</key>
     <string>com.github.keeleysam.recipes.GitHub.download</string>
     <key>Process</key>
