@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Installs the current release of the jss-autopkg-addon from Github.</string>
+    <string>Installs the current release of JSSImporter from Github.</string>
     <key>Identifier</key>
-    <string>com.github.homebysix.install.jss-autopkg-addon</string>
+    <string>com.github.homebysix.install.JSSImporter</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>jss-autopkg-addon</string>
+        <string>JSSImporter</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.jss-autopkg-addon</string>
+    <string>com.github.homebysix.download.JSSImporter</string>
     <key>Process</key>
     <array>
         <dict>
