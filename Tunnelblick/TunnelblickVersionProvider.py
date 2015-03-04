@@ -39,7 +39,6 @@ class TunnelblickVersionProvider(Processor):
     __doc__ = description
 
     def main(self):
-        # Determine type, hashed, username and password.
         input_version = self.env.get("input_version")
 
         results = re.match(SANITIZE_PATTERN, input_version)
