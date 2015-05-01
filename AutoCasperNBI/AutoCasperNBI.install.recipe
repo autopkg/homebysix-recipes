@@ -4,14 +4,14 @@
 <dict>
     <key>Description</key>
     <string>Downloads the current release version of AutoCasperNBI and installs it.</string>
-	<key>Identifier</key>
-	<string>com.github.homebysix.install.AutoCasperNBI</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.install.AutoCasperNBI</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>AutoCasperNBI</string>
-		<key>APP_DESTINATION</key>
-		<string>/Applications</string>
+        <key>APP_DESTINATION</key>
+        <string>/Applications</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>

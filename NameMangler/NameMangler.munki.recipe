@@ -2,40 +2,40 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Description</key>
-	<string>Downloads the latest Name Mangler dmg and imports into Munki.</string>
-	<key>Identifier</key>
-	<string>com.github.homebysix.munki.NameMangler</string>
-	<key>Input</key>
-	<dict>
-		<key>NAME</key>
-		<string>NameMangler</string>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/NameMangler</string>
-		<key>pkginfo</key>
-		<dict>
-			<key>catalogs</key>
-			<array>
-				<string>testing</string>
-			</array>
-			<key>description</key>
-			<string>Easy-to-use batch file re-namer.</string>
-			<key>display_name</key>
-			<string>Name Mangler</string>
-			<key>name</key>
-			<string>%NAME%</string>
-			<key>minimum_os_version</key>
-			<string>10.7</string>
-			<key>unattended_install</key>
-			<true/>
-		</dict>
-	</dict>
-	<key>MinimumVersion</key>
-	<string>0.2.0</string>
-	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.NameMangler</string>
-	<key>Process</key>
-	<array>
+    <key>Description</key>
+    <string>Downloads the latest Name Mangler dmg and imports into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.munki.NameMangler</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>NameMangler</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/NameMangler</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>description</key>
+            <string>Easy-to-use batch file re-namer.</string>
+            <key>display_name</key>
+            <string>Name Mangler</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>minimum_os_version</key>
+            <string>10.7</string>
+            <key>unattended_install</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.homebysix.download.NameMangler</string>
+    <key>Process</key>
+    <array>
         <dict>
             <key>Processor</key>
             <string>MunkiPkginfoMerger</string>
@@ -51,6 +51,6 @@
             <key>Processor</key>
             <string>MunkiImporter</string>
         </dict>
-	</array>
+    </array>
 </dict>
 </plist>

@@ -31,7 +31,7 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-	<string>com.github.homebysix.download.AppZapper</string>
+    <string>com.github.homebysix.download.AppZapper</string>
     <key>Process</key>
     <array>
         <dict>

@@ -31,9 +31,9 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-	<string>com.github.homebysix.download.AutoPkgr</string>
+    <string>com.github.homebysix.download.AutoPkgr</string>
     <key>Process</key>
-	<array>
+    <array>
         <dict>
             <key>Processor</key>
             <string>MunkiPkginfoMerger</string>
