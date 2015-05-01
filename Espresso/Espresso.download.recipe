@@ -11,8 +11,8 @@
         <key>NAME</key>
         <string>Espresso</string>
         <key>SPARKLE_FEED_URL</key>
-        <!-- This will probably need to be updated upon major version releases. -->
-        <string>http://update.macrabbit.com/espresso/2.1.xml</string>
+        <!-- This will probably need to be updated upon major version releases. Browse to http://update.macrabbit.com/espresso/ to see a list of the feeds. -->
+        <string>http://update.macrabbit.com/espresso/2.2.x.xml</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
