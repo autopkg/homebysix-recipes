@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>BitTorrentSync</string>
         <key>DOWNLOAD_URL</key>
-        <string>http://download-new.utorrent.com/endpoint/btsync/os/osx/track/stable</string>
+        <string>https://download-cdn.getsyncapp.com/stable/osx/BitTorrent-Sync.dmg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -22,8 +22,6 @@
             <dict>
                 <key>url</key>
                 <string>%DOWNLOAD_URL%</string>
-                <key>filename</key>
-                <string>%NAME%.dmg</string>
             </dict>
             <key>Processor</key>
             <string>URLDownloader</string>
