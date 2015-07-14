@@ -14,7 +14,7 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.Spotify</string>
+    <string>com.github.autopkg.download.Spotify</string>
     <key>Process</key>
     <array>
         <dict>
