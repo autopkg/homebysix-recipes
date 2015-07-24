@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release of CleanMyMac 2.</string>
+    <string>Downloads the current release of CleanMyMac 3.</string>
     <key>Identifier</key>
-    <string>com.github.homebysix.download.CleanMyMac2</string>
+    <string>com.github.homebysix.download.CleanMyMac3</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>CleanMyMac2</string>
+        <string>CleanMyMac3</string>
         <key>SPARKLE_FEED_URL</key>
-        <string>http://updates.devmate.com/com.macpaw.CleanMyMac2.xml</string>
+        <string>http://updateinfo.devmate.com/com.macpaw.CleanMyMac3/updates.xml</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
