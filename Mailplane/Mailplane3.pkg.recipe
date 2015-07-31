@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads latest MailPlane app and builds a package.</string>
+    <string>Downloads latest Mailplane 3 app and builds a package.</string>
     <key>Identifier</key>
-    <string>com.github.homebysix.pkg.MailPlane</string>
+    <string>com.github.homebysix.pkg.Mailplane3</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>MailPlane</string>
+        <string>Mailplane</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -50,7 +50,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/MailPlane.app/Contents/Info.plist</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Mailplane 3.app/Contents/Info.plist</string>
                 <key>plist_version_key</key>
                 <string>CFBundleVersion</string>
             </dict>
