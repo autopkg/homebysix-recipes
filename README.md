@@ -8,30 +8,29 @@ Big thanks to [@rtrouton](https://github.com/rtrouton) for writing the [AutoPkgr
 ## Installation
 
 To use, run this command:
+
 ```
-autopkg repo-add https://github.com/autopkg/homebysix-recipes.git
+autopkg repo-add homebysix-recipes
 ```
 
 If you previously subscribed to my old repo, you'll need to remove that one and add this new one:
+
 ```
 autopkg repo-delete https://github.com/homebysix/homebysix-autopkg-recipes.git
-autopkg repo-add https://github.com/autopkg/homebysix-recipes.git
+autopkg repo-add homebysix-recipes
 ```
 
 
 ## Dependencies
 
-My `GitHub.pkg` recipe requires [@keeleysam](https://github.com/keeleysam)'s `GitHub.download` recipe, so be sure to add his repo:
+Some of my recipes have parent recipes that live in another repo. To add them all in one shot, here are the commands you'll need:
+
 ```
-autopkg repo-add https://github.com/autopkg/keeleysam-recipes.git
-```
-My `BonjourBrowser.pkg` recipe requires [@jleggat](https://github.com/jleggat)'s `BonjourBrowser.download`, and my `SequelPro.pkg` recipe requires his `SequelPro.download` recipe:
-```
-autopkg repo-add https://github.com/autopkg/jleggat-recipes.git
-```
-And my `Divvy.pkg` recipe requires [@jaharmi](https://github.com/jaharmi)'s `Divvy.download`:
-```
-autopkg repo-add https://github.com/autopkg/jaharmi-recipes.git
+autopkg repo-add eholtam-recipes
+autopkg repo-add hansen-m-recipes
+autopkg repo-add jaharmi-recipes
+autopkg repo-add jleggat-recipes
+autopkg repo-add keeleysam-recipes
 ```
 
 
