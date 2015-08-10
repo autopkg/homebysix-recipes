@@ -1,5 +1,4 @@
-homebysix-recipes
-=========================
+# homebysix-recipes
 
 My recipes for AutoPkg.
 
@@ -26,7 +25,7 @@ My `GitHub.pkg` recipe requires [@keeleysam](https://github.com/keeleysam)'s `Gi
 ```
 autopkg repo-add https://github.com/autopkg/keeleysam-recipes.git
 ```
-My `BonjourBrowser.pkg` recipe requires [@jleggat](https://github.com/jleggat)'s `BonjourBrowser.download`:
+My `BonjourBrowser.pkg` recipe requires [@jleggat](https://github.com/jleggat)'s `BonjourBrowser.download`, and my `SequelPro.pkg` recipe requires his `SequelPro.download` recipe:
 ```
 autopkg repo-add https://github.com/autopkg/jleggat-recipes.git
 ```
