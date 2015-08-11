@@ -1,6 +1,6 @@
 # homebysix-recipes
 
-My recipes for AutoPkg.
+My recipes for AutoPkg. If you use them, click the Star button above to show your support!
 
 Big thanks to [@rtrouton](https://github.com/rtrouton) for writing the [AutoPkgr](https://github.com/lindegroup/autopkgr) recipes.
 
@@ -26,6 +26,7 @@ autopkg repo-add homebysix-recipes
 Some of my recipes have parent recipes that live in another repo. To add them all in one shot, here are the commands you'll need:
 
 ```
+autopkg repo-add recipes
 autopkg repo-add eholtam-recipes
 autopkg repo-add hansen-m-recipes
 autopkg repo-add jaharmi-recipes
