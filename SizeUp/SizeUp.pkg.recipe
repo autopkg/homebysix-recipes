@@ -10,6 +10,8 @@
     <dict>
         <key>NAME</key>
         <string>SizeUp</string>
+        <key>BUNDLE_ID</key>
+        <string>com.irradiatedsoftware.SizeUp</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -67,7 +69,7 @@
                     <key>version</key>
                     <string>%version%</string>
                     <key>id</key>
-                    <string>com.irradiatedsoftware.SizeUp</string>
+                    <string>%BUNDLE_ID%</string>
                     <key>options</key>
                     <string>purge_ds_store</string>
                     <key>chown</key>

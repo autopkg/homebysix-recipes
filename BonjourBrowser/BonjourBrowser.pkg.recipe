@@ -10,6 +10,8 @@
     <dict>
         <key>NAME</key>
         <string>BonjourBrowser</string>
+        <key>BUNDLE_ID</key>
+        <string>com.tildesoft.RendezvousBrowser</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -65,7 +67,7 @@
                     <key>pkgdir</key>
                     <string>%RECIPE_CACHE_DIR%</string>
                     <key>id</key>
-                    <string>com.tildesoft.RendezvousBrowser.pkg</string>
+                    <string>%BUNDLE_ID%</string>
                     <key>options</key>
                     <string>purge_ds_store</string>
                     <key>chown</key>
