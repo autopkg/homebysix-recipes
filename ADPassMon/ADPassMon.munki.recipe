@@ -37,6 +37,8 @@ http://yourmacguy.wordpress.com/adpassmon</string>
             <true/>
             <key>unattended_uninstall</key>
             <true/>
+            <key>minimum_os_version</key>
+            <string>10.8</string>
         </dict>
     </dict>
     <key>Process</key>
