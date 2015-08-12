@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of Sofa Control and imports into Munki.</string>
+    <string>Downloads the current release version of iZip and imports into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.homebysix.munki.SofaControl</string>
+    <string>com.github.homebysix.munki.iZip</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>SofaControl</string>
+        <string>iZip</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/SofaControl</string>
+        <string>apps/iZip</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -19,32 +19,37 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-            <string>Gives you expanded functionality with your Apple Remote.</string>
+            <string>File compression and archive creation tool.</string>
             <key>display_name</key>
-            <string>Sofa Control</string>
+            <string>iZip</string>
             <key>name</key>
             <string>%NAME%</string>
-            <key>minimum_os_version</key>
-            <string>10.4</string>
             <key>unattended_install</key>
             <true/>
+            <key>minimum_os_version</key>
+            <string>10.8</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.SofaControl</string>
+    <string>com.github.homebysix.download.iZip</string>
     <key>Process</key>
     <array>
         <dict>
             <key>Processor</key>
             <string>MunkiPkginfoMerger</string>
+            <key>Arguments</key>
+            <dict>
+                <key>additional_pkginfo</key>
+                <dict></dict>
+            </dict>
         </dict>
         <dict>
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%filename%</string>
+                <string>%pathname%</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
