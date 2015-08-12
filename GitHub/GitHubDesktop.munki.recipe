@@ -30,6 +30,20 @@
             <string>10.9</string>
             <key>unattended_install</key>
             <true/>
+            <key>postinstall_script</key>
+            <string>#!/bin/bash
+
+DEST_DIR="/usr/local/bin"
+
+if [[ ! -d "$DEST_DIR" ]]; then
+    mkdir -p "$DEST_DIR"
+fi
+
+ln -s "/Applications/GitHub Desktop.app/Contents/Resources/git-lfs/bin/git-lfs" "$DEST_DIR/git-lfs"
+ln -s "/Applications/GitHub Desktop.app/Contents/MacOS/github_cli" "$DEST_DIR/github"
+
+exit 0
+            </string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
