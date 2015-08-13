@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release of TimeMachineEditor and installs it.</string>
+    <string>Downloads the latest version of TimeMachineEditor and installs it.</string>
     <key>Identifier</key>
     <string>com.github.homebysix.install.TimeMachineEditor</string>
     <key>Input</key>
@@ -12,7 +12,7 @@
         <string>TimeMachineEditor</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.4.0</string>
     <key>ParentRecipe</key>
     <string>com.github.homebysix.download.TimeMachineEditor</string>
     <key>Process</key>

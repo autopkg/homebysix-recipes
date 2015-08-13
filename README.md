@@ -31,6 +31,7 @@ autopkg repo-add eholtam-recipes
 autopkg repo-add hansen-m-recipes
 autopkg repo-add jaharmi-recipes
 autopkg repo-add jleggat-recipes
+autopkg repo-add jps3-recipes
 autopkg repo-add keeleysam-recipes
 ```
 
