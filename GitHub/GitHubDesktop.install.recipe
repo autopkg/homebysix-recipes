@@ -10,6 +10,8 @@
     <dict>
         <key>NAME</key>
         <string>GitHub Desktop</string>
+        <key>FILENAME</key>
+        <string>GitHubDesktop</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>

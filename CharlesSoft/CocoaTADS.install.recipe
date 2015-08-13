@@ -38,7 +38,7 @@
                 <key>dmg_root</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%</string>
                 <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/%FILENAME%.dmg</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
             </dict>
         </dict>
         <dict>
@@ -47,7 +47,7 @@
             <key>Arguments</key>
             <dict>
                 <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/%FILENAME%.dmg</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
                 <key>items_to_copy</key>
                 <array>
                     <dict>
