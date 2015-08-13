@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of Docker Toolbox and builds a package.</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.pkg.DockerToolbox</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>DockerToolbox</string>
+        <key>BUNDLE_ID</key>
+        <string>com.macmule.DockerToolbox</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.homebysix.download.DockerToolbox</string>
+    <key>Process</key>
+    <array>
+        <!-- com.github.homebysix.download.DockerToolbox already provides a pkg -->
+    </array>
+</dict>
+</plist>
