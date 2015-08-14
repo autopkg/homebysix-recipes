@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>DockerToolbox</string>
         <key>BUNDLE_ID</key>
-        <string>com.macmule.DockerToolbox</string>
+        <string>io.docker.pkg.docker</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
