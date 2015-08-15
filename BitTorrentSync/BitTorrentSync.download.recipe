@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>BitTorrentSync</string>
         <key>DOWNLOAD_URL</key>
-        <string>https://download-cdn.getsyncapp.com/stable/osx/BitTorrent-Sync.dmg</string>
+        <string>http://download-cdn.getsync.com/stable/osx/BitTorrent-Sync.dmg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -36,7 +36,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%pathname%</string>
+                <string>%pathname%/BitTorrent Sync.app</string>
             </dict>
         </dict>
     </array>
