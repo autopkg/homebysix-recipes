@@ -57,6 +57,8 @@
             <dict>
                 <key>input_path</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+                <key>requirement</key>
+                <string>identifier "org.pmbuko.ADPassMon" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Rich Trouton (26MJ2QZ68U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
             </dict>
         </dict>
     </array>
