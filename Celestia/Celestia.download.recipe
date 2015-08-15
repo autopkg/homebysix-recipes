@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest version of Celestia.</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.download.Celestia</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Celestia</string>
+        <key>SOURCEFORGE_FILE_PATTERN</key>
+        <string>celestia-osx-[\d.]*\.dmg</string>
+        <key>SOURCEFORGE_PROJECT_ID</key>
+        <string>21302</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>SourceForgeURLProvider</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>AppDmgVersioner</string>
+            <key>Arguments</key>
+            <dict>
+                <key>dmg_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>FileMover</string>
+            <key>Arguments</key>
+            <dict>
+                <key>source</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+                <key>target</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
