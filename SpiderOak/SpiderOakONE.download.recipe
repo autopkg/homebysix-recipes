@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest version of SpiderOakONE.</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.download.SpiderOakONE</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>SpiderOakONE</string>
+        <key>URL</key>
+        <string>https://spideroak.com/getbuild?platform=mac</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.5.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%URL%</string>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <!-- TODO: Unpack the pkg instide the dmg for code sig verify. -->
+    </array>
+</dict>
+</plist>
