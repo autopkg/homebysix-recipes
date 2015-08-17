@@ -24,8 +24,6 @@
             <string>coconutBattery</string>
             <key>name</key>
             <string>%NAME%</string>
-            <key>minimum_os_version</key>
-            <string>10.7</string>
             <key>unattended_install</key>
             <true/>
         </dict>
