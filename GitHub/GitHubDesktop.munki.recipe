@@ -26,8 +26,6 @@
             <string>GitHub Desktop</string>
             <key>name</key>
             <string>%NAME%</string>
-            <key>minimum_os_version</key>
-            <string>10.9</string>
             <key>unattended_install</key>
             <true/>
             <key>postinstall_script</key>
