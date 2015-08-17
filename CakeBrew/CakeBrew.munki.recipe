@@ -24,8 +24,6 @@
             <string>CakeBrew</string>
             <key>name</key>
             <string>%NAME%</string>
-            <key>minimum_os_version</key>
-            <string>10.8</string>
             <key>unattended_install</key>
             <true/>
         </dict>

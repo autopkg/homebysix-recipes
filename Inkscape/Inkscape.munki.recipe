@@ -23,13 +23,13 @@
             <key>display_name</key>
             <string>Inkscape</string>
             <key>requires</key>
-            <string>XQuartz</string>
+            <array>
+        		<string>XQuartz</string>
+        	</array>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
-            <key>minimum_os_version</key>
-            <string>10.5</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

@@ -3,15 +3,17 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of MacTerm and imports into Munki.</string>
+    <string>Downloads the latest version of SpiderOakONE and imports into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.homebysix.munki.MacTerm</string>
+    <string>com.github.homebysix.munki.SpiderOakONE</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>MacTerm</string>
+        <string>SpiderOakONE</string>
+        <key>DISPLAY_NAME</key>
+        <string>SpiderOak ONE</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/MacTerm</string>
+        <string>apps/SpiderOakONE</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -19,21 +21,21 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-            <string>An alternative to the Mac OS X Terminal.</string>
+            <string>Securely store your files in SpiderOak's cloud.</string>
             <key>display_name</key>
-            <string>MacTerm</string>
+            <string>%DISPLAY_NAME%</string>
             <key>name</key>
             <string>%NAME%</string>
-            <key>maximum_os_version</key>
-            <string>10.10.99</string>
             <key>unattended_install</key>
             <true/>
+            <key>minimum_os_version</key>
+            <string>10.8</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.5.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.MacTerm</string>
+    <string>com.github.homebysix.download.SpiderOakONE</string>
     <key>Process</key>
     <array>
         <dict>
