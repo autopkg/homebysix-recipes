@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>LiveSurfaceContext</string>
+        <string>LiveSurface Context</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/LiveSurfaceContext</string>
         <key>pkginfo</key>
@@ -21,7 +21,7 @@
             <key>description</key>
             <string>Use the design tools you already know to create stunning photorealistic onscreen mockups with a click. Context links with Illustrator to allow you to see your concepts realized side-by-side, while you work.</string>
             <key>display_name</key>
-            <string>LiveSurface Context</string>
+            <string>%NAME%</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
@@ -34,19 +34,6 @@
     <string>com.github.homebysix.download.LiveSurfaceContext</string>
     <key>Process</key>
     <array>
-        <dict>
-            <key>Processor</key>
-            <string>Unarchiver</string>
-            <key>Arguments</key>
-            <dict>
-                <key>archive_path</key>
-                <string>%pathname%</string>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
-                <key>purge_destination</key>
-                <true/>
-            </dict>
-        </dict>
         <dict>
             <key>Processor</key>
             <string>DmgCreator</string>
