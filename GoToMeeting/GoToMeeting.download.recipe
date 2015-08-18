@@ -18,11 +18,6 @@
         <dict>
             <key>Processor</key>
             <string>GoToMeetingURLProvider</string>
-            <key>Arguments</key>
-            <dict>
-                <key>build</key>
-                <string>%build%</string>
-            </dict>
         </dict>
         <dict>
             <key>Processor</key>
