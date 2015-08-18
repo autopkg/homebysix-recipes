@@ -18,11 +18,6 @@
         <dict>
             <key>Processor</key>
             <string>GoToMeetingURLProvider</string>
-            <key>Arguments</key>
-            <dict>
-                <key>build</key>
-                <string>%build%</string>
-            </dict>
         </dict>
         <dict>
             <key>Processor</key>
@@ -47,7 +42,7 @@
                 <key>archive_path</key>
                 <string>%pathname%</string>
                 <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
                 <key>purge_destination</key>
                 <true/>
             </dict>
@@ -59,6 +54,8 @@
             <dict>
                 <key>input_path</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%/GoToMeeting (%build%).app</string>
+                <key>requirement</key>
+                <string>identifier "com.citrixonline.GoToMeeting" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "3Y9EC8WH48"</string>
             </dict>
         </dict>
     </array>

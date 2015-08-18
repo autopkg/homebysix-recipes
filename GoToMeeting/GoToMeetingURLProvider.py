@@ -16,7 +16,8 @@
 # limitations under the License.
 
 import re
-import urllib2, json
+import urllib2
+import json
 
 from autopkglib import Processor, ProcessorError
 
@@ -28,6 +29,7 @@ BASE_URL = "https://p5.osdimg.com/g2mupdater/live/config.json"
 
 
 class GoToMeetingURLProvider(Processor):
+
     """Provides a download URL for the latest GoToMeeting release."""
     input_variables = {
         "base_url": {
@@ -47,17 +49,17 @@ class GoToMeetingURLProvider(Processor):
 
     def get_g2m_url(self, base_url):
         try:
-        	jsonData = json.loads(urllib2.urlopen(base_url).read())
-        	return jsonData['activeBuilds'][len(jsonData['activeBuilds'])-1]['macDownloadUrl']
+            jsonData = json.loads(urllib2.urlopen(base_url).read())
+            return jsonData['activeBuilds'][len(jsonData['activeBuilds']) - 1]['macDownloadUrl']
         except BaseException as err:
-			raise Exception("Can't read %s: %s" % (base_url, err))
+            raise Exception("Can't read %s: %s" % (base_url, err))
 
     def get_g2m_build(self, base_url):
         try:
-        	jsonData = json.loads(urllib2.urlopen(base_url).read())
-        	return str(jsonData['activeBuilds'][len(jsonData['activeBuilds'])-1]['buildNumber'])
+            jsonData = json.loads(urllib2.urlopen(base_url).read())
+            return str(jsonData['activeBuilds'][len(jsonData['activeBuilds']) - 1]['buildNumber'])
         except BaseException as err:
-			raise Exception("Can't read %s: %s" % (base_url, err))
+            raise Exception("Can't read %s: %s" % (base_url, err))
 
     def main(self):
         """Find and return a download URL"""
