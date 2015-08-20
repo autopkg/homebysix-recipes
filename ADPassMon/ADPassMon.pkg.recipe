@@ -26,6 +26,8 @@
             <dict>
                 <key>pkg_request</key>
                 <dict>
+                    <key>pkgroot</key>
+                    <string>%RECIPE_CACHE_DIR%/%NAME%</string>
                     <key>pkgname</key>
                     <string>%NAME%-%version%</string>
                     <key>version</key>
