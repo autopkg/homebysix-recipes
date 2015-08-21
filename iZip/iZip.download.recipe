@@ -10,7 +10,7 @@
     <dict>
         <key>NAME</key>
         <string>iZip</string>
-        <key>url</key>
+        <key>URL</key>
         <string>http://www.izip.com/izip.dmg</string>
     </dict>
     <key>MinimumVersion</key>
@@ -23,7 +23,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%url%</string>
+                <string>%URL%</string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
             </dict>
