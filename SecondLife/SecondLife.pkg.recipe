@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>SecondLife</string>
         <key>BUNDLE_ID</key>
-        <string>com.pretendco.SecondLife</string>
+        <string>com.secondlife.indra.viewer</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>
@@ -59,9 +59,9 @@
             <key>Arguments</key>
             <dict>
                 <key>source_path</key>
-                <string>%pathname%/SecondLife.app</string>
+                <string>%pathname%/Second Life Viewer.app</string>
                 <key>destination_path</key>
-                <string>%pkgroot%/Applications/SecondLife.app</string>
+                <string>%pkgroot%/Applications/Second Life Viewer.app</string>
             </dict>
         </dict>
         <dict>
