@@ -10,8 +10,6 @@
     <dict>
         <key>NAME</key>
         <string>SecondLife</string>
-        <key>BUNDLE_ID</key>
-        <string>com.secondlife.indra.viewer</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>
@@ -76,7 +74,7 @@
                     <key>pkgdir</key>
                     <string>%RECIPE_CACHE_DIR%</string>
                     <key>id</key>
-                    <string>%BUNDLE_ID%</string>
+                    <string>%bundleid%</string>
                     <key>options</key>
                     <string>purge_ds_store</string>
                     <key>chown</key>

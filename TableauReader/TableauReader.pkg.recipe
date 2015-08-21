@@ -10,8 +10,6 @@
     <dict>
         <key>NAME</key>
         <string>Tableau Reader</string>
-        <key>BUNDLE_ID</key>
-        <string>com.tableausoftware.tableaureader</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -56,7 +54,7 @@
                     <key>pkgdir</key>
                     <string>%RECIPE_CACHE_DIR%</string>
                     <key>id</key>
-                    <string>%BUNDLE_ID%</string>
+                    <string>%bundleid%</string>
                     <key>options</key>
                     <string>purge_ds_store</string>
                     <key>chown</key>
