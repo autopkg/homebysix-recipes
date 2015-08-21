@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Moving Box Sync support files to the current user's Library..."
+
+CURRENT_USER=$(/usr/bin/stat -f%Su /dev/console)
+USER_LIB="$3/Users/$CURRENT_USER/Library"
+
+mkdir -p "$USER_LIB/Application Support/Box/Box Sync"
+mv "$3/tmp/BoxSyncInstall/Library/Application Support/Box/Box Sync/cacert.pem" "$USER_LIB/Application Support/Box/Box Sync"
+mv "$3/tmp/BoxSyncInstall/Library/Application Support/Box/Box Sync/FinderPlugin.bundle" "$USER_LIB/Application Support/Box/Box Sync"
+
+chown -R "$CURRENT_USER:staff" "$USER_LIB/Application Support/Box/Box Sync"
+chmod -R 700 "$USER_LIB/Application Support/Box"
+
+exit 0
