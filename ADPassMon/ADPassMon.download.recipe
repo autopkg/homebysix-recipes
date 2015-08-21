@@ -12,7 +12,7 @@
         <string>ADPassMon</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.5.0</string>
     <key>Process</key>
     <array>
         <dict>
@@ -45,7 +45,7 @@
                 <key>archive_path</key>
                 <string>%pathname%</string>
                 <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
                 <key>purge_destination</key>
                 <true/>
             </dict>
@@ -56,7 +56,20 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
+                <key>requirement</key>
+                <string>identifier "org.pmbuko.ADPassMon" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Rich Trouton (26MJ2QZ68U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Versioner</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
+                <key>plist_version_key</key>
+                <string>CFBundleShortVersionString</string>
             </dict>
         </dict>
     </array>

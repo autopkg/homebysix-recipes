@@ -24,8 +24,6 @@
 			<string>BitTorrent Sync</string>
 			<key>name</key>
 			<string>%NAME%</string>
-			<key>minimum_os_version</key>
-			<string>10.5</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
@@ -45,18 +43,6 @@
 				<string>%pathname%/BitTorrent Sync.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
-			<key>Arguments</key>
-			<dict>
-				<key>additional_pkginfo</key>
-				<dict>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
 			</dict>
 		</dict>
 		<dict>

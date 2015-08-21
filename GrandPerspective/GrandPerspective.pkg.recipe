@@ -10,8 +10,6 @@
     <dict>
         <key>NAME</key>
         <string>GrandPerspective</string>
-        <key>BUNDLE_ID</key>
-        <string>net.sourceforge.grandperspectiv</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -19,15 +17,6 @@
     <string>com.github.homebysix.download.GrandPerspective</string>
     <key>Process</key>
     <array>
-        <dict>
-            <key>Processor</key>
-            <string>AppDmgVersioner</string>
-            <key>Arguments</key>
-            <dict>
-                <key>dmg_path</key>
-                <string>%pathname%</string>
-            </dict>
-        </dict>
         <dict>
             <key>Processor</key>
             <string>PkgRootCreator</string>
@@ -65,7 +54,7 @@
                     <key>pkgdir</key>
                     <string>%RECIPE_CACHE_DIR%</string>
                     <key>id</key>
-                    <string>%BUNDLE_ID%</string>
+                    <string>%bundleid%</string>
                     <key>options</key>
                     <string>purge_ds_store</string>
                     <key>chown</key>

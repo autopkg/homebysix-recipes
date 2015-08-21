@@ -3,20 +3,40 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of AutoPkgr and builds a package.</string>
+    <string>Downloads the latest version of SecondLife and builds a package.</string>
     <key>Identifier</key>
-    <string>com.github.homebysix.pkg.AutoPkgr</string>
+    <string>com.github.homebysix.pkg.SecondLife</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>AutoPkgr</string>
+        <string>SecondLife</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.5.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.AutoPkgr</string>
+    <string>com.github.rustymyers.download.SecondLife</string>
     <key>Process</key>
     <array>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/Second Life Viewer.app</string>
+                <key>requirement</key>
+                <string>identifier "com.secondlife.indra.viewer" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FVYLQXE8Z7</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>AppDmgVersioner</string>
+            <key>Arguments</key>
+            <dict>
+                <key>dmg_path</key>
+                <string>%pathname%</string>
+            </dict>
+        </dict>
         <dict>
             <key>Processor</key>
             <string>PkgRootCreator</string>
@@ -37,9 +57,9 @@
             <key>Arguments</key>
             <dict>
                 <key>source_path</key>
-                <string>%pathname%/AutoPkgr.app</string>
+                <string>%pathname%/Second Life Viewer.app</string>
                 <key>destination_path</key>
-                <string>%pkgroot%/Applications/AutoPkgr.app</string>
+                <string>%pkgroot%/Applications/Second Life Viewer.app</string>
             </dict>
         </dict>
         <dict>

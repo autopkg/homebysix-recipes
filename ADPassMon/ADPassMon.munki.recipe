@@ -7,7 +7,7 @@
     <key>Identifier</key>
     <string>com.github.homebysix.munki.ADPassMon</string>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.5.0</string>
     <key>ParentRecipe</key>
     <string>com.github.homebysix.download.ADPassMon</string>
     <key>Input</key>
@@ -37,34 +37,19 @@ http://yourmacguy.wordpress.com/adpassmon</string>
             <true/>
             <key>unattended_uninstall</key>
             <true/>
-            <key>minimum_os_version</key>
-            <string>10.8</string>
         </dict>
     </dict>
     <key>Process</key>
     <array>
         <dict>
             <key>Processor</key>
-            <string>Unarchiver</string>
-            <key>Arguments</key>
-            <dict>
-                <key>archive_path</key>
-                <string>%pathname%</string>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
-                <key>purge_destination</key>
-                <true/>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
             <string>DmgCreator</string>
             <key>Arguments</key>
             <dict>
                 <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
                 <key>dmg_root</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
             </dict>
         </dict>
         <dict>

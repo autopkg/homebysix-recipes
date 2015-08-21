@@ -24,14 +24,12 @@
             <string>AutoCasperNBI</string>
             <key>name</key>
             <string>%NAME%</string>
-            <key>minimum_os_version</key>
-            <string>10.7</string>
             <key>unattended_install</key>
             <true/>
         </dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.5.0</string>
     <key>ParentRecipe</key>
     <string>com.github.homebysix.download.AutoCasperNBI</string>
     <key>Process</key>

@@ -36,6 +36,15 @@
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
         </dict>
+        <dict>
+            <key>Processor</key>
+            <string>AppDmgVersioner</string>
+            <key>Arguments</key>
+            <dict>
+                <key>dmg_path</key>
+                <string>%pathname%</string>
+            </dict>
+        </dict>
     </array>
 </dict>
 </plist>

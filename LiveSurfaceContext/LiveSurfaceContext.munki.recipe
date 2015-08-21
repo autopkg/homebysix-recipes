@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>LiveSurfaceContext</string>
+        <string>LiveSurface Context</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/LiveSurfaceContext</string>
         <key>pkginfo</key>
@@ -21,11 +21,9 @@
             <key>description</key>
             <string>Use the design tools you already know to create stunning photorealistic onscreen mockups with a click. Context links with Illustrator to allow you to see your concepts realized side-by-side, while you work.</string>
             <key>display_name</key>
-            <string>LiveSurface Context</string>
+            <string>%NAME%</string>
             <key>name</key>
             <string>%NAME%</string>
-            <key>minimum_os_version</key>
-            <string>10.6</string>
             <key>unattended_install</key>
             <true/>
         </dict>
@@ -38,29 +36,18 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>Unarchiver</string>
-            <key>Arguments</key>
-            <dict>
-                <key>archive_path</key>
-                <string>%pathname%</string>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
-                <key>purge_destination</key>
-                <true/>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
             <string>DmgCreator</string>
             <key>Arguments</key>
             <dict>
                 <key>dmg_root</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
                 <key>dmg_path</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
             </dict>
         </dict>
         <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
@@ -68,8 +55,6 @@
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
         </dict>
     </array>
 </dict>
