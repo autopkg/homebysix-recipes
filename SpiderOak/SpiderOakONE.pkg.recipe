@@ -12,6 +12,8 @@
         <string>SpiderOakONE</string>
         <key>BUNDLE_ID</key>
         <string>com.spideroak.orange.client</string>
+        <key>pkg_path</key>
+        <string>%pathname%</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>
