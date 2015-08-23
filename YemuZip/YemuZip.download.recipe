@@ -32,21 +32,12 @@
             <key>Arguments</key>
             <dict>
                 <key>filename</key>
-                <string>%NAME%.dmg</string>
+                <string>%NAME%-%version%.dmg</string>
             </dict>
         </dict>
         <dict>
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>AppDmgVersioner</string>
-            <key>Arguments</key>
-            <dict>
-                <key>dmg_path</key>
-                <string>%pathname%</string>
-            </dict>
         </dict>
     </array>
 </dict>

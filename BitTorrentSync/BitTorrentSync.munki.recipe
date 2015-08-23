@@ -36,16 +36,7 @@
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>Versioner</string>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/BitTorrent Sync.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleVersion</string>
-			</dict>
-		</dict>
-		<dict>
+			<string>MunkiImporter</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
@@ -55,8 +46,6 @@
 				<key>version_comparison_key</key>
 				<string>CFBundleVersion</string>
 			</dict>
-			<key>Processor</key>
-			<string>MunkiImporter</string>
 		</dict>
 	</array>
 </dict>
