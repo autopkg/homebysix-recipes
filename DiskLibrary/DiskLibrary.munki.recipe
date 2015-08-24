@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest DiskLibrary zip and imports into Munki.</string>
+    <string>Downloads the latest DiskLibrary zip and imports into Munki.
+
+Note: DiskLibrary has been discontined as of 11/2014, and this recipe will probably disappear soon.</string>
     <key>Identifier</key>
     <string>com.github.homebysix.munki.DiskLibrary</string>
     <key>Input</key>
@@ -28,6 +30,8 @@
             <string>10.6</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>Obvious Matter</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

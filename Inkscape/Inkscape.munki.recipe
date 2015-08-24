@@ -24,12 +24,14 @@
             <string>Inkscape</string>
             <key>requires</key>
             <array>
-        		<string>XQuartz</string>
-        	</array>
+                <string>XQuartz</string>
+            </array>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>The Inkscape Project</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

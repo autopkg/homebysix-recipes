@@ -30,6 +30,8 @@
             <string>10.10.99</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>MacPaw, Inc.</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

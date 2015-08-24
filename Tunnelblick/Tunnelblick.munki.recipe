@@ -22,6 +22,8 @@
             <string>Tunnelblick is a Mac app that lets you easily connect to OpenVPN.</string>
             <key>display_name</key>
             <string>Tunnelblick</string>
+            <key>developer</key>
+            <string>The Tunnelblick Project</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>

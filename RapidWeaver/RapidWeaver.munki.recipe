@@ -19,13 +19,15 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-			<string>RapidWeaver is a fantastic app. You should try it.</string>
+            <string>Create template-based websites rapidly.</string>
             <key>display_name</key>
             <string>RapidWeaver</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>Realmac Software</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

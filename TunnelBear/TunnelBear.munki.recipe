@@ -22,6 +22,8 @@
             <string>Subscription-based VPN service.</string>
             <key>display_name</key>
             <string>TunnelBear</string>
+            <key>developer</key>
+            <string>TunnelBear, Inc.</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>

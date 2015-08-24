@@ -22,6 +22,8 @@
             <string>Commodore 64 emulator.</string>
             <key>display_name</key>
             <string>VirtualC64</string>
+            <key>developer</key>
+            <string>Prof. Dr. Dirk W. Hoffmann</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>

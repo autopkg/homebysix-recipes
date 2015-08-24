@@ -24,12 +24,14 @@
             <string>Web browser that anonymizes your activity using peer-to-peer networks.</string>
             <key>display_name</key>
             <string>%DISPLAY_NAME%</string>
+            <key>developer</key>
+            <string>The Tor Project, Inc.</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
             <key>installcheck_script</key>
-        	<string>#!/bin/bash
+            <string>#!/bin/bash
 CURRENT_USER=$(/usr/bin/stat -f%Su /dev/console)
 USER_APPS="/Users/$CURRENT_USER/Applications"
 if [[ -d "$USER_APPS/TorBrowser.app" ]]; then

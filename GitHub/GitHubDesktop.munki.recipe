@@ -24,6 +24,8 @@
             <string>Desktop app made by GitHub for seamless contribution to git projects.</string>
             <key>display_name</key>
             <string>GitHub Desktop</string>
+            <key>developer</key>
+            <string>GitHub, Inc.</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>

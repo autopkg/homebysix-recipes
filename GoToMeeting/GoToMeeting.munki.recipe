@@ -19,13 +19,15 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-			<string>GoToMeeting is a fantastic app. You should try it.</string>
+            <string>Online meeting, desktop sharing, and video conferencing software.</string>
             <key>display_name</key>
             <string>GoToMeeting</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>Citrix Systems, Inc.</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

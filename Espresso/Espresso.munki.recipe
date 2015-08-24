@@ -26,6 +26,8 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>MacRabbit</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

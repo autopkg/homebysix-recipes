@@ -28,6 +28,8 @@
             <string>10.7</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>MacPaw, Inc.</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

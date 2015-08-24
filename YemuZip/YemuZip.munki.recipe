@@ -22,6 +22,8 @@
             <string>Zip compression utility.</string>
             <key>display_name</key>
             <string>YemuZip</string>
+            <key>developer</key>
+            <string>Yellow Mug Software</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>minimum_os_version</key>

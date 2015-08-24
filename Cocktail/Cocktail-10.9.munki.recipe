@@ -30,6 +30,8 @@
             <string>10.9.99</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>Maintain</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

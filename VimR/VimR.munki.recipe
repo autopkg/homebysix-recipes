@@ -22,6 +22,8 @@
             <string>Project VimR is an attempt to refine the Vim experience.</string>
             <key>display_name</key>
             <string>VimR</string>
+            <key>developer</key>
+            <string>Tae Won Ha</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>

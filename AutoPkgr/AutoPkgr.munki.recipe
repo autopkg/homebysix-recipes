@@ -26,6 +26,8 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>Linde Group, Inc.</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

@@ -19,13 +19,15 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-			<string>Make your website load faster.</string>
+            <string>Make your website load faster.</string>
             <key>display_name</key>
             <string>Smaller</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>25.io, Inc.</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

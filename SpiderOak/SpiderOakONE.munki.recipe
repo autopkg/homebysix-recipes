@@ -30,6 +30,8 @@
             <true/>
             <key>minimum_os_version</key>
             <string>10.8</string>
+            <key>developer</key>
+            <string>SpiderOak</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

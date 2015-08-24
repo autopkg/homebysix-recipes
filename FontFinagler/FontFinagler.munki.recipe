@@ -28,6 +28,8 @@
             <string>10.6</string>
             <key>unattended_install</key>
             <true/>
+            <key>developer</key>
+            <string>Mark Douma</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

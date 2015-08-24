@@ -28,7 +28,7 @@
             <string>Active Directory Password Monitor menulet app for OS X 10.8+
 http://yourmacguy.wordpress.com/adpassmon</string>
             <key>developer</key>
-            <string>Open Source</string>
+            <string>Peter Bukowinski</string>
             <key>display_name</key>
             <string>ADPassMon</string>
             <key>name</key>
