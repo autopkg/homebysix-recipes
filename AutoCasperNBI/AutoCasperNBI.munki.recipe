@@ -19,7 +19,7 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-            <string>AutoCasperNBI is an app that automates the creation of NetBoot Images (read: NBI’s) for use with Casper Imaging.</string>
+            <string>AutoCasperNBI is an app that automates the creation of NetBoot Images (NBIs) for use with Casper Imaging.</string>
             <key>display_name</key>
             <string>AutoCasperNBI</string>
             <key>name</key>

@@ -45,17 +45,6 @@
                 <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
             </dict>
         </dict>
-        <dict>
-            <key>Processor</key>
-            <string>FileMover</string>
-            <key>Arguments</key>
-            <dict>
-                <key>source</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
-                <key>target</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg</string>
-            </dict>
-        </dict>
     </array>
 </dict>
 </plist>

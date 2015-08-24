@@ -10,6 +10,8 @@
     <dict>
         <key>NAME</key>
         <string>Paparazzi</string>
+        <key>BUNDLE_ID</key>
+        <string>org.derailer.Paparazzi</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -54,7 +56,7 @@
                     <key>pkgdir</key>
                     <string>%RECIPE_CACHE_DIR%</string>
                     <key>id</key>
-                    <string>%bundleid%</string>
+                    <string>%BUNDLE_ID%</string>
                     <key>options</key>
                     <string>purge_ds_store</string>
                     <key>chown</key>

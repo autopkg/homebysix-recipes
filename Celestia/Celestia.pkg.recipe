@@ -37,7 +37,7 @@
             <key>Arguments</key>
             <dict>
                 <key>source_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg/Celestia.app</string>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/Celestia.app</string>
                 <key>destination_path</key>
                 <string>%pkgroot%/Applications/Celestia.app</string>
             </dict>
