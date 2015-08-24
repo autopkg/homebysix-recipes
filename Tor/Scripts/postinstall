@@ -3,7 +3,7 @@
 echo "Moving TorBrowser.app to the current user's ~/Applications folder..."
 
 CURRENT_USER=$(/usr/bin/stat -f%Su /dev/console)
-USER_APPS="/Users/$CURRENT_USER/Applications"
+USER_APPS="$3/Users/$CURRENT_USER/Applications"
 
 if [[ ! -d "$USER_APPS" ]]; then
     mkdir -p "$USER_APPS"
@@ -11,7 +11,7 @@ if [[ ! -d "$USER_APPS" ]]; then
     chmod -R 700 "$USER_APPS"
 fi
 
-mv "/tmp/TorBrowser.app" "$USER_APPS/TorBrowser.app"
+mv "$3/tmp/TorBrowser.app" "$USER_APPS/TorBrowser.app"
 chown -R "$CURRENT_USER:staff" "$USER_APPS/TorBrowser.app"
 
 exit 0
