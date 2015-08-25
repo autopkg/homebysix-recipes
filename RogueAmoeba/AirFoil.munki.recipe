@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest version of AirFoil and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.munki.AirFoil</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>AirFoil</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/AirFoil</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>description</key>
+            <string>Send any audio from your Mac to AirPort Express units, Apple TVs, iPhones and iPods Touch, and even other Macs and PCs, all in sync.</string>
+            <key>display_name</key>
+            <string>%NAME%</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>developer</key>
+            <string>Rogue Amoeba Software</string>
+            <key>blocking_applications</key>
+                <array>
+                <string>AirFoil.app</string>
+                <string>AirFoil Speakers.app</string>
+            </array>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.homebysix.pkg.AirFoil</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pkg_path%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
