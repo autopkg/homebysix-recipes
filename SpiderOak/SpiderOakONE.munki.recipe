@@ -32,6 +32,10 @@
             <string>10.8</string>
             <key>developer</key>
             <string>SpiderOak</string>
+            <key>blocking_applications</key>
+            <array>
+                <string>SpiderOakONE.app</string>
+            </array>
         </dict>
     </dict>
     <key>MinimumVersion</key>

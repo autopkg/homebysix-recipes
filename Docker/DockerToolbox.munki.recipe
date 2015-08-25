@@ -30,6 +30,13 @@
             <true/>
             <key>developer</key>
             <string>Docker, Inc.</string>
+            <key>blocking_applications</key>
+        	<array>
+        		<string>Docker Quickstart Terminal.app</string>
+        		<string>Kitematic (Beta).app</string>
+                <string>Kitematic.app</string>
+                <string>VirtualBox.app</string>
+        	</array>
         </dict>
     </dict>
     <key>MinimumVersion</key>
