@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of Flux and builds a package.</string>
+    <string>Downloads the current release version of f.lux and builds a package.</string>
     <key>Identifier</key>
     <string>com.github.homebysix.pkg.Flux</string>
     <key>Input</key>

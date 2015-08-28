@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Installs the latest version of Flux.</string>
+    <string>Installs the latest version of f.lux.</string>
     <key>Identifier</key>
     <string>com.github.homebysix.install.Flux</string>
     <key>Input</key>

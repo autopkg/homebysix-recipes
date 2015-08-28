@@ -10,7 +10,7 @@
     <dict>
         <key>NAME</key>
         <string>NibUnlocker</string>
-        <key>URL</key>
+        <key>DOWNLOAD_URL</key>
         <string>http://www.charlessoft.com/NibUnlocker.zip</string>
     </dict>
     <key>MinimumVersion</key>
@@ -23,7 +23,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%URL%</string>
+                <string>%DOWNLOAD_URL%</string>
             </dict>
         </dict>
         <dict>

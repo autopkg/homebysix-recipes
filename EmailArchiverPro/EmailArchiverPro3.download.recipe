@@ -12,7 +12,7 @@
         <string>EmailArchiverPro3</string>
         <key>DISPLAY_NAME</key>
         <string>Email Archiver Pro</string>
-        <key>URL</key>
+        <key>DOWNLOAD_URL</key>
         <string>http://emailarchiverpro.com/downloads/EmailArchiverPro.zip</string>
     </dict>
     <key>MinimumVersion</key>
@@ -25,7 +25,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%URL%</string>
+                <string>%DOWNLOAD_URL%</string>
             </dict>
         </dict>
         <dict>

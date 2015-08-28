@@ -10,7 +10,7 @@
     <dict>
         <key>NAME</key>
         <string>SpiderOakONE</string>
-        <key>URL</key>
+        <key>DOWNLOAD_URL</key>
         <string>https://spideroak.com/getbuild?platform=mac</string>
     </dict>
     <key>MinimumVersion</key>
@@ -23,7 +23,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%URL%</string>
+                <string>%DOWNLOAD_URL%</string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
             </dict>
