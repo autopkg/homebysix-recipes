@@ -12,7 +12,7 @@
         <string>GitHub Desktop</string>
         <key>FILENAME</key>
         <string>GitHubDesktop</string>
-        <key>URL</key>
+        <key>DOWNLOAD_URL</key>
         <string>https://central.github.com/mac/latest</string>
     </dict>
     <key>MinimumVersion</key>
@@ -27,7 +27,7 @@
                 <key>filename</key>
                 <string>%FILENAME%.zip</string>
                 <key>url</key>
-                <string>%URL%</string>
+                <string>%DOWNLOAD_URL%</string>
             </dict>
         </dict>
         <dict>
