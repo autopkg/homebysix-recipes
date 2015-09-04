@@ -22,6 +22,8 @@
 			</array>
 			<key>description</key>
 			<string>Hot-key tasking solution.</string>
+			<key>developer</key>
+			<string>Stairways Software Pty Ltd</string>
 			<key>display_name</key>
 			<string>Keyboard Maestro</string>
 			<key>name</key>

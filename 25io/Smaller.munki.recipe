@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of RapidWeaver and imports it into Munki.</string>
+    <string>Downloads the latest version of Smaller and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.homebysix.munki.RapidWeaver</string>
+    <string>com.github.homebysix.munki.Smaller</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>RapidWeaver</string>
+        <string>Smaller</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/RapidWeaver</string>
+        <string>apps/Smaller</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -19,21 +19,21 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-            <string>Create template-based websites rapidly.</string>
+            <string>Make your website load faster.</string>
+            <key>developer</key>
+            <string>25.io, Inc.</string>
             <key>display_name</key>
-            <string>RapidWeaver</string>
+            <string>Smaller</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
-            <key>developer</key>
-            <string>Realmac Software</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.RapidWeaver</string>
+    <string>com.github.homebysix.download.Smaller</string>
     <key>Process</key>
     <array>
         <dict>
