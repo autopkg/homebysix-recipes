@@ -18,21 +18,25 @@
     <key>Process</key>
     <array>
         <dict>
-            <key>Processor</key>
-            <string>TorBrowserBundleInfoProvider</string>
-            <key>Arguments</key>
-            <dict>
-                <key>language</key>
-                <string>%LANGUAGE%</string>
-            </dict>
-        </dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>https://dist.torproject.org/torbrowser/?C=M;O=D</string>
+				<key>re_pattern</key>
+				<string>(?:(\d+\.(?:\d+\.)*\d+))/</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+			</dict>
+		</dict>
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
-                <key>filename</key>
-                <string>%NAME%-%version%.dmg</string>
+                <key>url</key>
+                <string>https://dist.torproject.org/torbrowser/%version%/TorBrowser-%version%-osx64_%LANGUAGE%.dmg</string>
             </dict>
         </dict>
         <dict>
