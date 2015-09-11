@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Tunnelblick and imports it into Munki</string>
+	<string>Downloads the latest version of Tunnelblick and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.Tunnelblick</string>
 	<key>Input</key>

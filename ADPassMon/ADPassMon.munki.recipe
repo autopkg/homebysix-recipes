@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of ADPassMon and imports into munki</string>
+    <string>Downloads the current release version of ADPassMon and imports into Munki.</string>
     <key>Identifier</key>
     <string>com.github.homebysix.munki.ADPassMon</string>
     <key>MinimumVersion</key>

@@ -7,7 +7,7 @@
 
 	MAJOR_VERSION input variable can be either 9 or 10.</string>
 	<key>Description</key>
-	<string>Downloads the latest version of A Better Finder Rename and imports it into Munki</string>
+	<string>Downloads the latest version of A Better Finder Rename and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.ABetterFinderRename</string>
 	<key>Input</key>
