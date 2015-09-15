@@ -12,6 +12,8 @@
         <string>DockerToolbox</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/DockerToolbox</string>
+        <key>pathname</key>
+        <string>%pathname%</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>

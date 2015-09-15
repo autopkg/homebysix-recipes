@@ -12,6 +12,8 @@
         <string>DockerToolbox</string>
         <key>APP_DESTINATION</key>
         <string>/Applications</string>
+        <key>pathname</key>
+        <string>%pathname%</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.5.0</string>

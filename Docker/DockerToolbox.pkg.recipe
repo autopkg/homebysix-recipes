@@ -12,6 +12,8 @@
         <string>DockerToolbox</string>
         <key>BUNDLE_ID</key>
         <string>io.docker.pkg.docker</string>
+        <key>pathname</key>
+        <string>%pathname%</string>
         <key>pkg_path</key>
         <string>%pathname%</string>
     </dict>
