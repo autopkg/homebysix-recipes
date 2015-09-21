@@ -32,9 +32,10 @@ class MunkiIconImporter(Processor):
 
     input_variables = {
         "icon_path": {
-            "required": True,
+            "required": False,
             "description": "Path to the icon to be copied into the Munki "
-                           "repository. Default is %NAME%.png."
+                           "repository. Defaults to "
+                           "%RECIPE_DIR%/%NAME%.png."
         },
         "MUNKI_REPO": {
             "description": "Path to a mounted Munki repo.",
@@ -44,12 +45,20 @@ class MunkiIconImporter(Processor):
     output_variables = {}
     description = __doc__
 
+
     def main(self):
         """Copy the icon to the Munki repo."""
-        source_icon = self.env["source_icon"]
-        munki_repo = self.env["munki_repo"]
 
-        shutil.copy(source_icon, os.path.join(munki_repo, "icons"))
+        icon_path = self.env.get("icon_path", os.path.join(self.env["RECIPE_DIR"], "%s.png" % self.env["NAME"]))
+        munki_repo = self.env["MUNKI_REPO"]
+
+        # Create icons folder in munki_repo, if it doesn't already exist.
+        dest_dir = os.path.join(munki_repo, "icons")
+        if not os.path.exists(dest_dir):
+            os.makedirs(dest_dir)
+
+        # Copy the icon.
+        shutil.copy(icon_path, os.path.join(dest_dir, "%s.png" % self.env["NAME"]))
 
 
 if __name__ == "__main__":
