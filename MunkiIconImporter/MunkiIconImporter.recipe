@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>This is a stub recipe that can be used as a reference when referring to the MunkiIconImporter shared processor.</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.MunkiIconImporter</string>
+    <key>Input</key>
+    <dict/>
+    <key>MinimumVersion</key>
+    <string>0.5.0</string>
+    <key>Process</key>
+    <dict/>
+</dict>
+</plist>

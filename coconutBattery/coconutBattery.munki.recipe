@@ -58,6 +58,15 @@
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
         </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.homebysix.MunkiIconImporter/MunkiIconImporter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>source_icon</key>
+                <string>%NAME%.png</string>
+            </dict>
+        </dict>
     </array>
 </dict>
 </plist>
