@@ -44,9 +44,6 @@ class MunkiIconImporter(Processor):
         }
     }
     output_variables = {
-        "munki_icon": {
-            "description": "Path to the icon in the Munki repo."
-        },
         "munki_icon_summary_result": {
             "description": "Description of interesting results."
         }
@@ -82,7 +79,6 @@ class MunkiIconImporter(Processor):
                 "Icon": munki_icon
             }
         }
-        self.env["munki_icon"] = munki_icon
 
 
 if __name__ == "__main__":
