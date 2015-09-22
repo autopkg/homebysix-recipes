@@ -25,6 +25,7 @@ __all__ = ["MunkiIconImporter"]
 
 
 class MunkiIconImporter(Processor):
+
     """For a given recipe Foo.munki.recipe, the MunkiIconImporter processor
     copies a file called Foo.png to the "icons" folder in the local Munki
     repository.
@@ -45,6 +46,9 @@ class MunkiIconImporter(Processor):
     output_variables = {
         "munki_icon": {
             "description": "Path to the icon in the Munki repo."
+        },
+        "munki_icon_summary_result": {
+            "description": "Description of interesting results."
         }
     }
     description = __doc__
@@ -53,18 +57,31 @@ class MunkiIconImporter(Processor):
     def main(self):
         """Copy the icon to the Munki repo."""
 
-        icon_path = self.env.get("icon_path", os.path.join(self.env["RECIPE_DIR"], "%s.png" % self.env["NAME"]))
+        icon_path = self.env.get(
+            "icon_path", os.path.join(self.env["RECIPE_DIR"], "%s.png"
+                                      % self.env["NAME"]))
         munki_repo = self.env["MUNKI_REPO"]
 
         # Create icons folder in munki_repo, if it doesn't already exist.
         dest_dir = os.path.join(munki_repo, "icons")
         if not os.path.exists(dest_dir):
             os.makedirs(dest_dir)
+            self.output("Created icons folder in Munki repo.")
 
         # Copy the icon.
         munki_icon = os.path.join(dest_dir, "%s.png" % self.env["NAME"])
         shutil.copy(icon_path, munki_icon)
+        self.output("Copied icon file.")
 
+        # Report success.
+        self.env["munki_icon_summary_result"] = {
+            "summary_text": "The following icons were copied to the Munki "
+                            "repo:",
+            "report_fields": ["Icon"],
+            "data": {
+                "Icon": munki_icon
+            }
+        }
         self.env["munki_icon"] = munki_icon
 
 
