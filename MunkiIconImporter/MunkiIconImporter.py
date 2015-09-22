@@ -15,7 +15,6 @@
 # limitations under the License.
 
 import os
-import plistlib
 import shutil
 
 from autopkglib import Processor, ProcessorError
