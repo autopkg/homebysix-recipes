@@ -63,6 +63,10 @@ http://yourmacguy.wordpress.com/adpassmon</string>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
         </dict>
+        <dict>
+            <key>Processor</key>
+            <string>com.github.homebysix.MunkiIconImporter/MunkiIconImporter</string>
+        </dict>
     </array>
 </dict>
 </plist>

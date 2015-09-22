@@ -62,6 +62,10 @@
 			<key>Processor</key>
 			<string>MunkiImporter</string>
 		</dict>
+		<dict>
+            <key>Processor</key>
+            <string>com.github.homebysix.MunkiIconImporter/MunkiIconImporter</string>
+        </dict>
 	</array>
 </dict>
 </plist>
