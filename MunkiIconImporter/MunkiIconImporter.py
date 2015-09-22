@@ -42,7 +42,11 @@ class MunkiIconImporter(Processor):
             "required": True
         }
     }
-    output_variables = {}
+    output_variables = {
+        "munki_icon": {
+            "description": "Path to the icon in the Munki repo."
+        }
+    }
     description = __doc__
 
 
@@ -58,7 +62,10 @@ class MunkiIconImporter(Processor):
             os.makedirs(dest_dir)
 
         # Copy the icon.
-        shutil.copy(icon_path, os.path.join(dest_dir, "%s.png" % self.env["NAME"]))
+        munki_icon = os.path.join(dest_dir, "%s.png" % self.env["NAME"])
+        shutil.copy(icon_path, munki_icon)
+
+        self.env["munki_icon"] = munki_icon
 
 
 if __name__ == "__main__":
