@@ -38,7 +38,7 @@ if [[ -d "$USER_APPS/TorBrowser.app" ]]; then
     exit 1
 fi
 exit 0
-</string>
+            </string>
         </dict>
     </dict>
     <key>MinimumVersion</key>

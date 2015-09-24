@@ -28,6 +28,14 @@
             <true/>
             <key>developer</key>
             <string>Citrix Systems, Inc.</string>
+            <key>preinstall_script</key>
+            <string>#!/bin/sh
+
+echo "Removing old copies of GoToMeeting from the /Applications folder..."
+rm -rf /Applications/GoToMeeting\ \(*\).app
+
+exit $?
+            </string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
