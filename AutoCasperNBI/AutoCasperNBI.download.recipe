@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release of AutoCasperNBI from Github.</string>
+	<string>Downloads the latest version of AutoCasperNBI.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.AutoCasperNBI</string>
 	<key>Input</key>

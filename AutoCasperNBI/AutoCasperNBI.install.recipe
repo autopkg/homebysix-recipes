@@ -2,14 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the current release version of AutoCasperNBI and installs it.</string>
+	<string>Installs the latest version of AutoCasperNBI.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.AutoCasperNBI</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_DESTINATION</key>
-		<string>/Applications</string>
 		<key>NAME</key>
 		<string>AutoCasperNBI</string>
 	</dict>
@@ -25,7 +25,7 @@
 				<key>archive_path</key>
 				<string>%pathname%</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
@@ -38,7 +38,7 @@
 				<key>dmg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
 			</dict>
 			<key>Processor</key>
 			<string>DmgCreator</string>
@@ -52,9 +52,9 @@
 				<array>
 					<dict>
 						<key>destination_path</key>
-						<string>%APP_DESTINATION%</string>
+						<string>/Applications</string>
 						<key>source_item</key>
-						<string>AutoCasperNBI.app</string>
+						<string>%NAME%.app</string>
 					</dict>
 				</array>
 			</dict>
