@@ -1,5 +1,4 @@
 *.pyc
-_templates
+_*
 TODO.md
-
 recipe_runner_results.csv
