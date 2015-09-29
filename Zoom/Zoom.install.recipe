@@ -2,25 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Installs the latest version of Zoom.</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.install.Zoom</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>Zoom</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.5.0</string>
-    <key>ParentRecipe</key>
-    <string>com.github.homebysix.pkg.Zoom</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>Installer</string>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Installs the latest version of Zoom.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.install.Zoom</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Zoom</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.pkg.Zoom</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>Installer</string>
+		</dict>
+	</array>
 </dict>
 </plist>

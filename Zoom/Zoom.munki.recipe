@@ -2,51 +2,51 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the latest version of Zoom and imports it into Munki.</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.munki.Zoom</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>Zoom</string>
-        <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/Zoom</string>
-        <key>pkginfo</key>
-        <dict>
-            <key>catalogs</key>
-            <array>
-                <string>testing</string>
-            </array>
-            <key>description</key>
-            <string>The Zoom app provides cloud-hosted video conferencing, plus online meetings and group messaging.</string>
-            <key>display_name</key>
-            <string>Zoom</string>
-            <key>developer</key>
-            <string>Zoom Video Communications, Inc.</string>
-            <key>name</key>
-            <string>%NAME%</string>
-            <key>unattended_install</key>
-            <true/>
-        </dict>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.0</string>
-    <key>ParentRecipe</key>
-    <string>com.github.homebysix.pkg.Zoom</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>repo_subdirectory</key>
-                <string>%MUNKI_REPO_SUBDIR%</string>
-                <key>version_comparison_key</key>
-                <string>CFBundleVersion</string>
-            </dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Downloads the latest version of Zoom and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.Zoom</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/Zoom</string>
+		<key>NAME</key>
+		<string>Zoom</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>The Zoom app provides cloud-hosted video conferencing, plus online meetings and group messaging.</string>
+			<key>developer</key>
+			<string>Zoom Video Communications, Inc.</string>
+			<key>display_name</key>
+			<string>Zoom</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.pkg.Zoom</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>version_comparison_key</key>
+				<string>CFBundleVersion</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
 </dict>
 </plist>
