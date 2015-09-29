@@ -21,7 +21,7 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>SourceForgeURLProvider</string>
+            <string>com.github.homebysix.SourceForgeURLProvider/SourceForgeURLProvider</string>
         </dict>
         <dict>
             <key>Processor</key>
