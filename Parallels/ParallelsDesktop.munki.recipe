@@ -8,12 +8,12 @@
 	<string>com.github.homebysix.munki.ParallelsDesktop</string>
 	<key>Input</key>
 	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>11</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
-		<key>MAJOR_VERSION</key>
-		<string>11</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -30,7 +30,7 @@
 			<string>%NAME%</string>
 			<key>postinstall_script</key>
 			<string>#!/bin/bash
-chflags nohidden &quot;/Applications/%NAME%.app&quot;
+chflags nohidden "/Applications/%NAME%.app"
 </string>
 			<key>unattended_install</key>
 			<true/>
@@ -47,10 +47,10 @@ chflags nohidden &quot;/Applications/%NAME%.app&quot;
 			<dict>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
-				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
 				<key>overwrite</key>
 				<true/>
+				<key>source_path</key>
+				<string>%pathname%/%NAME%.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
