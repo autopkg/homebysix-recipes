@@ -2,59 +2,59 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the latest version of SpiderOakONE and imports into Munki.</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.munki.SpiderOakONE</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>SpiderOakONE</string>
-        <key>DISPLAY_NAME</key>
-        <string>SpiderOak ONE</string>
-        <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/SpiderOakONE</string>
-        <key>pkginfo</key>
-        <dict>
-            <key>catalogs</key>
-            <array>
-                <string>testing</string>
-            </array>
-            <key>description</key>
-            <string>Securely store your files in SpiderOak's cloud.</string>
-            <key>display_name</key>
-            <string>%DISPLAY_NAME%</string>
-            <key>name</key>
-            <string>%NAME%</string>
-            <key>unattended_install</key>
-            <true/>
-            <key>minimum_os_version</key>
-            <string>10.8</string>
-            <key>developer</key>
-            <string>SpiderOak</string>
-            <key>blocking_applications</key>
-            <array>
-                <string>SpiderOakONE.app</string>
-            </array>
-        </dict>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.5.0</string>
-    <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.SpiderOakONE</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_path</key>
-                <string>%pathname%</string>
-                <key>repo_subdirectory</key>
-                <string>%MUNKI_REPO_SUBDIR%</string>
-            </dict>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Downloads the latest version of SpiderOakONE and imports into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.SpiderOakONE</string>
+	<key>Input</key>
+	<dict>
+		<key>DISPLAY_NAME</key>
+		<string>SpiderOak ONE</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/SpiderOakONE</string>
+		<key>NAME</key>
+		<string>SpiderOakONE</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>SpiderOakONE.app</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Securely store your files in SpiderOak's cloud.</string>
+			<key>developer</key>
+			<string>SpiderOak</string>
+			<key>display_name</key>
+			<string>%DISPLAY_NAME%</string>
+			<key>minimum_os_version</key>
+			<string>10.8</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.SpiderOakONE</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
 </dict>
 </plist>
