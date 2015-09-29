@@ -2,36 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the latest GitHub Desktop zip and imports into Munki.</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.munki.GitHubDesktop</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>GitHub Desktop</string>
-        <key>FILENAME</key>
-        <string>GitHubDesktop</string>
-        <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/GitHub</string>
-        <key>pkginfo</key>
-        <dict>
-            <key>catalogs</key>
-            <array>
-                <string>testing</string>
-            </array>
-            <key>description</key>
-            <string>Desktop app made by GitHub for seamless contribution to git projects.</string>
-            <key>display_name</key>
-            <string>GitHub Desktop</string>
-            <key>developer</key>
-            <string>GitHub, Inc.</string>
-            <key>name</key>
-            <string>%NAME%</string>
-            <key>unattended_install</key>
-            <true/>
-            <key>postinstall_script</key>
-            <string>#!/bin/bash
+	<key>Comment</key>
+	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of GitHub Desktop and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.GitHubDesktop</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/GitHub</string>
+		<key>NAME</key>
+		<string>GitHub Desktop</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Desktop app made by GitHub for seamless contribution to git projects.</string>
+			<key>developer</key>
+			<string>GitHub, Inc.</string>
+			<key>display_name</key>
+			<string>GitHub Desktop</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
 
 DEST_DIR="/usr/local/bin"
 
@@ -44,36 +42,52 @@ ln -s "/Applications/GitHub Desktop.app/Contents/MacOS/github_cli" "$DEST_DIR/gi
 
 exit 0
             </string>
-        </dict>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.0</string>
-    <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.GitHubDesktop</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>DmgCreator</string>
-            <key>Arguments</key>
-            <dict>
-                <key>dmg_root</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-                <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/%FILENAME%.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_path</key>
-                <string>%dmg_path%</string>
-                <key>repo_subdirectory</key>
-                <string>%MUNKI_REPO_SUBDIR%</string>
-            </dict>
-        </dict>
-    </array>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.GitHubDesktop</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%dmg_path%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>version_comparison_key</key>
+				<string>CFBundleVersion</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
 </dict>
 </plist>
