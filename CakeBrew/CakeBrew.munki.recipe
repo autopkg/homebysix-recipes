@@ -2,16 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest CakeBrew zip and imports into Munki.</string>
+	<string>Downloads the latest version of Cakebrew and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.CakeBrew</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/cakebrew</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>CakeBrew</string>
+		<string>Cakebrew</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -23,7 +25,7 @@
 			<key>developer</key>
 			<string>Bruno Philipe</string>
 			<key>display_name</key>
-			<string>CakeBrew</string>
+			<string>Cakebrew</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -31,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.5.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.CakeBrew</string>
 	<key>Process</key>
@@ -54,6 +56,8 @@
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>version_comparison_key</key>
+				<string>CFBundleShortVersionString</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
