@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of R for Mac OS X. (Also known as "The R Project for Statistical Computing.") This recipe does not perform any processing, because the R download is already in pkg format.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.pkg.R</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>R</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.R</string>
+	<key>Process</key>
+	<array/>
+</dict>
+</plist>
