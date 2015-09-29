@@ -5,7 +5,9 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Cakebrew and creates a package.</string>
+	<string>Downloads the latest version of Cakebrew and creates a package.
+
+WARNING: The identifier of this recipe will soon change to com.github.homebysix.pkg.Cakebrew. Please be ready to update your overrides.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.CakeBrew</string>
 	<key>Input</key>
