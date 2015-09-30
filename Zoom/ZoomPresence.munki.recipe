@@ -17,7 +17,9 @@
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
-			<string>%NAME%.app</string>
+			<array>
+				<string>%NAME%.app</string>
+			</array>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
