@@ -14,10 +14,10 @@
 	<dict>
 		<key>BUNDLE_ID</key>
 		<string>net.publicspace.abfr9</string>
-		<key>NAME</key>
-		<string>A Better Finder Rename</string>
 		<key>MAJOR_VERSION</key>
 		<string>9</string>
+		<key>NAME</key>
+		<string>A Better Finder Rename</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>

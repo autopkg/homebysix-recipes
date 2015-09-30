@@ -14,10 +14,10 @@ MAJOR_VERSION input variable can be either 9 or 10.</string>
 	<string>com.github.homebysix.download.ABetterFinderRename</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>A Better Finder Rename</string>
 		<key>MAJOR_VERSION</key>
 		<string>9</string>
+		<key>NAME</key>
+		<string>A Better Finder Rename</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
