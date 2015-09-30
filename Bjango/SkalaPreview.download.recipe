@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://download.bjango.com/skalapreview</string>
+		<string>http://download.bjango.com/skalapreview/</string>
 		<key>NAME</key>
 		<string>Skala Preview</string>
 	</dict>
