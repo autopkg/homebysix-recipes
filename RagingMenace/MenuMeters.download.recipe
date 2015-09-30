@@ -2,54 +2,54 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Description</key>
-	<string>Downloads the latest version of MenuMeters. This recipe differs from the one in jleggat-recipes because it performs code signature verification.</string>
-	<key>Identifier</key>
-	<string>com.github.homebysix.download.MenuMeters</string>
-	<key>Input</key>
-	<dict>
-		<key>NAME</key>
-		<string>MenuMeters</string>
-	</dict>
-	<key>MinimumVersion</key>
-	<string>0.5.0</string>
-	<key>Process</key>
-	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>http://www.ragingmenace.com/software/download/MenuMeters.dmg</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%pathname%/MenuMeters Installer.app</string>
-				<key>requirement</key>
-				<string>identifier "com.ragingmenace.MenuMetersInstaller" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = AM6298ZK74</string>
-			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/MenuMeters Installer.app/Contents/Resources/%NAME%.prefPane/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-		</dict>
-	</array>
+    <key>Description</key>
+    <string>Downloads the latest version of MenuMeters. This recipe differs from the one in jleggat-recipes because it performs code signature verification.</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.download.MenuMeters</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>MenuMeters</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.5.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>http://www.ragingmenace.com/software/download/MenuMeters.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/MenuMeters Installer.app</string>
+                <key>requirement</key>
+                <string>identifier "com.ragingmenace.MenuMetersInstaller" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = AM6298ZK74</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Versioner</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%pathname%/MenuMeters Installer.app/Contents/Resources/%NAME%.prefPane/Contents/Info.plist</string>
+                <key>plist_version_key</key>
+                <string>CFBundleShortVersionString</string>
+            </dict>
+        </dict>
+    </array>
 </dict>
 </plist>

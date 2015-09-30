@@ -10,10 +10,10 @@
 	<string>com.github.homebysix.download.FileChute</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>http://www.yellowmug.com/download/FileChute.dmg</string>
 		<key>NAME</key>
 		<string>FileChute</string>
+		<key>DOWNLOAD_URL</key>
+		<string>http://www.yellowmug.com/download/FileChute.dmg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
