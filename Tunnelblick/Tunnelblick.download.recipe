@@ -16,34 +16,32 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://tunnelblick.net/downloads.html</string>
 				<key>re_pattern</key>
 				<string>release/Tunnelblick_([\d\.]+)_build_[\d\.]+\.dmg</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-			<key>Arguments</key>
-			<dict>
 				<key>url</key>
 				<string>https://tunnelblick.net/downloads.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>re_pattern</key>
 				<string>release/Tunnelblick_[\d\.]+_build_([\d\.]+)\.dmg</string>
 				<key>result_output_var_name</key>
 				<string>build</string>
+				<key>url</key>
+				<string>https://tunnelblick.net/downloads.html</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
@@ -51,6 +49,8 @@
 				<key>url</key>
 				<string>https://tunnelblick.net/release/Tunnelblick_%version%_build_%build%.dmg</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
