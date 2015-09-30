@@ -2,51 +2,51 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the current release version of Tableau Reader and imports into Munki.</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.munki.TableauReader</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>Tableau Reader</string>
-        <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/Tableau Reader</string>
-        <key>pkginfo</key>
-        <dict>
-            <key>catalogs</key>
-            <array>
-                <string>testing</string>
-            </array>
-            <key>description</key>
-            <string>Tableau Reader is a free desktop application you can use to interact with data visualizations built in Tableau Desktop.</string>
-            <key>display_name</key>
-            <string>Tableau Reader</string>
-            <key>name</key>
-            <string>%NAME%</string>
-            <key>unattended_install</key>
-            <true/>
-            <key>developer</key>
-            <string>Tableau Software</string>
-        </dict>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.0</string>
-    <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.TableauReader</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_path</key>
-                <string>%pathname%</string>
-                <key>repo_subdirectory</key>
-                <string>%MUNKI_REPO_SUBDIR%</string>
-            </dict>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Downloads the current release version of Tableau Reader and imports into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.TableauReader</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/Tableau Reader</string>
+		<key>NAME</key>
+		<string>Tableau Reader</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Tableau Reader is a free desktop application you can use to interact with data visualizations built in Tableau Desktop.</string>
+			<key>developer</key>
+			<string>Tableau Software</string>
+			<key>display_name</key>
+			<string>Tableau Reader</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.TableauReader</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
 </dict>
 </plist>
