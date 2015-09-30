@@ -55,25 +55,21 @@
 			<string>Unarchiver</string>
 		</dict>
 		<dict>
-			<key>Comment</key>
-			<string>For some reason, the app is buried inside a Users folder when the app is extracted. In order to proceed with the remaining recipes, we must move the app to the proper place.</string>
-			<key>Processor</key>
-			<string>FileMover</string>
 			<key>Arguments</key>
 			<dict>
+				<key>purge_destination</key>
+				<true/>
 				<key>source</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Users/bill/Desktop/%NAME%.app</string>
 				<key>target</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
-				<key>purge_destination</key>
-				<true/>
 			</dict>
+			<key>Comment</key>
+			<string>For some reason, the app is buried inside a Users folder when the app is extracted. In order to proceed with the remaining recipes, we must move the app to the proper place.</string>
+			<key>Processor</key>
+			<string>FileMover</string>
 		</dict>
 		<dict>
-			<key>Comment</key>
-			<string>Remove the extraneous Users folder once the app has been moved.</string>
-			<key>Processor</key>
-			<string>PathDeleter</string>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
@@ -81,6 +77,10 @@
 					<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Users</string>
 				</array>
 			</dict>
+			<key>Comment</key>
+			<string>Remove the extraneous Users folder once the app has been moved.</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

@@ -2,25 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Installs the latest version of MenuMeters. This recipe differs from the one in jleggat-recipes because it performs code signature verification and installs MenuMeters.prefPane to /Library/PreferencePanes.</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.install.MenuMeters</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>MenuMeters</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.5.0</string>
-    <key>ParentRecipe</key>
-    <string>com.github.homebysix.pkg.MenuMeters</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>Installer</string>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Installs the latest version of MenuMeters. This recipe differs from the one in jleggat-recipes because it performs code signature verification and installs MenuMeters.prefPane to /Library/PreferencePanes.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.install.MenuMeters</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>MenuMeters</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.pkg.MenuMeters</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>Installer</string>
+		</dict>
+	</array>
 </dict>
 </plist>
