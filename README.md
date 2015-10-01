@@ -30,6 +30,18 @@ autopkg repo-add recipes eholtam-recipes hansen-m-recipes jaharmi-recipes jlegga
 ```
 
 
+## Known issues
+
+- __IrradiatedSoftware/Tuck.download.recipe__
+    A previous version of this app was signed, but the current version (as of 2015-09-30) is not. This recipe will fail until the developer re-signs the app.
+
+- __LiteratureAndLatte/Scapple.download.recipe__
+    The Sparkle feed for this app lists incorrect `http:/` download URLs instead of `http://`. The developer is aware and will correct this in a future release.
+
+- __MacPaw/Gemini.download.recipe__
+    The Sparkle feed for this app is malformed, and will probably be corrected by the developer in the future. You can also use an [AppStoreApp recipe](https://github.com/autopkg/nmcspadden-recipes#appstoreapp-recipe) for this app, since it's available in the App Store.
+
+
 ## Submissions
 
 Forks/pulls/issues are welcome. I'm always tweaking.
