@@ -2,14 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest coconutBattery zip and imports into Munki.</string>
+	<string>Downloads the latest version of coconutBattery and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.coconutBattery</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/coconutBattery</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>coconutBattery</string>
 		<key>pkginfo</key>
@@ -21,7 +23,7 @@
 			<key>description</key>
 			<string>Displays info about your laptop battery.</string>
 			<key>developer</key>
-			<string>Chris Sinai</string>
+			<string>Christoph Sinai</string>
 			<key>display_name</key>
 			<string>coconutBattery</string>
 			<key>name</key>
@@ -31,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.5.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.coconutBattery</string>
 	<key>Process</key>

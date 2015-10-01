@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the current release version of coconutBattery and builds a package.</string>
+	<string>Downloads the latest version of coconutBattery and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.coconutBattery</string>
 	<key>Input</key>
@@ -14,7 +16,7 @@
 		<string>coconutBattery</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.5.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.coconutBattery</string>
 	<key>Process</key>
@@ -29,8 +31,6 @@
 						<dict>
 							<key>group</key>
 							<string>admin</string>
-							<key>mode</key>
-							<string>0775</string>
 							<key>path</key>
 							<string>Applications</string>
 							<key>user</key>
