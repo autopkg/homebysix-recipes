@@ -62,7 +62,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>source</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Users/bpaar/Desktop/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Users/bill/Desktop/%NAME%.app</string>
 				<key>target</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
 				<key>purge_destination</key>
@@ -71,7 +71,7 @@
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string>Remove the extraneous Users/bpaar/Desktop folder once the app has been moved.</string>
+			<string>Remove the extraneous Users/bill/Desktop folder once the app has been moved.</string>
 			<key>Processor</key>
 			<string>PathDeleter</string>
 			<key>Arguments</key>
