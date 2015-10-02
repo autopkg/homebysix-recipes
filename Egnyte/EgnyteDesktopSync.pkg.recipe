@@ -41,7 +41,7 @@
 				<key>destination_path</key>
 				<string>%pkgroot%/Applications/%NAME%.app</string>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/.installData/%NAME%.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

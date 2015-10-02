@@ -25,7 +25,7 @@
 				<key>re_pattern</key>
 				<string>(https://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/[\d\.]+/EgnyteDesktopSync_.+.dmg)</string>
 				<key>result_output_var_name</key>
-				<string>url</string>
+				<string>download_url</string>
 				<key>url</key>
 				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
 			</dict>
@@ -46,6 +46,11 @@
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>version</key>
+				<string>%version%</string>
+			</dict>
 			<key>Processor</key>
 			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 		</dict>
@@ -56,6 +61,8 @@
 			<dict>
 				<key>filename</key>
 				<string>EgnyteDesktopSync-%version%.dmg</string>
+				<key>url</key>
+				<string>%download_url%</string>
 			</dict>
 		</dict>
 		<dict>
