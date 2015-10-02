@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>This is a stub recipe that can be used as a reference when referring to the SanitizeVersionsWithSpaces shared processor.</string>
+	<string>This is a stub recipe that can be used as a reference when referring to the VersionSplitter shared processor.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.SanitizeVersionsWithSpaces</string>
+	<string>com.github.homebysix.VersionSplitter</string>
 	<key>Input</key>
 	<dict/>
 	<key>MinimumVersion</key>
