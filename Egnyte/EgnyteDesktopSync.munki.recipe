@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Egnyte Desktop Sync and imports it into Munki.</string>
+	<string>Downloads the latest version of Egnyte Desktop Sync and imports it into Munki.
+
+WARNING: The resulting package does not include the necessary scripts to upgrade Egnyte safely from a previous version. This recipe is still under development, and not recommended for production deployments.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.EgnyteDesktopSync</string>
 	<key>Input</key>
