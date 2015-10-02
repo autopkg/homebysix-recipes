@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Egnyte Desktop Sync.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.EgnyteDesktopSync</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Egnyte Desktop Sync</string>
+		<key>LOCALE</key>
+		<string>en-us</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(https://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/[\d\.]+/EgnyteDesktopSync_.+.dmg)</string>
+				<key>result_output_var_name</key>
+				<string>download_url</string>
+				<key>url</key>
+				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>https://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/([\d\.]+)/EgnyteDesktopSync_.+.dmg</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+				<key>url</key>
+				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>version</key>
+				<string>%version%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>EgnyteDesktopSync-%version%.dmg</string>
+				<key>url</key>
+				<string>%download_url%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/.installData/%NAME%.app</string>
+				<key>requirement</key>
+				<string>identifier "com.egnyte.EgnyteDesktopSync" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FELUD555VC</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
