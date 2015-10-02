@@ -17,24 +17,29 @@
 from autopkglib import Processor, ProcessorError
 
 
-__all__ = ["ViennaVersionCleaner"]
+__all__ = ["SanitizeVersionsWithSpaces"]
 
 
-class ViennaVersionCleaner(Processor):
+class SanitizeVersionsWithSpaces(Processor):
 
-    """Converts a Vienna CFBundleShortVersionString to a StrictVersion string.
-    For example: "3.0.8 :074a131:" --> "3.0.8"
+    """For version numbers with spaces, this processor returns everything up
+    to but not including the first space.
+
+    Examples:
+    - "3.0.8 :074a131:" --> "3.0.8"
+    - "8.3.1.1 (154179)" --> "8.3.1.1"
+
     """
 
     input_variables = {
         "version": {
             "required": True,
-            "description": "The CFBundleShortVersionString for Vienna.app."
+            "description": "The version with spaces."
         }
     }
     output_variables = {
         "version": {
-            "description": "The cleaned version number."
+            "description": "The cleaned version."
         }
     }
     description = __doc__
@@ -46,5 +51,5 @@ class ViennaVersionCleaner(Processor):
 
 
 if __name__ == "__main__":
-    processor = ViennaVersionCleaner()
+    processor = SanitizeVersionsWithSpaces()
     processor.execute_shell()

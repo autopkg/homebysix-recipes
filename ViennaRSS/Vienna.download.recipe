@@ -30,7 +30,7 @@
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>ViennaVersionCleaner</string>
+			<string>com.github.homebysix.SanitizeVersionsWithSpaces/SanitizeVersionsWithSpaces</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
