@@ -26,6 +26,8 @@
             <string>MenuMeters</string>
             <key>developer</key>
             <string>Jay Tuley</string>
+            <key>maximum_os_version</key>
+            <string>10.10.99</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
