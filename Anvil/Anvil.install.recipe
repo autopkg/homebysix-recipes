@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Installs the latest version of Anvil.</string>
 	<key>Identifier</key>
@@ -19,19 +17,6 @@
 	<string>com.github.homebysix.download.Anvil</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
