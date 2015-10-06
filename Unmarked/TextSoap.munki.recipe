@@ -2,16 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v0.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Anvil and imports it into Munki.</string>
+	<string>Downloads the latest version of TextSoap and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.Anvil</string>
+	<string>com.github.homebysix.munki.TextSoap</string>
 	<key>Input</key>
 	<dict>
+		<key>APP_FILENAME</key>
+		<string>textsoap7</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Anvil</string>
+		<string>TextSoap</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -19,11 +23,11 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Anvil is a beautiful menubar app for managing local websites.</string>
+			<string>Flexible text editing utility.</string>
 			<key>developer</key>
-			<string>Beach Digital Ltd.</string>
+			<string>Unmarked Software</string>
 			<key>display_name</key>
-			<string>Anvil</string>
+			<string>TextSoap</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -33,7 +37,7 @@
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Anvil</string>
+	<string>com.github.homebysix.download.TextSoap</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -54,8 +58,6 @@
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>version_comparison_key</key>
-				<string>CFBundleShortVersionString</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

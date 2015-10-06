@@ -2,21 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v0.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Anvil and creates a package.</string>
+	<string>Downloads the latest version of VirtualHostX and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.Anvil</string>
+	<string>com.github.homebysix.pkg.VirtualHostX</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
-		<string>com.riot.Anvil</string>
+		<string>com.clickontyler.virtualhostx</string>
 		<key>NAME</key>
-		<string>Anvil</string>
+		<string>VirtualHostX</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Anvil</string>
+	<string>com.github.homebysix.download.VirtualHostX</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -2,21 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v0.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Anvil and creates a package.</string>
+	<string>Downloads the latest version of TextSoap and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.Anvil</string>
+	<string>com.github.homebysix.pkg.TextSoap</string>
 	<key>Input</key>
 	<dict>
+		<key>APP_FILENAME</key>
+		<string>textsoap7</string>
 		<key>BUNDLE_ID</key>
-		<string>com.riot.Anvil</string>
+		<string>com.unmarked.textsoap7</string>
 		<key>NAME</key>
-		<string>Anvil</string>
+		<string>TextSoap</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Anvil</string>
+	<string>com.github.homebysix.download.TextSoap</string>
 	<key>Process</key>
 	<array>
 		<dict>
