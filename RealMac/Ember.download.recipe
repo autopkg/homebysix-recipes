@@ -16,17 +16,17 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>http://downloads.realmacmedia.com/ember/?C=M;O=D</string>
 				<key>re_pattern</key>
 				<string>(ember-[\d]+.zip)</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
+				<key>url</key>
+				<string>http://downloads.realmacmedia.com/ember/?C=M;O=D</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

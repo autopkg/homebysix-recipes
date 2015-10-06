@@ -2,77 +2,77 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the latest version of cd to and imports it into Munki. The TERMINAL_APP variable determines which app cd to will work with. Its possible options are "terminal", "iterm", and "x11_xterm", and it is set to "terminal" by default</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.munki.cdto</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>cd to</string>
-        <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/cdto</string>
-        <key>TERMINAL_APP</key>
-        <string>terminal</string>
-        <key>pkginfo</key>
-        <dict>
-            <key>catalogs</key>
-            <array>
-                <string>testing</string>
-            </array>
-            <key>description</key>
-            <string>An app that opens a Terminal window to the current Finder path. Drag it into your active Finder window's toolbar for one-click access.</string>
-            <key>display_name</key>
-            <string>cd to</string>
-            <key>developer</key>
-            <string>Jay Tuley</string>
-            <key>name</key>
-            <string>%NAME%</string>
-            <key>unattended_install</key>
-            <true/>
-        </dict>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.5.0</string>
-    <key>ParentRecipe</key>
-    <string>com.github.homebysix.download.cdto</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>Copier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>source_path</key>
-                <string>%RECIPE_CACHE_DIR%/unpacked/%dirname%/%TERMINAL_APP%/%NAME%.app</string>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
-                <key>overwrite</key>
-                <true/>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>DmgCreator</string>
-            <key>Arguments</key>
-            <dict>
-                <key>dmg_root</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
-                <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_path</key>
-                <string>%dmg_path%</string>
-                <key>repo_subdirectory</key>
-                <string>%MUNKI_REPO_SUBDIR%</string>
-            </dict>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Downloads the latest version of cd to and imports it into Munki. The TERMINAL_APP variable determines which app cd to will work with. Its possible options are "terminal", "iterm", and "x11_xterm", and it is set to "terminal" by default</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.cdto</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/cdto</string>
+		<key>NAME</key>
+		<string>cd to</string>
+		<key>TERMINAL_APP</key>
+		<string>terminal</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>An app that opens a Terminal window to the current Finder path. Drag it into your active Finder window's toolbar for one-click access.</string>
+			<key>developer</key>
+			<string>Jay Tuley</string>
+			<key>display_name</key>
+			<string>cd to</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.cdto</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<key>overwrite</key>
+				<true/>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked/%dirname%/%TERMINAL_APP%/%NAME%.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%dmg_path%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
 </dict>
 </plist>

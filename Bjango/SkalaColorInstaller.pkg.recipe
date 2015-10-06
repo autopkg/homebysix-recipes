@@ -20,24 +20,22 @@
 	<key>Process</key>
 	<array>
 		<dict>
-            <key>Processor</key>
-            <string>PkgRootCreator</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pkgroot</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
-                <key>pkgdirs</key>
-                <dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict>
 					<key>Library</key>
-                    <string>0775</string>
-                    <key>Library/ColorPickers</key>
-                    <string>0775</string>
-                </dict>
-            </dict>
-        </dict>
-		<dict>
+					<string>0775</string>
+					<key>Library/ColorPickers</key>
+					<string>0775</string>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
 			<key>Processor</key>
-			<string>FileMover</string>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>source</key>
@@ -45,10 +43,10 @@
 				<key>target</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Library/ColorPickers/%NAME%.colorPicker</string>
 			</dict>
+			<key>Processor</key>
+			<string>FileMover</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PathDeleter</string>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
@@ -56,10 +54,10 @@
 					<string>%RECIPE_CACHE_DIR%/unpacked</string>
 				</array>
 			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
@@ -67,12 +65,12 @@
 					<key>chown</key>
 					<array>
 						<dict>
+							<key>group</key>
+							<string>wheel</string>
 							<key>path</key>
 							<string>Library/ColorPickers</string>
 							<key>user</key>
 							<string>root</string>
-							<key>group</key>
-							<string>wheel</string>
 						</dict>
 					</array>
 					<key>id</key>
@@ -87,6 +85,8 @@
 					<string>%version%</string>
 				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>
