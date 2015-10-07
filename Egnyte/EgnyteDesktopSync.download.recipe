@@ -8,10 +8,10 @@
 	<string>com.github.homebysix.download.EgnyteDesktopSync</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Egnyte Desktop Sync</string>
 		<key>LOCALE</key>
 		<string>en-us</string>
+		<key>NAME</key>
+		<string>Egnyte Desktop Sync</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
@@ -44,8 +44,6 @@
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
@@ -53,6 +51,8 @@
 				<key>url</key>
 				<string>%download_url%</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

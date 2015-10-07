@@ -41,6 +41,8 @@ autopkg repo-add recipes eholtam-recipes gerardkok-recipes hansen-m-recipes jaha
 - __MacPaw/Gemini.download.recipe__
     The Sparkle feed for this app is malformed, and will probably be corrected by the developer in the future. You can also use an [AppStoreApp recipe](https://github.com/autopkg/nmcspadden-recipes#appstoreapp-recipe) for this app, since it's available in the App Store.
 
+- __Anvil/Anvil.download.recipe__
+    The app used to be a standard app-within-a-zip, but as of version 1.1.6, it's now an app-within-a-folder-within-a-zip. I suspect this was a mistake and will be corrected by the developer in the next release. Until then, Anvil recipes will fail.
 
 ## Submissions
 
