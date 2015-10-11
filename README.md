@@ -32,8 +32,8 @@ autopkg repo-add recipes eholtam-recipes gerardkok-recipes hansen-m-recipes jaha
 
 ## Known issues
 
-- __IrradiatedSoftware/Tuck.download.recipe__
-    A previous version of this app was signed, but the current version (as of 2015-09-30) is not. This recipe will fail until the developer re-signs the app.
+- __Anvil/Anvil.download.recipe__
+    The app used to be a standard app-within-a-zip, but as of version 1.1.6, it's now an app-within-a-folder-within-a-zip. I suspect this was a mistake and will be corrected by the developer in the next release. Until then, Anvil recipes will fail.
 
 - __LiteratureAndLatte/Scapple.download.recipe__
     The Sparkle feed for this app lists incorrect `http:/` download URLs instead of `http://`. The developer is aware and will correct this in a future release.
@@ -41,8 +41,16 @@ autopkg repo-add recipes eholtam-recipes gerardkok-recipes hansen-m-recipes jaha
 - __MacPaw/Gemini.download.recipe__
     The Sparkle feed for this app is malformed, and will probably be corrected by the developer in the future. You can also use an [AppStoreApp recipe](https://github.com/autopkg/nmcspadden-recipes#appstoreapp-recipe) for this app, since it's available in the App Store.
 
-- __Anvil/Anvil.download.recipe__
-    The app used to be a standard app-within-a-zip, but as of version 1.1.6, it's now an app-within-a-folder-within-a-zip. I suspect this was a mistake and will be corrected by the developer in the next release. Until then, Anvil recipes will fail.
+- __IrradiatedSoftware/Tuck.download.recipe__
+    A previous version of this app was signed, but the current version (as of 2015-09-30) is not. This recipe will fail until the developer re-signs the app.
+
+- __YellowMug/FileChute.download.recipe__
+    The included version of the Growl framework breaks code signature verification. This issue will probably be resolved by the developer in a future release.
+    ```
+    FileChute.app: resource envelope is obsolete (custom omit rules)
+    In subcomponent: FileChute.app/Contents/Frameworks/Growl.framework
+    ```
+
 
 ## Submissions
 
