@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Quip.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.Quip</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Quip</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>Quip.dmg</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0)</string>
+				</dict>
+				<key>url</key>
+				<string>https://quip.com/downloads/auto</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/%NAME%.app</string>
+				<key>requirement</key>
+				<string>identifier "com.quip.Desktop" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FMRT79K8DG</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>AppDmgVersioner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
