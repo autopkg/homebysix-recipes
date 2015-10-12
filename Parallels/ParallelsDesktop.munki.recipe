@@ -31,7 +31,7 @@
 			<key>postinstall_script</key>
 			<string>#!/bin/bash
 chflags nohidden "/Applications/%NAME%.app"
-</string>
+            </string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>

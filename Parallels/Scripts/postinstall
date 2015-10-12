@@ -1,5 +1,5 @@
 #!/bin/bash
 
-chflags nohidden "/Applications/Parallels Desktop.app"
+chflags nohidden "$3/Applications/Parallels Desktop.app"
 
 exit 0
