@@ -44,7 +44,7 @@
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
+					<string>DeepDreamer-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 					<key>version</key>
