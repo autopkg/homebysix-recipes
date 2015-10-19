@@ -33,14 +33,14 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%pathname%/Emailchemy Installer.app</string>
 				<key>expected_authorities</key>
 				<array>
 					<string>Developer ID Application: Weird Kid Software LLC</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%pathname%/Emailchemy Installer.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
