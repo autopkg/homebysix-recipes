@@ -23,7 +23,7 @@
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/CrashPlanPROe-%version%.pkg</string>
 				<key>source_path</key>
-				<string>%pathname%/Install CrashPlanPROe.pkg</string>
+				<string>%pathname%/Install CrashPlan PROe.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
