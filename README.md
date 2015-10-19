@@ -2,8 +2,6 @@
 
 My recipes for AutoPkg. If you use them, click the Star button above to show your support!
 
-Big thanks to [@rtrouton](https://github.com/rtrouton) for writing the [AutoPkgr](https://github.com/lindegroup/autopkgr) recipes.
-
 
 ## Installation
 
@@ -33,6 +31,15 @@ autopkg repo-add recipes eholtam-recipes gerardkok-recipes hansen-m-recipes jaha
 ## Known issues
 
 If you're having a problem with one of my recipes, [check the issues](https://github.com/autopkg/homebysix-recipes/issues) to see whether a known problem exists. If not, please [submit an issue](https://github.com/autopkg/homebysix-recipes/issues/new) so I can investigate.
+
+
+## Processors
+
+I wrote a couple custom processors for my own recipes. Feel free to refer to them if you find them useful, or modify and redistribute as you like.
+
+- __GoToMeetingURLProvider__ - Uses the GoToMeeting updater JSON to determine the URL to the latest release and the build number for that release.
+
+- __VersionSplitter__ - Takes a string, splits it on a specified character, and returns the specified index. Particularly useful for breaking down multi-part version numbers. For example, "0.3.4 (build 352)" might become simply "0.3.4".
 
 
 ## Submissions
