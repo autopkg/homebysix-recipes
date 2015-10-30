@@ -67,7 +67,7 @@
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
 					<key>scripts</key>
-					<string>Scripts</string>
+					<string>TorBrowserBundleScripts</string>
 				</dict>
 				<key>pkgname</key>
 				<string>%NAME%-%version%</string>
