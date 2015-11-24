@@ -3,15 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.6 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Together 3 and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.Together3</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Together</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>

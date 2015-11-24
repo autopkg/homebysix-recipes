@@ -3,15 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.6 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Together 3.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Together3</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Together</string>
 		<key>NAME</key>
 		<string>Together 3</string>
 		<key>SPARKLE_FEED_URL</key>
@@ -47,7 +45,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/%APP_FILENAME%.app</string>
+				<string>%pathname%/%NAME%.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.reinvented.Together3" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = D75L7R8266)</string>
 			</dict>
