@@ -3,15 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.6 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Together 3 and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.Together3</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Together</string>
 		<key>BUNDLE_ID</key>
 		<string>com.reinvented.Together3</string>
 		<key>NAME</key>
@@ -41,9 +39,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%APP_FILENAME%.app</string>
+				<string>%pkgroot%/Applications/%NAME%.app</string>
 				<key>source_path</key>
-				<string>%pathname%/%APP_FILENAME%.app</string>
+				<string>%pathname%/%NAME%.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

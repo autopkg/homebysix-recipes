@@ -5,18 +5,18 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Installs the latest version of Together 3.</string>
+	<string>Installs the latest version of WhatSize.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.install.Together3</string>
+	<string>com.github.homebysix.install.WhatSize</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Together 3</string>
+		<string>WhatSize</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Together3</string>
+	<string>com.github.homebysix.download.WhatSize</string>
 	<key>Process</key>
 	<array>
 		<dict>
