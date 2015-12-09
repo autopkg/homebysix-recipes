@@ -22,15 +22,15 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 			<key>Arguments</key>
 			<dict>
-				<key>split_on</key>
-				<string>-</string>
 				<key>index</key>
 				<integer>1</integer>
+				<key>split_on</key>
+				<string>-</string>
 			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
