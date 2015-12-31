@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>This recipe does nothing, since Avira Free Mac Security is already downloaded as a pkg.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.pkg.AviraFreeMacSecurity</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Avira Free Mac Security</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.AviraFreeMacSecurity</string>
+</dict>
+</plist>
