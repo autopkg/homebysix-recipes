@@ -11,6 +11,7 @@ __all__ = ["SourceForgeURLProvider"]
 
 FILE_INDEX_URL = 'http://sourceforge.net/api/file/index/project-id/%s/rss'
 
+
 class SourceForgeURLProvider(Processor):
     '''Provides URL to the latest file that matches a pattern for a particular SourceForge project.'''
 
@@ -18,11 +19,11 @@ class SourceForgeURLProvider(Processor):
         'SOURCEFORGE_PROJECT_ID': {
             'required': True,
             'description': 'Numerical ID of SourceForge project',
-            },
+        },
         'SOURCEFORGE_FILE_PATTERN': {
             'required': True,
             'description': 'Pattern to match SourceFile files on',
-            },
+        },
     }
     output_variables = {
         'url': {
@@ -48,11 +49,12 @@ class SourceForgeURLProvider(Processor):
 
         items = []
 
-        for i in  rss_parse.getElementsByTagName('item'):
+        for i in rss_parse.getElementsByTagName('item'):
             pubDate = i.getElementsByTagName('pubDate')[0].firstChild.nodeValue
             link = i.getElementsByTagName('link')[0].firstChild.nodeValue
 
-            pubDatetime = datetime.datetime.strptime(pubDate, '%a, %d %b %Y %H:%M:%S UT')
+            pubDatetime = datetime.datetime.strptime(
+                pubDate, '%a, %d %b %Y %H:%M:%S UT')
 
             if re_file.search(link):
                 items.append((pubDatetime, link),)
@@ -65,7 +67,7 @@ class SourceForgeURLProvider(Processor):
         return items[-1][1]
 
     def main(self):
-        proj_id  = self.env.get('SOURCEFORGE_PROJECT_ID')
+        proj_id = self.env.get('SOURCEFORGE_PROJECT_ID')
         file_pat = self.env.get('SOURCEFORGE_FILE_PATTERN')
 
         self.env['url'] = self.get_sf_file_url(proj_id, file_pat)
