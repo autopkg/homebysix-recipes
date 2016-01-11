@@ -27,7 +27,7 @@
 			<key>display_name</key>
 			<string>CleanMyMac 3</string>
 			<key>maximum_os_version</key>
-			<string>10.10.99</string>
+			<string>10.11.99</string>
 			<key>minimum_os_version</key>
 			<string>10.8</string>
 			<key>name</key>
