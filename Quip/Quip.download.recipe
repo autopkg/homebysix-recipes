@@ -29,7 +29,7 @@
 				<string>https://quip.com/downloads/auto</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

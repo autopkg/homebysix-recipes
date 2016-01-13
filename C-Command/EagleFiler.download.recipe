@@ -39,7 +39,7 @@
 				<string>http://c-command.com/downloads/EagleFiler-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

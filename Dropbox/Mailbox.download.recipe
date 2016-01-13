@@ -40,7 +40,7 @@ NOTE: Mailbox is no longer under active development, so this recipe may not exis
 				<string>%NAME%-%version%.zip</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

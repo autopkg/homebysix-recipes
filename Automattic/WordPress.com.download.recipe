@@ -39,7 +39,7 @@
 				<string>https://public-api.wordpress.com/%download_path%</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

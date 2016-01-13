@@ -50,7 +50,7 @@
 				<string>https://tunnelblick.net/release/Tunnelblick_%version%_build_%build%.dmg</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

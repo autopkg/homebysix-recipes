@@ -28,7 +28,7 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 				<string>http://www.parallels.com/directdownload/pd%MAJOR_VERSION%</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

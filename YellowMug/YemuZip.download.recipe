@@ -37,7 +37,7 @@ Temporarily disabled code signature verification, because the current version of
 				<string>%NAME%-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

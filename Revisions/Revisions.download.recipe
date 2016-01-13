@@ -35,7 +35,7 @@
 				<string>https://www.revisionsapp.com/downloads/revisions-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

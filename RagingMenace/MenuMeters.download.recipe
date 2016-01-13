@@ -22,7 +22,7 @@
 				<string>http://www.ragingmenace.com/software/download/MenuMeters.dmg</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

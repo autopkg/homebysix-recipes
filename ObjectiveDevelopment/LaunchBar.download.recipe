@@ -46,7 +46,7 @@
 				<string>https://www.obdev.at/downloads/launchbar/%match%</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

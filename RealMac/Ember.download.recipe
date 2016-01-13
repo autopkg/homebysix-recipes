@@ -37,7 +37,7 @@
 				<string>http://downloads.realmacmedia.com/ember/%url%</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

@@ -48,7 +48,7 @@
 				<string>https://cran.r-project.org/bin/macosx/%filename%</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

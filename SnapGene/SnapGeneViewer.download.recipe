@@ -56,7 +56,7 @@
 				<string>http://www.snapgene.com//products/snapgene_viewer/download.php?&amp;majorRelease=%majorversion%&amp;minorRelease=%version%&amp;os=mac</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

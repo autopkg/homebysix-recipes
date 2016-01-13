@@ -37,7 +37,7 @@
 				<string>https://dist.torproject.org/torbrowser/%version%/TorBrowser-%version%-osx64_%LANGUAGE%.dmg</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

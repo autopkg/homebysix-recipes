@@ -28,7 +28,7 @@
 				<string>http://unmarked.s3.amazonaws.com/textsoap%MAJOR_VERSION%.zip</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
