@@ -26,7 +26,7 @@
 				<string>https://cran.r-project.org/bin/macosx/</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>CURLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -39,7 +39,7 @@
 				<string>https://cran.r-project.org/bin/macosx/</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>CURLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

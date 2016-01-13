@@ -28,7 +28,7 @@
 				<string>http://www.mellel.com/thanks-for-downloading</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>CURLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

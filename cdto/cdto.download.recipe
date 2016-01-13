@@ -28,7 +28,7 @@
 				<string>https://api.github.com/repos/jbtule/cdto/releases/latest</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>CURLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

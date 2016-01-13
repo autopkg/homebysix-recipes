@@ -28,7 +28,7 @@
 				<string>https://dist.apache.org/repos/dist/release/directory/studio/</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>CURLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
