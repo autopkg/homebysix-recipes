@@ -20,7 +20,7 @@ MAJOR_VERSION input variable can be either 9 or 10.</string>
 		<string>A Better Finder Rename</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.5.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -16,7 +16,7 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 		<string>Parallels Desktop</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.5.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

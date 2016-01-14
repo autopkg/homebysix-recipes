@@ -16,7 +16,7 @@
 		<string>https://kevin.softpress.com/sparkle/appcast.php?app=exhibeo</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.5.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
