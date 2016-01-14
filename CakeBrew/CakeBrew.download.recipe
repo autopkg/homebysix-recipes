@@ -18,7 +18,7 @@ WARNING: The identifier of this recipe will soon change to com.github.homebysix.
 		<string>http://www.cakebrew.com/appcast/profileInfo.php</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.1</string>
+	<string>0.5.2</string>
 	<key>Process</key>
 	<array>
 		<dict>

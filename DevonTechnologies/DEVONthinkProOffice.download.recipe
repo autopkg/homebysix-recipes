@@ -16,7 +16,7 @@
 		<string>http://www.devon-technologies.com/Sparkle/DEVONthinkProOffice2.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.1</string>
+	<string>0.5.2</string>
 	<key>Process</key>
 	<array>
 		<dict>
