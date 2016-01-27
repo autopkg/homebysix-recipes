@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>https://downloads.tableau.com/tssoftware/TableauReader.dmg</string>
+		<string>https://www.tableau.com/downloads/reader/mac</string>
 		<key>NAME</key>
 		<string>Tableau Reader</string>
 	</dict>
@@ -22,6 +22,8 @@
 			<dict>
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
