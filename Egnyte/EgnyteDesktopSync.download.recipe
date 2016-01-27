@@ -14,7 +14,7 @@
 		<string>Egnyte Desktop Sync</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.5.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -28,7 +28,7 @@
 				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>CURLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -41,7 +41,7 @@
 				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>CURLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -52,7 +52,7 @@
 				<string>%download_url%</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

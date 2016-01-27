@@ -16,7 +16,7 @@ WARNING: The test builds of NetSurf can be unstable. Better to use the regular N
 		<string>NetSurf</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.5.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -30,7 +30,7 @@ WARNING: The test builds of NetSurf can be unstable. Better to use the regular N
 				<string>http://ci.netsurf-browser.org/builds/cocoa/LATEST</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>CURLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -39,7 +39,7 @@ WARNING: The test builds of NetSurf can be unstable. Better to use the regular N
 				<string>http://ci.netsurf-browser.org/builds/cocoa/%download_filename%</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

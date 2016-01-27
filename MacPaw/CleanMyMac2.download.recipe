@@ -16,7 +16,7 @@
 		<string>http://updateinfo.devmate.com/com.macpaw.CleanMyMac2/updates.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.5.2</string>
 	<key>Process</key>
 	<array>
 		<dict>
