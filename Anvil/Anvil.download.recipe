@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Anvil</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://sparkler.herokuapp.com/apps/3/updates.xml</string>
+		<string>https://sparkler.herokuapp.com/apps/3/updates.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

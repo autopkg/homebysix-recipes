@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Folder Tidy</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.tunabellysoftware.com/resources/sparkle/foldertidy.xml</string>
+		<string>https://www.tunabellysoftware.com/resources/sparkle/foldertidy.xml</string>
 		<key>USER_AGENT</key>
 		<string>Mozilla/5.0</string>
 	</dict>

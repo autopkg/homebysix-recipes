@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>TG Pro</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://tunabellysoftware.com/resources/sparkle/tgpro/profileInfo.php</string>
+		<string>https://www.tunabellysoftware.com/resources/sparkle/tgpro/profileInfo.php</string>
 		<key>USER_AGENT</key>
 		<string>Mozilla/5.0</string>
 	</dict>

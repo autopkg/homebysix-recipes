@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Monolingual</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://monolingual.sourceforge.net/appcast.xml</string>
+		<string>https://ingmarstein.github.io/Monolingual/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.1</string>

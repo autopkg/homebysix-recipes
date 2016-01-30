@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>App Reviews</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://knutigro.github.io/apps/app-reviews/app-reviews-appcast.xml</string>
+		<string>https://knutigro.github.io/apps/app-reviews/app-reviews-appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>
