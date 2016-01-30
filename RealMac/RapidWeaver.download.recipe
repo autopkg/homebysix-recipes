@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>RapidWeaver</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://updates.devmate.com/com.realmacsoftware.rapidweaver6.xml</string>
+		<string>https://updates.devmate.com/com.realmacsoftware.rapidweaver6.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>

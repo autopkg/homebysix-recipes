@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Persona</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.marinersoftware.com/sparkle/persona/persona_appcast.php</string>
+		<string>https://www.marinersoftware.com/sparkle/persona/persona.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.1</string>

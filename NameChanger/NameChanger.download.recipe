@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>NameChanger</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://mrrsoftware.com/Downloads/NameChanger/Updates/NameChangerSoftwareUpdates.xml</string>
+		<string>https://mrrsoftware.com/Downloads/NameChanger/Updates/NameChangerSoftwareUpdates.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.1</string>

@@ -15,7 +15,7 @@ WARNING: The identifier of this recipe will soon change to com.github.homebysix.
 		<key>NAME</key>
 		<string>Cakebrew</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.cakebrew.com/appcast/profileInfo.php</string>
+		<string>https://www.cakebrew.com/appcast/profileInfo.php</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>VirtualHostX</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://shine.clickontyler.com/appcast.php?id=30</string>
+		<string>https://shine.clickontyler.com/appcast.php?id=30</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

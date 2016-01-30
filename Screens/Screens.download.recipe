@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Screens</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://updates.edovia.com/com.edovia.screens.mac/appcast.xml</string>
+		<string>https://updates.edovia.com/com.edovia.screens.mac/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

@@ -15,7 +15,7 @@
 		<key>NAME</key>
 		<string>Vox</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://updates.devmate.com/com.coppertino.Vox.xml</string>
+		<string>https://updates.devmate.com/com.coppertino.Vox.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

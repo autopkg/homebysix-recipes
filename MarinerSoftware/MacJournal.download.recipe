@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>MacJournal</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://danschimpf.com/appcasts/MacJournal6.appcast</string>
+		<string>https://danschimpf.com/appcasts/MacJournal6.appcast</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>
