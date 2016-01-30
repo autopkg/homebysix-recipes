@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Twitterrific</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://iconfactory.com/appcasts/Twitterrific/appcast.xml</string>
+		<string>https://iconfactory.com/appcasts/Twitterrific/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Tangerine!</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://launch.karelia.com/appcast.php?version=0&amp;product=13&amp;appname=Tangerine!</string>
+		<string>https://launch.karelia.com/appcast.php?version=0&product=13&appname=Tangerine</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

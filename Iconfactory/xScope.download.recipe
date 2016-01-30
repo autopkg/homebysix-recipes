@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>xScope</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://iconfactory.com/appcasts/xScope/appcast.xml</string>
+		<string>https://iconfactory.com/appcasts/xScope/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

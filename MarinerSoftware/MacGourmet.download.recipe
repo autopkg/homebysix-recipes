@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>MacGourmet</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.marinersoftware.com/sparkle/MacGourmet4/appcast.php</string>
+		<string>https://www.marinersoftware.com/sparkle/MacGourmet4/macgourmet4.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.1</string>
