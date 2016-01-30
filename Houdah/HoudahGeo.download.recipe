@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>HoudahGeo</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.houdah.com/houdahGeo/updates4/profileInfo.php</string>
+		<string>https://www.houdah.com/houdahGeo/updates4/cast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

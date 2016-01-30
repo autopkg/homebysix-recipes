@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Scapple</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.literatureandlatte.com/downloads/scapple/scapple.xml</string>
+		<string>https://www.literatureandlatte.com/downloads/scapple/scapple.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.1</string>
