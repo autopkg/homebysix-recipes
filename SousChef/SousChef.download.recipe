@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>SousChef</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://acaciatreesoftware.com/download/update.php</string>
+		<string>http://acaciatreesoftware.com/download/souschef.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.1</string>

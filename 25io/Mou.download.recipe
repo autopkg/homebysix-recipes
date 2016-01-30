@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Mou</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://mouapp.com/up/updates.xml</string>
+		<string>http://25.io/mou/up/updates.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

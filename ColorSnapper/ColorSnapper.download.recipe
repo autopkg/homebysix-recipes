@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>ColorSnapper2</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.colorsnapper.com/app/appcast.xml</string>
+		<string>http://colorsnapper.com/app/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>
