@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>duet</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://updates.duetdisplay.com/checkMacUpdates</string>
+		<string>https://updates.duetdisplay.com/checkMacUpdates</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>
