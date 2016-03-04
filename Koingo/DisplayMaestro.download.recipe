@@ -23,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>getmirrorfile.php.dmg</string>
+				<string>DisplayMaestro.dmg</string>
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
 			</dict>
