@@ -19,7 +19,7 @@ autopkg repo-add homebysix-recipes
 Some of my recipes have parent recipes that live in another repo. To add them all in one shot, here is the command you'll need:
 
 ```
-autopkg repo-add recipes eholtam-recipes gerardkok-recipes hansen-m-recipes jaharmi-recipes jleggat-recipes jps3-recipes keeleysam-recipes rustymyers-recipes
+autopkg repo-add recipes eholtam-recipes gerardkok-recipes hansen-m-recipes jaharmi-recipes jessepeterson-recipes jleggat-recipes jps3-recipes keeleysam-recipes rustymyers-recipes
 ```
 
 
