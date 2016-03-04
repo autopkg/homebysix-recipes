@@ -10,22 +10,31 @@
 	<string>com.github.homebysix.download.KeyboardMaestro</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>http://www.keyboardmaestro.com/action/download?km-kmi-7-b3</string>
 		<key>NAME</key>
 		<string>Keyboard Maestro</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.1</string>
+	<string>0.5.2</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>download.zip</string>
+				<key>re_pattern</key>
+				<string>https://files.stairways.com/(keyboardmaestro-[\d]+.zip)</string>
+				<key>result_output_var_name</key>
+				<string>download_filename</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>http://www.keyboardmaestro.com/action/download</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>https://files.stairways.com/%download_filename%</string>
 			</dict>
 			<key>Processor</key>
 			<string>CURLDownloader</string>
