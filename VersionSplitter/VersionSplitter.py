@@ -23,9 +23,10 @@ __all__ = ["VersionSplitter"]
 class VersionSplitter(Processor):
 
     """This processor splits version numbers and returns the specified index.
+    By default, it splits using a space, and returns the first item.
+    Default behavior example: "3.0.8 :074a131:" --> "3.0.8"
 
-    Examples (with "split_on" in parentheses and "index" in brackets):
-    - "3.0.8 :074a131:" --> (" ")[0] --> "3.0.8"
+    More examples (with "split_on" in parentheses and "index" in brackets):
     - "8.3.1.1 (154179)" --> (" ")[0] -->"8.3.1.1"
     - "1.3.1-stable" --> ("-")[0] -->"1.3.1"
     - "macosx_64bit_3.0" --> ("_")[2] -->"3.0"
@@ -34,7 +35,7 @@ class VersionSplitter(Processor):
     input_variables = {
         "version": {
             "required": True,
-            "description": "The version that needs splitting."
+            "description": "The version string that needs splitting."
         },
         "split_on": {
             "required": False,
@@ -49,7 +50,7 @@ class VersionSplitter(Processor):
     }
     output_variables = {
         "version": {
-            "description": "The cleaned up version."
+            "description": "The cleaned up version string."
         }
     }
     description = __doc__
