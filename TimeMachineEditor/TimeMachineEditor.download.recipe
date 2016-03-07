@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip</string>
+		<string>http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.pkg</string>
 		<key>NAME</key>
 		<string>TimeMachineEditor</string>
 	</dict>
@@ -33,19 +33,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/unpacked</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>expected_authorities</key>
 				<array>
 					<string>Developer ID Installer: Thomas CLEMENT</string>
@@ -53,7 +40,7 @@
 					<string>Apple Root CA</string>
 				</array>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/unpacked/%NAME%.pkg</string>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>

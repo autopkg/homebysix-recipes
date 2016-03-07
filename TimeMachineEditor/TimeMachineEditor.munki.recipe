@@ -28,6 +28,8 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>version</key>
+			<string>%version%</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
@@ -40,7 +42,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/unpacked/%NAME%.pkg</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>

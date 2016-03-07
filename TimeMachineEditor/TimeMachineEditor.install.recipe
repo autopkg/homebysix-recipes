@@ -18,13 +18,13 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>Installer</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/unpacked/%NAME%.pkg</string>
+				<string>%pathname%</string>
 			</dict>
+			<key>Processor</key>
+			<string>Installer</string>
 		</dict>
 	</array>
 </dict>
