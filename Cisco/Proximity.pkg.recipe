@@ -24,17 +24,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>index</key>
-				<integer>1</integer>
-				<key>split_on</key>
-				<string>-</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkgdirs</key>
 				<dict>
 					<key>Applications</key>
