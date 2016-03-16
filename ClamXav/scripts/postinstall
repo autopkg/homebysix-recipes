@@ -1,5 +1,5 @@
 #!/bin/sh
 
-installer -target / -pkg "$3/Applications/ClamXav.app/Contents/Resources/clamavEngineInstaller.pkg"
+installer -target "$3" -pkg "$3/Applications/ClamXav.app/Contents/Resources/clamavEngineInstaller.pkg"
 
 exit $?
