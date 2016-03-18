@@ -37,7 +37,7 @@
 				<string>https://dist.apache.org/repos/dist/release/directory/studio/%version%/ApacheDirectoryStudio-%version%-macosx.cocoa.x86_64.tar.gz</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

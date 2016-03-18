@@ -41,7 +41,7 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 				<string>%NAME%-%version%.zip</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

@@ -39,7 +39,7 @@ WARNING: The test builds of NetSurf can be unstable. Better to use the regular N
 				<string>http://ci.netsurf-browser.org/builds/cocoa/%download_filename%</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

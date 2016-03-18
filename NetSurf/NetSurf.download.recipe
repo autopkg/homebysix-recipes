@@ -39,7 +39,7 @@
 				<string>http://download.netsurf-browser.org/netsurf/releases/pre-built/macosx/NetSurf-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

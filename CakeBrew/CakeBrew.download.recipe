@@ -37,7 +37,7 @@ WARNING: The identifier of this recipe will soon change to com.github.homebysix.
 				<string>%NAME%-%version%.zip</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

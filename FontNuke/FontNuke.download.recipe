@@ -37,7 +37,7 @@ This set of recipes differs from the one in wardsparadox-recipes because it prov
 				<string>%NAME%-%version%.tgz</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
