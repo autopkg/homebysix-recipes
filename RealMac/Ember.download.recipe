@@ -12,7 +12,7 @@
 		<string>Ember</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.2</string>
+	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -26,7 +26,7 @@
 				<string>http://downloads.realmacmedia.com/ember/?C=M;O=D</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -37,7 +37,7 @@
 				<string>http://downloads.realmacmedia.com/ember/%url%</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

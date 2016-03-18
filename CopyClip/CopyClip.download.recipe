@@ -16,7 +16,7 @@
 		<string>https://rink.hockeyapp.net/api/2/apps/082cf4b1e3613fad8de3075a6ac2903a</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.2</string>
+	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -35,7 +35,7 @@
 				<string>%NAME%-%version%.zip</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

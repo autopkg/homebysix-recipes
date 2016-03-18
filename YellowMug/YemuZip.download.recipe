@@ -18,7 +18,7 @@ Temporarily disabled code signature verification, because the current version of
 		<string>http://yellowmug.com/yemuzip/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.1</string>
+	<string>0.6.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -37,7 +37,7 @@ Temporarily disabled code signature verification, because the current version of
 				<string>%NAME%-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

@@ -18,7 +18,7 @@ WARNING: The identifier of this recipe will soon change to com.github.homebysix.
 		<string>https://www.cakebrew.com/appcast/profileInfo.php</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.2</string>
+	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -37,7 +37,7 @@ WARNING: The identifier of this recipe will soon change to com.github.homebysix.
 				<string>%NAME%-%version%.zip</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLDownloader</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
