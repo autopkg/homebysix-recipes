@@ -16,7 +16,7 @@
 		<string>https://launch.karelia.com/appcast.php?product=9&amp;appname=The+Hit+List</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.2</string>
+	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
 		<dict>

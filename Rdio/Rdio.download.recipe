@@ -18,7 +18,7 @@ Temporarily disabled code signature verification due to errors in included Spark
 		<string>https://www.rdio.com/media/static/desktop/mac/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.2</string>
+	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
 		<dict>

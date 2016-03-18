@@ -16,7 +16,7 @@
 		<string>https://reinventedsoftware.com/together/downloads/Together3.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.1</string>
+	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
 		<dict>

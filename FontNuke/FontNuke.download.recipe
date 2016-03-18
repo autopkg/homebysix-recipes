@@ -18,7 +18,7 @@ This set of recipes differs from the one in wardsparadox-recipes because it prov
 		<string>http://jamapi.com/fontnuke/fontnuke-update-appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.1</string>
+	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
