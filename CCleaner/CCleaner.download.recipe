@@ -28,7 +28,7 @@
 				<string>https://www.piriform.com/ccleaner/download?mac</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

@@ -30,7 +30,7 @@
 			<key>Comment</key>
 			<string>Scrapes the "major" version number of the current SnapGene Viewer release.</string>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -45,7 +45,7 @@
 			<key>Comment</key>
 			<string>Scrapes the full version number of the current SnapGene Viewer release.</string>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

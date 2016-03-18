@@ -30,7 +30,7 @@ WARNING: The test builds of NetSurf can be unstable. Better to use the regular N
 				<string>http://ci.netsurf-browser.org/builds/cocoa/LATEST</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

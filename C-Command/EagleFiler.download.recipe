@@ -28,7 +28,7 @@
 				<string>http://c-command.com/eaglefiler/</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

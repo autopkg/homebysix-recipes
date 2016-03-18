@@ -30,7 +30,7 @@
 				<string>http://martiancraft.com/products/slender.html</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

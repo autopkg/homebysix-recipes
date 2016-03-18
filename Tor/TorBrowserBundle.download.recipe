@@ -28,7 +28,7 @@
 				<string>https://dist.torproject.org/torbrowser/?C=N;O=D</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

@@ -28,7 +28,7 @@
 				<string>https://www.keepassx.org/downloads/</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

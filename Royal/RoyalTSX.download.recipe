@@ -28,7 +28,7 @@
 				<string>http://www.royalapplications.com/ts/osx/download</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Processor</key>

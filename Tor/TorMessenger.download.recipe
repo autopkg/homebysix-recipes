@@ -28,7 +28,7 @@
 				<string>https://dist.torproject.org/tormessenger/?C=M;O=D</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

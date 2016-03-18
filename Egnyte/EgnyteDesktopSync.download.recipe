@@ -28,7 +28,7 @@
 				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -41,7 +41,7 @@
 				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
 			</dict>
 			<key>Processor</key>
-			<string>CURLTextSearcher</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
