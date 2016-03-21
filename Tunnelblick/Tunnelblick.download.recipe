@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>release/Tunnelblick_([\d\.]+)_build_[\d\.]+\.dmg</string>
+				<string>release/Tunnelblick_([\d\.]+a?)_build_[\d\.]+\.dmg</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>release/Tunnelblick_[\d\.]+_build_([\d\.]+)\.dmg</string>
+				<string>release/Tunnelblick_[\d\.]+a?_build_([\d\.]+)\.dmg</string>
 				<key>result_output_var_name</key>
 				<string>build</string>
 				<key>url</key>
