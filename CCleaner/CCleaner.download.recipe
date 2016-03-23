@@ -33,8 +33,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>CCMacSetup109.dmg</string>
 				<key>url</key>
 				<string>https://download.piriform.com/%url%</string>
 			</dict>
