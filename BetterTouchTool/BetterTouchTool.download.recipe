@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>BetterTouchTool</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://appcast.boastr.net</string>
+		<string>https://updates.bettertouchtool.net/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
