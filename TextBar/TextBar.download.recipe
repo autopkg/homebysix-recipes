@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>TextBar</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.richsomerfield.com/apps/textbar/sparkle_textbar.xml</string>
+		<string>https://raw.githubusercontent.com/richie5um/richie5um.github.io/master/apps/textbar/sparkle_textbar.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
