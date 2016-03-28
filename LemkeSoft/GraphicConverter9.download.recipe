@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>GraphicConverter 9</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.lemkesoft.org/files/graphicconverter/graphicconverter9.xml</string>
+		<string>https://www.lemkesoft.info/sparkle/graphicconverter/graphicconverter9.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
