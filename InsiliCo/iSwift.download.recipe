@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>iSwift</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://iswift.org/iswift.xml</string>
+		<string>https://s3.amazonaws.com/iswift/iswift.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>

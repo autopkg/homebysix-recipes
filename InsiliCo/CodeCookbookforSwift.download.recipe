@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Code Cookbook for Swift</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://iswift.org/codecookbook.xml</string>
+		<string>https://s3.amazonaws.com/iswift/codecookbook.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
