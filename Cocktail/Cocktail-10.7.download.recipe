@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Cocktail-10.7</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.maintain.se/downloads/sparkle/lion/lion.xml</string>
+		<string>https://www.maintain.se/downloads/sparkle/lion/lion.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
