@@ -21,11 +21,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="(http://v2\.royaltsx\.com/updates/royaltsx_.+\.dmg)" title="Download Royal TSX"&gt;Download Now&lt;/a&gt;</string>
+				<string>href="(https://royaltsx-v2.royalapplications.com/updates/royaltsx_.+\.dmg)" title="Download Royal TSX"&gt;Download Now&lt;/a&gt;</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>http://www.royalapplications.com/ts/osx/download</string>
+				<string>https://www.royalapplications.com/ts/osx/download</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
