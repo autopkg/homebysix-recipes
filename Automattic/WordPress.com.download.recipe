@@ -25,7 +25,7 @@
 				<key>result_output_var_name</key>
 				<string>download_path</string>
 				<key>url</key>
-				<string>https://developer.wordpress.com/calypso/</string>
+				<string>https://apps.wordpress.com/d/osx/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
