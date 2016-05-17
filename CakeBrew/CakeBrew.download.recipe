@@ -14,27 +14,29 @@ WARNING: The identifier of this recipe will soon change to com.github.homebysix.
 	<dict>
 		<key>NAME</key>
 		<string>Cakebrew</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>https://www.cakebrew.com/appcast/profileInfo.php</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
-		<dict>
+        <dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<key>re_pattern</key>
+				<string>\/files\/(cakebrew-[\d\.]+\.dmg)\"&gt;Direct Download&lt;\/a&gt;</string>
+				<key>result_output_var_name</key>
+				<string>filename</string>
+				<key>url</key>
+				<string>https://www.cakebrew.com/</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%-%version%.zip</string>
+				<key>url</key>
+				<string>https://www.cakebrew.com/files/%filename%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -46,26 +48,24 @@ WARNING: The identifier of this recipe will soon change to com.github.homebysix.
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
+				<string>%pathname%/%NAME%.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.brunophilipe.Cakebrew" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = R85D3K8ATT)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+        <dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
