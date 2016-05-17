@@ -2,14 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Cakebrew.
-
-WARNING: The identifier of this recipe will soon change to com.github.homebysix.download.Cakebrew. Please be ready to update your overrides.</string>
+	<string>Downloads the latest version of Cakebrew.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.CakeBrew</string>
+	<string>com.github.homebysix.download.Cakebrew</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
