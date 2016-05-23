@@ -28,7 +28,7 @@
 				<dict>
 					<key>Library</key>
 					<string>0775</string>
-                    <key>Library/PreferencePanes</key>
+					<key>Library/PreferencePanes</key>
 					<string>0775</string>
 				</dict>
 				<key>pkgroot</key>

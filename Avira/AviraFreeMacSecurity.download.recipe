@@ -18,10 +18,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://www.avira.com/downloads/frontendDl/defaultDownload?product=avira-free-antivirus-for-mac</string>
 				<key>filename</key>
 				<string>AviraFreeMacSecurity.pkg</string>
+				<key>url</key>
+				<string>https://www.avira.com/downloads/frontendDl/defaultDownload?product=avira-free-antivirus-for-mac</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

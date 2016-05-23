@@ -57,13 +57,13 @@
 			<string>Versioner</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 			<key>Arguments</key>
 			<dict>
 				<key>split_on</key>
 				<string>,</string>
 			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 		</dict>
 	</array>
 </dict>
