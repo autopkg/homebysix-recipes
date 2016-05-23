@@ -22,7 +22,7 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-                <key>filename</key>
+				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
@@ -34,21 +34,21 @@
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
-        <dict>
-            <key>Processor</key>
-            <string>CodeSignatureVerifier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>input_path</key>
-                <string>%pathname%/Install Hazel.app</string>
-                <key>expected_authorities</key>
-                <array>
-                    <string>Apple Root CA</string>
-                    <string>Developer ID Certification Authority</string>
-                    <string>Developer ID Application: Noodlesoft, LLC</string>
-                </array>
-            </dict>
-        </dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authorities</key>
+				<array>
+					<string>Apple Root CA</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Developer ID Application: Noodlesoft, LLC</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%/Install Hazel.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>

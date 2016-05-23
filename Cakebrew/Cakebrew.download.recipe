@@ -15,7 +15,7 @@
 	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
-        <dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
@@ -52,7 +52,7 @@
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
 		</dict>
-        <dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
