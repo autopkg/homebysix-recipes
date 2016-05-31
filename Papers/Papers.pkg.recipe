@@ -72,6 +72,8 @@
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 					<key>version</key>
 					<string>%version%</string>
+					<key>scripts</key>
+					<string>Scripts</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
