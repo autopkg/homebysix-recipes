@@ -30,7 +30,7 @@
 						<key>destination_path</key>
 						<string>/Library/PreferencePanes</string>
 						<key>source_item</key>
-						<string>%pathname%/Install Hazel.app/Contents/Resources/Hazel.prefPane</string>
+						<string>Install Hazel.app/Contents/Resources/Hazel.prefPane</string>
 					</dict>
 				</array>
 			</dict>
