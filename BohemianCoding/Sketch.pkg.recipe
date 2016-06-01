@@ -18,8 +18,6 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>Versioner</string>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
@@ -27,10 +25,10 @@
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkgdirs</key>
@@ -41,10 +39,10 @@
 				<key>pkgroot</key>
 				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>FileMover</string>
 			<key>Arguments</key>
 			<dict>
 				<key>source</key>
@@ -52,10 +50,10 @@
 				<key>target</key>
 				<string>%pkgroot%/Applications/Sketch.app</string>
 			</dict>
+			<key>Processor</key>
+			<string>FileMover</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
@@ -83,6 +81,8 @@
 					<string>%version%</string>
 				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>
