@@ -31,8 +31,23 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>find</key>
+				<string>http:///scrivener.s3.amazonaws.com</string>
+				<key>input_string</key>
+				<string>%url%</string>
+				<key>replace</key>
+				<string>http://scrivener.s3.amazonaws.com</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%-%version%.zip</string>
+				<key>url</key>
+				<string>%output_string%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
