@@ -21,21 +21,16 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(?:(\d+\.(?:\d+\.)*\d+))/</string>
+				<string>"(https:\/\/dist\.torproject\.org\/tormessenger\/[\w\.]+/TorMessenger-[\w\.]+-osx64_%LANGUAGE%\.dmg)"</string>
 				<key>result_output_var_name</key>
-				<string>version</string>
+				<string>url</string>
 				<key>url</key>
-				<string>https://dist.torproject.org/tormessenger/?C=M;O=D</string>
+				<string>https://trac.torproject.org/projects/tor/wiki/doc/TorMessenger#Downloads</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>https://dist.torproject.org/tormessenger/%version%/%NAME%-%version%-osx64_%LANGUAGE%.dmg</string>
-			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
