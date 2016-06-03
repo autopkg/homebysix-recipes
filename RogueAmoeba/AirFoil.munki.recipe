@@ -3,21 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of AirFoil and imports it into Munki.</string>
+	<string>Downloads the latest version of Airfoil and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.AirFoil</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/AirFoil</string>
+		<string>apps/Airfoil</string>
 		<key>NAME</key>
-		<string>AirFoil</string>
+		<string>Airfoil</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
 			<array>
-				<string>AirFoil.app</string>
-				<string>AirFoil Speakers.app</string>
+				<string>Airfoil.app</string>
+                <string>Airfoil Satellite.app</string>
+				<string>Airfoil Speakers.app</string>
 			</array>
 			<key>catalogs</key>
 			<array>

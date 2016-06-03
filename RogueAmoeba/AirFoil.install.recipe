@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Installs the latest version of AirFoil.</string>
+	<string>Installs the latest version of Airfoil.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.AirFoil</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>AirFoil</string>
+		<string>Airfoil</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>

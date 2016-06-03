@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of AirFoil and builds a package.</string>
+	<string>Downloads the latest version of Airfoil and builds a package.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.AirFoil</string>
 	<key>Input</key>
@@ -11,7 +11,7 @@
 		<key>BUNDLE_ID</key>
 		<string>com.rogueamoeba.Airfoil</string>
 		<key>NAME</key>
-		<string>AirFoil</string>
+		<string>Airfoil</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
