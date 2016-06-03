@@ -2,16 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of DeltaWalker.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.DeltaWalker</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://s3.amazonaws.com/deltawalker/DeltaWalker-2.1.2_64.dmg</string>
 		<key>NAME</key>
 		<string>DeltaWalker</string>
 	</dict>
@@ -22,10 +18,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>DeltaWalker-2.1.2_64.dmg</string>
+				<key>re_pattern</key>
+				<string>href="(https:\/\/s3\.amazonaws\.com\/deltawalker\/DeltaWalker\-[\d\.]+_64\.dmg)"</string>
+				<key>result_output_var_name</key>
+				<string>download_url</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>http://www.deltawalker.com/download.jsp</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%download_url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
