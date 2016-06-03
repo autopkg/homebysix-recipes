@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.Simon</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>http://www.dejal.com/download/simon-4.1.zip</string>
 		<key>NAME</key>
 		<string>Simon</string>
 	</dict>
@@ -22,10 +20,19 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>simon-4.1.zip</string>
+				<key>re_pattern</key>
+				<string>&lt;span class="version"&gt;version ([\d\.]+)&lt;/span&gt;</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>http://www.dejal.com/mac/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>http://www.dejal.com/download/simon-%match%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
