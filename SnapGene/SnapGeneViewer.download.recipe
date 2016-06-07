@@ -21,29 +21,10 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href=".+&amp;majorRelease=([\d\.]+)&amp;minorRelease=[\d\.]+&amp;os=mac"</string>
-				<key>result_output_var_name</key>
-				<string>majorversion</string>
+                <string>\/\/products\/snapgene_viewer\/download\.php\?&amp;majorRelease=(?P&lt;majorversion&gt;[\d.]+)&amp;minorRelease=(?P&lt;version&gt;[\d.]+)&amp;os=mac</string>
 				<key>url</key>
 				<string>http://www.snapgene.com/products/snapgene_viewer/</string>
 			</dict>
-			<key>Comment</key>
-			<string>Scrapes the "major" version number of the current SnapGene Viewer release.</string>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>href=".+&amp;majorRelease=[\d\.]+&amp;minorRelease=([\d\.]+)&amp;os=mac"</string>
-				<key>result_output_var_name</key>
-				<string>version</string>
-				<key>url</key>
-				<string>http://www.snapgene.com/products/snapgene_viewer/</string>
-			</dict>
-			<key>Comment</key>
-			<string>Scrapes the full version number of the current SnapGene Viewer release.</string>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
 		</dict>

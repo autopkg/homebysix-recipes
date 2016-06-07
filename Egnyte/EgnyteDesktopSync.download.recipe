@@ -21,22 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(https://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/[\d\.]+/EgnyteDesktopSync_.+.dmg)</string>
-				<key>result_output_var_name</key>
-				<string>download_url</string>
-				<key>url</key>
-				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>https://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/([\d\.]+)/EgnyteDesktopSync_.+.dmg</string>
-				<key>result_output_var_name</key>
-				<string>version</string>
+				<string>(?P&lt;url&gt;https://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/(?P&lt;version&gt;[\d\.]+)/EgnyteDesktopSync_.+.dmg)</string>
 				<key>url</key>
 				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
 			</dict>
@@ -48,8 +33,6 @@
 			<dict>
 				<key>filename</key>
 				<string>EgnyteDesktopSync-%version%.dmg</string>
-				<key>url</key>
-				<string>%download_url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
