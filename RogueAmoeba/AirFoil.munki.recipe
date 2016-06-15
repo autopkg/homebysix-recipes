@@ -17,7 +17,7 @@
 			<key>blocking_applications</key>
 			<array>
 				<string>Airfoil.app</string>
-                <string>Airfoil Satellite.app</string>
+				<string>Airfoil Satellite.app</string>
 				<string>Airfoil Speakers.app</string>
 			</array>
 			<key>catalogs</key>
