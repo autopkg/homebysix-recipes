@@ -5,7 +5,8 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Celestia.</string>
+	<string>Downloads the latest version of Celestia.
+	Note: Celestia.app's code object is not signed at all</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Celestia</string>
 	<key>Input</key>
