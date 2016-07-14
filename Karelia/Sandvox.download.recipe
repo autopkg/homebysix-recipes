@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.karelia.com/files/8/Sandvox.zip</string>
+		<string>https://www.karelia.com/files/8/Sandvox.zip</string>
 		<key>NAME</key>
 		<string>Sandvox</string>
 	</dict>

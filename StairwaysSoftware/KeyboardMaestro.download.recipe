@@ -25,7 +25,7 @@
 				<key>result_output_var_name</key>
 				<string>download_filename</string>
 				<key>url</key>
-				<string>http://www.stairways.com/main/download</string>
+				<string>https://www.stairways.com/main/download</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>

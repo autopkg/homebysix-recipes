@@ -25,7 +25,7 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 				<key>filename</key>
 				<string>ParallelsDesktop-%MAJOR_VERSION%.dmg</string>
 				<key>url</key>
-				<string>http://www.parallels.com/directdownload/pd%MAJOR_VERSION%</string>
+				<string>https://www.parallels.com/directdownload/pd%MAJOR_VERSION%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

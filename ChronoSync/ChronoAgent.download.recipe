@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://downloads.econtechnologies.com/CA_Mac_Download.dmg</string>
+		<string>https://downloads.econtechnologies.com/CA_Mac_Download.dmg</string>
 		<key>NAME</key>
 		<string>ChronoAgent</string>
 	</dict>

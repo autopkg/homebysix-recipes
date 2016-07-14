@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.cisdem.com/download/cisdem-betterunarchiver.dmg</string>
+		<string>https://www.cisdem.com/download/cisdem-betterunarchiver.dmg</string>
 		<key>NAME</key>
 		<string>Cisdem BetterUnarchiver</string>
 	</dict>
