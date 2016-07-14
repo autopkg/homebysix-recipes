@@ -25,7 +25,7 @@
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>http://c-command.com/dropdmg/</string>
+				<string>https://c-command.com/dropdmg/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -36,7 +36,7 @@
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
-				<string>http://c-command.com/downloads/DropDMG-%version%.dmg</string>
+				<string>https://c-command.com/downloads/DropDMG-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.fatcatsoftware.com/powerphotos/PowerPhotos.zip</string>
+		<string>https://www.fatcatsoftware.com/powerphotos/PowerPhotos.zip</string>
 		<key>NAME</key>
 		<string>PowerPhotos</string>
 	</dict>

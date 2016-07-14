@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://wksdownload.s3-website-us-east-1.amazonaws.com/Emailchemy-Mac.dmg</string>
+		<string>https://s3.amazonaws.com/wksdownload/Emailchemy-Mac.dmg</string>
 		<key>NAME</key>
 		<string>Emailchemy</string>
 	</dict>

@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://macrabbit.com/slicy/get</string>
+		<string>https://macrabbit.com/slicy/get</string>
 		<key>NAME</key>
 		<string>Slicy</string>
 	</dict>

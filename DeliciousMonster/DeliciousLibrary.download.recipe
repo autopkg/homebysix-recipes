@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://delicious-monster.com/downloads/DeliciousLibrary3.zip</string>
+		<string>https://delicious-monster.com/downloads/DeliciousLibrary3.zip</string>
 		<key>NAME</key>
 		<string>Delicious Library 3</string>
 	</dict>

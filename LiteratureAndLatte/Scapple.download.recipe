@@ -36,7 +36,7 @@
 				<key>input_string</key>
 				<string>%url%</string>
 				<key>replace</key>
-				<string>http://scrivener.s3.amazonaws.com</string>
+				<string>https://scrivener.s3.amazonaws.com</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>

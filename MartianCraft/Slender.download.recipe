@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.Slender</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>http://downloads.dragonforged.com/slender222.zip</string>
 		<key>NAME</key>
 		<string>Slender</string>
 	</dict>

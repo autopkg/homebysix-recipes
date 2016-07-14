@@ -11,7 +11,7 @@
 		<key>DISPLAY_NAME</key>
 		<string>Email Archiver Pro</string>
 		<key>DOWNLOAD_URL</key>
-		<string>http://ironicsoftware.com/downloads/EmailArchiverPro.zip</string>
+		<string>https://ironicsoftware.com/downloads/EmailArchiverPro.zip</string>
 		<key>NAME</key>
 		<string>EmailArchiverPro2</string>
 	</dict>

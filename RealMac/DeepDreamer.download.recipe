@@ -13,7 +13,7 @@
 		<key>APP_FILENAME</key>
 		<string>Deep Dreamer</string>
 		<key>DOWNLOAD_URL</key>
-		<string>http://dl.devmate.com/com.realmacsoftware.deepdreamer/DeepDreamer.zip</string>
+		<string>https://dl.devmate.com/com.realmacsoftware.deepdreamer/DeepDreamer.zip</string>
 		<key>NAME</key>
 		<string>Deep Dreamer (Public Beta)</string>
 	</dict>

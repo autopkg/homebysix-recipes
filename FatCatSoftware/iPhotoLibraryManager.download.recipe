@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.fatcatsoftware.com/iplm/iPhotoLibraryManager.zip</string>
+		<string>https://www.fatcatsoftware.com/iplm/iPhotoLibraryManager.zip</string>
 		<key>NAME</key>
 		<string>iPhoto Library Manager</string>
 	</dict>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.FuzzMeasure</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>http://s3.amazonaws.com/fuzzmeasure/FuzzMeasure-20.app.zip</string>
 		<key>NAME</key>
 		<string>FuzzMeasure</string>
 	</dict>
@@ -22,10 +20,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%.zip</string>
+				<key>re_pattern</key>
+				<string>(FuzzMeasure-[\d]+.app.zip)</string>
+				<key>result_output_var_name</key>
+				<string>filename</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://supermegaultragroovy.com/products/fuzzmeasure/download/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>https://s3.amazonaws.com/fuzzmeasure/%filename%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

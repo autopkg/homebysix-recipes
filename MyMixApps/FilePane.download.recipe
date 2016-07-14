@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://dl.devmate.com/com.mymixapps.FilePane/FilePane.dmg</string>
+		<string>https://dl.devmate.com/com.mymixapps.FilePane/FilePane.dmg</string>
 		<key>NAME</key>
 		<string>FilePane</string>
 	</dict>

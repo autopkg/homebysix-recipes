@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.charlessoft.com/TimeTracker.zip</string>
+		<string>https://www.charlessoft.com/TimeTracker.zip</string>
 		<key>NAME</key>
 		<string>TimeTracker</string>
 	</dict>

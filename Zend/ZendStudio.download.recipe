@@ -27,7 +27,7 @@
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>http://www.zend.com/en/products/studio/downloads-studio#Mac%20OS</string>
+				<string>https://www.zend.com/en/products/studio/downloads-studio#Mac%20OS</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
