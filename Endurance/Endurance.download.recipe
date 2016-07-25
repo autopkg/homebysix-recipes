@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Endurance</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://enduranceapp.com/appcast</string>
+		<string>https://enduranceapp.com/appcast</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>

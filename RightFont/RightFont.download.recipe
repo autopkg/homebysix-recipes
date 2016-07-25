@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>RightFont</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://rightfontapp.com/update/appcast.xml</string>
+		<string>https://rightfontapp.com/update/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
