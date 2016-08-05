@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Install silently from installer app.
+"$3/private/tmp/Tracker-osx-installer.app/Contents/MacOS/osx-intel" --mode unattended
+rc=$?
+
+# Remove installer app.
+/bin/rm -r "$3/private/tmp/Tracker-osx-installer.app"
+
+exit $rc
