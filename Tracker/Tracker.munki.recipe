@@ -51,7 +51,7 @@ Apple's legacy Java 6 is required to run Tracker, so AppleJava6 has been added a
 					<array>
 						<dict>
 							<key>path</key>
-							<string>/Applications/Tracker.app/Contents/Resources/Java/tracker-%CURRENT_VERSION%.jar</string>
+							<string>/Applications/Tracker.app/Contents/Resources/Java/tracker-%version%.jar</string>
 							<key>type</key>
 							<string>file</string>
 						</dict>
@@ -61,7 +61,7 @@ Apple's legacy Java 6 is required to run Tracker, so AppleJava6 has been added a
 						<string>AppleJava6</string>
 					</array>
 					<key>version</key>
-					<string>%CURRENT_VERSION%</string>
+					<string>%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>

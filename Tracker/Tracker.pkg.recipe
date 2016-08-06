@@ -83,13 +83,13 @@ The Tracker app requires Apple's legacy Java 6 installer. The pkg installer gene
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
-					<string>%NAME%-%CURRENT_VERSION%</string>
+					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 					<key>scripts</key>
 					<string>Scripts</string>
 					<key>version</key>
-					<string>%CURRENT_VERSION%</string>
+					<string>%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
