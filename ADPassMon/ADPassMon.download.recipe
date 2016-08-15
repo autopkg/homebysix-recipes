@@ -5,7 +5,9 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of ADPassMon.</string>
+	<string>Downloads the latest version of ADPassMon.
+
+Code signature verification is commented-out for now. The developer plans to start signing the app soon.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.ADPassMon</string>
 	<key>Input</key>
