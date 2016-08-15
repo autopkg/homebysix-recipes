@@ -32,6 +32,10 @@ Apple's legacy Java 6 is required to run Tracker, so AppleJava6 has been added a
 			<string>Tracker</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>requires</key>
+			<array>
+				<string>AppleJava6</string>
+			</array>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
@@ -55,10 +59,6 @@ Apple's legacy Java 6 is required to run Tracker, so AppleJava6 has been added a
 							<key>type</key>
 							<string>file</string>
 						</dict>
-					</array>
-					<key>requires</key>
-					<array>
-						<string>AppleJava6</string>
 					</array>
 					<key>version</key>
 					<string>%version%</string>
