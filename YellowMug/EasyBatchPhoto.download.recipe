@@ -34,7 +34,7 @@
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
-		<!-- <dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
@@ -44,7 +44,7 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
-		</dict> -->
+		</dict>
 	</array>
 </dict>
 </plist>
