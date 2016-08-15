@@ -10,10 +10,10 @@
 	<string>com.github.homebysix.download.NeoFinder</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>NeoFinder</string>
 		<key>DOWNLOAD_URL</key>
 		<string>http://www.cdfinder.de/neofinder.zip</string>
+		<key>NAME</key>
+		<string>NeoFinder</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
