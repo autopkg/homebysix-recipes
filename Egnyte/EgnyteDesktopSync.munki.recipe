@@ -31,7 +31,7 @@ WARNING: The resulting package does not include the necessary scripts to upgrade
 			<key>developer</key>
 			<string>Egnyte Inc</string>
 			<key>display_name</key>
-			<string>Egnyte Desktop Sync Installer</string>
+			<string>Egnyte Desktop Sync</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
