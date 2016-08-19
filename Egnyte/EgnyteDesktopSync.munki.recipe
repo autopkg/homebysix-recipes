@@ -27,11 +27,11 @@ WARNING: The resulting package does not include the necessary scripts to upgrade
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>Keep a local copy of files on your Egnyte cloud storage using this desktop sync agent.</string>
 			<key>developer</key>
 			<string>Egnyte Inc</string>
 			<key>display_name</key>
-			<string>Egnyte Desktop Sync Installer</string>
+			<string>Egnyte Desktop Sync</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -80,8 +80,20 @@ WARNING: The resulting package does not include the necessary scripts to upgrade
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
-				<string>%pathname%</string>
+				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
