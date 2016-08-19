@@ -80,6 +80,18 @@ WARNING: The resulting package does not include the necessary scripts to upgrade
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
