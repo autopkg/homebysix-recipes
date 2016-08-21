@@ -23,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>download.zip</string>
+				<string>%NAME%.zip</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
