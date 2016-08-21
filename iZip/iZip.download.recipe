@@ -38,7 +38,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/iZip.app</string>
 				<key>requirement</key>
 				<string>identifier "com.iboostup.izip" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8NQYXT4C4P"</string>
 			</dict>

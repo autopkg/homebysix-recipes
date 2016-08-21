@@ -60,7 +60,7 @@ Code signature verification is commented-out for now. The developer plans to sta
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/ADPassMon.app</string>
 				<key>requirement</key>
 				<string>identifier "org.pmbuko.ADPassMon" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Ben Toms (F5M53V29PH)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 			</dict>

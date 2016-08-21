@@ -45,7 +45,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/Skim.app</string>
 				<key>requirement</key>
 				<string>identifier "net.sourceforge.skim-app.skim" and certificate root = H"39df13a92599a938258af4514964986eb9aae396"</string>
 			</dict>

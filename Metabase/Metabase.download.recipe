@@ -58,7 +58,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Metabase.app</string>
 				<key>requirement</key>
 				<string>anchor trusted</string>
 			</dict>
