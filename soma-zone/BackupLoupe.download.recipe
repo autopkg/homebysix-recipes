@@ -16,7 +16,7 @@
 		<string>https://somazonecom.ipage.com/soma-zone.com/BackupLoupe/a/appcast_update.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>0.6.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

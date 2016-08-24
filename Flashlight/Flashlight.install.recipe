@@ -14,7 +14,7 @@
 		<string>Flashlight</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Flashlight</string>
 	<key>Process</key>

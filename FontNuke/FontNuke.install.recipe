@@ -16,7 +16,7 @@ This set of recipes differs from the one in wardsparadox-recipes because it prov
 		<string>FontNuke</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.FontNuke</string>
 	<key>Process</key>

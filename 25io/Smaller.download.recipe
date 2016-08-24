@@ -16,7 +16,7 @@
 		<string>http://25.io/smaller/up/updates.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>0.6.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
