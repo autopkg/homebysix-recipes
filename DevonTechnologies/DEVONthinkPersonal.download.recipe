@@ -65,17 +65,6 @@
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
 		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-		</dict>
 	</array>
 </dict>
 </plist>

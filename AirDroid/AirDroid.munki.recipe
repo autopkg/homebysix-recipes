@@ -41,13 +41,14 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleVersion</string>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
 			</dict>
 			<key>Processor</key>
-			<string>Versioner</string>
+			<string>MunkiPkginfoMerger</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

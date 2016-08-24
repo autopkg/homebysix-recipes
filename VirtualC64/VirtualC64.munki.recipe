@@ -61,19 +61,7 @@
 			</dict>
 			<key>Processor</key>
 			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>additional_pkginfo</key>
-				<dict>
-					<key>version</key>
-					<string>%version%</string>
 				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -81,8 +69,6 @@
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>version_comparison_key</key>
-				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
