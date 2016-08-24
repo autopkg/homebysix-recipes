@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>CleanMyMac 2</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://updateinfo.devmate.com/com.macpaw.CleanMyMac2/updates.xml</string>
+		<string>https://updates.devmate.com/com.macpaw.CleanMyMac2.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>

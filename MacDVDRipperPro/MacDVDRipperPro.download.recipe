@@ -18,8 +18,6 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 		<string>MDRP</string>
 		<key>NAME</key>
 		<string>Mac DVDRipper Pro</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>https://www.macdvdripperpro.com/mdrp_sparkle5.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -29,7 +27,7 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<string>https://www.macdvdripperpro.com/mdrp_sparkle.xml</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
