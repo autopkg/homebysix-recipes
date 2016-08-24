@@ -5,7 +5,7 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the current release of Paparazzi and installs it.</string>
+	<string>Installs the latest version of Paparazzi!.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.Paparazzi</string>
 	<key>Input</key>
@@ -14,7 +14,7 @@
 		<string>Paparazzi</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Paparazzi</string>
 	<key>Process</key>
@@ -28,7 +28,7 @@
 				<array>
 					<dict>
 						<key>destination_path</key>
-						<string>/Applications/</string>
+						<string>/Applications</string>
 						<key>source_item</key>
 						<string>Paparazzi!.app</string>
 					</dict>

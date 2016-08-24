@@ -5,13 +5,13 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest Paparazzi dmg and imports into Munki.</string>
+	<string>Downloads the latest version of Paparazzi! and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.Paparazzi</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/Paparazzi</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Paparazzi</string>
 		<key>pkginfo</key>
@@ -33,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Paparazzi</string>
 	<key>Process</key>
@@ -51,7 +51,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%filename%</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
