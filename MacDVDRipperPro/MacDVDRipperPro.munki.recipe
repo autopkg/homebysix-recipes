@@ -8,7 +8,6 @@
 	<string>Downloads the latest version of Mac DVDRipper Pro and imports it into Munki.
 
 This set of recipes differs from the ones provided by macvfx-recipes in the following ways:
-- These recipes are for version 5, not 4.
 - Pkg and install recipes are available in this set, in addition to download and munki recipes.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.MacDVDRipperPro</string>
