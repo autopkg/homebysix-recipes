@@ -2,25 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Generated with help from Recipe Robot v0.0.3 (https://github.com/homebysix/recipe-robot)
+	<key>Description</key>
+	<string>Downloads the latest version of A Better Finder Rename.
 
 Temporarily disabled code signature verification due to errors in included Sparkle framework.
 
-MAJOR_VERSION input variable can be either 9 or 10.</string>
-	<key>Description</key>
-	<string>Downloads the latest version of A Better Finder Rename.</string>
+The MAJOR_VERSION input variable can be overridden to determine which version of the app is retrieved. Possible values are 10 (default), 9, or 8.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.ABetterFinderRename</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>9</string>
+		<string>10</string>
 		<key>NAME</key>
 		<string>A Better Finder Rename</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>0.6.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -62,7 +60,7 @@ MAJOR_VERSION input variable can be either 9 or 10.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME% %MAJOR_VERSION%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/A Better Finder Rename %MAJOR_VERSION%.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "net.publicspace.abfr%MAJOR_VERSION%" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "7Y9KW4ND8W")</string>
 			</dict>
