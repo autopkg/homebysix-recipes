@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://dl.devmate.com/com.macpaw.CleanMyMac3/beta/CleanMyMac3.zip</string>
+		<string>https://updates.devmate.com/beta/com.macpaw.CleanMyMac3.xml</string>
 		<key>NAME</key>
 		<string>CleanMyMac 3</string>
 	</dict>
