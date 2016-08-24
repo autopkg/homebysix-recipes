@@ -23,7 +23,7 @@
 			<key>description</key>
 			<string>Directory comparison and file differencing tool.</string>
 			<key>developer</key>
-			<string>MartianCraft, LLC</string>
+			<string>MartianCraft LLC</string>
 			<key>display_name</key>
 			<string>Changes</string>
 			<key>name</key>
