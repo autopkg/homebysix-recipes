@@ -12,10 +12,10 @@ The MAJOR_VERSION input variable can be overridden to select either version 10 (
 	<string>com.github.homebysix.pkg.GraphicConverter</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>GraphicConverter</string>
 		<key>MAJOR_VERSION</key>
 		<string>10</string>
+		<key>NAME</key>
+		<string>GraphicConverter</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>

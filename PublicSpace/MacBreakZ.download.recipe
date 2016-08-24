@@ -10,10 +10,10 @@ The MAJOR_VERSION input variable can be overridden to determine which version of
 	<string>com.github.homebysix.download.MacBreakZ</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>MacBreakZ</string>
 		<key>MAJOR_VERSION</key>
 		<string>5</string>
+		<key>NAME</key>
+		<string>MacBreakZ</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>

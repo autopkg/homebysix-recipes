@@ -10,10 +10,10 @@ The MAJOR_VERSION input variable can be overridden to determine which version of
 	<string>com.github.homebysix.download.RapidWeaver</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>RapidWeaver</string>
 		<key>MAJOR_VERSION</key>
 		<string>6</string>
+		<key>NAME</key>
+		<string>RapidWeaver</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
