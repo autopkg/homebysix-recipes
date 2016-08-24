@@ -56,7 +56,7 @@ This set of recipes differs from the one in wardsparadox-recipes because it prov
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%NAME%.app</string>
+						<string>FontNuke.app</string>
 					</dict>
 				</array>
 			</dict>

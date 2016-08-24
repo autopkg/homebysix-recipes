@@ -41,7 +41,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%NAME%.app</string>
+						<string>Persona.app</string>
 					</dict>
 				</array>
 			</dict>

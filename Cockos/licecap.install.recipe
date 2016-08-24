@@ -32,7 +32,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%APP_FILENAME%.app</string>
+						<string>licecap.app</string>
 					</dict>
 				</array>
 			</dict>

@@ -41,9 +41,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%APP_FILENAME%.app</string>
+				<string>%pkgroot%/Applications/licecap.app</string>
 				<key>source_path</key>
-				<string>%pathname%/%APP_FILENAME%.app</string>
+				<string>%pathname%/licecap.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
