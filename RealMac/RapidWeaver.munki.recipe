@@ -3,11 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of RapidWeaver and imports it into Munki.</string>
+	<string>Downloads the latest version of RapidWeaver and imports it into Munki.
+
+The MAJOR_VERSION input variable can be overridden to determine which version of the app is retrieved. The only possible value as of this writing is 6 (default).</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.RapidWeaver</string>
 	<key>Input</key>
 	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>6</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/RapidWeaver</string>
 		<key>NAME</key>
@@ -31,7 +35,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.RapidWeaver</string>
 	<key>Process</key>
