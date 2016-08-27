@@ -5,17 +5,15 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Deep Dreamer (Public Beta) and creates a package.</string>
+	<string>Downloads the latest version of Deep Dreamer and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.DeepDreamer</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Deep Dreamer</string>
 		<key>BUNDLE_ID</key>
 		<string>com.realmacsoftware.deepdreamer</string>
 		<key>NAME</key>
-		<string>Deep Dreamer (Public Beta)</string>
+		<string>Deep Dreamer</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -44,7 +42,7 @@
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
-					<string>DeepDreamer-%version%</string>
+					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 					<key>version</key>
