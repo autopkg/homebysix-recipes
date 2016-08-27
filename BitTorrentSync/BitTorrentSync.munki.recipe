@@ -23,7 +23,7 @@
 			<key>description</key>
 			<string>BitTorrent Sync for Mac. Sync files without the cloud, using peer-to-peer connections.</string>
 			<key>developer</key>
-			<string>BitTorrent, Inc.</string>
+			<string>Resilio, Inc.</string>
 			<key>display_name</key>
 			<string>BitTorrent Sync</string>
 			<key>name</key>
