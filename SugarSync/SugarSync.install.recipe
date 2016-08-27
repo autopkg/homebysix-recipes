@@ -14,7 +14,7 @@
 		<string>SugarSync</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.SugarSync</string>
 	<key>Process</key>
@@ -30,7 +30,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%NAME%.app</string>
+						<string>SugarSync.app</string>
 					</dict>
 				</array>
 			</dict>
