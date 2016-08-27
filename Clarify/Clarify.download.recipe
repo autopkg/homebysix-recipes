@@ -16,7 +16,7 @@
 		<string>https://www.bluemangolearning.com/download/clarify/2_0/auto_update/release/clarify_appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>0.6.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

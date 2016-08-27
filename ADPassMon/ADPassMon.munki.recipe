@@ -33,7 +33,6 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.ADPassMon</string>
 	<key>Process</key>
