@@ -5,7 +5,7 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Delicious Librar and imports it into Munki.</string>
+	<string>Downloads the latest version of Delicious Library and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.DeliciousLibrary</string>
 	<key>Input</key>
