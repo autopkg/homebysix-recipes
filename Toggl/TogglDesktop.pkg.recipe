@@ -24,6 +24,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>AppDmgVersioner</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkgdirs</key>
 				<dict>
 					<key>Applications</key>
@@ -39,9 +48,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%pkgroot%/Applications/TogglDesktop.app</string>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/TogglDesktop.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

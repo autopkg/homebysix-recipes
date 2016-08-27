@@ -26,8 +26,6 @@
 			<string>Koingo Software, Inc.</string>
 			<key>display_name</key>
 			<string>MacPilot</string>
-			<key>minimum_os</key>
-			<string>10.11</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>

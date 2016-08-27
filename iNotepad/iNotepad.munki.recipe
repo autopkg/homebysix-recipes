@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Replacement for Apple NotePad.</string>
+			<string>Replacement for Apple Notes app.</string>
 			<key>developer</key>
 			<string>Ivan Gobbo</string>
 			<key>display_name</key>
@@ -56,8 +56,6 @@
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>version_comparison_key</key>
-				<string>CFBundleShortVersionString</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

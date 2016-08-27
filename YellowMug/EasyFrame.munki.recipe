@@ -41,13 +41,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
-			<string>Versioner</string>
+			<string>AppDmgVersioner</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -56,8 +54,6 @@
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>version_comparison_key</key>
-				<string>CFBundleShortVersionString</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

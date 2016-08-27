@@ -29,6 +29,11 @@
 			<string>SparkleUpdateInfoProvider</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.tgz</string>
+			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
