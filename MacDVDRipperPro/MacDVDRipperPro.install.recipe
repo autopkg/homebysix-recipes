@@ -46,7 +46,7 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>Mac DVDRipper Pro.app</string>
+						<string>MDRP.app</string>
 					</dict>
 				</array>
 			</dict>
