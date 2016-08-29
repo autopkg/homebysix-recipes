@@ -3,12 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Installs the latest version of Mac DVDRipper Pro.
 
 This set of recipes differs from the ones provided by macvfx-recipes in the following ways:
-- These recipes are for version 5, not 4.
 - Pkg and install recipes are available in this set, in addition to download and munki recipes.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.MacDVDRipperPro</string>
@@ -20,7 +19,7 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 		<string>Mac DVDRipper Pro</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.MacDVDRipperPro</string>
 	<key>Process</key>
@@ -47,7 +46,7 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%APP_FILENAME%.app</string>
+						<string>MDRP.app</string>
 					</dict>
 				</array>
 			</dict>

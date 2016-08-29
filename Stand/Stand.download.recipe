@@ -23,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>download.zip</string>
+				<string>%NAME%.zip</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
@@ -56,7 +56,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Stand.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "reddavis.Stand" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = CF43K35J9C)</string>
 			</dict>

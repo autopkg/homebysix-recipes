@@ -3,12 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Mac DVDRipper Pro and imports it into Munki.
 
 This set of recipes differs from the ones provided by macvfx-recipes in the following ways:
-- These recipes are for version 5, not 4.
 - Pkg and install recipes are available in this set, in addition to download and munki recipes.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.MacDVDRipperPro</string>
@@ -39,7 +38,7 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.MacDVDRipperPro</string>
 	<key>Process</key>

@@ -3,17 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Icon Grabber and imports it into Munki.</string>
+	<string>Downloads the latest version of GraphicConverter and imports it into Munki.
+
+The MAJOR_VERSION input variable can be overridden to select either version 10 (default) or version 9 of GraphicConverter.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.IconGrabber</string>
+	<string>com.github.homebysix.munki.GraphicConverter</string>
 	<key>Input</key>
 	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>10</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Icon Grabber</string>
+		<string>GraphicConverter</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,11 +25,11 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>An Automator app that converts app icons to PNG easily and quickly.</string>
+			<string> </string>
 			<key>developer</key>
-			<string>John Kitzmiller</string>
+			<string>Thorsten Lemke</string>
 			<key>display_name</key>
-			<string>Icon Grabber</string>
+			<string>GraphicConverter</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -33,25 +37,27 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.IconGrabber</string>
+	<string>com.github.homebysix.download.GraphicConverter</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_path</key>
-				<string>%pathname%</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
 			</dict>
 			<key>Processor</key>
-			<string>AppDmgVersioner</string>
+			<string>DmgCreator</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%pathname%</string>
+				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>

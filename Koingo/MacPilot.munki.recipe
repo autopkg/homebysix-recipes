@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.5 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of MacPilot and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -26,8 +26,6 @@
 			<string>Koingo Software, Inc.</string>
 			<key>display_name</key>
 			<string>MacPilot</string>
-			<key>minimum_os</key>
-			<string>10.11</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.MacPilot</string>
 	<key>Process</key>

@@ -3,16 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Installs the latest version of RapidWeaver.</string>
+	<string>Installs the latest version of RapidWeaver.
+
+The MAJOR_VERSION input variable can be overridden to determine which version of the app is retrieved. The only possible value as of this writing is 6 (default).</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.RapidWeaver</string>
 	<key>Input</key>
 	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>6</string>
 		<key>NAME</key>
 		<string>RapidWeaver</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.RapidWeaver</string>
 	<key>Process</key>
@@ -39,7 +43,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%DISPLAY_NAME%.app</string>
+						<string>RapidWeaver %MAJOR_VERSION%.app</string>
 					</dict>
 				</array>
 			</dict>

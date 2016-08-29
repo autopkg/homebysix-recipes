@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of ProfitTrain.</string>
 	<key>Identifier</key>
@@ -13,10 +13,10 @@
 		<key>NAME</key>
 		<string>ProfitTrain</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://media.razorant.com/profittrain/releases/pt_appcast.xml</string>
+		<string>http://razorant.com/profittrain/profileInfo</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>0.6.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

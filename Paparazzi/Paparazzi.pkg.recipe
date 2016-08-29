@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the current release version of Paparazzi and builds a package.</string>
+	<string>Downloads the latest version of Paparazzi! and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.Paparazzi</string>
 	<key>Input</key>
@@ -14,11 +16,20 @@
 		<string>Paparazzi</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.6.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Paparazzi</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>AppDmgVersioner</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -64,11 +75,13 @@
 					<string>%BUNDLE_ID%</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
-					<key>pkgdir</key>
-					<string>%RECIPE_CACHE_DIR%</string>
+					<key>pkgname</key>
+					<string>%NAME%-%version%</string>
+					<key>pkgroot</key>
+					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<key>version</key>
+					<string>%version%</string>
 				</dict>
-				<key>pkgname</key>
-				<string>%NAME%-%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCreator</string>

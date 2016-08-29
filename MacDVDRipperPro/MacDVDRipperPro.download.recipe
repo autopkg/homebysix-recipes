@@ -3,12 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Mac DVDRipper Pro.
 
 This set of recipes differs from the ones provided by macvfx-recipes in the following ways:
-- These recipes are for version 5, not 4.
 - Pkg and install recipes are available in this set, in addition to download and munki recipes.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.MacDVDRipperPro</string>
@@ -18,18 +17,16 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 		<string>MDRP</string>
 		<key>NAME</key>
 		<string>Mac DVDRipper Pro</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>https://www.macdvdripperpro.com/mdrp_sparkle5.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>0.6.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<string>https://www.macdvdripperpro.com/mdrp_sparkle.xml</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
@@ -64,7 +61,7 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%APP_FILENAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/MDRP.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.mdrp.MDRP" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8CE859W3R2")</string>
 			</dict>
