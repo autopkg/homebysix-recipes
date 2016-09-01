@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Monodraw</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://updates.helftone.com/monodraw/appcast-beta.xml</string>
+		<string>https://updates.helftone.com/monodraw/appcast-beta.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
