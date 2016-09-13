@@ -19,5 +19,7 @@ This recipe has been converted into a recipe override for the new download recip
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.GraphicConverter</string>
 </dict>
 </plist>
