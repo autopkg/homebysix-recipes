@@ -1,0 +1,8 @@
+#!/bin/bash
+
+OLD_APP="/Applications/BitTorrent Sync.app"
+if [[ -d "$OLD_APP" ]]; then
+    rm -rfv "$OLD_APP"
+fi
+
+exit 0

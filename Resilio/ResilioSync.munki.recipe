@@ -3,31 +3,45 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of BitTorrent Sync and imports it into Munki.</string>
+	<string>Downloads the latest version of Resilio Sync (formerly BitTorrent Sync) and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.BitTorrentSync</string>
+	<string>com.github.homebysix.munki.ResilioSync</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>BitTorrent Sync</string>
+		<string>Resilio Sync</string>
 		<key>pkginfo</key>
 		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>BitTorrent Sync</string>
+			</array>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>BitTorrent Sync for Mac. Sync files without the cloud, using peer-to-peer connections.</string>
+			<string>Sync files without the cloud, using peer-to-peer connections.</string>
 			<key>developer</key>
 			<string>Resilio, Inc.</string>
 			<key>display_name</key>
-			<string>BitTorrent Sync</string>
+			<string>Resilio Sync</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
+
+OLD_APP="/Applications/BitTorrent Sync.app"
+if [[ -d "$OLD_APP" ]]; then
+    rm -rfv "$OLD_APP"
+fi
+
+exit 0
+			</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
@@ -35,7 +49,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.BitTorrentSync</string>
+	<string>com.github.homebysix.download.ResilioSync</string>
 	<key>Process</key>
 	<array>
 		<dict>

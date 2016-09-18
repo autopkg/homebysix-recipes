@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v1.0.4 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Installs the latest version of Resilio Sync (formerly BitTorrent Sync).</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.install.ResilioSync</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Resilio Sync</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.1</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.pkg.ResilioSync</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>Installer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

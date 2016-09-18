@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Installs the latest version of Resilio Sync.
+
+NOTE: This recipe has been deprecated and replaced with com.github.homebysix.install.ResilioSync. Please use that recipe instead.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.install.BitTorrentSync</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Resilio Sync</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.1</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.install.ResilioSync</string>
+	<key>Process</key>
+	<array/>
+</dict>
+</plist>

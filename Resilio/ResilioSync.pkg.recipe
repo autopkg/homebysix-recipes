@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of BitTorrent Sync and creates a package.</string>
+	<string>Downloads the latest version of Resilio Sync (formerly BitTorrent Sync) and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.BitTorrentSync</string>
+	<string>com.github.homebysix.pkg.ResilioSync</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
-		<string>com.bittorrent.Sync</string>
+		<string>com.resilio.Sync</string>
 		<key>NAME</key>
-		<string>BitTorrent Sync</string>
+		<string>Resilio Sync</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.BitTorrentSync</string>
+	<string>com.github.homebysix.download.ResilioSync</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -39,9 +39,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/BitTorrent Sync.app</string>
+				<string>%pkgroot%/Applications/Resilio Sync.app</string>
 				<key>source_path</key>
-				<string>%pathname%/BitTorrent Sync.app</string>
+				<string>%pathname%/Resilio Sync.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -70,6 +70,8 @@
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<key>scripts</key>
+					<string>scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
