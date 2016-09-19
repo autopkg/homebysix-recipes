@@ -19,6 +19,7 @@
 			<key>blocking_applications</key>
 			<array>
 				<string>BitTorrent Sync</string>
+				<string>Resilio Sync</string>
 			</array>
 			<key>catalogs</key>
 			<array>
