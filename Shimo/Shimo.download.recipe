@@ -22,8 +22,23 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>re_pattern</key>
+				<string>\?key=(.*)"</string>
+				<key>result_output_var_name</key>
+				<string>key</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://www.shimovpn.com/download/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%?key=%key%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
