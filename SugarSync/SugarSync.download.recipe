@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>https://www.sugarsync.com/downloads/p/InstallSugarSync.dmg</string>
+		<string>https://www.sugarsync.com/downloads/InstallSugarSync.dmg</string>
 		<key>NAME</key>
 		<string>SugarSync</string>
 	</dict>
