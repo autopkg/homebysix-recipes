@@ -5,7 +5,9 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of FileChute.</string>
+	<string>Downloads the latest version of FileChute.
+
+NOTE: Code signature verification is disabled due to a signing error in the version of the Growl framework included with FileChute.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.FileChute</string>
 	<key>Input</key>
@@ -34,7 +36,7 @@
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
-		<dict>
+		<!-- <dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
@@ -44,7 +46,7 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
-		</dict>
+		</dict> -->
 		<dict>
 			<key>Arguments</key>
 			<dict>
