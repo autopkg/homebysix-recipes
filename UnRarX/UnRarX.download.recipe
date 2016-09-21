@@ -3,10 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)
-	Code signature verification not possible. Code object not signed. No https download link available either.</string>
+	<string>Created with help from Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of UnRarX.</string>
+	<string>Downloads the latest version of UnRarX.
+
+NOTE: As of 2016-09-21, code signature verification not possible. No HTTPS download link available either.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.UnRarX</string>
 	<key>Input</key>
@@ -22,7 +23,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(?P&lt;url&gt;http:\/\/www\.unrarx\.com\/files\/UnRarX_(?P&lt;version&gt;.*?)\.zip)</string>
+				<string>http:\/\/www\.unrarx\.com\/files\/UnRarX_([\d\.]+)\.zip</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
 				<key>url</key>
 				<string>http://www.unrarx.com/</string>
 			</dict>
@@ -35,7 +38,7 @@
 				<key>filename</key>
 				<string>%NAME%-%version%.zip</string>
 				<key>url</key>
-				<string>%url%</string>
+				<string>http://www.unrarx.com/files/UnRarX_%version%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
