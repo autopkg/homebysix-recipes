@@ -18,27 +18,27 @@
 	<string>0.6.1</string>
 	<key>Process</key>
 	<array>
-        	<dict>
-            		<key>Processor</key>
-            		<string>URLTextSearcher</string>
-            		<key>Arguments</key>
-            			<dict>
-                			<key>url</key>
-                			<string>http://www.unrarx.com/</string>
-                			<key>re_pattern</key>
-                			<string>(?P&lt;url&gt;http:\/\/www\.unrarx\.com\/files\/UnRarX_(?P&lt;version&gt;.*?)\.zip)</string>
-            			</dict>
-            	</dict>
-        	<dict>
-            		<key>Processor</key>
-            		<string>URLDownloader</string>
-            		<key>Arguments</key>
-            			<dict>
-               				<key>url</key>
-               				<string>%url%</string>
-               				<key>filename</key>
-               				<string>%NAME%-%version%.zip</string>
-            			</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(?P&lt;url&gt;http:\/\/www\.unrarx\.com\/files\/UnRarX_(?P&lt;version&gt;.*?)\.zip)</string>
+				<key>url</key>
+				<string>http://www.unrarx.com/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.zip</string>
+				<key>url</key>
+				<string>%url%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
