@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://whatsizemac.com/software/whatsize6/whatsize.dmg</string>
+		<string>https://whatsizemac.com/software/whatsize6/whatsize.dmg</string>
 		<key>NAME</key>
 		<string>WhatSize</string>
 	</dict>
