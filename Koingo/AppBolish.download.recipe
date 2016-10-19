@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.koingosw.com/products/getmirrorfile.php?path=%2Fproducts%2Fappbolish%2Fdownload%2Fappbolish.dmg</string>
+		<string>https://www.koingosw.com/products/getmirrorfile.php?path=%2Fproducts%2Fappbolish%2Fdownload%2Fappbolish.dmg</string>
 		<key>NAME</key>
 		<string>AppBolish</string>
 	</dict>

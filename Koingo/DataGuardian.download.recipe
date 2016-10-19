@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.koingosw.com/products/getmirrorfile.php?path=%2Fproducts%2Fdataguardian%2Fdownload%2Fdataguardian.dmg</string>
+		<string>https://www.koingosw.com/products/getmirrorfile.php?path=%2Fproducts%2Fdataguardian%2Fdownload%2Fdataguardian.dmg</string>
 		<key>NAME</key>
 		<string>Data Guardian</string>
 	</dict>

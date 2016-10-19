@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.koingosw.com/products/getmirrorfile.php?path=%2Fproducts%2Fdigitalsentry%2Fdownload%2Fdigitalsentry.dmg</string>
+		<string>https://www.koingosw.com/products/getmirrorfile.php?path=%2Fproducts%2Fdigitalsentry%2Fdownload%2Fdigitalsentry.dmg</string>
 		<key>NAME</key>
 		<string>Digital Sentry</string>
 	</dict>
