@@ -15,5 +15,17 @@
 	<string>0.5.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.TransmitDisk</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source_pkg</key>
+				<string>%RECIPE_CACHE_DIR%/unzipped/Transmit Disk %version%.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="Transmit%20Disk%20([\d\.]+)\.pkg"</string>
+				<string>href="Transmit%20Disk%20([\d\.]+)\.pkg\.zip"</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://download.panic.com/transmit/Transmit%20Disk%20%version%.pkg</string>
+				<string>https://download.panic.com/transmit/Transmit%20Disk%20%version%.pkg.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -44,6 +44,19 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unzipped</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: Panic, Inc.</string>
@@ -51,7 +64,7 @@
 					<string>Apple Root CA</string>
 				</array>
 				<key>input_path</key>
-				<string>%pathname%</string>
+				<string>%RECIPE_CACHE_DIR%/unzipped/Transmit Disk %version%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
