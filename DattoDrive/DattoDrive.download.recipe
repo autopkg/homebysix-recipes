@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>\/mac\/dattodrive-([\d\.]+)\.pkg</string>
+				<string>\/mac\/single\/dattodrive-([\d\.]+).pkg</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://download.dattodrive.com/mac/dattodrive-%version%.pkg</string>
+				<string>https://download.dattodrive.com/mac/single/dattodrive-%version%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
