@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>https://srv3.airdroid.com/p14/web/getbinaryredirect?type=dmg</string>
+		<string>https://srv3.airdroid.com/p20/web/getbinaryredirect?type=dmg&amp;channel=&amp;version=</string>
 		<key>NAME</key>
 		<string>AirDroid</string>
 	</dict>
