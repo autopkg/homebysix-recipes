@@ -12,8 +12,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>LiveSurface Context</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>https://context.livesurface.com/94775618/updates.php</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -22,17 +20,23 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<key>re_pattern</key>
+				<string>&lt;span&gt;Context ([\d\.]+)&lt;/span&gt;</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+				<key>url</key>
+				<string>https://www.livesurface.com/contextdownload.php</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%-%version%.zip</string>
+				<key>url</key>
+				<string>https://1528758543.rsc.cdn77.org/94775618/releases/LiveSurface_Context_%version%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
