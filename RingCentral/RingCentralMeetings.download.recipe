@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of the RingCentral Meetings Mac app.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.RingCentralMeetings</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>RingCentral Meetings</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.1</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(dn\.ringcentral\.com\/data\/web\/download\/RCMeetings\/[\d]+\/RCMeetingsClientSetup\.pkg)</string>
+				<key>result_output_var_name</key>
+				<string>download_path</string>
+				<key>url</key>
+				<string>https://www.ringcentral.com/office/features/online-meetings/overview.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>http://%download_path%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: RingCentral, Inc. (M932RC5J66)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
