@@ -15,7 +15,7 @@ This set of recipes differs from the one in wardsparadox-recipes because it prov
 		<key>NAME</key>
 		<string>FontNuke</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://jamapi.com/fontnuke/fontnuke-update-appcast.xml</string>
+		<string>https://www.jamapi.com/fontnuke/fontnuke-update-appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
