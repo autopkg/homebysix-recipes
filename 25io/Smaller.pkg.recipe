@@ -23,8 +23,8 @@
 	<array>
 		<dict>
 			<key>Arguments</key>
-				<key>app_path</key>
 			<dict>
+				<key>app_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Smaller.app</string>
 			</dict>
 			<key>Processor</key>
