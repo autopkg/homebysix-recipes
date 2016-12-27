@@ -5,15 +5,38 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Egnyte Desktop Sync and imports it into Munki.
 
-WARNING: The resulting package does not include the necessary scripts to upgrade Egnyte safely from a previous version. This recipe is still under development, and not recommended for production deployments.</string>
+This recipe generally follows the guidelines outlined on this KB article:
+    https://helpdesk.egnyte.com/hc/en-us/articles/202982694
+With one exception: A postinstall script automatically launches the Sync app after installation.
+
+The following input variables should be customized to your organization using a recipe override:
+- LOCAL_ROOT
+- DOMAIN
+- REMOTE_FOLDERS
+- SYNC_TYPE
+- SYNC_ALL_LOCAL_FOLDERS
+- SYNC_SPECIAL_CHAR_FILENAME
+</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.EgnyteDesktopSync</string>
 	<key>Input</key>
 	<dict>
+		<key>DOMAIN</key>
+		<string>acmeinc</string>
+		<key>LOCAL_ROOT</key>
+		<string>~/Documents/Egnyte</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/Egnyte</string>
 		<key>NAME</key>
 		<string>Egnyte Desktop Sync</string>
+		<key>REMOTE_FOLDERS</key>
+		<string>/Shared,/Private</string>
+		<key>SYNC_ALL_LOCAL_FOLDERS</key>
+		<string>true</string>
+		<key>SYNC_SPECIAL_CHAR_FILENAME</key>
+		<string>true</string>
+		<key>SYNC_TYPE</key>
+		<string>realtime</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -21,6 +44,7 @@ WARNING: The resulting package does not include the necessary scripts to upgrade
 				<string>EgnyteDesktopSync</string>
 				<string>EgnyteLocalCloud</string>
 				<string>Egnyte Loader</string>
+				<string>Egnyte Desktop Sync Uninstall</string>
 			</array>
 			<key>catalogs</key>
 			<array>
@@ -34,49 +58,44 @@ WARNING: The resulting package does not include the necessary scripts to upgrade
 			<string>Egnyte Desktop Sync</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/sh
+open /Applications/Egnyte\ Desktop\ Sync.app
+            </string>
+			<key>preinstall_script</key>
+			<string>#!/bin/sh
+echo "[config.db]" &gt; /Library/Preferences/egnyteconfig.ini
+echo "local_root=%LOCAL_ROOT% " &gt;&gt; /Library/Preferences/egnyteconfig.ini
+echo "domain=%DOMAIN%" &gt;&gt; /Library/Preferences/egnyteconfig.ini
+echo "remote_folders=%REMOTE_FOLDERS%" &gt;&gt; /Library/Preferences/egnyteconfig.ini
+echo "sync_type=%SYNC_TYPE%" &gt;&gt; /Library/Preferences/egnyteconfig.ini
+echo "sync_all_local_folders=%SYNC_ALL_LOCAL_FOLDERS%" &gt;&gt; /Library/Preferences/egnyteconfig.ini
+echo "sync_special_char_filename=%SYNC_SPECIAL_CHAR_FILENAME%" &gt;&gt; /Library/Preferences/egnyteconfig.ini
+            </string>
 			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+			<key>uninstall_method</key>
+			<string>uninstall_script</string>
+			<key>uninstall_script</key>
+			<string>#!/bin/sh
+rm /Library/Preferences/egnyteconfig.ini
+cp /Applications/Egnyte\ Desktop\ Sync.app/Contents/Resources/uninstall_elc.sh ~
+chmod +x ~/uninstall_elc.sh
+sh ~/uninstall_elc.sh
+rm ~/uninstall_elc.sh
+            </string>
+			<key>uninstallable</key>
 			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.0.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.EgnyteDesktopSync</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkgdirs</key>
-				<dict/>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/%NAME%.app</string>
-				<key>source_path</key>
-				<string>%pathname%/.installData/%NAME%.app</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -93,7 +112,7 @@ WARNING: The resulting package does not include the necessary scripts to upgrade
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>

@@ -14,16 +14,16 @@
 		<string>Egnyte Desktop Sync</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(?P&lt;url&gt;https://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/(?P&lt;version&gt;[\d\.]+)/EgnyteDesktopSync_.+.dmg)</string>
+				<string>"https:\/\/egnyte-cdn\.egnyte\.com\/desktopsync\/mac\/%LOCALE%\/(?P&lt;version&gt;[\d\.]+)\/EgnyteDesktopSync_[\d\.]+_(?P&lt;build&gt;[\w]+)\.pkg"</string>
 				<key>url</key>
-				<string>https://helpdesk.egnyte.com/hc/en-us/articles/201636844</string>
+				<string>https://helpdesk.egnyte.com/hc/%LOCALE%/articles/202982694</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -32,7 +32,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>EgnyteDesktopSync-%version%.dmg</string>
+				<string>EgnyteDesktopSync-%version%.pkg</string>
+				<key>url</key>
+				<string>https://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/%version%/EgnyteDesktopSync_%version%_%build%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -44,10 +46,14 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Egnyte Inc (FELUD555VC)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
 				<key>input_path</key>
-				<string>%pathname%/.installData/Egnyte Desktop Sync.app</string>
-				<key>requirement</key>
-				<string>identifier "com.egnyte.EgnyteDesktopSync" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FELUD555VC</string>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
