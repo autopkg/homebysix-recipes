@@ -59,8 +59,12 @@ The following input variables should be customized to your organization using a 
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>postinstall_script</key>
-			<string>#!/bin/sh
-open /Applications/Egnyte\ Desktop\ Sync.app
+			<string>#!/bin/bash
+# Only launch the sync app if a user is logged in.
+CURRENT_USER=$(/usr/bin/stat -f%Su /dev/console)
+if [[ "$CURRENT_USER" != "root" &amp;&amp; "$CURRENT_USER" != "" ]]; then
+    open /Applications/Egnyte\ Desktop\ Sync.app
+fi
             </string>
 			<key>preinstall_script</key>
 			<string>#!/bin/sh
