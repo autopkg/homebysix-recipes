@@ -13,7 +13,7 @@
 		<key>APP_FILENAME</key>
 		<string>Pingendo3</string>
 		<key>DOWNLOAD_URL</key>
-		<string>http://pingendo.com/electron/Pingendo.dmg</string>
+		<string>https://pingendo.com/electron/Pingendo.dmg</string>
 		<key>NAME</key>
 		<string>Pingendo</string>
 	</dict>
