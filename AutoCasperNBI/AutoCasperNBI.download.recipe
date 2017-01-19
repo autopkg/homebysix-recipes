@@ -2,26 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of AutoCasperNBI.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.AutoCasperNBI</string>
 	<key>Input</key>
 	<dict>
+		<key>GITHUB_REPO</key>
+		<string>macmule/AutoCasperNBI</string>
 		<key>NAME</key>
 		<string>AutoCasperNBI</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
-				<string>macmule/AutoCasperNBI</string>
-				<key>include_prereleases</key>
-				<string>true</string>
+				<string>%GITHUB_REPO%</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
@@ -45,7 +47,7 @@
 				<key>archive_path</key>
 				<string>%pathname%</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
@@ -56,7 +58,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/AutoCasperNBI.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/AutoCasperNBI.app</string>
 				<key>requirement</key>
 				<string>identifier "com.macmule.AutoCasperNBI" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Ben Toms (L7N6BNQQEU)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 			</dict>
@@ -67,7 +69,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/AutoCasperNBI.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/AutoCasperNBI.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

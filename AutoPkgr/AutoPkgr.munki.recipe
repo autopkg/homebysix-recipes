@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of AutoPkgr and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>AutoPkgr makes it simple to get started using autopkg to automate Mac software packaging.</string>
+			<string>AutoPkgr is a free Mac app that makes it easy to install and configure AutoPkg.</string>
 			<key>developer</key>
 			<string>Linde Group, Inc.</string>
 			<key>display_name</key>
@@ -33,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.AutoPkgr</string>
 	<key>Process</key>
