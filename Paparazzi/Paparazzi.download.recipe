@@ -31,8 +31,23 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>find</key>
+				<string>%2520</string>
+				<key>input_string</key>
+				<string>%url%</string>
+				<key>replace</key>
+				<string>%20</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
+				<key>url</key>
+				<string>%output_string%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
