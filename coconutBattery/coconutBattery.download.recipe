@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>coconutBattery</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>https://coconut-flavour.com/updates/coconutBatteryIntel.xml</string>
+		<string>https://coconut-flavour.com/updates/coconutBattery.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
