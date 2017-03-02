@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.projectwizards.net/downloads/MerlinProject.zip</string>
+		<string>https://www.projectwizards.net/downloads/MerlinProject.zip</string>
 		<key>NAME</key>
 		<string>Merlin Project</string>
 	</dict>
