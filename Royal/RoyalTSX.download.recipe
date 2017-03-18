@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="(https://royaltsx-v2.royalapplications.com/updates/royaltsx_.+\.dmg)" title="Download Royal TSX"&gt;Download Now&lt;/a&gt;</string>
+				<string>href="(https://royaltsx-v3.royalapplications.com/updates/royaltsx_.+\.dmg)" title="Download Royal TSX"&gt;Download Now&lt;/a&gt;</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
