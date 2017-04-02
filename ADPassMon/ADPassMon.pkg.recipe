@@ -5,7 +5,11 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of ADPassMon and creates a package.</string>
+	<string>Downloads the latest version of ADPassMon and creates a package.
+
+ADPassMon is no longer maintained. Please consider using NoMAD instead.
+https://macmule.com/2017/04/01/adpassmon-is-dead-long-live-nomad/
+    </string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.ADPassMon</string>
 	<key>Input</key>

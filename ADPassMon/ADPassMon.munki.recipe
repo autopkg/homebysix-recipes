@@ -5,7 +5,11 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of ADPassMon and imports it into Munki.</string>
+	<string>Downloads the latest version of ADPassMon and imports it into Munki.
+
+ADPassMon is no longer maintained. Please consider using NoMAD instead.
+https://macmule.com/2017/04/01/adpassmon-is-dead-long-live-nomad/
+    </string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.ADPassMon</string>
 	<key>Input</key>
