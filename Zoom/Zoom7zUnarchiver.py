@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #
 # Copyright 2010 Per Olofsson
+# Updated as draft by Yoann Gini in 2017 to support 7z file format for Zoom
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -56,12 +57,12 @@ class Zoom7zUnarchiver(Processor):
         "archive_format": {
             "required": False,
             "description": ("The archive format. Currently supported: 'zip', "
-                            "'tar_gzip', 'tar_bzip2', 'tar'. If omitted, the "
+                            "'tar_gzip', 'tar_bzip2', 'tar', '7z'. If omitted, the "
                             "file extension is used to guess the format.")
         },
         "7z_unarchiver_path": {
-            "required": True,
-            "description": "Path to the 7z unarchiver (not macOS standard)",
+            "required": False,
+            "description": "Path to the p7zip 7zr unarchiver (not macOS standard, need to be provided by another way)",
         },
     }
     output_variables = {
@@ -136,6 +137,9 @@ class Zoom7zUnarchiver(Processor):
                   destination_path]
         elif fmt == "7z":
            cmd_7z = self.env.get("7z_unarchiver_path")
+           if not cmd_7z:
+               raise ProcessorError(
+                "Expected an '7z_unarchiver_path' input variable since file format is 7z!")
            cmd = [cmd_7z,
                   "x",
                   archive_path,
