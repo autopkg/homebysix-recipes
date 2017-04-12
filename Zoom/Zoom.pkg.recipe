@@ -52,14 +52,27 @@
 			<key>Arguments</key>
 			<dict>
 				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/zm.zip</string>
+				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/7zr.zip</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/expanded/Scripts</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/zm.7z</string>
 				<key>destination_path</key>
 				<string>%pkgroot%/Applications</string>
+				<key>7z_unarchiver_path</key>
+				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/7zr</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
+			<string>Zoom7zUnarchiver</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
