@@ -65,6 +65,8 @@
 							<string>Applications</string>
 							<key>user</key>
 							<string>root</string>
+							<key>mode</key>
+							<string>0755</string>
 						</dict>
 					</array>
 					<key>id</key>
