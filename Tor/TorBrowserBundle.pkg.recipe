@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
-		<string>org.mozilla.tor browser</string>
+		<string>org.torproject.torbrowser</string>
 		<key>NAME</key>
 		<string>TorBrowserBundle</string>
 	</dict>
