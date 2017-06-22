@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# based on forum discussion:
+# https://groups.google.com/forum/#!topic/tunnelblick-discuss/UYeR7vv_rXM
+
+# setup folders and secure Tunnelblick app
+/Applications/Tunnelblick.app/Contents/Resources/installer 5
+
+# secure configurations
+/Applications/Tunnelblick.app/Contents/Resources/installer 16
+
