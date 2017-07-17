@@ -13,7 +13,7 @@
 		<key>APP_FILENAME</key>
 		<string>Zend Studio</string>
 		<key>BUNDLE_ID</key>
-		<string>com.zend.studio</string>
+		<string>com.zend.php.ide</string>
 		<key>NAME</key>
 		<string>ZendStudio</string>
 	</dict>
