@@ -38,12 +38,12 @@ https://macmule.com/2017/04/01/adpassmon-is-dead-long-live-nomad/
 			<key>Processor</key>
 			<string>Unarchiver</string>
 		</dict>
-				<dict>
+		<dict>
 			<key>Arguments</key>
-						<dict>
+			<dict>
 				<key>app_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/ADPassMon.app</string>
-				</dict>
+			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
 		</dict>

@@ -44,7 +44,7 @@ https://macmule.com/2017/04/01/adpassmon-is-dead-long-live-nomad/
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
-			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>

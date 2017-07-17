@@ -62,12 +62,12 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>7z_unarchiver_path</key>
+				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/7zr</string>
 				<key>archive_path</key>
 				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/zm.7z</string>
 				<key>destination_path</key>
 				<string>%pkgroot%/Applications</string>
-				<key>7z_unarchiver_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/7zr</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
