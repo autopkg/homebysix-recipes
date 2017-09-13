@@ -2,23 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Pixate Studio and creates a package.</string>
+	<string>Downloads the latest version of GitHub Desktop beta and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.PixateStudio</string>
+	<string>com.github.homebysix.pkg.GitHubDesktopBeta</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
-		<string>com.pixate.studio</string>
+		<string>com.github.GitHub</string>
 		<key>NAME</key>
-		<string>Pixate Studio</string>
+		<string>GitHub Desktop</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.2</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.PixateStudio</string>
+	<string>com.github.homebysix.download.GitHubDesktopBeta</string>
 	<key>Process</key>
 	<array>
 		<dict>

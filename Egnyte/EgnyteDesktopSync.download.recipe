@@ -23,7 +23,7 @@
 				<key>re_pattern</key>
 				<string>"https:\/\/egnyte-cdn\.egnyte\.com\/desktopsync\/mac\/%LOCALE%\/(?P&lt;version&gt;[\d\.]+)\/EgnyteDesktopSync_[\d\.]+_(?P&lt;build&gt;[\w]+)\.pkg"</string>
 				<key>url</key>
-				<string>https://helpdesk.egnyte.com/hc/%LOCALE%/articles/202982694</string>
+				<string>https://helpdesk.egnyte.com/hc/%LOCALE%/articles/201636844</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>

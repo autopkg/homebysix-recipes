@@ -37,7 +37,7 @@
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.ApacheDirectoryStudio</string>
 	<key>Process</key>
-				<array>
+	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>

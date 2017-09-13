@@ -12,28 +12,14 @@
 		<string>Tableau Reader</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>1.0.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.TableauReader</string>
+	<string>com.github.homebysix.pkg.TableauReader</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%pathname%</string>
-				<key>items_to_copy</key>
-				<array>
-					<dict>
-						<key>destination_path</key>
-						<string>/Applications/</string>
-						<key>source_item</key>
-						<string>Tableau Reader.app</string>
-					</dict>
-				</array>
-			</dict>
 			<key>Processor</key>
-			<string>InstallFromDMG</string>
+			<string>Installer</string>
 		</dict>
 	</array>
 </dict>

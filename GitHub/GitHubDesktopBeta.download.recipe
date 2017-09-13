@@ -2,28 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Pixate Studio.</string>
+	<string>Downloads the latest version of GitHub Desktop beta.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.PixateStudio</string>
+	<string>com.github.homebysix.download.GitHubDesktopBeta</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://cdn.pixate.com/downloads/studio/latest/PixateStudio.zip</string>
+		<string>https://central.github.com/deployments/desktop/desktop/latest/darwin</string>
 		<key>NAME</key>
-		<string>Pixate Studio</string>
+		<string>GitHub Desktop</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.2</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.zip</string>
+				<string>GitHubDesktopBeta.zip</string>
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
 			</dict>
@@ -51,9 +49,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Pixate Studio.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/GitHub Desktop.app</string>
 				<key>requirement</key>
-				<string>identifier "com.pixate.studio" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = ANZCG56DAH</string>
+				<string>(identifier "com.github.GitHub" or identifier "com.github.GHAskPass") and anchor apple generic and certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = VEKTX9H2N7</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -62,9 +60,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Pixate Studio.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/GitHub Desktop.app/Contents/Info.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>Versioner</string>

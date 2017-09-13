@@ -13,7 +13,7 @@
 		<key>DOWNLOAD_URL</key>
 		<string>https://proximity.cisco.com/mac/Proximity.dmg</string>
 		<key>NAME</key>
-		<string>Proximity</string>
+		<string>Cisco Proximity</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>

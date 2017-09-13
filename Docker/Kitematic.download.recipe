@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Credit to Jason Stanford for creating and sharing this recipe.</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Kitematic.</string>
+	<key>Identifier</key>
+	<string>com.github.jps3.download.Kitematic</string>
+	<key>Input</key>
+	<dict>
+		<key>DOWNLOAD_PAGE_URL</key>
+		<string>https://github.com/kitematic/kitematic/releases/latest</string>
+		<key>NAME</key>
+		<string>Kitematic</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_flags</key>
+				<array>
+					<string>IGNORECASE</string>
+				</array>
+				<key>re_pattern</key>
+				<string>"(.*/docker/kitematic/releases/download/.*/?Kitematic[^"]+[Mm]ac[^"]*\.zip)</string>
+				<key>result_output_var_name</key>
+				<string>url_stub</string>
+				<key>url</key>
+				<string>%DOWNLOAD_PAGE_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>https://github.com/%url_stub%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%*.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%found_filename%</string>
+				<key>requirement</key>
+				<string>identifier "com.electron.kitematic_(beta)" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "9BNSXJN65R"</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
+</plist>

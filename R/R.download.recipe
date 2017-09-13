@@ -44,7 +44,7 @@
 			<dict>
 				<key>expected_authority_names</key>
 				<array>
-					<string>Developer ID Installer: Simon Urbanek</string>
+					<string>Developer ID Installer: Simon Urbanek (VZLD955F6P)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>

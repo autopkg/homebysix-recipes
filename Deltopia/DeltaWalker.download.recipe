@@ -19,11 +19,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="(https:\/\/s3\.amazonaws\.com\/deltawalker\/DeltaWalker\-[\d\.]+_64\.dmg)"</string>
+				<string>href="(https:\/\/s3\.amazonaws\.com\/deltawalker\/DeltaWalker-[\d\.]+\.dmg)"</string>
 				<key>result_output_var_name</key>
 				<string>download_url</string>
 				<key>url</key>
-				<string>http://www.deltawalker.com/download.jsp</string>
+				<string>https://www.deltawalker.com/download.jsp</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>

@@ -13,7 +13,7 @@ The BUNDLE_ID variable may need to be changed when a new major version is releas
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
-		<string>com.flyingmeat.Acorn5</string>
+		<string>com.flyingmeat.Acorn6</string>
 		<key>NAME</key>
 		<string>Acorn</string>
 	</dict>
