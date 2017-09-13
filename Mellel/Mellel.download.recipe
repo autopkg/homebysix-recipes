@@ -12,6 +12,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>Mellel</string>
+		<key>APPNAME</key>
+		<string>Mellel 4.app</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -47,9 +49,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Mellel.app</string>
+				<string>%pathname%/%APPNAME%</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.redlex.mellel" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = DS2QH574BD)</string>
+				<string>anchor apple generic and identifier "com.redlex.mellel4" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = DS2QH574BD)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -58,7 +60,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Mellel.app/Contents/Info.plist</string>
+				<string>%pathname%/%APPNAME%/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
