@@ -10,10 +10,10 @@
 	<string>com.github.homebysix.download.Mellel</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Mellel</string>
 		<key>APPNAME</key>
 		<string>Mellel 4.app</string>
+		<key>NAME</key>
+		<string>Mellel</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
