@@ -75,6 +75,11 @@
 /bin/echo 'Starting PostInstall Script'
 /bin/echo "**************************************************"
 
+if [[ $3 != "/" ]]; then
+    /bin/echo "[ERROR] Target disk is not the startup disk."
+    exit 1
+fi
+
 # Set working directory
 pkgDir=$(/usr/bin/dirname $0)
 
