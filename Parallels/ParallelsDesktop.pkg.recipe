@@ -25,12 +25,20 @@
 			<key>Arguments</key>
 			<dict>
 				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0775</string>
-				</dict>
+				<dict/>
 				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict/>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgRootCreator</string>
@@ -39,9 +47,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/Scripts/%NAME%.dmg</string>
+				<key>overwrite</key>
+				<true/>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -49,19 +59,72 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>file_content</key>
+				<string>#!/bin/bash
+
+###################################################################################################
+# Script Name:  install_ParallelsDesktop.sh
+# By:  Zack Thompson / Created:  8/1/2017
+# Version:  1.0 / Updated:  8/1/2017 / By:  ZT
+#
+# Description:  This script installs the Parallels Desktop {MAJOR VERSION} downloaded by AutoPkg.
+#
+###################################################################################################
+
+/bin/echo "**************************************************"
+/bin/echo 'Starting PostInstall Script'
+/bin/echo "**************************************************"
+
+# Set working directory
+pkgDir=$(/usr/bin/dirname $0)
+
+# Check if Parallels Desktop is currently installed...
+if [[ -e /Applications/Parallels\ Desktop.app ]]; then
+    /bin/echo "Parallels Desktop is currently installed; removing this instance before continuing..."
+   	/Applications/Parallels\ Desktop.app/Contents/MacOS/Uninstaller remove
+    /bin/echo "Parallels Desktop has been removed."
+fi
+
+# Get the filename of the .dmg file (allows this script to be used with different versions).
+ParallelsDMG=$(/bin/ls $pkgDir | /usr/bin/grep .dmg)
+
+# Mounting the .dmg found...
+/bin/echo "Mounting ${ParallelsDMG}..."
+/usr/bin/hdiutil attach "${ParallelsDMG}" -nobrowse -noverify -noautoopen
+/bin/sleep 2
+
+# Get the name of the mount (allows this script to be used with different versions).
+ParallelsMount=$(/bin/ls /Volumes/ | /usr/bin/grep Parallels)
+
+# Install Parallels Desktop.app...
+/bin/echo "Installing ${ParallelsMount}..."
+/Volumes/"${ParallelsMount}"/Parallels\ Desktop.app/Contents/MacOS/inittool install -t /Applications/Parallels\ Desktop.app
+/bin/sleep 2
+/bin/echo "${ParallelsMount} has been installed!"
+
+# Ejecting the .dmg...
+/usr/bin/hdiutil eject /Volumes/"${ParallelsMount}"
+
+/bin/echo "**************************************************"
+/bin/echo 'PostInstall Script Finished'
+/bin/echo "**************************************************"
+
+exit 0</string>
+				<key>file_mode</key>
+				<string>0755</string>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts/postinstall</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_request</key>
 				<dict>
 					<key>chown</key>
-					<array>
-						<dict>
-							<key>group</key>
-							<string>admin</string>
-							<key>path</key>
-							<string>Applications</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-					</array>
+					<array/>
 					<key>id</key>
 					<string>%BUNDLE_ID%</string>
 					<key>options</key>
@@ -69,7 +132,9 @@
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+					<key>pkgtype</key>
+					<string>flat</string>
 					<key>scripts</key>
 					<string>Scripts</string>
 					<key>version</key>
@@ -78,6 +143,18 @@
 			</dict>
 			<key>Processor</key>
 			<string>PkgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+					<string>%RECIPE_CACHE_DIR%/Scripts</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 	</array>
 </dict>
