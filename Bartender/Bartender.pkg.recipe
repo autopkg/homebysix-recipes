@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Bartender and creates a package.</string>
 	<key>Identifier</key>
@@ -13,12 +11,12 @@
 		<key>BUNDLE_ID</key>
 		<string>com.surteesstudios.Bartender</string>
 		<key>NAME</key>
-		<string>Bartender 2</string>
+		<string>Bartender</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.keeleysam.recipes.surteesstudios.Bartender.download</string>
+	<string>com.github.homebysix.download.Bartender</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -38,7 +36,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Bartender 2.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Bartender 3.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.surteesstudios.Bartender" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8DD663WDX4")</string>
 			</dict>
@@ -49,7 +47,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Bartender 2.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Bartender 3.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
