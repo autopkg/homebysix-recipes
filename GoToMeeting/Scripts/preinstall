@@ -2,5 +2,6 @@
 
 echo "Removing old copies of GoToMeeting from the /Applications folder..."
 rm -rf "$3"/Applications/GoToMeeting\ \(*\).app
+rm -rf "$3/Applications/GoToMeeting.app"
 
-exit $?
+exit 0
