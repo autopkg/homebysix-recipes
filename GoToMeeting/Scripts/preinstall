@@ -1,7 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Removing old copies of GoToMeeting from the /Applications folder..."
+
 rm -rf "$3"/Applications/GoToMeeting\ \(*\).app
-rm -rf "$3/Applications/GoToMeeting.app"
+
+if [[ -d "$3/Applications/GoToMeeting" ]]; then
+    rm -rf "$3/Applications/GoToMeeting"
+fi
+
+if [[ -f "$3/Applications/GoToMeeting.app/Contents/Info.plist" ]]; then
+    rm -rf "$3/Applications/GoToMeeting.app"
+fi
 
 exit 0
