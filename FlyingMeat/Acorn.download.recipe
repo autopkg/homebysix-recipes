@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://flyingmeat.com/download/Acorn.zip</string>
+		<string>https://flyingmeat.com/download/Acorn.zip</string>
 		<key>NAME</key>
 		<string>Acorn</string>
 	</dict>
