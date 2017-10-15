@@ -74,8 +74,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/expanded/Tableau Reader*.app/Contents/Info.plist</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Tableau Reader.app/Contents/Info.plist</string>
+				<string>%found_filename%</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
