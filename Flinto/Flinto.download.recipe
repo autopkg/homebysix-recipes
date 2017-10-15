@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>https://www.flinto.com/mac/download_latest</string>
+		<string>https://www.flinto.com/download_latest</string>
 		<key>NAME</key>
 		<string>Flinto</string>
 	</dict>
