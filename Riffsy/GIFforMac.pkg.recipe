@@ -5,7 +5,7 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of GIF for Mac and creates a package.</string>
+	<string>Downloads the latest version of Tenor, formerly known as GIF for Mac and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.GIFforMac</string>
 	<key>Input</key>
