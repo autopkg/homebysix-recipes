@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>https://central.github.com/mac/latest</string>
+		<string>https://central.github.com/deployments/desktop/desktop/latest/darwin</string>
 		<key>NAME</key>
 		<string>GitHub Desktop</string>
 	</dict>
