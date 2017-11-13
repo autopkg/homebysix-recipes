@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of GitHub Desktop and creates a package.</string>
 	<key>Identifier</key>
@@ -16,7 +14,7 @@
 		<string>GitHub Desktop</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.0.2</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.GitHubDesktop</string>
 	<key>Process</key>
@@ -45,6 +43,8 @@
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<key>scripts</key>
+					<string>scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
