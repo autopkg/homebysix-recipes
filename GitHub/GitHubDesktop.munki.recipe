@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of GitHub Desktop and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -37,17 +35,28 @@ if [[ ! -d "$DEST_DIR" ]]; then
     mkdir -p "$DEST_DIR"
 fi
 
-ln -s "/Applications/GitHub Desktop.app/Contents/Resources/git-lfs/bin/git-lfs" "$DEST_DIR/git-lfs"
-ln -s "/Applications/GitHub Desktop.app/Contents/MacOS/github_cli" "$DEST_DIR/github"
+ln -s "/Applications/GitHub Desktop.app/Contents/Resources/app/static/github.sh" "$DEST_DIR/github"
 
 exit 0
-            </string>
+</string>
+			<key>preinstall_script</key>
+			<string>#!/bin/bash
+
+DEST_DIR="/usr/local/bin"
+
+# Remove old symbolic links associated with pre-Electron version of GitHub Desktop.
+if [[ -L "$DEST_DIR/git-lfs" ]]; then
+    rm -f "$DEST_DIR/git-lfs"
+fi
+
+exit 0
+</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.0.2</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.GitHubDesktop</string>
 	<key>Process</key>
@@ -82,8 +91,6 @@ exit 0
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>version_comparison_key</key>
-				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

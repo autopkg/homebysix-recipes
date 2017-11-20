@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DEST_DIR="$3/usr/local/bin"
+
+# Remove old symbolic links associated with pre-Electron version of GitHub Desktop.
+if [[ -L "$DEST_DIR/git-lfs" ]]; then
+    rm -f "$DEST_DIR/git-lfs"
+fi
+
+exit 0

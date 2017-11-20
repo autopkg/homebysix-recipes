@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DEST_DIR="$3/usr/local/bin"
+
+if [[ ! -d "$DEST_DIR" ]]; then
+    mkdir -p "$DEST_DIR"
+fi
+
+ln -s "$3/Applications/GitHub Desktop.app/Contents/Resources/app/static/github.sh" "$DEST_DIR/github"
+
+exit 0
