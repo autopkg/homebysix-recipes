@@ -27,7 +27,7 @@ from autopkglib import Processor, ProcessorError
 __all__ = ["GoToMeetingURLProvider"]
 
 
-BASE_URL = "https://p5.osdimg.com/g2mupdater/live/config.json"
+BASE_URL = "https://builds.cdn.getgo.com/g2mupdater/live/config.json"
 
 
 class GoToMeetingURLProvider(Processor):
