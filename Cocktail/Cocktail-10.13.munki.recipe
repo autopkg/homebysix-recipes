@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Cocktail and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.Cocktail</string>
+	<string>com.github.homebysix.munki.Cocktail-10.13</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>General maintenance and optimization utility.</string>
 			<key>developer</key>
 			<string>Kristofer Szymanski</string>
 			<key>display_name</key>
@@ -35,7 +35,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Cocktail</string>
+	<string>com.github.homebysix.download.Cocktail-10.13</string>
 	<key>Process</key>
 	<array>
 		<dict>

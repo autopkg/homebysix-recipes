@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Cocktail and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.Cocktail</string>
+	<string>com.github.homebysix.pkg.Cocktail-10.13</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
@@ -18,7 +18,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Cocktail</string>
+	<string>com.github.homebysix.download.Cocktail-10.13</string>
 	<key>Process</key>
 	<array>
 		<dict>
