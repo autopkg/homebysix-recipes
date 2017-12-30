@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Parallels Desktop and imports it into Munki. This recipe has been tested with major versions 9, 10, 11, and 12.</string>
+	<string>Downloads the latest version of Parallels Desktop and imports it into Munki. This recipe has been tested with major versions 9, 10, 11, 12, and 13.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.ParallelsDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>12</string>
+		<string>13</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>

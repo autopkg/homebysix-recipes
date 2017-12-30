@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Parallels Desktop and creates a package. This recipe has been tested with major versions 9, 10, 11, and 12.</string>
+	<string>Downloads the latest version of Parallels Desktop and creates a package. This recipe has been tested with major versions 9, 10, 11, 12, and 13.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.ParallelsDesktop</string>
 	<key>Input</key>
@@ -11,7 +11,7 @@
 		<key>BUNDLE_ID</key>
 		<string>com.parallels.desktop.installer</string>
 		<key>MAJOR_VERSION</key>
-		<string>12</string>
+		<string>13</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
 	</dict>

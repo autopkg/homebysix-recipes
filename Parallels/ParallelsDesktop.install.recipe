@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Installs the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 9, 10, 11, and 12.</string>
+	<string>Installs the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 9, 10, 11, 12, and 13.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.ParallelsDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>12</string>
+		<string>13</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
 	</dict>
