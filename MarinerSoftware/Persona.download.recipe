@@ -60,9 +60,9 @@
 				<key>purge_destination</key>
 				<true/>
 				<key>source</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Users/bill/Desktop/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Users/bill/Desktop/Persona.app</string>
 				<key>target</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Persona.app</string>
 			</dict>
 			<key>Comment</key>
 			<string>For some reason, the app is buried inside a Users folder when the app is extracted. In order to proceed with the remaining recipes, we must move the app to the proper place.</string>

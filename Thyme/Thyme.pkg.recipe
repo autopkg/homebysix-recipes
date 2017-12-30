@@ -25,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
+				<string>%pathname%/Thyme.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
@@ -50,9 +50,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%pkgroot%/Applications/Thyme.app</string>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/Thyme.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

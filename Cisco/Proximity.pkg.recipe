@@ -39,9 +39,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%pkgroot%/Applications/Cisco Proximity.app</string>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/Cisco Proximity.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

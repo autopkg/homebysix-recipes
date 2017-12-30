@@ -45,7 +45,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/SizeUp.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
@@ -74,7 +74,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%NAME%.app</string>
+						<string>SizeUp.app</string>
 					</dict>
 				</array>
 			</dict>

@@ -37,7 +37,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%NAME%.app</string>
+						<string>Postbox.app</string>
 					</dict>
 				</array>
 			</dict>
