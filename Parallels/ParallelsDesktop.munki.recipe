@@ -30,7 +30,7 @@
 			<string>%NAME%</string>
 			<key>postinstall_script</key>
 			<string>#!/bin/bash
-chflags nohidden "/Applications/%NAME%.app"
+chflags nohidden "/Applications/Parallels Desktop.app"
             </string>
 			<key>unattended_install</key>
 			<true/>
@@ -46,11 +46,11 @@ chflags nohidden "/Applications/%NAME%.app"
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Parallels Desktop.app</string>
 				<key>overwrite</key>
 				<true/>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/Parallels Desktop.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
