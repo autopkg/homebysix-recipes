@@ -55,50 +55,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pattern</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Anvil */Anvil.app</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileFinder</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>source</key>
-				<string>%found_filename%</string>
-				<key>target</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Anvil.app</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileMover</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>find</key>
-				<string>/Anvil.app</string>
-				<key>input_string</key>
-				<string>%found_filename%</string>
-				<key>replace</key>
-				<string></string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>path_list</key>
-				<array>
-					<string>%output_string%</string>
-				</array>
-			</dict>
-			<key>Processor</key>
-			<string>PathDeleter</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Anvil.app</string>
 				<key>requirement</key>
