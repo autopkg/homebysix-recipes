@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Skim</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://skim-app.sourceforge.net/skim.xml</string>
+		<string>https://skim-app.sourceforge.io/skim.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -47,7 +47,7 @@
 				<key>input_path</key>
 				<string>%pathname%/Skim.app</string>
 				<key>requirement</key>
-				<string>identifier "net.sourceforge.skim-app.skim" and certificate root = H"39df13a92599a938258af4514964986eb9aae396"</string>
+				<string>identifier "net.sourceforge.skim-app.skim" and certificate root = H"81bb92d5f3cc09b8287a95181afc6f77654883e0"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
