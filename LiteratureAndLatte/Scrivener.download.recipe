@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Scrivener</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>https://www.literatureandlatte.com/downloads/scrivener-2.xml</string>
+		<string>https://www.literatureandlatte.com/downloads/scrivener-3.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -60,7 +60,7 @@
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Scrivener.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.literatureandlatte.scrivener2" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = W4QTL7X778)</string>
+				<string>anchor apple generic and identifier "com.literatureandlatte.scrivener3" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = W4QTL7X778)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
