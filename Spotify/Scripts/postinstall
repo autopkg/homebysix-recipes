@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Set group permissions to match owner permissions.
+chmod -R g=u "$3/Applications/Spotify.app"
