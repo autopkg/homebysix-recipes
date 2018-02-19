@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Clarify</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>https://www.bluemangolearning.com/download/clarify/2_0/auto_update/release/clarify_appcast.xml</string>
+		<string>http://files.clarify-it.com/v2/updaters/release/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
