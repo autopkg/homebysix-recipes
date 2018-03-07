@@ -51,7 +51,7 @@
 				<key>input_plist_path</key>
 				<string>%pathname%/AirDroid.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
-				<string>CFBundleVersion</string>
+				<string>CFBundleShortVersionString</string>
 			</dict>
 			<key>Processor</key>
 			<string>Versioner</string>
