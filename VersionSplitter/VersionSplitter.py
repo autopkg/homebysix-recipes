@@ -42,6 +42,17 @@ class VersionSplitter(Processor):
             "description": "The character(s) to use for splitting the "
                            "version. (Defaults to a space.)"
         },
+        "find": {
+            "required": False,
+            "description": "The character(s) to find in the "
+                           "version. Used with 'replace'."
+        },
+        "replace": {
+            "required": False,
+            "description": "The character(s) to replace in the "
+                           "version. Works with 'find'. "
+                           "(Defaults to a decimal point.)"
+        },
         "index": {
             "required": False,
             "description": "The index of the version string to be "
@@ -56,7 +67,10 @@ class VersionSplitter(Processor):
     description = __doc__
 
     def main(self):
-
+        find = self.env.get("find", "")
+        if find:
+            replace = self.env.get("replace")
+            self.env["version"] = self.env["version"].replace(find, replace)
         split_on = self.env.get("split_on", " ")
         index = self.env.get("index", 0)
         self.env["version"] = self.env["version"].split(split_on)[index]
