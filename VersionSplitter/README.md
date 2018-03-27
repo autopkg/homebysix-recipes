@@ -58,7 +58,8 @@ You can also return a part of the version other than the first part. For example
 - Example 3 `version` input: `macosx_64bit_3.0`
 - Example 3 `version` output: `3.0`
 
-#Find and replace
+## Find and replace
+
 This processor can also find and replace a part of `version`. For instance, if the version for Docker is `18.03.0-ce-mac59`, we can find for `-ce-mac` and replace it with `.`. This would produce a version of `18.03.0.59`.
 
 ```
