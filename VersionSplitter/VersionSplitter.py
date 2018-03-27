@@ -67,10 +67,9 @@ class VersionSplitter(Processor):
     description = __doc__
 
     def main(self):
-        find = self.env.get("find", "")
-        if find:
-            replace = self.env.get("replace")
-            self.env["version"] = self.env["version"].replace(find, replace)
+        if self.env.get("find"):
+            replace = self.env.get("replace", ".")
+            self.env["version"] = self.env["version"].replace(self.env.get("find"), replace)
         split_on = self.env.get("split_on", " ")
         index = self.env.get("index", 0)
         self.env["version"] = self.env["version"].split(split_on)[index]
