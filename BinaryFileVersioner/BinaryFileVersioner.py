@@ -14,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import shlex
 import os
+import re
+import shlex
 from autopkglib import Processor, ProcessorError
 from subprocess import PIPE, Popen
 
@@ -25,8 +26,7 @@ __all__ = ['BinaryFileVersioner']
 
 class BinaryFileVersioner(Processor):
 
-    '''This processor returns the version number of a binary file that has an embedded info plist,
-    using the /usr/bin/otool command.
+    '''This processor returns the version number of a binary file that has an embedded info plist.
     '''
 
     input_variables = {
@@ -50,27 +50,25 @@ class BinaryFileVersioner(Processor):
     def main(self):
         '''Main function.'''
 
-        if not os.path.isfile('/usr/bin/otool'):
-            raise ProcessorError('/usr/bin/otool is not present on this Mac.')
+        if not os.path.isfile('/bin/launchctl'):
+            raise ProcessorError('/bin/launchctl is not present on this Mac.')
 
-        cmd = '/usr/bin/otool -P \'{}\''.format(self.env['input_file_path'])
+        cmd = '/bin/launchctl plist __TEXT,__info_plist \'{}\''.format(self.env['input_file_path'])
         proc = Popen(shlex.split(cmd.strip()), stdin=PIPE, stdout=PIPE, stderr=PIPE)
         out, err = proc.communicate()
         exitcode = proc.returncode
 
         if exitcode != 0:
-            raise ProcessorError('/usr/bin/otool failed with error: {}'.format(err))
+            raise ProcessorError('/bin/launchctl failed with error: {}'.format(err))
 
-        plist_lines = out.split('\n')
-        for index, line in enumerate(plist_lines):
-            if self.env.get('plist_version_key', 'CFBundleShortVersionString') in line:
-                version = plist_lines[index + 1]
-                version = version.strip().strip('<string>').strip('</string>')
-                self.env['version'] = version
-                self.output('Found version: {}'.format(self.env['version']))
-                break
+        version_key = self.env.get('plist_version_key', 'CFBundleShortVersionString')
+        pattern = '\"{}\" = \"(.*)\";'.format(version_key)
+        match = re.search(pattern, out)
 
-        if not self.env['version']:
+        if match:
+            self.env['version'] = match.group(1)
+            self.output('Found version: {}'.format(self.env['version']))
+        else:
             raise ProcessorError('Unable to find a {} key in {}.'.format(
                 self.env.get('plist_version_key', 'CFBundleShortVersionString'),
                 self.env['input_file_path']))
