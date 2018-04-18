@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Adobe Remote Update Manager command line tool.</string>
+	<string>Downloads the latest version of the Adobe Remote Update Manager command line tool.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.AdobeRemoteUpdateManager</string>
 	<key>Input</key>
@@ -14,7 +14,7 @@
 		<string>AdobeRemoteUpdateManager</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+    <string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
