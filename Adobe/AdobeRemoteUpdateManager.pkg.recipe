@@ -14,7 +14,7 @@
 		<string>AdobeRemoteUpdateManager</string>
 	</dict>
 	<key>MinimumVersion</key>
-    <string>1.0.0</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.AdobeRemoteUpdateManager</string>
 	<key>Process</key>
