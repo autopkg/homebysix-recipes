@@ -20,14 +20,22 @@ import json
 import re
 import StringIO
 import urllib2
+import platform
+import socket
+from distutils.version import LooseVersion
 
 from autopkglib import Processor, ProcessorError
 
 
 __all__ = ["GoToMeetingURLProvider"]
 
+HOSTNAME = "builds.cdn.getgo.com"
 
-BASE_URL = "https://builds.cdn.getgo.com/g2mupdater/live/config.json"
+# workaround for 10.12.x SNI issue
+if LooseVersion(platform.mac_ver()[0]) < LooseVersion('10.13.0'):
+    HOSTNAME = socket.gethostbyname_ex("builds.cdn.getgo.com")[0]
+
+BASE_URL = "https://" + HOSTNAME + "/g2mupdater/live/config.json"
 
 
 class GoToMeetingURLProvider(Processor):
