@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>\/\/products\/snapgene_viewer\/download\.php\?&amp;majorRelease=(?P&lt;majorversion&gt;[\d.]+)&amp;minorRelease=(?P&lt;version&gt;[\d.]+)&amp;os=mac</string>
+				<string>\/\/products\/download\.php\?product=viewer&amp;majorRelease=(?P&lt;majorversion&gt;[\d.]+)&amp;minorRelease=(?P&lt;version&gt;[\d.]+)&amp;os=mac</string>
 				<key>url</key>
 				<string>http://www.snapgene.com/products/snapgene_viewer/</string>
 			</dict>
@@ -34,7 +34,7 @@
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
-				<string>http://www.snapgene.com//products/snapgene_viewer/download.php?&amp;majorRelease=%majorversion%&amp;minorRelease=%version%&amp;os=mac</string>
+				<string>http://www.snapgene.com//products/download.php?product=viewer&amp;majorRelease=%majorversion%&amp;minorRelease=%version%&amp;os=mac</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
