@@ -26,14 +26,6 @@
 				<dict>
 					<key>Applications</key>
 					<string>0775</string>
-					<key>Library</key>
-					<string>0775</string>
-					<key>Library/Audio</key>
-					<string>0775</string>
-					<key>Library/Audio/Plug-Ins</key>
-					<string>0775</string>
-					<key>Library/Audio/Plug-Ins/HAL</key>
-					<string>0775</string>
 
 				</dict>
 				<key>pkgroot</key>
@@ -68,17 +60,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/zoom.us.app/Contents/Plugins/ZoomAudioDevice.driver</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%//Library/Audio/Plug-Ins/HAL</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>input_plist_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/zoom.us.app/Contents/Info.plist</string>
 			</dict>
@@ -99,7 +80,7 @@
 					<key>version</key>
 					<string>%version%</string>
 					<key>scripts</key>
-					<string>%RECIPE_CACHE_DIR%/expanded/zoomus.pkg/Scripts</string>
+					<string>zoom_scripts</string>
                     <key>chown</key>
     				<array>
     					<dict>
@@ -109,38 +90,6 @@
                     		<string>root</string>
     						<key>group</key>
                     		<string>admin</string>
-    					</dict>
-    					<dict>
-    						<key>path</key>
-                    		<string>Library</string>
-    						<key>user</key>
-                    		<string>root</string>
-    						<key>group</key>
-                    		<string>root</string>
-    					</dict>
-    					<dict>
-    						<key>path</key>
-                    		<string>Library/Audio</string>
-    						<key>user</key>
-                    		<string>root</string>
-    						<key>group</key>
-                    		<string>root</string>
-    					</dict>
-    					<dict>
-    						<key>path</key>
-                    		<string>Library/Audio/Plug-Ins</string>
-    						<key>user</key>
-                    		<string>root</string>
-    						<key>group</key>
-                    		<string>root</string>
-    					</dict>
-    					<dict>
-    						<key>path</key>
-                    		<string>Library/Audio/Plug-Ins/HAL</string>
-    						<key>user</key>
-                    		<string>root</string>
-    						<key>group</key>
-                    		<string>root</string>
     					</dict>
 				    </array>
 				</dict>
