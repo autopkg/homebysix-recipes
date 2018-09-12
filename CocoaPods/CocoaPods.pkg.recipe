@@ -22,6 +22,32 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Scripts</string>
+				<key>pkgdirs</key>
+				<dict/>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>file_content</key>
+				<string>#!/bin/sh
+/bin/chmod -R go+rX '/Applications/CocoaPods.app'
+ln -sf /Applications/CocoaPods.app/Contents/Helpers/pod /usr/local/bin/pod</string>
+				<key>file_mode</key>
+				<string>0755</string>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Scripts/postinstall</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
@@ -30,9 +56,17 @@
 					<array>
 						<dict>
 							<key>group</key>
-							<string>admin</string>
+							<string>wheel</string>
 							<key>path</key>
 							<string>Applications</string>
+							<key>user</key>
+							<string>root</string>
+						</dict>
+						<dict>
+							<key>group</key>
+							<string>wheel</string>
+							<key>path</key>
+							<string>Scripts</string>
 							<key>user</key>
 							<string>root</string>
 						</dict>
@@ -45,6 +79,8 @@
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<key>scripts</key>
+					<string>%RECIPE_CACHE_DIR%/%NAME%/Scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
