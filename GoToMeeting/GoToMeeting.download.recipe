@@ -22,6 +22,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>CHECK_FILESIZE_ONLY</key>
+                                <true/>
 				<key>filename</key>
 				<string>%NAME%.tar.gz</string>
 				<key>url</key>
