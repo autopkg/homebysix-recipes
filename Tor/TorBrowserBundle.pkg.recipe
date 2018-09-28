@@ -37,9 +37,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/tmp/TorBrowser.app</string>
+				<string>%pkgroot%/tmp/Tor Browser.app</string>
 				<key>source_path</key>
-				<string>%pathname%/TorBrowser.app</string>
+				<string>%pathname%/Tor Browser.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
