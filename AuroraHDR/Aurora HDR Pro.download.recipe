@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Aurora HDR Pro</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://cdn.macphun.com/updates/AuroraHDRPro/appcast.xml</string>
+		<string>https://cdn.macphun.com/updates/AuroraHDRPro/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>

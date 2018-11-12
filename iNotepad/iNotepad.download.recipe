@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.apimac.com/download/iNotepad.zip</string>
+		<string>https://www.apimac.com/download/iNotepad.zip</string>
 		<key>NAME</key>
 		<string>iNotepad</string>
 	</dict>
