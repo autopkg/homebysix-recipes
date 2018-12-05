@@ -34,10 +34,10 @@ AudioPluginPath=/Library/Audio/Plug-Ins/HAL
 audioPluginfile=$app_path/Contents/Plugins/ZoomAudioDevice.driver
 if [[ $minorver -gt 9 ]] ; then
     echo "Install audio device drive">>$LOG_PATH
-    
+
     # unload device kernel if loaded
     st=$(kextstat -b zoom.us.ZoomAudioDevice | grep zoom.us.ZoomAudioDevice 2>&1)
-    
+
     if [[ $st = *zoom.us.ZoomAudioDevice* ]] ; then
         echo "audio device is loaded: ($st) skip driver">>$LOG_PATH
     else
@@ -45,7 +45,7 @@ if [[ $minorver -gt 9 ]] ; then
         if [[ -d "$AudioPluginPath/ZoomAudioDevice.driver" ]]; then
             rm -rf "$AudioPluginPath/ZoomAudioDevice.driver"
         fi
-        
+
         cp -rf "$audioPluginfile" "$AudioPluginPath"
     fi
 
@@ -81,7 +81,7 @@ else
 		else
 			need_update=1
 		fi
-	
+
 		st=$(kextstat -b zoom.us.ZoomAudioDevice | grep zoom.us.ZoomAudioDevice 2>&1)
 		if [[ $st = *zoom.us.ZoomAudioDevice* ]] ; then
 			echo "audio device is loaded: ($st)">>$LOG_PATH
@@ -115,14 +115,14 @@ else
 			state=$(kextstat -b zoom.us.ZoomAudioDevice 2>&1)
 			echo "ext stat: $state">>$LOG_PATH
 		fi
-	
+
 	else
 
 		r=0
 		if [ $need_unload = 1 ] ; then
 			s=$(sudo /sbin/kextunload -v 3 "$kext_file" 2>&1)
 			r=$?
-	
+
 			echo "unload ext: ($s), ret=$r">>$LOG_PATH
 		fi
 
@@ -138,7 +138,7 @@ else
 
 			echo "unload ext again: ($s), ret=$r">>$LOG_PATH
 			unloaded=1
-		fi 
+		fi
 
 		if [ $unloaded = 1 ] ; then
 			rm -rf "$kext_file"
