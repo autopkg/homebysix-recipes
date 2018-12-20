@@ -42,9 +42,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Wondershare Filmora.app</string>
+				<string>%pathname%/Wondershare Filmora*.app</string>
 				<key>requirement</key>
-				<string>identifier "com.Wondershare.Video Editor" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = YZC2T44ZDX</string>
+				<string>identifier "com.wondershare.filmora" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = YZC2T44ZDX</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -52,8 +52,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>pattern</key>
+				<string>%pathname%/Wondershare Filmora*.app/Contents/Info.plist</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Wondershare Filmora.app/Contents/Info.plist</string>
+				<string>%pathname%/%dmg_found_filename%</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
