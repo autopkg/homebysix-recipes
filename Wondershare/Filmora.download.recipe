@@ -21,11 +21,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(https?\:\/\/download\.wondershare\.com\/mac\-video\-editor\_full[\d]+\.dmg)</string>
+				<string>(https?\:\/\/download\.wondershare\.com\/mac\-filmora[\d]+\_full[\d]+\.dmg)</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>http://filmora.wondershare.com/</string>
+				<string>https://filmora.wondershare.com/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
