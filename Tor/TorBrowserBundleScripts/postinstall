@@ -11,7 +11,7 @@ if [[ ! -d "$USER_APPS" ]]; then
     chmod -R 700 "$USER_APPS"
 fi
 
-mv "$3/tmp/TorBrowser.app" "$USER_APPS/TorBrowser.app"
+mv "$3/tmp/Tor Browser.app" "$USER_APPS/TorBrowser.app"
 chown -R "$CURRENT_USER:staff" "$USER_APPS/TorBrowser.app"
 
 exit 0
