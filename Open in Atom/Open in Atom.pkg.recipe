@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.1.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Open in Atom for Finder and creates a package.</string>
+	<string>Downloads the latest version of Open in Atom and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.OpeninAtomforFinder</string>
 	<key>Input</key>
@@ -13,7 +13,7 @@
 		<key>BUNDLE_ID</key>
 		<string>cdz.finder-atom-integration</string>
 		<key>NAME</key>
-		<string>Open in Atom for Finder</string>
+		<string>Open in Atom</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -25,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Open in Atom for Finder.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Open in Atom.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>

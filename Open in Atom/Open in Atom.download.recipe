@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.1.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Open in Atom for Finder.</string>
+	<string>Downloads the latest version of Open in Atom.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.OpeninAtomforFinder</string>
 	<key>Input</key>
@@ -13,7 +13,7 @@
 		<key>GITHUB_REPO</key>
 		<string>cdzombak/finder-atom</string>
 		<key>NAME</key>
-		<string>Open in Atom for Finder</string>
+		<string>Open in Atom</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -58,9 +58,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Open in Atom for Finder.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Open in Atom.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "cdz.finder-atom-integration" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "4QNZ8566GP")</string>
+				<string>identifier "com.apple.ScriptEditor.id.Open-in-Atom" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Christopher Dzombak (JC7TCLR787)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -69,7 +69,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Open in Atom for Finder.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Open in Atom.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

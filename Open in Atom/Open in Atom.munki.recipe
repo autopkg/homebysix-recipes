@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.1.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Open in Atom for Finder and imports it into Munki.</string>
+	<string>Downloads the latest version of Open in Atom and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.OpeninAtomforFinder</string>
 	<key>Input</key>
@@ -25,7 +25,7 @@
 			<key>developer</key>
 			<string>Christopher Dzombak</string>
 			<key>display_name</key>
-			<string>Open in Atom for Finder</string>
+			<string>Open in Atom</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
