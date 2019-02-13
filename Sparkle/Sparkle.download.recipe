@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>https://sparklesoftware.s3.amazonaws.com/store/Sparkle.zip</string>
+		<string>https://sparkleapp.com/update/Sparkle.zip</string>
 		<key>NAME</key>
 		<string>Sparkle</string>
 	</dict>
