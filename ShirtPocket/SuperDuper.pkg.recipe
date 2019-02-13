@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>NOTE: Cannot use AppPkgCreator for this recipe because the exclamation point in the app name causes an "Invalid package name" error.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of SuperDuper and builds a package.</string>
 	<key>Identifier</key>

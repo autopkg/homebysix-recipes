@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)
+
+NOTE: Cannot use AppPkgCreator for this recipe because the exclamation point in the app name causes an "Invalid package name" error.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Paparazzi! and creates a package.</string>
 	<key>Identifier</key>
