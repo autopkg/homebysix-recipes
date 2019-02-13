@@ -47,7 +47,7 @@
 				<key>input_path</key>
 				<string>%pathname%/TogglDesktop.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.toggl.toggldesktop.TogglDesktop" and certificate leaf[subject.OU] = G56V5LY6SL</string>
+				<string>anchor apple generic and identifier "com.toggl.toggldesktop.TogglDesktop" and certificate leaf[subject.OU] = B227VTMZ94</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
