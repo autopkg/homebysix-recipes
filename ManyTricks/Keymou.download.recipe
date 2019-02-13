@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.1.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Keymo.</string>
+	<string>Downloads the latest version of Keymou.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Keymo</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Keymo</string>
+		<string>Keymou</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>https://manytricks.com/keymo/appcast.xml</string>
+		<string>https://manytricks.com/keymou/appcast/?version=1</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -45,7 +45,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Keymo.app</string>
+				<string>%pathname%/Keymou.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.manytricks.Keymo" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = METK467GW2)</string>
 			</dict>
