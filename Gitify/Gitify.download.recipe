@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>GITHUB_REPO</key>
-		<string>ekonstantinidis/gitify</string>
+		<string>manosim/gitify</string>
 		<key>NAME</key>
 		<string>Gitify</string>
 	</dict>
