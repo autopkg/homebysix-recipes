@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.1.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Espresso and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -23,7 +23,7 @@
 			<key>description</key>
 			<string>Powerful HTML, XML, CSS, and JavaScript development tool.</string>
 			<key>developer</key>
-			<string>MacRabbit</string>
+			<string>Warewolf</string>
 			<key>display_name</key>
 			<string>Espresso</string>
 			<key>name</key>
@@ -33,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Espresso</string>
 	<key>Process</key>
@@ -44,7 +44,7 @@
 				<key>dmg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 			</dict>
 			<key>Processor</key>
 			<string>DmgCreator</string>
