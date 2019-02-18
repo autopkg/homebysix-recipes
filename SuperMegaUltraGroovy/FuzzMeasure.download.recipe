@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.1.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of FuzzMeasure.</string>
 	<key>Identifier</key>
@@ -14,18 +14,18 @@
 		<string>FuzzMeasure</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(FuzzMeasure-[\d]+.app.zip)</string>
+				<string>href="(https:\/\/downloads\.rodetest\.com\/fuzzmeasure\/FuzzMeasure-[\d\.]+\.zip)"></string>
 				<key>result_output_var_name</key>
-				<string>filename</string>
+				<string>url</string>
 				<key>url</key>
-				<string>https://supermegaultragroovy.com/products/fuzzmeasure/download/</string>
+				<string>https://www.rodetest.com/download</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -33,8 +33,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://s3.amazonaws.com/fuzzmeasure/%filename%</string>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -49,7 +49,7 @@
 				<key>archive_path</key>
 				<string>%pathname%</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
@@ -60,7 +60,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/FuzzMeasure.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/FuzzMeasure.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.supermegaultragroovy.fuzzmeasure4.mac" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FZ6W74R3XC)</string>
 			</dict>
@@ -71,7 +71,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/FuzzMeasure.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/FuzzMeasure.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
