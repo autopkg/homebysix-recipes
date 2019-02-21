@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.yellowmug.com/download/FolderBrander.dmg</string>
+		<string>https://www.yellowmug.com/download/FolderBrander.dmg</string>
 		<key>NAME</key>
 		<string>FolderBrander</string>
 	</dict>
