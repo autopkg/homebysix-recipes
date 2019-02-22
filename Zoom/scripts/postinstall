@@ -5,6 +5,12 @@
 # All UI related things have been removed
 # But all other things are kept, even code that will never run.
 
+# Bail out early if the target disk is not the startup disk.
+if [[ $3 != "/" ]]; then
+    echo "[ERROR] Target disk is not the startup disk."
+    exit 1
+fi
+
 app_path=/Applications/zoom.us.app
 
 kext_file=/System/Library/Extensions/ZoomAudioDevice.kext
