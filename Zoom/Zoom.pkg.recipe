@@ -87,7 +87,7 @@
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>scripts</key>
-					<string>zoom_scripts</string>
+					<string>scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
