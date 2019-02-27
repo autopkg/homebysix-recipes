@@ -32,7 +32,7 @@ __all__ = ["GoToMeetingURLProvider"]
 HOSTNAME = "builds.cdn.getgo.com"
 
 # workaround for 10.12.x SNI issue
-if LooseVersion(platform.mac_ver()[0]) < LooseVersion('10.13.0'):
+if LooseVersion(platform.mac_ver()[0]) < LooseVersion("10.13.0"):
     HOSTNAME = socket.gethostbyname_ex("builds.cdn.getgo.com")[0]
 
 BASE_URL = "https://" + HOSTNAME + "/g2mupdater/live/config.json"
@@ -41,19 +41,13 @@ BASE_URL = "https://" + HOSTNAME + "/g2mupdater/live/config.json"
 class GoToMeetingURLProvider(Processor):
 
     """Provides a download URL for the latest GoToMeeting release."""
+
     input_variables = {
-        "base_url": {
-            "required": False,
-            "description": "Default is %s" % BASE_URL
-        }
+        "base_url": {"required": False, "description": "Default is %s" % BASE_URL}
     }
     output_variables = {
-        "url": {
-            "description": "URL to the latest GoToMeeting release."
-        },
-        "build": {
-            "description": "Build number of the latest GoToMeeting release."
-        }
+        "url": {"description": "URL to the latest GoToMeeting release."},
+        "build": {"description": "Build number of the latest GoToMeeting release."},
     }
     description = __doc__
 
@@ -75,12 +69,14 @@ class GoToMeetingURLProvider(Processor):
         return jsonData
 
     def get_g2m_url(self, jsonData):
-        return jsonData["activeBuilds"][
-            len(jsonData["activeBuilds"]) - 1]["macDownloadUrl"]
+        return jsonData["activeBuilds"][len(jsonData["activeBuilds"]) - 1][
+            "macDownloadUrl"
+        ]
 
     def get_g2m_build(self, jsonData):
-        return str(jsonData["activeBuilds"][
-            len(jsonData["activeBuilds"]) - 1]["buildNumber"])
+        return str(
+            jsonData["activeBuilds"][len(jsonData["activeBuilds"]) - 1]["buildNumber"]
+        )
 
     def main(self):
         """Find and return a download URL"""
@@ -90,6 +86,7 @@ class GoToMeetingURLProvider(Processor):
         self.output("Found URL: %s" % self.env["url"])
         self.env["build"] = self.get_g2m_build(jsonData)
         self.output("Build number: %s" % self.env["build"])
+
 
 if __name__ == "__main__":
     processor = GoToMeetingURLProvider()
