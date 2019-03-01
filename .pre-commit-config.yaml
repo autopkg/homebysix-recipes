@@ -9,9 +9,6 @@ repos:
   - id: check-docstring-first
   - id: check-executables-have-shebangs
   - id: check-merge-conflict
-  - id: check-symlinks
-  - id: check-xml
-  - id: check-yaml
   - id: mixed-line-ending
   - id: no-commit-to-branch
   - id: trailing-whitespace
@@ -20,3 +17,8 @@ repos:
   rev: 18.9b0
   hooks:
   - id: black
+- repo: https://github.com/homebysix/pre-commit-macadmin
+  rev: 6bff9cc739eac92a945ce05d7cabe7a23abcec7e
+  hooks:
+  - id: check-autopkg-recipes
+  - id: forbid-autopkg-overrides
