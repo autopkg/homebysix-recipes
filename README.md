@@ -28,13 +28,13 @@ If you're having a problem with one of my recipes, [check the issues](https://gi
 
 I wrote a couple custom processors for my own recipes. Feel free to refer to them if you find them useful, or modify and redistribute as you like.
 
-- __[BinaryFileVersioner](BinaryFileVersioner/README.md)__
+- __[BinaryFileVersioner](BinaryFileVersioner/README.md)__  
     This processor returns the version number of a binary file that has an embedded info plist, using the /usr/bin/otool command.
 
-- __[FindAndReplace](FindAndReplace/README.md)__
+- __[FindAndReplace](FindAndReplace/README.md)__  
 This processor performs a find/replace on a specified environment variable. The result is saved as a new variable, `%output_string%`.
 
-- __[VersionSplitter](VersionSplitter/README.md)__
+- __[VersionSplitter](VersionSplitter/README.md)__  
     This processor splits version numbers. This is especially useful if the version contains two parts (e.g. version and build) but you only need/want one of them. For example, "0.3.4 (build 352ac3)" could become simply "0.3.4".
 
 
