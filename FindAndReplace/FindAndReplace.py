@@ -30,23 +30,23 @@ class FindAndReplace(Processor):
     input_variables = {
         "input_string": {
             "required": True,
-            "description": "The string you want to perform find/replace on."
+            "description": "The string you want to perform find/replace on.",
         },
         "find": {
             "required": True,
             "description": "This string, if found, will be replaced with the "
-                           "\"replace\" string."
+            '"replace" string.',
         },
         "replace": {
             "required": True,
-            "description": "The string that you want to replace the \"find\" "
-                           "string with."
-        }
+            "description": 'The string that you want to replace the "find" '
+            "string with.",
+        },
     }
     output_variables = {
         "output_string": {
             "description": "The result of find/replace on the input string."
-        },
+        }
     }
     description = __doc__
 
@@ -55,8 +55,7 @@ class FindAndReplace(Processor):
         input_string = self.env["input_string"]
         find = self.env["find"]
         replace = self.env["replace"]
-        self.output("Replacing \"%s\" with \"%s\" in \"%s\"." %
-                    (find, replace, input_string))
+        self.output('Replacing "%s" with "%s" in "%s".' % (find, replace, input_string))
         self.env["output_string"] = self.env["input_string"].replace(find, replace)
 
 

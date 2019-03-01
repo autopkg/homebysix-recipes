@@ -16,11 +16,7 @@ autopkg repo-add homebysix-recipes
 
 ## Dependencies
 
-Some of my recipes have parent recipes that live in another repo. To add them all in one shot, here is the command you'll need:
-
-```
-autopkg repo-add recipes eholtam-recipes foigus-recipes gerardkok-recipes hansen-m-recipes jaharmi-recipes jessepeterson-recipes jleggat-recipes jps3-recipes keeleysam-recipes rustymyers-recipes
-```
+Some of my recipes have parent recipes that live in another repo. Refer to a given recipe's parent recipe identifier to determine which repo you'll need to add. For example, my Sketch.pkg recipe uses `com.github.foigus.download.Sketch` as its parent, so you would need to run `autopkg repo-add foigus-recipes` before you could run Sketch.pkg successfully.
 
 
 ## Known issues
@@ -28,13 +24,18 @@ autopkg repo-add recipes eholtam-recipes foigus-recipes gerardkok-recipes hansen
 If you're having a problem with one of my recipes, [check the issues](https://github.com/autopkg/homebysix-recipes/issues) to see whether a known problem exists. If not, please [submit an issue](https://github.com/autopkg/homebysix-recipes/issues/new) so I can investigate.
 
 
-## Processors
+## Shared Processors
 
 I wrote a couple custom processors for my own recipes. Feel free to refer to them if you find them useful, or modify and redistribute as you like.
 
-- __GoToMeetingURLProvider__ - Uses the GoToMeeting updater JSON to determine the URL to the latest release and the build number for that release.
+- __[BinaryFileVersioner](BinaryFileVersioner/README.md)__  
+    This processor returns the version number of a binary file that has an embedded info plist, using the /usr/bin/otool command.
 
-- __VersionSplitter__ - Takes a string, splits it on a specified character, and returns the specified index. Particularly useful for breaking down multi-part version numbers. For example, "0.3.4 (build 352ac3)" might become simply "0.3.4".
+- __[FindAndReplace](FindAndReplace/README.md)__  
+This processor performs a find/replace on a specified environment variable. The result is saved as a new variable, `%output_string%`.
+
+- __[VersionSplitter](VersionSplitter/README.md)__  
+    This processor splits version numbers. This is especially useful if the version contains two parts (e.g. version and build) but you only need/want one of them. For example, "0.3.4 (build 352ac3)" could become simply "0.3.4".
 
 
 ## Submissions
