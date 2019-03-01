@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Set group permissions to match owner permissions on Electron framework.
+chmod -R g=u "$3/Applications/Chat.app/Contents/Frameworks/Electron Framework.framework"
