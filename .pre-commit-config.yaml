@@ -18,7 +18,7 @@ repos:
   hooks:
   - id: black
 - repo: https://github.com/homebysix/pre-commit-macadmin
-  rev: 6bff9cc739eac92a945ce05d7cabe7a23abcec7e
+  rev: v1.0.0
   hooks:
   - id: check-autopkg-recipes
   - id: forbid-autopkg-overrides
