@@ -20,6 +20,9 @@ IDENTIFIER_EXEMPTIONS = (
     "com.github.jps3.pkg.Kitematic",
 )
 
+# Path to the AutoPkg cache.
+AUTOPKG_CACHE = os.path.expanduser("~/Library/AutoPkg/Cache")
+
 
 def check_recipe(relpath, recipe):
     """Parse the recipe and make sure it's valid."""
@@ -32,11 +35,16 @@ def check_recipe(relpath, recipe):
     )
     assert_in("Input", recipe, "{}: no Input key".format(relpath))
     assert_in("Process", recipe, "{}: no Process key".format(relpath))
+    assert_not_in(
+        "ParentRecipeTrustInfo",
+        recipe,
+        "{}: has ParentRecipeTrustInfo key".format(relpath),
+    )
 
 
 def clear_cache(identifier):
     """Clear AutoPkg cache for a specific recipe."""
-    recipe_cache = os.path.expanduser("~/Library/AutoPkg/Cache/" + identifier)
+    recipe_cache = os.path.join(AUTOPKG_CACHE, identifier)
     if os.path.isdir(recipe_cache):
         shutil.rmtree(recipe_cache, ignore_errors=True)
 
@@ -50,7 +58,7 @@ def run_recipe(relpath):
 
 
 def test_functional():
-    """Test whether recipes are functional."""
+    """Functional tests"""
 
     # Types of recipes we are targeting for testing. (Recommend "download" and "pkg" only.)
     recipe_types = ("download", "pkg")
