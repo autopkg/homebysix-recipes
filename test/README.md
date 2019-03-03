@@ -23,7 +23,7 @@ You'll also need a few repos that contain required parent recipes:
         keeleysam-recipes \
         rustymyers-recipes
 
-Make sure your working directory is the __homebysix-recipes__ folder (the clone you made, not the clone in your ~/Library/AutoPkg/RecipeRepos folder).
+Make sure your working directory is the __homebysix-recipes__ folder (the clone you made with `git clone`, not the clone in your ~/Library/AutoPkg/RecipeRepos folder).
 
     cd ~/Developer/homebysix-recipes
 
