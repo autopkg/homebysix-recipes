@@ -31,6 +31,6 @@ Make sure your working directory is the __homebysix-recipes__ folder (the clone 
 
 Once you've met the above requirements, run the tests with this command:
 
-    nosetests -v test
+    nosetests --verbose --nocapture test
 
 "OK" will be displayed in the output if the tests passed.

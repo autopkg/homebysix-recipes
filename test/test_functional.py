@@ -8,42 +8,68 @@ Functional tests for homebysix-recipes.
 
 import os
 import plistlib
+import shutil
 import subprocess
 
 from nose.tools import *  # pylint: disable=W0401, W0614
 
+# Desired identifier prefix, with few exceptions.
+IDENTIFIER_PREFIX = "com.github.homebysix."
+IDENTIFIER_EXEMPTIONS = (
+    "com.github.jps3.download.Kitematic",
+    "com.github.jps3.pkg.Kitematic",
+)
 
-def recipe_runner(relpath):
-    """Given a relative path, run the recipe and return the exit code."""
-    retcode = subprocess.call(
-        [
-            "/usr/local/bin/autopkg",
-            "run",
-            relpath,
-            "--verbose",
-            "--report-plist=test/report.plist",
-        ]
+
+def check_recipe(relpath, recipe):
+    """Parse the recipe and make sure it's valid."""
+    assert_is_instance(recipe, dict, "{}: recipe is not a dict".format(relpath))
+    assert_in("Identifier", recipe, "{}: no Identifier key".format(relpath))
+    assert_true(
+        recipe["Identifier"].startswith(IDENTIFIER_PREFIX)
+        or recipe["Identifier"] in IDENTIFIER_EXEMPTIONS,
+        "{}: does not start with {}".format(relpath, IDENTIFIER_PREFIX),
     )
-    return retcode
+    assert_in("Input", recipe, "{}: no Input key".format(relpath))
+    assert_in("Process", recipe, "{}: no Process key".format(relpath))
 
 
-def check_recipe(relpath):
-    """Verify the recipe run produces expected exitcode and results."""
-    retcode = recipe_runner(relpath)
-    assert_equal(retcode, 0)
-    report = plistlib.readPlist("test/report.plist")
-    assert_equal(report["failures"], [])
+def clear_cache(identifier):
+    """Clear AutoPkg cache for a specific recipe."""
+    recipe_cache = os.path.expanduser("~/Library/AutoPkg/Cache/" + identifier)
+    if os.path.isdir(recipe_cache):
+        shutil.rmtree(recipe_cache, ignore_errors=True)
+
+
+def run_recipe(relpath):
+    """Run the recipe and check the exit code."""
+    retcode = subprocess.call(
+        ["/usr/local/bin/autopkg", "run", relpath, "--report-plist=test/report.plist"]
+    )
+    assert_equal(retcode, 0, "{}: autopkg exited with code {}".format(relpath, retcode))
 
 
 def test_functional():
-    """Iterate through recipes in working directory and run tests on each."""
+    """Test whether recipes are functional."""
 
     # Types of recipes we are targeting for testing. (Recommend "download" and "pkg" only.)
     recipe_types = ("download", "pkg")
 
-    # Walk our repo and check each recipe matching the above types.
+    # Walk our repo and collect each recipe matching the above types.
+    recipe_paths = []
     for root, dirs, files in os.walk("."):
         dirs[:] = [d for d in dirs if not d.startswith(".")]
         for filename in files:
             if filename.endswith(tuple("." + x + ".recipe" for x in recipe_types)):
-                yield check_recipe, os.path.join(root, filename)
+                recipe_paths.append(os.path.join(root, filename))
+
+    # Check and run each recipe we found.
+    for index, recipe_path in enumerate(recipe_paths):
+        print(
+            "Testing {} ({} of {})...".format(recipe_path, index + 1, len(recipe_paths))
+        )
+        recipe = plistlib.readPlist(recipe_path)
+        yield check_recipe, recipe_path, recipe
+        clear_cache(recipe["Identifier"])
+        yield run_recipe, recipe_path
+        clear_cache(recipe["Identifier"])
