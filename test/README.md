@@ -33,4 +33,4 @@ Once you've met the above requirements, run the tests with this command:
 
     nosetests --verbose --nocapture test
 
-"OK" will be displayed in the output if the tests passed.
+Full testing takes about 30-45 minutes to run, depending on your internet connection speed.
