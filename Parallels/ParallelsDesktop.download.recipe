@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 9, 10, 11, 12, and 13.
+	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 9, 10, 11, 12, 13, and 14.
 
 This recipe differs from the one in keeleysam-recipes because it offers code signature verification, does not require a ParallelsURLProvider processor, and also includes pkg and install recipes.</string>
 	<key>Identifier</key>
@@ -11,7 +11,7 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>13</string>
+		<string>14</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
 	</dict>
