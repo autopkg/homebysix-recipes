@@ -31,6 +31,8 @@ https://github.com/autopkg/rtrouton-recipes/tree/master/EnterpriseConnect</strin
 			<string>Apple</string>
 			<key>display_name</key>
 			<string>Enterprise Connect</string>
+			<key>minimum_os_version</key>
+			<string>10.11.0</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
