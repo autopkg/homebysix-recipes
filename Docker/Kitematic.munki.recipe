@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Credit to Jason Stanford for creating and sharing this recipe.</string>
+	<string>Created with Recipe Robot v1.1.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Kitematic and imports it into your Munki repository.</string>
+	<string>Downloads the latest version of Kitematic and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.jps3.munki.Kitematic</string>
 	<key>Input</key>
@@ -22,16 +22,24 @@
 				<string>Kitematic.app</string>
 				<string>Kitematic</string>
 			</array>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
 			<key>description</key>
-			<string>The easiest way to use Docker on your Mac. https://kitematic.com/docs/</string>
-			<key>displayname</key>
+			<string>Visual Docker Container Management on Mac &amp; Windows</string>
+			<key>developer</key>
+			<string>Docker</string>
+			<key>display_name</key>
 			<string>Kitematic</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.jps3.download.Kitematic</string>
 	<key>Process</key>
@@ -39,21 +47,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_plist_path</key>
-				<string>%found_filename%/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleVersion</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_megabytes</key>
-				<string>225</string>
 				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.dmg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				<key>dmg_root</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 			</dict>
@@ -64,7 +59,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.dmg</string>
+				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>

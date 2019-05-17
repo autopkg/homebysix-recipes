@@ -25,11 +25,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/cd to.app</string>
 				<key>overwrite</key>
 				<true/>
 				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/%dirname%/%TERMINAL_APP%/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/unpacked/%dirname%/%TERMINAL_APP%/cd to.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

@@ -22,6 +22,8 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
@@ -49,8 +51,17 @@
 					<string>%version%</string>
 				</dict>
 			</dict>
+		</dict>
+		<dict>
 			<key>Processor</key>
-			<string>PkgCreator</string>
+			<string>PathDeleter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				</array>
+			</dict>
 		</dict>
 	</array>
 </dict>

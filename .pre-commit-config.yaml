@@ -1,0 +1,24 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.1.0
+  hooks:
+  - id: check-added-large-files
+    args: [--maxkb=100]
+  - id: check-byte-order-marker
+  - id: check-case-conflict
+  - id: check-docstring-first
+  - id: check-executables-have-shebangs
+  - id: check-merge-conflict
+  - id: mixed-line-ending
+  - id: no-commit-to-branch
+  - id: trailing-whitespace
+    args: [--markdown-linebreak-ext=md]
+- repo: https://github.com/ambv/black
+  rev: 18.9b0
+  hooks:
+  - id: black
+- repo: https://github.com/homebysix/pre-commit-macadmin
+  rev: v1.0.5
+  hooks:
+  - id: check-autopkg-recipes
+  - id: forbid-autopkg-overrides

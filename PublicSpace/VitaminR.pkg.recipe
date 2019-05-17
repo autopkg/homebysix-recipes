@@ -37,9 +37,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%pkgroot%/Applications/Vitamin-R 2.app</string>
 				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Vitamin-R 2.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

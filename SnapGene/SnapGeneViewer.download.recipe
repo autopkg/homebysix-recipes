@@ -12,6 +12,10 @@
 	<dict>
 		<key>NAME</key>
 		<string>SnapGene Viewer</string>
+		<key>majorRelease</key>
+		<string>latest</string>
+		<key>minorRelease</key>
+		<string>latest</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -20,21 +24,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>\/\/products\/snapgene_viewer\/download\.php\?&amp;majorRelease=(?P&lt;majorversion&gt;[\d.]+)&amp;minorRelease=(?P&lt;version&gt;[\d.]+)&amp;os=mac</string>
-				<key>url</key>
-				<string>http://www.snapgene.com/products/snapgene_viewer/</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>http://www.snapgene.com//products/snapgene_viewer/download.php?&amp;majorRelease=%majorversion%&amp;minorRelease=%version%&amp;os=mac</string>
+				<string>https://www.snapgene.com/local/targets/viewer_download.php?os=mac&amp;majorRelease=%majorRelease%&amp;minorRelease=%minorRelease%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

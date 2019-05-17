@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.hansen-m.download.zoom</string>
+	<string>com.github.hansen-m.download.zoomus</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -25,10 +25,6 @@
 				<key>pkgdirs</key>
 				<dict>
 					<key>Applications</key>
-					<string>0775</string>
-					<key>Library</key>
-					<string>0775</string>
-					<key>Library/Internet Plug-Ins</key>
 					<string>0775</string>
 				</dict>
 				<key>pkgroot</key>
@@ -51,47 +47,19 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/7zr.zip</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Scripts</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/zoom.us.app</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/expanded/zoomus.pkg/Payload</string>
 			</dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>7z_unarchiver_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/7zr</string>
-				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/zm.7z</string>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Zoom7zUnarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>source</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/ZoomUsPlugIn.plugin</string>
-				<key>target</key>
-				<string>%pkgroot%/Library/Internet Plug-Ins/ZoomUsPlugIn.plugin</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileMover</string>
+			<string>PkgPayloadUnpacker</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pkgroot%/Applications/zoom.us.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleVersion</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/zoom.us.app/Contents/Info.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>Versioner</string>
@@ -107,7 +75,7 @@
 							<key>group</key>
 							<string>admin</string>
 							<key>path</key>
-							<string>Library/Internet Plug-Ins/ZoomUsPlugIn.plugin</string>
+							<string>Applications</string>
 							<key>user</key>
 							<string>root</string>
 						</dict>
@@ -118,6 +86,8 @@
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
+					<key>scripts</key>
+					<string>scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>

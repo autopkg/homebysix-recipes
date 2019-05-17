@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://radiapp.com/Radi.zip</string>
+		<string>https://radiapp.com/Radi.zip</string>
 		<key>NAME</key>
 		<string>Radi</string>
 	</dict>

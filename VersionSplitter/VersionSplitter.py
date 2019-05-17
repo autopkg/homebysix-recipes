@@ -35,32 +35,28 @@ class VersionSplitter(Processor):
     input_variables = {
         "version": {
             "required": True,
-            "description": "The version string that needs splitting."
+            "description": "The version string that needs splitting.",
         },
         "split_on": {
             "required": False,
             "description": "The character(s) to use for splitting the "
-                           "version. (Defaults to a space.)"
+            "version. (Defaults to a space.)",
         },
         "index": {
             "required": False,
             "description": "The index of the version string to be "
-                           "returned. (Defaults to 0.)"
-        }
+            "returned. (Defaults to 0.)",
+        },
     }
-    output_variables = {
-        "version": {
-            "description": "The cleaned up version string."
-        }
-    }
+    output_variables = {"version": {"description": "The cleaned up version string."}}
     description = __doc__
 
     def main(self):
 
         split_on = self.env.get("split_on", " ")
         index = self.env.get("index", 0)
-        self.env["version"] = self.env["version"].split(split_on)[index]
-        self.output("Version: %s" % self.env["version"])
+        self.env["version"] = self.env["version"].decode("utf-8").split(split_on)[index]
+        self.output("Split version: {}".format(self.env["version"]))
 
 
 if __name__ == "__main__":

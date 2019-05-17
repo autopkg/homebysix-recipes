@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Enterprise Connect and imports it into Munki.
+
+See Rich Trouton's read me for details on using the Apple-provided download URL:
+https://github.com/autopkg/rtrouton-recipes/tree/master/EnterpriseConnect</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.EnterpriseConnect</string>
+	<key>Input</key>
+	<dict>
+		<key>DOWNLOAD_URL</key>
+		<string>Put_Enterprise_Connect_download_URL_into_AutoPkg_recipe_override</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>Enterprise Connect</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array/>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Apple Enterprise Connect is a helpful replacement for Active Directory bindings, using Kerberos and other resources to provide Active Directory services.</string>
+			<key>developer</key>
+			<string>Apple</string>
+			<key>display_name</key>
+			<string>Enterprise Connect</string>
+			<key>minimum_os_version</key>
+			<string>10.11.0</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.rtrouton.pkg.EnterpriseConnect</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>

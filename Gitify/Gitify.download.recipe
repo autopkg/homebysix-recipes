@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>GITHUB_REPO</key>
-		<string>ekonstantinidis/gitify</string>
+		<string>manosim/gitify</string>
 		<key>NAME</key>
 		<string>Gitify</string>
 	</dict>
@@ -69,7 +69,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Gitify.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
 			</dict>

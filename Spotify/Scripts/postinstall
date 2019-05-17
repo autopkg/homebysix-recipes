@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Set group permissions to match owner permissions on Chromium embedded framework bundle.
+chmod g=u "$3/Applications/Spotify.app/Contents/Frameworks/Chromium Embedded Framework.framework"

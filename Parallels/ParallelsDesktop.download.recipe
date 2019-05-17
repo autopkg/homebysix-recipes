@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 9, 10, 11, and 12.
+	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 9, 10, 11, 12, 13, and 14.
 
 This recipe differs from the one in keeleysam-recipes because it offers code signature verification, does not require a ParallelsURLProvider processor, and also includes pkg and install recipes.</string>
 	<key>Identifier</key>
@@ -11,7 +11,7 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>12</string>
+		<string>14</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
 	</dict>
@@ -23,7 +23,7 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>ParallelsDesktop-%MAJOR_VERSION%.dmg</string>
+				<string>%NAME%-%MAJOR_VERSION%.dmg</string>
 				<key>url</key>
 				<string>https://www.parallels.com/directdownload/pd%MAJOR_VERSION%</string>
 			</dict>
@@ -49,7 +49,7 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
+				<string>%pathname%/Parallels Desktop.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

@@ -23,7 +23,7 @@
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>http://apps.tempel.org/FindAnyFile/</string>
+				<string>http://apps.tempel.org/FindAnyFile/index.php</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -71,7 +71,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Find Any File.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

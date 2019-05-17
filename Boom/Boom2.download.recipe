@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.globaldelight.com/boom/download/2x/web/boom2.dmg</string>
+		<string>https://www.globaldelight.com/boom/download/2x/web/boom2.dmg</string>
 		<key>NAME</key>
 		<string>Boom 2</string>
 	</dict>

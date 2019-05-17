@@ -39,7 +39,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%NAME%.app</string>
+						<string>Vitamin-R 2.app</string>
 					</dict>
 				</array>
 			</dict>

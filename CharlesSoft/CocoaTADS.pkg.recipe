@@ -50,7 +50,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/%NAME%.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/unpack/CocoaTADS.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
 			</dict>
@@ -61,9 +61,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/CocoaTADS.app</string>
 				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/%NAME%.app</string>
+				<string>%RECIPE_CACHE_DIR%/unpack/CocoaTADS.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

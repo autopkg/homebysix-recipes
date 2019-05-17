@@ -13,7 +13,7 @@ NOTE: Code signature verification is disabled due to a signing error in the vers
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.yellowmug.com/download/FileChute.dmg</string>
+		<string>https://www.yellowmug.com/download/FileChute.dmg</string>
 		<key>NAME</key>
 		<string>FileChute</string>
 	</dict>
