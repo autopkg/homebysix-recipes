@@ -16,6 +16,11 @@
 		<string>BlueJeans</string>
 		<key>pkginfo</key>
 		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Blue Jeans.app</string>
+				<string>BlueJeans.app</string>
+			</array>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
