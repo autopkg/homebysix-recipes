@@ -18,8 +18,8 @@
 		<dict>
 			<key>blocking_applications</key>
 			<array>
-				<string>Blue Jeans.app</string>
-				<string>BlueJeans.app</string>
+				<string>Blue Jeans.app/Contents/MacOS/Blue Jeans</string>
+				<string>BlueJeans.app/Contents/MacOS/BlueJeans</string>
 			</array>
 			<key>catalogs</key>
 			<array>
@@ -37,9 +37,9 @@
 			<string>#!/bin/bash
 # remove any existing 1.x version of "Blue Jeans.app"
 if [[ -d "/Applications/Blue Jeans.app" ]]; then
-    /bin/rm -rf "/Applications/Blue Jeans.app"
+		/bin/rm -rf "/Applications/Blue Jeans.app"
 fi
-            </string>
+			</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
@@ -64,10 +64,28 @@ fi
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/BlueJeans.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleVersion</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_makepkginfo_options</key>
+				<array>
+					<string>--pkgvers</string>
+					<string>%version%</string>
+				</array>
 				<key>pkg_path</key>
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>version_comparison_key</key>
+				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
