@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Cocktail.</string>
 	<key>Identifier</key>
-	<string>at.premedia.download.Cocktail</string>
+	<string>com.github.homebysix.download.Cocktail-10.14</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

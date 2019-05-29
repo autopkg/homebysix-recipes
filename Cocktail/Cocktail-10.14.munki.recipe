@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Cocktail and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>at.premedia.munki.Cocktail</string>
+	<string>com.github.homebysix.munki.Cocktail-10.14</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
@@ -35,7 +35,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>at.premedia.download.Cocktail</string>
+	<string>com.github.homebysix.download.Cocktail-10.14</string>
 	<key>Process</key>
 	<array>
 		<dict>
