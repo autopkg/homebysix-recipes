@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.1.2 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of ApacheDirectoryStudio and imports it into Munki.</string>
+	<string>Downloads the latest version of GB Studio and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.ApacheDirectoryStudio</string>
+	<string>com.github.homebysix.munki.GBStudio</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>ApacheDirectoryStudio</string>
+		<string>GB Studio</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,11 +21,11 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Complete LDAP tooling platform (was LDAP Studio).</string>
+			<string>A free and easy to use retro adventure game creator for your favourite handheld video game system.</string>
 			<key>developer</key>
-			<string></string>
+			<string>Chris Maltby</string>
 			<key>display_name</key>
-			<string>ApacheDirectoryStudio</string>
+			<string>GB Studio</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,27 +35,40 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.ApacheDirectoryStudio</string>
+	<string>com.github.homebysix.download.GBStudio</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
+				<key>archive_path</key>
 				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
 			</dict>
 			<key>Processor</key>
-			<string>AppDmgVersioner</string>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%pathname%</string>
+				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>version_comparison_key</key>
-				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

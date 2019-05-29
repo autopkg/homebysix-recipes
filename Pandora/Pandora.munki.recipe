@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.1.2 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of ApacheDirectoryStudio and imports it into Munki.</string>
+	<string>Downloads the latest version of Pandora and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.ApacheDirectoryStudio</string>
+	<string>com.github.homebysix.munki.Pandora</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>ApacheDirectoryStudio</string>
+		<string>Pandora</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,11 +21,11 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Complete LDAP tooling platform (was LDAP Studio).</string>
+			<string>Mac app for listening to music using the Pandora streaming service.</string>
 			<key>developer</key>
-			<string></string>
+			<string>Pandora Media, Inc.</string>
 			<key>display_name</key>
-			<string>ApacheDirectoryStudio</string>
+			<string>Pandora</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,18 +35,9 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.ApacheDirectoryStudio</string>
+	<string>com.github.homebysix.download.Pandora</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%pathname%</string>
-			</dict>
-			<key>Processor</key>
-			<string>AppDmgVersioner</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -54,8 +45,6 @@
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>version_comparison_key</key>
-				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
