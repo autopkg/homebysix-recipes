@@ -12,7 +12,7 @@
 		<string>GoToMeeting</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.3.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -23,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>CHECK_FILESIZE_ONLY</key>
-                                <true/>
+				<true/>
 				<key>filename</key>
 				<string>%NAME%.tar.gz</string>
 				<key>url</key>

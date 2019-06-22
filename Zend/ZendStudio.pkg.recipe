@@ -18,7 +18,7 @@
 		<string>ZendStudio</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.ZendStudio</string>
 	<key>Process</key>
