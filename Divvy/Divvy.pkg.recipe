@@ -14,7 +14,7 @@
 		<string>Divvy</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.3.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.jaharmi.download.Divvy</string>
 	<key>Process</key>

@@ -16,7 +16,7 @@
 		<string>DeltaWalker</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.DeltaWalker</string>
 	<key>Process</key>

@@ -14,7 +14,7 @@
 		<string>Kite</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Kite</string>
 	<key>Process</key>
