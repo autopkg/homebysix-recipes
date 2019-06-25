@@ -11,9 +11,8 @@ import plistlib
 import shutil
 import subprocess
 
-from nose.tools import (
+from nose.tools import (  # assert_false,
     assert_equal,
-    # assert_false,
     assert_in,
     assert_is_instance,
     assert_not_in,
@@ -59,7 +58,13 @@ def clear_cache(identifier):
 def run_recipe(relpath):
     """Run the recipe and check the exit code."""
     retcode = subprocess.call(
-        ["/usr/local/bin/autopkg", "run", relpath, "--report-plist=test/report.plist"]
+        [
+            "/usr/local/bin/autopkg",
+            "run",
+            relpath,
+            "--report-plist=test/report.plist",
+            "--quiet",
+        ]
     )
     assert_equal(retcode, 0, "{}: autopkg exited with code {}".format(relpath, retcode))
 
