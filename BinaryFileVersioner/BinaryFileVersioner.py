@@ -17,9 +17,9 @@
 import os
 import re
 import shlex
-from autopkglib import Processor, ProcessorError
 from subprocess import PIPE, Popen
 
+from autopkglib import Processor, ProcessorError  # noqa: F401
 
 __all__ = ["BinaryFileVersioner"]
 

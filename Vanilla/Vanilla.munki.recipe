@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-            <string>Utility that allows you to hide unwanted menu bar icons.</string>
+			<string>Utility that allows you to hide unwanted menu bar icons.</string>
 			<key>developer</key>
 			<string>Matthew Palmer</string>
 			<key>display_name</key>

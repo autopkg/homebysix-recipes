@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.pkg</string>
+		<string>https://tclementdev.com/timemachineeditor/TimeMachineEditor.pkg</string>
 		<key>NAME</key>
 		<string>TimeMachineEditor</string>
 	</dict>

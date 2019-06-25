@@ -20,10 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source_pkg</key>
-				<string>%pathname%/Tableau Reader.pkg</string>
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/Tableau Reader-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%pathname%/Tableau Reader.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCopier</string>
