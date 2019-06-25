@@ -17,15 +17,13 @@
 
 import gzip
 import json
-import re
-import StringIO
-import urllib2
 import platform
 import socket
+import StringIO
+import urllib2
 from distutils.version import LooseVersion
 
-from autopkglib import Processor, ProcessorError
-
+from autopkglib import Processor, ProcessorError  # noqa: F401
 
 __all__ = ["GoToMeetingURLProvider"]
 

@@ -11,7 +11,14 @@ import plistlib
 import shutil
 import subprocess
 
-from nose.tools import *  # pylint: disable=W0401, W0614
+from nose.tools import (
+    assert_equal,
+    # assert_false,
+    assert_in,
+    assert_is_instance,
+    assert_not_in,
+    assert_true,
+)
 
 # Desired identifier prefix, with few exceptions.
 IDENTIFIER_PREFIX = "com.github.homebysix."

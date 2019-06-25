@@ -17,11 +17,10 @@
 """See docstring for Zoom7zUnarchiver class"""
 
 import os
-import subprocess
 import shutil
+import subprocess
 
-from autopkglib import Processor, ProcessorError
-
+from autopkglib import Processor, ProcessorError  # noqa: F401
 
 __all__ = ["Zoom7zUnarchiver"]
 
