@@ -1,4 +1,21 @@
 repos:
+- repo: https://github.com/homebysix/pre-commit-macadmin
+  rev: v1.1.4
+  hooks:
+  - id: check-autopkg-recipes
+    args: [--recipe-prefix=com.github.homebysix.]
+    exclude: Kitematic
+  - id: forbid-autopkg-overrides
+  - id: forbid-autopkg-trust-info
+- repo: https://github.com/ambv/black
+  rev: 19.3b0
+  hooks:
+  - id: black
+    language_version: python3.7
+- repo: https://github.com/pre-commit/mirrors-isort
+  rev: v4.3.20
+  hooks:
+  - id: isort
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v2.2.3
   hooks:
@@ -9,19 +26,9 @@ repos:
   - id: check-docstring-first
   - id: check-executables-have-shebangs
   - id: check-merge-conflict
+  - id: flake8
+    language_version: python2.7
   - id: mixed-line-ending
   - id: no-commit-to-branch
   - id: trailing-whitespace
     args: [--markdown-linebreak-ext=md]
-- repo: https://github.com/ambv/black
-  rev: 19.3b0
-  hooks:
-  - id: black
-- repo: https://github.com/homebysix/pre-commit-macadmin
-  rev: v1.1.1
-  hooks:
-  - id: check-autopkg-recipes
-    args: [--recipe-prefix=com.github.homebysix.]
-    exclude: Kitematic
-  - id: forbid-autopkg-overrides
-  - id: forbid-autopkg-trust-info
