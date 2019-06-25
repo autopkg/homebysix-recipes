@@ -16,9 +16,13 @@
 		<string>https://giveabrief.s3.amazonaws.com/briefsAppCast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1.0</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
