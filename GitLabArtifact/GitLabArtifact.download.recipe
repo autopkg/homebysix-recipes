@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest CI/CD job artifact from the specified GitLab repository. Can be used to automatically download MunkiPkg installer files built by CI/CD, for example. See the README.md file for details on using this recipe.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.GitLabArtifact</string>
+	<key>Input</key>
+	<dict>
+		<key>GITLAB_HOSTNAME</key>
+		<string>gitlab.example.com</string>
+		<key>JOB_NAME</key>
+		<string>munkipkg_building</string>
+		<key>NAME</key>
+		<string>gitlab_artifact</string>
+		<key>PRIVATE_TOKEN</key>
+		<string>PUT_TOKEN_IN_OVERRIDE</string>
+		<key>URLENCODED_PROJECT</key>
+		<string>owner%2frepository</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.4</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>PRIVATE_TOKEN == "PUT_TOKEN_IN_OVERRIDE"</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+				<key>request_headers</key>
+				<dict>
+					<key>PRIVATE-TOKEN</key>
+					<string>%PRIVATE_TOKEN%</string>
+				</dict>
+				<key>url</key>
+				<string>https://%GITLAB_HOSTNAME%/api/v4/projects/%URLENCODED_PROJECT%/jobs/artifacts/master/download?job=%JOB_NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>

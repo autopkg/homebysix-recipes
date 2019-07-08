@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Download the latest CI/CD job artifact from the specified GitLab repository, and extracts the specified pkg file. Can be used to automatically download MunkiPkg installer files built by CI/CD, for example. See the README.md file for details on using this recipe.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.pkg.GitLabArtifact</string>
+	<key>Input</key>
+	<dict>
+		<key>ARTIFACT_PATH</key>
+		<string>build/*.pkg</string>
+		<key>GITLAB_HOSTNAME</key>
+		<string>gitlab.example.com</string>
+		<key>JOB_NAME</key>
+		<string>munkipkg_building</string>
+		<key>NAME</key>
+		<string>gitlab_artifact</string>
+		<key>PRIVATE_TOKEN</key>
+		<string>PUT_TOKEN_IN_OVERRIDE</string>
+		<key>URLENCODED_PROJECT</key>
+		<string>owner%2frepository</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.4</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.GitLabArtifact</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/%ARTIFACT_PATH%</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source_pkg</key>
+				<string>%found_filename%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
