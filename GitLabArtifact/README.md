@@ -6,6 +6,53 @@ These recipes are specifically targeted at organizations who use MunkiPkg to bui
 
 The recipes aren't meant to be run directly, and won't function without creating an override first. See the directions below.
 
+## Configuring MunkiPkg builds in GitLab CI/CD
+
+(You can skip this section if you produce your GitLab artifacts using something other than MunkiPkg.)
+
+You will need a [macOS GitLab runner](https://docs.gitlab.com/runner/install/osx.html) installed and registered in order to do this. Additionally, MunkiPkg will need to be installed on the runner and symlinked from the PATH.
+
+Configure the .gitlab-ci.yml file with the job for building MunkiPkg projects. If your repo contains a single MunkiPkg project, your job might look like this:
+
+```yaml
+munkipkg_building:
+  stage: build
+  tags:
+    - macOS
+  script: /usr/local/bin/munkipkg .
+  artifacts:
+    paths:
+    - build/*.pkg
+  only:
+    - master
+```
+
+If your repo contains multiple MunkiPkg project folders, your job might reference a separate build script, like this:
+
+```yaml
+munkipkg_building:
+  stage: build
+  tags:
+    - macOS
+    script: munkipkg_building.sh
+  artifacts:
+    paths:
+    - */build/*.pkg
+  only:
+    - master
+```
+
+The contents of the munkipkg_building.sh script would look something like this:
+
+```sh
+#!/bin/bash
+for proj in pkgs/*/build-info.*; do
+    /usr/local/bin/munkipkg "$(dirname "$proj")" || exit 1
+done
+```
+
+With this configuration, every commit or merge to the master branch will result in a fresh pkg file being created and stored in the GitLab repo artifacts.
+
 ## Creating overrides and using the recipes
 
 Before you can use any of the recipes, please create a [personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) in GitLab and store it somewhere safe. You will need this token when creating the overrides.
