@@ -27,7 +27,7 @@ munkipkg_building:
     - master
 ```
 
-If your repo contains multiple MunkiPkg project folders, your job might reference a separate build script, like this:
+If your repo contains multiple MunkiPkg project folders, your job might reference a separate build script and different artifact paths, like this:
 
 ```yaml
 munkipkg_building:
@@ -46,7 +46,7 @@ The contents of the munkipkg_building.sh script would look something like this:
 
 ```sh
 #!/bin/bash
-for proj in pkgs/*/build-info.*; do
+for proj in */build-info.*; do
     /usr/local/bin/munkipkg "$(dirname "$proj")" || exit 1
 done
 ```
@@ -58,30 +58,6 @@ With this configuration, every commit or merge to the master branch will result 
 Before you can use any of the recipes, please create a [personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) in GitLab and store it somewhere safe. You will need this token when creating the overrides.
 
 Note: If storing the token in your AutoPkg override is not advisable for security purposes, it's also possible to inject the variable during your AutoPkg recipe run using `-k`. For example: `autopkg run -v MyGitLabOverride.pkg -k PRIVATE_TOKEN=abcdef123456`
-
-### GitLabArtifact.download
-
-This recipe produces a zip file that contains all artifacts produced by the specified CI/CD job in your GitLab repo.
-
-Note: If your artifacts contain packages, it's more likely that you'll want to use the GitLabArtifact.pkg recipe as the basis for your override instead.
-
-1. Create a recipe override, specifying the download recipe as the parent and the name of the resulting override you'll be using. For example:
-
-        autopkg make-override GitLabArtifact.download -n YourCoolProject.download
-
-2. Edit the resulting override file, being sure to replace the following Input variables:
-
-    - `GITLAB_HOSTNAME` - Your company's GitLab host.
-    - `JOB_NAME` - The name of the job that produces artifacts, as described in the .gitlab-ci.yml file in your repository.
-    - `NAME` - The name of the product you're downloading artifacts for, e.g. YourCoolProject.
-    - `PRIVATE_TOKEN` - Your GitLab [personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html).
-    - `URLENCODED_PROJECT` - The URL-encoded project path of your GitLab repository, e.g. `yourname%2fcoolproject`
-
-3. Test out the recipe.
-
-        autopkg run -v YourCoolProject.download
-
-4. If it works, a zip file should be downloaded which contains the built artifacts.
 
 ### GitLabArtifact.download
 
