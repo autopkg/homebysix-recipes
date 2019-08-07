@@ -35,6 +35,28 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>file_content</key>
+				<string>This is a placeholder file to work GitLab's tendency to return the same etag across multiple URLDownloader runs.</string>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.zip</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.zip</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>request_headers</key>
