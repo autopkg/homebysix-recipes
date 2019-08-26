@@ -14,7 +14,7 @@
 		<string>Zoom</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.1</string>
+	<string>1.1.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.hansen-m.download.zoomus</string>
 	<key>Process</key>
@@ -63,6 +63,12 @@
 			</dict>
 			<key>Processor</key>
 			<string>Versioner</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>The version used by Zoom is in the format "4.5.0 (3261.0825)" which isn't accepted by pkgbuild when building the package. This processor splits the version to just the "4.5.0" part.</string>
+			<key>Processor</key>
+			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
