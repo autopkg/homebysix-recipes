@@ -14,7 +14,7 @@
 		<string>Zoom</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.1.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.hansen-m.download.zoomus</string>
 	<key>Process</key>
