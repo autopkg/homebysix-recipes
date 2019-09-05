@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v1.0.4 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of terminal-notifier.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.terminal-notifier</string>
+	<key>Input</key>
+	<dict>
+		<key>GITHUB_REPO</key>
+		<string>julienXX/terminal-notifier</string>
+		<key>NAME</key>
+		<string>terminal-notifier</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.1</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>github_repo</key>
+				<string>%GITHUB_REPO%</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>

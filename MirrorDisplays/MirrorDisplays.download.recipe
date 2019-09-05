@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of MirrorDisplays.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.MirrorDisplays</string>
+	<key>Input</key>
+	<dict>
+		<key>GITHUB_REPO</key>
+		<string>fcanas/mirror-displays</string>
+		<key>NAME</key>
+		<string>MirrorDisplays</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.1</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>MirrorDisplays*.zip</string>
+				<key>github_repo</key>
+				<string>%GITHUB_REPO%</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>

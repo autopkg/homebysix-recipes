@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of I Can Animate 2.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.ICanAnimate2</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>I Can Animate 2</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.1</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>appcast_url</key>
+				<string>http://webservices.kudlian.net/appcasts/mac_icav2/appcast.xml</string>
+			</dict>
+			<key>Processor</key>
+			<string>SparkleUpdateInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+	</array>
+</dict>
+</plist>
