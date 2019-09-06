@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of the Tor Browser Bundle.</string>
+	<string>Downloads the latest version of Tor Browser.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.TorBrowserBundle</string>
 	<key>Input</key>
@@ -14,18 +14,16 @@
 		<string>TorBrowserBundle</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(?:(\d+\.(?:\d+\.)*\d+))/</string>
-				<key>result_output_var_name</key>
-				<string>version</string>
+				<string>href="(?P&lt;url&gt;https:\/\/www\.torproject\.org\/dist\/torbrowser\/[\d\.]+\/TorBrowser-(?P&lt;version&gt;[\d\.]+)-osx64_en-US\.dmg)"</string>
 				<key>url</key>
-				<string>https://dist.torproject.org/torbrowser/?C=M;O=D</string>
+				<string>https://www.torproject.org/download/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -33,8 +31,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://dist.torproject.org/torbrowser/%version%/TorBrowser-%version%-osx64_%LANGUAGE%.dmg</string>
+				<key>filename</key>
+				<string>%NAME%-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -53,6 +51,17 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Tor Browser.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Tor Browser Bundle and installs it.</string>
+	<string>Installs the latest version of Tor Browser.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.TorBrowserBundle</string>
 	<key>Input</key>
@@ -12,19 +12,28 @@
 		<string>TorBrowserBundle</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.TorBrowserBundle</string>
+	<string>com.github.homebysix.download.TorBrowserBundle</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_path</key>
-				<string>%pkg_path%</string>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+				<key>items_to_copy</key>
+				<array>
+					<dict>
+						<key>destination_path</key>
+						<string>/Applications</string>
+						<key>source_item</key>
+						<string>Tor Browser.app</string>
+					</dict>
+				</array>
 			</dict>
 			<key>Processor</key>
-			<string>Installer</string>
+			<string>InstallFromDMG</string>
 		</dict>
 	</array>
 </dict>
