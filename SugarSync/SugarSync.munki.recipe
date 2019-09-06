@@ -26,6 +26,8 @@
 			<string>SugarSync, Inc.</string>
 			<key>display_name</key>
 			<string>SugarSync</string>
+			<key>minimum_os_version</key>
+			<string>10.12</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -33,11 +35,36 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.SugarSync</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>installs</key>
+					<array>
+						<dict>
+							<key>CFBundleShortVersionString</key>
+							<string>%version%</string>
+							<key>path</key>
+							<string>/Applications/SugarSync.app</string>
+							<key>type</key>
+							<string>application</string>
+							<key>version_comparison_key</key>
+							<string>CFBundleShortVersionString</string>
+						</dict>
+					</array>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>

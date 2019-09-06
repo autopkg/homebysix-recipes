@@ -14,7 +14,7 @@
 		<string>SugarSync</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.SugarSync</string>
 	<key>Process</key>
@@ -22,20 +22,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%pathname%</string>
-				<key>items_to_copy</key>
-				<array>
-					<dict>
-						<key>destination_path</key>
-						<string>/Applications</string>
-						<key>source_item</key>
-						<string>SugarSync.app</string>
-					</dict>
-				</array>
+				<key>pkg_path</key>
+				<string>%pathname%/SugarSync.pkg</string>
 			</dict>
 			<key>Processor</key>
-			<string>InstallFromDMG</string>
+			<string>Installer</string>
 		</dict>
 	</array>
 </dict>
