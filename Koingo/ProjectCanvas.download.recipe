@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>https://www.koingosw.com/products/getmirrorfile.php?path=%2Fproducts%2Fprojectcanvas%2Fdownload%2Fprojectcanvas.dmg</string>
+		<string>http://www.koingosw.com/products/getmirrorfile.php?path=%2Fproducts%2Fdiscontinued%2Fdownload%2Fprojectcanvas%2Fprojectcanvas_124.dmg</string>
 		<key>NAME</key>
 		<string>Project Canvas</string>
 	</dict>
@@ -19,6 +19,15 @@
 	<string>0.6.1</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>%NAME% is discontinued. The last version is available here: https://www.koingosw.com/products/discontinued/</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
