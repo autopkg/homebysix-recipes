@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of kubelogin.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.kubelogin</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>kubelogin</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.1</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>kubelogin-cli-.+-darwin\.tar\.gz$</string>
+				<key>github_repo</key>
+				<string>Nordstrom/kubelogin</string>
+				<key>include_prereleases</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>kubelogin-%version%.tar.gz</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
