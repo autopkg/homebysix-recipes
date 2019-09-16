@@ -10,6 +10,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>DeltaWalker</string>
+		<key>USER_AGENT</key>
+		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.2 Safari/605.1.15</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -20,8 +22,13 @@
 			<dict>
 				<key>re_pattern</key>
 				<string>href="(https:\/\/s3\.amazonaws\.com\/deltawalker\/DeltaWalker-[\d\.]+\.dmg)"</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>%USER_AGENT%</string>
+				</dict>
 				<key>result_output_var_name</key>
-				<string>download_url</string>
+				<string>url</string>
 				<key>url</key>
 				<string>https://www.deltawalker.com/download.jsp</string>
 			</dict>
@@ -29,11 +36,6 @@
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>%download_url%</string>
-			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
