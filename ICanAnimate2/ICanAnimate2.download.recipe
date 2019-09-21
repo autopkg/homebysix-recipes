@@ -26,11 +26,11 @@
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
+			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>EndOfCheckPhase</string>
 		</dict>
 	</array>
 </dict>
