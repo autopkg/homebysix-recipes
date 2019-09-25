@@ -60,15 +60,11 @@
 			<dict>
 				<key>input_plist_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/zoom.us.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>Versioner</string>
-		</dict>
-		<dict>
-			<key>Comment</key>
-			<string>The version used by Zoom is in the format "4.5.0 (3261.0825)" which isn't accepted by pkgbuild when building the package. This processor splits the version to just the "4.5.0" part.</string>
-			<key>Processor</key>
-			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
