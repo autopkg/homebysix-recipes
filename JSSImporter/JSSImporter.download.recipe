@@ -18,6 +18,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>This recipe is deprecated. Please consider using the JSSImporter recipes in the rtrouton-recipes repo instead.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>github_repo</key>
 				<string>jssimporter/JSSImporter</string>
 			</dict>
