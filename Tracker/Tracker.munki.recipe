@@ -3,9 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Tracker and imports it into Munki.
-
-Apple's legacy Java 6 is required to run Tracker, so AppleJava6 has been added as a `requires` item.</string>
+	<string>Downloads the latest version of Tracker and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.Tracker</string>
 	<key>Input</key>
@@ -32,10 +30,6 @@ Apple's legacy Java 6 is required to run Tracker, so AppleJava6 has been added a
 			<string>Tracker</string>
 			<key>name</key>
 			<string>%NAME%</string>
-			<key>requires</key>
-			<array>
-				<string>AppleJava6</string>
-			</array>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
