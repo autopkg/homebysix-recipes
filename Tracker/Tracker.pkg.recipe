@@ -22,21 +22,21 @@ The Tracker app requires Apple's legacy Java 6 installer. The pkg installer gene
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
+				<key>source_path</key>
+				<string>%pathname%/Tracker-*-osx-installer.app</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/private/tmp</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/private/tmp/Tracker-osx-installer.app</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
+			<string>Copier</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pattern</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/private/tmp/Tracker-*-osx-installer.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/private/tmp/Tracker-osx-installer.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileFinder</string>
