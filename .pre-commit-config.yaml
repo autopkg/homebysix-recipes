@@ -3,12 +3,12 @@ repos:
   rev: v1.5.1
   hooks:
   - id: check-autopkg-recipes
-    args: [--recipe-prefix=com.github.homebysix.]
+    args: ['--recipe-prefix', 'com.github.homebysix.']
     exclude: Kitematic
   - id: forbid-autopkg-overrides
   - id: forbid-autopkg-trust-info
 - repo: https://github.com/ambv/black
-  rev: 19.3b0
+  rev: 19.10b0
   hooks:
   - id: black
     language_version: python3.7
@@ -17,10 +17,10 @@ repos:
   hooks:
   - id: isort
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v2.3.0
+  rev: v2.4.0
   hooks:
   - id: check-added-large-files
-    args: [--maxkb=100]
+    args: ['--maxkb=100']
   - id: check-byte-order-marker
   - id: check-case-conflict
   - id: check-docstring-first
@@ -31,4 +31,4 @@ repos:
   - id: mixed-line-ending
   - id: no-commit-to-branch
   - id: trailing-whitespace
-    args: [--markdown-linebreak-ext=md]
+    args: ['--markdown-linebreak-ext=md']
