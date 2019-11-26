@@ -20,10 +20,9 @@ import json
 import platform
 import socket
 import StringIO
-import urllib2
 from distutils.version import LooseVersion
 
-from autopkglib import Processor, ProcessorError  # noqa: F401
+from autopkglib import Processor, ProcessorError, URLGetter  # noqa: F401
 
 __all__ = ["GoToMeetingURLProvider"]
 
@@ -36,7 +35,7 @@ if LooseVersion(platform.mac_ver()[0]) < LooseVersion("10.13.0"):
 BASE_URL = "https://" + HOSTNAME + "/g2mupdater/live/config.json"
 
 
-class GoToMeetingURLProvider(Processor):
+class GoToMeetingURLProvider(URLGetter):
 
     """Provides a download URL for the latest GoToMeeting release."""
 
@@ -50,19 +49,16 @@ class GoToMeetingURLProvider(Processor):
     description = __doc__
 
     def get_g2m_json(self, base_url):
-        request = urllib2.Request(base_url)
-        request.add_header("Accept-Encoding", "gzip")
-        opener = urllib2.build_opener()
-        response = opener.open(request)
+        response = self.download(base_url)
 
         # Sometimes the base URL is compressed as gzip, sometimes it's not.
-        if response.info().get("Content-Encoding") == "gzip":
-            self.output("Encoding: gzip")
-            gzipData = StringIO.StringIO(response.read())
-            jsonData = json.loads(gzip.GzipFile(fileobj=gzipData).read())
-        else:
+        try:
+            jsonData = json.loads(response)
             self.output("Encoding: plaintext")
-            jsonData = json.loads(response.read())
+        except ValueError:
+            gzipData = StringIO.StringIO(response)
+            jsonData = json.loads(gzip.GzipFile(fileobj=gzipData).read())
+            self.output("Encoding: gzip")
 
         return jsonData
 
