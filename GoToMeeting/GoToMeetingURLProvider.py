@@ -17,9 +17,9 @@
 
 import gzip
 import json
+import os
 import platform
 import socket
-import StringIO
 from distutils.version import LooseVersion
 
 from autopkglib import Processor, ProcessorError, URLGetter  # noqa: F401
@@ -49,16 +49,28 @@ class GoToMeetingURLProvider(URLGetter):
     description = __doc__
 
     def get_g2m_json(self, base_url):
-        response = self.download(base_url)
+
+        # Prepare download file path.
+        download_dir = os.path.join(self.env["RECIPE_CACHE_DIR"], "downloads")
+        meta_path = os.path.join(download_dir, "meta")
+        try:
+            os.makedirs(download_dir)
+        except os.error:
+            # Directory already exists
+            pass
+
+        # Download JSON feed (or gzipped JSON feed) to a file.
+        meta_file = self.download_to_file(base_url, meta_path)
 
         # Sometimes the base URL is compressed as gzip, sometimes it's not.
         try:
-            jsonData = json.loads(response)
-            self.output("Encoding: plaintext")
+            with open(meta_file, "rb") as f:
+                jsonData = json.loads(f.read())
+                self.output("Encoding: json")
         except ValueError:
-            gzipData = StringIO.StringIO(response)
-            jsonData = json.loads(gzip.GzipFile(fileobj=gzipData).read())
-            self.output("Encoding: gzip")
+            with gzip.open(meta_file, "rb") as f:
+                jsonData = json.loads(f.read())
+                self.output("Encoding: gzip")
 
         return jsonData
 
