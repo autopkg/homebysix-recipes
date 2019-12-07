@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>NativeConnect is a desktop client for App Store Connect. You can edit metadata, generate promo codes, and work with customer reviews in the native and modern 100% AppKit interface.</string>
 			<key>developer</key>
 			<string>Vadim Shpakovski</string>
 			<key>display_name</key>
