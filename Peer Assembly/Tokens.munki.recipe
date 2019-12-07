@@ -5,15 +5,15 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.1.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of NativeConnect and imports it into Munki.</string>
+	<string>Downloads the latest version of Tokens and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.NativeConnect</string>
+	<string>com.github.homebysix.munki.Tokens</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>NativeConnect</string>
+		<string>Tokens</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,11 +21,11 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>NativeConnect is a desktop client for App Store Connect. You can edit metadata, generate promo codes, and work with customer reviews in the native and modern 100% AppKit interface.</string>
+			<string>App for managing promotion codes for your App Store apps.</string>
 			<key>developer</key>
-			<string>Vadim Shpakovski</string>
+			<string>Peer Assembly Ltd</string>
 			<key>display_name</key>
-			<string>NativeConnect</string>
+			<string>Tokens</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -33,9 +33,9 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-    <string>1.4</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.NativeConnect</string>
+	<string>com.github.homebysix.download.Tokens</string>
 	<key>Process</key>
 	<array>
 		<dict>
