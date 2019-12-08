@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>LaunchControl</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>https://somazonecom.ipage.com/soma-zone.com/LaunchControl/a/appcast_update.xml</string>
+		<string>https://www.soma-zone.com/LaunchControl/a/appcast_update.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
