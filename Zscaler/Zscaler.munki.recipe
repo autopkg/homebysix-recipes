@@ -3,7 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads Zscaler Mac app and imports into Munki.</string>
+	<string>Downloads Zscaler Mac app and imports into Munki.
+
+If a logout/uninstall password is required for removing Zscaler, you can specify it in the
+UNINSTALL_PASSWORD input variable. Please note that if you do this, there is a chance that end users
+may be able to reverse-engineer the password; however if you're already providing the uninstall
+option in MSC, the assumption is that this is not a concern.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.Zscaler</string>
 	<key>Input</key>
@@ -12,6 +17,8 @@
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Zscaler</string>
+		<key>UNINSTALL_PASSWORD</key>
+		<string></string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -34,8 +41,43 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>uninstall_method</key>
+			<string>uninstall_script</string>
+			<key>uninstall_script</key>
+			<string>#!/bin/bash
+
+UNINSTALL_SCRIPT="/Applications/Zscaler/.Uninstaller.sh"
+if [[ -f "$UNINSTALL_SCRIPT" ]]; then
+    echo "Uninstalling Zscaler..."
+    /bin/sh "$UNINSTALL_SCRIPT" "%UNINSTALL_PASSWORD%"
+else
+    echo "Zscaler uninstaller not present on disk."
+fi
+
+echo "Ensuring Zscaler is removed..."
+rm -rf "/Applications/Zscaler"
+USER_LIST=$(/usr/bin/dscl . -list /Users UniqueID | awk '$2 &gt; 500 {print $1}')
+for THIS_USER in $USER_LIST; do
+    USER_HOME=$(/usr/bin/dscl . -read "/Users/$THIS_USER" NFSHomeDirectory | awk '{print $2}')
+    rm -rf "$USER_HOME/Library/Application Support/com.zscaler.Zscaler"
+    rm -rf "$USER_HOME/Library/Caches/com.zscaler.Zscaler"
+    rm -rf "$USER_HOME/Library/Preferences/com.zscaler.Zscaler.plist"
+    rm -rf "$USER_HOME/Library/com.zscaler.Zscaler"
+done
+
+if launchctl list com.zscaler.service &amp;&gt;/dev/null; then
+    echo "Unloading Zscaler service daemon..."
+    launchctl unload "/Library/LaunchDaemons/com.zscaler.service.plist"
+fi
+rm -f /Library/LaunchDaemons/com.zscaler.*.plist
+rm -f /Library/LaunchAgents/com.zscaler.*.plist
+
+/usr/sbin/pkgutil --forget "com.zscaler.zscaler.pkg" 2&gt;/dev/null
+
+exit 0
+</string>
 			<key>uninstallable</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 	<key>MiniumumVersion</key>
