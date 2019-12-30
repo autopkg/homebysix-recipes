@@ -12,8 +12,6 @@
 		<string>/Applications</string>
 		<key>NAME</key>
 		<string>cd to</string>
-		<key>TERMINAL_APP</key>
-		<string>terminal</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>

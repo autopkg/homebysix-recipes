@@ -3,33 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of cd to, which is an app that makes it easy to open Terminal windows to the current Finder path. The TERMINAL_APP variable determines which app cd to will work with. Its possible options are "terminal", "iterm", and "x11_xterm", and it is set to "terminal" by default.</string>
+	<string>Downloads the latest version of cd to, which is an app that makes it easy to open Terminal windows to the current Finder path.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.cdto</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>cd to</string>
-		<key>TERMINAL_APP</key>
-		<string>terminal</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>https://github\.com/jbtule/cdto/releases/download/.+/(cdto_[\d_]+)\.zip</string>
-				<key>result_output_var_name</key>
-				<string>dirname</string>
-				<key>url</key>
-				<string>https://api.github.com/repos/jbtule/cdto/releases/latest</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -69,9 +54,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/%dirname%/%TERMINAL_APP%/cd to.app</string>
+				<string>%RECIPE_CACHE_DIR%/unpacked/cd to.app</string>
 				<key>requirement</key>
-				<string>identifier "name.tuley.jay.cdto" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = VURRGRYW45</string>
+				<string>anchor apple generic and identifier "name.tuley.jay.cd-to" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = VURRGRYW45)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -80,7 +65,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/%dirname%/%TERMINAL_APP%/cd to.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/unpacked/cd to.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

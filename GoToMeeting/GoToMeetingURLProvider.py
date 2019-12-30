@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2015 Elliot Jordan
+# Copyright 2015-2019 Elliot Jordan
 # Based on original processor by Nick Gamewell
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,10 +37,14 @@ BASE_URL = "https://" + HOSTNAME + "/g2mupdater/live/config.json"
 
 class GoToMeetingURLProvider(URLGetter):
 
-    """Provides a download URL for the latest GoToMeeting release."""
+    """Provides a download URL and build number for the latest GoToMeeting release."""
 
     input_variables = {
-        "base_url": {"required": False, "description": "Default is %s" % BASE_URL}
+        "base_url": {
+            "required": False,
+            "description": "URL for the GoToMeeting "
+            "releases JSON feed. Default is %s" % BASE_URL,
+        }
     }
     output_variables = {
         "url": {"description": "URL to the latest GoToMeeting release."},
@@ -48,7 +52,8 @@ class GoToMeetingURLProvider(URLGetter):
     }
     description = __doc__
 
-    def get_g2m_json(self, base_url):
+    def get_g2m_info(self, base_url):
+        """Process the JSON data from the latest release."""
 
         # Prepare download file path.
         download_dir = os.path.join(self.env["RECIPE_CACHE_DIR"], "downloads")
@@ -65,32 +70,36 @@ class GoToMeetingURLProvider(URLGetter):
         # Sometimes the base URL is compressed as gzip, sometimes it's not.
         try:
             with open(meta_file, "rb") as f:
-                jsonData = json.loads(f.read())
+                jsondata = json.loads(f.read())
                 self.output("Encoding: json")
         except ValueError:
             with gzip.open(meta_file, "rb") as f:
-                jsonData = json.loads(f.read())
+                jsondata = json.loads(f.read())
                 self.output("Encoding: gzip")
 
-        return jsonData
-
-    def get_g2m_url(self, jsonData):
-        return jsonData["activeBuilds"][len(jsonData["activeBuilds"]) - 1][
+        g2m_url = jsondata["activeBuilds"][len(jsondata["activeBuilds"]) - 1].get(
             "macDownloadUrl"
-        ]
+        )
+        if not g2m_url:
+            raise ProcessorError(
+                "No download URL for the latest release "
+                "found in the base_url JSON feed."
+            )
 
-    def get_g2m_build(self, jsonData):
-        return str(
-            jsonData["activeBuilds"][len(jsonData["activeBuilds"]) - 1]["buildNumber"]
+        g2m_build = str(
+            jsondata["activeBuilds"][len(jsondata["activeBuilds"]) - 1]["buildNumber"]
         )
 
+        return g2m_url, g2m_build
+
     def main(self):
-        """Find and return a download URL"""
+        """Main process."""
+
         base_url = self.env.get("base_url", BASE_URL)
-        jsonData = self.get_g2m_json(base_url)
-        self.env["url"] = self.get_g2m_url(jsonData)
+        g2m_url, g2m_build = self.get_g2m_info(base_url)
+        self.env["url"] = g2m_url
         self.output("Found URL: %s" % self.env["url"])
-        self.env["build"] = self.get_g2m_build(jsonData)
+        self.env["build"] = g2m_build
         self.output("Build number: %s" % self.env["build"])
 
 

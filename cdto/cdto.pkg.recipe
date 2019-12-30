@@ -12,8 +12,6 @@
 		<string>name.tuley.jay.cdto</string>
 		<key>NAME</key>
 		<string>cd to</string>
-		<key>TERMINAL_APP</key>
-		<string>terminal</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
@@ -29,7 +27,7 @@
 				<key>overwrite</key>
 				<true/>
 				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/%dirname%/%TERMINAL_APP%/cd to.app</string>
+				<string>%RECIPE_CACHE_DIR%/unpacked/cd to.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
