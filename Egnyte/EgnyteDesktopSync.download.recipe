@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>"(?P&lt;protocol&gt;[\w]+):\/\/egnyte-cdn\.egnyte\.com\/desktopsync\/mac\/%LOCALE%\/(?P&lt;version&gt;[\d\.]+)\/EgnyteDesktopSync_[\d\.]+_(?P&lt;build&gt;[\w]+)\.pkg"</string>
+				<string>"https?:\/\/egnyte-cdn\.egnyte\.com\/desktopsync\/mac\/%LOCALE%\/(?P&lt;version&gt;[\d\.]+)\/(?P&lt;download_file&gt;EgnyteDesktopSync_[\S]+\.pkg+)[\?"]</string>
 				<key>url</key>
 				<string>https://helpdesk.egnyte.com/hc/%LOCALE%/articles/201636844</string>
 			</dict>
@@ -34,7 +34,7 @@
 				<key>filename</key>
 				<string>EgnyteDesktopSync-%version%.pkg</string>
 				<key>url</key>
-				<string>%protocol%://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/%version%/EgnyteDesktopSync_%version%_%build%.pkg</string>
+				<string>https://egnyte-cdn.egnyte.com/desktopsync/mac/%LOCALE%/%version%/%download_file%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
