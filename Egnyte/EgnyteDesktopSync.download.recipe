@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Egnyte Desktop Sync.</string>
+	<string>Downloads the latest version of Egnyte Desktop Sync.
+
+NOTE: According to Egnyte, Desktop Sync will no longer be supported after December 31st, 2019. This recipe will be deprecated at some point in the future.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.EgnyteDesktopSync</string>
 	<key>Input</key>

@@ -16,6 +16,8 @@ The following input variables should be customized to your organization using a 
 - SYNC_TYPE
 - SYNC_ALL_LOCAL_FOLDERS
 - SYNC_SPECIAL_CHAR_FILENAME
+
+NOTE: According to Egnyte, Desktop Sync will no longer be supported after December 31st, 2019. This recipe will be deprecated at some point in the future.
 </string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.EgnyteDesktopSync</string>
