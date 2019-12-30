@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.3.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of MacGourmet.</string>
 	<key>Identifier</key>
@@ -12,27 +12,31 @@
 	<dict>
 		<key>NAME</key>
 		<string>MacGourmet</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>https://www.marinersoftware.com/sparkle/MacGourmet4/macgourmet4.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<key>re_pattern</key>
+				<string>\/MarinerDownloads\/MacGourmet_Deluxe\/MacGourmet_([\d_]+)\.dmg</string>
+				<key>result_output_var_name</key>
+				<string>underscore_version</string>
+				<key>url</key>
+				<string>https://s3.amazonaws.com/MarinerDownloads/index.html</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.tgz</string>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://s3.amazonaws.com/MarinerDownloads/MacGourmet_Deluxe/MacGourmet_%underscore_version%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -44,21 +48,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
+				<key>dmg_path</key>
 				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-				<key>purge_destination</key>
-				<true/>
 			</dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
+			<string>AppDmgVersioner</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/MacGourmet.app</string>
+				<string>%pathname%/MacGourmet.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.marinersoftware.MacGourmet" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = J5L75SL484)</string>
 			</dict>
