@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Tidy up any folder with one click.</string>
+			<string>Organize messy folders using pre-made or custom rules.</string>
 			<key>developer</key>
 			<string>Tunabelly Software Inc.</string>
 			<key>display_name</key>
