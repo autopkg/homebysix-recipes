@@ -24,6 +24,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>HandsFree 2 is no longer developed by Tunabelly software. See this page for details: https://www.tunabellysoftware.com/handsfree2/</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>appcast_request_headers</key>
 				<dict>
 					<key>user-agent</key>
