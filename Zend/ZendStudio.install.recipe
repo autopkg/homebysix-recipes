@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.install.ZendStudio</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Zend Studio</string>
 		<key>NAME</key>
 		<string>ZendStudio</string>
 	</dict>
@@ -25,14 +23,14 @@
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_path</key>
-				<string>%pathname%</string>
+				<string>%PKG%</string>
 				<key>items_to_copy</key>
 				<array>
 					<dict>
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%APP_FILENAME%.app</string>
+						<string>Zend Studio.app</string>
 					</dict>
 				</array>
 			</dict>
