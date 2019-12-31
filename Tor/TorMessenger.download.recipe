@@ -20,6 +20,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>As of March 2018, Tor Messenger is NO LONGER MAINTAINED and you should NOT use it. Please see the ​announcement on the blog for more information: https://blog.torproject.org/sunsetting-tor-messenger</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>re_pattern</key>
 				<string>"(https:\/\/dist\.torproject\.org\/tormessenger\/[\w\.]+/TorMessenger-[\w\.]+-osx64_%LANGUAGE%\.dmg)"</string>
 				<key>result_output_var_name</key>
