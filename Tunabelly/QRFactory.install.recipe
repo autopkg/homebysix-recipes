@@ -5,18 +5,18 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.3.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Installs the latest version of TG Pro.</string>
+	<string>Installs the latest version of QR Factory.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.install.TGPro</string>
+	<string>com.github.homebysix.install.QRFactory</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>TG Pro</string>
+		<string>QR Factory</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.TGPro</string>
+	<string>com.github.homebysix.download.QRFactory</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -30,7 +30,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>TG Pro.app</string>
+						<string>QR Factory.app</string>
 					</dict>
 				</array>
 			</dict>

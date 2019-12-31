@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.TorBrowserBundle</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>org.torproject.torbrowser</string>
 		<key>NAME</key>
 		<string>TorBrowserBundle</string>
 	</dict>

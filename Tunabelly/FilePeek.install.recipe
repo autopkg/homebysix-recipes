@@ -5,32 +5,43 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.3.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Installs the latest version of TG Pro.</string>
+	<string>Installs the latest version of File Peek.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.install.TGPro</string>
+	<string>com.github.homebysix.install.FilePeek</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>TG Pro</string>
+		<string>File Peek</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.TGPro</string>
+	<string>com.github.homebysix.download.FilePeek</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_path</key>
-				<string>%pathname%</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%dmg_path%</string>
 				<key>items_to_copy</key>
 				<array>
 					<dict>
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>TG Pro.app</string>
+						<string>File Peek.app</string>
 					</dict>
 				</array>
 			</dict>

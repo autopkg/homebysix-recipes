@@ -10,10 +10,6 @@
 	<string>com.github.homebysix.pkg.ZendStudio</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Zend Studio</string>
-		<key>BUNDLE_ID</key>
-		<string>com.zend.php.ide</string>
 		<key>NAME</key>
 		<string>ZendStudio</string>
 	</dict>
@@ -24,6 +20,11 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>app_path</key>
+				<string>%PKG%/Zend Studio.app</string>
+			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
 		</dict>

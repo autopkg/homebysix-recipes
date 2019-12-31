@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Tor Browser.</string>
+	<string>Downloads the latest version of Tor Browser.
+
+The LANGUAGE input variable is en-US by default. If you'd like to download Tor Browser in a different language, refer to the download links listed here:
+https://www.torproject.org/download/languages/
+</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.TorBrowserBundle</string>
 	<key>Input</key>
@@ -21,9 +25,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="(?P&lt;url&gt;https:\/\/www\.torproject\.org\/dist\/torbrowser\/[\d\.]+\/TorBrowser-(?P&lt;version&gt;[\d\.]+)-osx64_en-US\.dmg)"</string>
+				<string>href="\/dist\/torbrowser\/[\d\.]+\/TorBrowser-([\d\.]+)-osx64_%LANGUAGE%\.dmg"</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
 				<key>url</key>
-				<string>https://www.torproject.org/download/</string>
+				<string>https://www.torproject.org/download/languages/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -33,6 +39,8 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
+				<key>url</key>
+				<string>https://www.torproject.org/dist/torbrowser/%version%/TorBrowser-%version%-osx64_%LANGUAGE%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
