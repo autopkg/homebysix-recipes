@@ -54,7 +54,7 @@ class VersionSplitter(Processor):
 
         split_on = self.env.get("split_on", " ")
         index = self.env.get("index", 0)
-        self.env["version"] = self.env["version"].decode("utf-8").split(split_on)[index]
+        self.env["version"] = self.env["version"].split(split_on)[index]
         self.output("Split version: {}".format(self.env["version"]))
 
 
