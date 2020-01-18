@@ -2,6 +2,7 @@
 #
 # Copyright 2010 Per Olofsson
 # Updated as draft by Yoann Gini in 2017 to support 7z file format for Zoom
+# No longer needed by Zoom but kept here for reference.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
