@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2016 Elliot Jordan
+# Copyright 2016-2020 Elliot Jordan
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,11 +20,9 @@ __all__ = ["FindAndReplace"]
 
 
 class FindAndReplace(Processor):
-
     """This processor does one thing only: It searches the input variable you
     specify and replaces instances of the "find" string with the "replace"
-    string.
-    """
+    string."""
 
     input_variables = {
         "input_string": {
@@ -50,6 +48,7 @@ class FindAndReplace(Processor):
     description = __doc__
 
     def main(self):
+        """Main process."""
 
         input_string = self.env["input_string"]
         find = self.env["find"]
@@ -59,5 +58,5 @@ class FindAndReplace(Processor):
 
 
 if __name__ == "__main__":
-    processor = FindAndReplace()
-    processor.execute_shell()
+    PROCESSOR = FindAndReplace()
+    PROCESSOR.execute_shell()

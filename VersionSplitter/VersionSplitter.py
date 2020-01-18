@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2015 Elliot Jordan
+# Copyright 2015-2020 Elliot Jordan
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,10 +20,9 @@ __all__ = ["VersionSplitter"]
 
 
 class VersionSplitter(Processor):
-
     """This processor splits version numbers and returns the specified index.
-    By default, it splits using a space, and returns the first item.
-    Default behavior example: "3.0.8 :074a131:" --> "3.0.8"
+    By default, it splits using a space, and returns the first item. Default
+    behavior example: "3.0.8 :074a131:" --> "3.0.8".
 
     More examples (with "split_on" in parentheses and "index" in brackets):
     - "8.3.1.1 (154179)" --> (" ")[0] -->"8.3.1.1"
@@ -51,6 +50,7 @@ class VersionSplitter(Processor):
     description = __doc__
 
     def main(self):
+        """Main process."""
 
         split_on = self.env.get("split_on", " ")
         index = self.env.get("index", 0)
@@ -59,5 +59,5 @@ class VersionSplitter(Processor):
 
 
 if __name__ == "__main__":
-    processor = VersionSplitter()
-    processor.execute_shell()
+    PROCESSOR = VersionSplitter()
+    PROCESSOR.execute_shell()
