@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2015-2019 Elliot Jordan
+# Copyright 2015-2020 Elliot Jordan
 # Based on original processor by Nick Gamewell
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,8 +36,8 @@ BASE_URL = "https://" + HOSTNAME + "/g2mupdater/live/config.json"
 
 
 class GoToMeetingURLProvider(URLGetter):
-
-    """Provides a download URL and build number for the latest GoToMeeting release."""
+    """Provides a download URL and build number for the latest GoToMeeting
+    release."""
 
     input_variables = {
         "base_url": {
@@ -104,5 +104,5 @@ class GoToMeetingURLProvider(URLGetter):
 
 
 if __name__ == "__main__":
-    processor = GoToMeetingURLProvider()
-    processor.execute_shell()
+    PROCESSOR = GoToMeetingURLProvider()
+    PROCESSOR.execute_shell()

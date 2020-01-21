@@ -1,6 +1,5 @@
 #!/usr/bin/python
-"""
-test_functional.py
+"""test_functional.py.
 
 Functional tests for homebysix-recipes.
 """
@@ -70,7 +69,7 @@ def run_recipe(relpath):
 
 
 def test_functional():
-    """Functional tests"""
+    """Functional tests."""
 
     # Types of recipes we are targeting for testing. (Recommend "download" and "pkg" only.)
     recipe_types = ("download", "pkg")

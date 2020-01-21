@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2018 Elliot Jordan
+# Copyright 2018-2020 Elliot Jordan
 #
 # Licensed under the Apache License, Version 2.0 (the 'License');
 # you may not use this file except in compliance with the License.
@@ -25,9 +25,8 @@ __all__ = ["BinaryFileVersioner"]
 
 
 class BinaryFileVersioner(Processor):
-
-    """This processor returns the version number of a binary file that has an embedded info plist.
-    """
+    """This processor returns the version number of a binary file that has an
+    embedded info plist."""
 
     input_variables = {
         "input_file_path": {
@@ -43,7 +42,7 @@ class BinaryFileVersioner(Processor):
     description = __doc__
 
     def main(self):
-        """Main function."""
+        """Main process."""
 
         if not os.path.isfile("/bin/launchctl"):
             raise ProcessorError("/bin/launchctl is not present on this Mac.")
@@ -75,5 +74,5 @@ class BinaryFileVersioner(Processor):
 
 
 if __name__ == "__main__":
-    processor = BinaryFileVersioner()
-    processor.execute_shell()
+    PROCESSOR = BinaryFileVersioner()
+    PROCESSOR.execute_shell()

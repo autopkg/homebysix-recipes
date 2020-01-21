@@ -2,6 +2,7 @@
 #
 # Copyright 2010 Per Olofsson
 # Updated as draft by Yoann Gini in 2017 to support 7z file format for Zoom
+# No longer needed by Zoom but kept here for reference.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""See docstring for Zoom7zUnarchiver class"""
+"""See docstring for Zoom7zUnarchiver class."""
 
 import os
 import shutil
@@ -73,7 +74,7 @@ class Zoom7zUnarchiver(Processor):
     output_variables = {}
 
     def get_archive_format(self, archive_path):
-        """Guess archive format based on filename extension"""
+        """Guess archive format based on filename extension."""
         # pylint: disable=no-self-use
         for format_str, extns in EXTNS.items():
             for extn in extns:
@@ -83,7 +84,7 @@ class Zoom7zUnarchiver(Processor):
         return None
 
     def main(self):
-        """Unarchive a file"""
+        """Unarchive a file."""
         # handle some defaults for archive_path and destination_path
         archive_path = self.env.get("archive_path", self.env.get("pathname"))
         if not archive_path:
