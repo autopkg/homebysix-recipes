@@ -35,7 +35,7 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authorities</key>
+				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: Econ Technologies, Inc.</string>
 					<string>Developer ID Certification Authority</string>

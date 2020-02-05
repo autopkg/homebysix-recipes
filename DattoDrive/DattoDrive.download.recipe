@@ -44,7 +44,7 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authorities</key>
+				<key>expected_authority_names</key>
 				<array>
 					<string>ownCloud Inc. (9B5WD74GWJ)</string>
 					<string>Developer ID Certification Authority</string>
