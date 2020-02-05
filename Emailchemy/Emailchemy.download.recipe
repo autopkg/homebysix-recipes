@@ -35,7 +35,7 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authorities</key>
+				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Application: Weird Kid Software LLC (5354MQYYTT)</string>
 					<string>Developer ID Certification Authority</string>

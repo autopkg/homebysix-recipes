@@ -37,7 +37,7 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authorities</key>
+				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: SugarSync, Inc. (SX99Q6TQQJ)</string>
 					<string>Developer ID Certification Authority</string>
