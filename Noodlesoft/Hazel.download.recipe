@@ -37,14 +37,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authorities</key>
-				<array>
-					<string>Apple Root CA</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Developer ID Application: Noodlesoft, LLC</string>
-				</array>
 				<key>input_path</key>
 				<string>%pathname%/Install Hazel.app</string>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.noodlesoft.Install-Hazel" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "86Z3GCJ4MF")</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
