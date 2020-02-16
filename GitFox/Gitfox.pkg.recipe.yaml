@@ -1,0 +1,10 @@
+Description: Downloads the latest version of Gitfox and creates a package.
+Identifier: com.github.homebysix.pkg.Gitfox
+Input:
+  NAME: Gitfox
+MinimumVersion: '2.0.3'
+ParentRecipe: com.github.homebysix.download.Gitfox
+Process:
+- Processor: AppPkgCreator
+  Arguments:
+    app_path: '%RECIPE_CACHE_DIR%/%NAME%/Gitfox.app'

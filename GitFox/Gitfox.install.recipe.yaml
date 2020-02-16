@@ -1,0 +1,17 @@
+Description: Installs the latest version of Gitfox.
+Identifier: com.github.homebysix.install.Gitfox
+Input:
+  NAME: Gitfox
+MinimumVersion: '2.0.3'
+ParentRecipe: com.github.homebysix.download.Gitfox
+Process:
+- Processor: DmgCreator
+  Arguments:
+    dmg_path: '%RECIPE_CACHE_DIR%/%NAME%.dmg'
+    dmg_root: '%RECIPE_CACHE_DIR%/%NAME%'
+- Processor: InstallFromDMG
+  Arguments:
+    dmg_path: '%dmg_path%'
+    items_to_copy:
+    - destination_path: /Applications
+      source_item: Gitfox.app
