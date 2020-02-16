@@ -1,0 +1,24 @@
+Description: Downloads the latest version of Gitfox and imports it into Munki.
+Identifier: com.github.homebysix.munki.Gitfox
+Input:
+  MUNKI_REPO_SUBDIR: apps/%NAME%
+  NAME: Gitfox
+  pkginfo:
+    catalogs:
+    - testing
+    description: Fast and powerful Git client.
+    developer: Erik Aigner
+    display_name: Gitfox
+    name: '%NAME%'
+    unattended_install: true
+MinimumVersion: '2.0.3'
+ParentRecipe: com.github.homebysix.download.Gitfox
+Process:
+- Processor: DmgCreator
+  Arguments:
+    dmg_path: '%RECIPE_CACHE_DIR%/%NAME%.dmg'
+    dmg_root: '%RECIPE_CACHE_DIR%/%NAME%'
+- Processor: MunkiImporter
+  Arguments:
+    pkg_path: '%dmg_path%'
+    repo_subdirectory: '%MUNKI_REPO_SUBDIR%'
