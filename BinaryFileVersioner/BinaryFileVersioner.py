@@ -50,7 +50,9 @@ class BinaryFileVersioner(Processor):
         cmd = "/bin/launchctl plist __TEXT,__info_plist '{}'".format(
             self.env["input_file_path"]
         )
-        proc = Popen(shlex.split(cmd.strip()), stdin=PIPE, stdout=PIPE, stderr=PIPE)
+        proc = Popen(
+            shlex.split(cmd.strip()), stdin=PIPE, stdout=PIPE, stderr=PIPE, text=True
+        )
         out, err = proc.communicate()
         exitcode = proc.returncode
 
