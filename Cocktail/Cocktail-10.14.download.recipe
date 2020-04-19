@@ -60,7 +60,7 @@
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Cocktail.app</string>
 				<key>requirement</key>
-				<string>identifier "com.maintain.cocktail.mojave" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "49Q84U5WS2"</string>
+				<string>identifier "com.maintain.cocktail.mojave12" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = HC63V5YZGB</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
