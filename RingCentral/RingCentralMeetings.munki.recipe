@@ -50,33 +50,13 @@
 				<key>installs_item_paths</key>
 				<array>
 					<string>/Applications/RingCentral Meetings.app</string>
+					<string>/Library/Internet Plug-Ins/RingCentralMeetings.plugin</string>
 				</array>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiInstallsItemsCreator</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>additional_pkginfo</key>
-				<dict>
-					<key>receipts</key>
-					<array>
-						<dict>
-							<key>packageid</key>
-							<string>us.zoom.pkg.ringcentral</string>
-							<key>version</key>
-							<string>%version%</string>
-						</dict>
-					</array>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
-			</dict>
 			<key>Processor</key>
 			<string>MunkiPkginfoMerger</string>
 		</dict>
