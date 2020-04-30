@@ -42,19 +42,16 @@ audioPluginfile="$app_path/Contents/Plugins/ZoomAudioDevice.driver"
 if [ "$minorver" -gt 9 ]; then
     echo "Install audio device drive" >> "$LOG_PATH"
 
-    # unload device kernel if loaded
-    st="$(/usr/sbin/kextstat -b zoom.us.ZoomAudioDevice | /usr/bin/grep zoom.us.ZoomAudioDevice 2>&1)"
-
-    if echo "$st" | grep -q "zoom.us.ZoomAudioDevice"; then
-        echo "audio device is loaded: ($st) skip driver" >> "$LOG_PATH"
-    else
-        #install audio driver
-        if [ -d "$AudioPluginPath/ZoomAudioDevice.driver" ]; then
-            /bin/rm -rf "$AudioPluginPath/ZoomAudioDevice.driver"
-        fi
-
-        /bin/cp -rf "$audioPluginfile" "$AudioPluginPath"
+    #install audio driver
+    if [ -d "$AudioPluginPath/ZoomAudioDevice.driver" ]; then
+        /bin/rm -rf "$AudioPluginPath/ZoomAudioDevice.driver"
     fi
+
+    # make intermediate directories
+    /bin/mkdir -p "$AudioPluginPath"
+    
+    # copy audio plugin
+    /bin/cp -rf "$audioPluginfile" "$AudioPluginPath"
 #################################
 # use audio device kernel
 else
@@ -181,5 +178,19 @@ else
 fi
 #################################
 #audio device end
+
+function removePluginsInUserFolder
+{
+   # Loop through all users with UIDs over 500
+    for name in $(/usr/bin/dscl /Local/Default list /Users UniqueID | /usr/bin/awk '$2 > 500 {print $1}'); do
+        # Determine home directory of user
+        userHome="$(/usr/bin/dscl /Local/Default read /Users/$name NFSHomeDirectory | /usr/bin/awk '{print $2}')"
+        
+        if [[ -d "$userHome/Library/Application Support/zoom.us/Plugins" ]] ; then
+            /bin/rm -rf "$userHome/Library/Application Support/zoom.us/Plugins"
+        fi
+    done
+}
+removePluginsInUserFolder
 
 exit 0
