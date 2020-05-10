@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>VimR</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://vimr.org/appcast.xml</string>
+		<string>https://raw.githubusercontent.com/qvacua/vimr/master/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
