@@ -3,15 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of ClamXav and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.ClamXav</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>uk.co.canimaansoftware.clamxav</string>
 		<key>NAME</key>
 		<string>ClamXav</string>
 	</dict>
@@ -24,35 +22,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>chown</key>
-					<array>
-						<dict>
-							<key>group</key>
-							<string>admin</string>
-							<key>path</key>
-							<string>Applications</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-					</array>
-					<key>id</key>
-					<string>%BUNDLE_ID%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-					<key>pkgroot</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-					<key>scripts</key>
-					<string>scripts</string>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
+				<key>app_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/ClamXAV.app</string>
 			</dict>
 			<key>Processor</key>
-			<string>PkgCreator</string>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
