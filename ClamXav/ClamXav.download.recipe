@@ -9,7 +9,6 @@
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.ClamXav</string>
 	<key>Input</key>
-	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>ClamXAV</string>
