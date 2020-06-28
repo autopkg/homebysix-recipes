@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>uBar</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>https://brawersoftware.com/appcasts/feeds/ubar/ubar3.xml</string>
+		<string>https://brawersoftware.com/appcasts/feeds/ubar/ubar4.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
