@@ -20,23 +20,23 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
+		<key>Arguments</key>
+		<dict>
+			<key>pkgdirs</key>
 			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0775</string>
-					<key>Library</key>
-					<string>0775</string>
-					<key>Library/Internet Plug-Ins</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>Applications</key>
+				<string>0775</string>
+				<key>Library</key>
+				<string>0775</string>
+				<key>Library/Internet Plug-Ins</key>
+				<string>0775</string>
 			</dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
+			<key>pkgroot</key>
+			<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 		</dict>
+		<key>Processor</key>
+		<string>PkgRootCreator</string>
+	</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -51,32 +51,30 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/zm.zip</string>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications</string>
-				<key>purge_destination</key>
-				<true/>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/expanded/install.pkg/Payload</string>
 			</dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
+			<string>PkgPayloadUnpacker</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>source</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/Scripts/RingCentralMeetings.plugin</string>
-				<key>target</key>
-				<string>%pkgroot%/Library/Internet Plug-Ins/RingCentralMeetings.plugin</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileMover</string>
-		</dict>
+	<key>Arguments</key>
+	<dict>
+		<key>source</key>
+		<string>%RECIPE_CACHE_DIR%/expanded/install.pkg/Scripts/RingCentralMeetings.plugin</string>
+		<key>target</key>
+		<string>%pkgroot%/Library/Internet Plug-Ins/RingCentralMeetings.plugin</string>
+	</dict>
+	<key>Processor</key>
+	<string>FileMover</string>
+</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pkgroot%/Applications/RingCentral Meetings.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/RingCentral Meetings.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
 			</dict>
@@ -93,6 +91,8 @@
 						<dict>
 							<key>group</key>
 							<string>admin</string>
+							<key>path</key>
+							<string>Applications/RingCentral Meetings.app</string>
 							<key>path</key>
 							<string>Library/Internet Plug-Ins/RingCentralMeetings.plugin</string>
 							<key>user</key>
