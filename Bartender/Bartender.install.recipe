@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Installs the latest version of Bartender.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.install.Bartender</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Bartender</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.Bartender</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%dmg_path%</string>
+				<key>items_to_copy</key>
+				<array>
+					<dict>
+						<key>destination_path</key>
+						<string>/Applications</string>
+						<key>source_item</key>
+						<string>Bartender 3.app</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>InstallFromDMG</string>
+		</dict>
+	</array>
+</dict>
+</plist>

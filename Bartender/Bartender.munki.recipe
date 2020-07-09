@@ -23,7 +23,7 @@
 			<key>description</key>
 			<string>Bartender 3 lets you organize your menu bar icons, by hiding them, rearranging them, show hidden items with a click or keyboard shortcut and have icons show when they update.</string>
 			<key>developer</key>
-			<string>Surtees Studio</string>
+			<string>Surtees Studios</string>
 			<key>display_name</key>
 			<string>Bartender</string>
 			<key>name</key>
@@ -44,7 +44,7 @@
 				<key>dmg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 			</dict>
 			<key>Processor</key>
 			<string>DmgCreator</string>
