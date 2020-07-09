@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.Bartender</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.surteesstudios.Bartender</string>
 		<key>NAME</key>
 		<string>Bartender</string>
 	</dict>
@@ -22,68 +20,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-				<key>purge_destination</key>
-				<true/>
+				<key>app_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Bartender 3.app</string>
 			</dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Bartender 3.app</string>
-				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.surteesstudios.Bartender" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8DD663WDX4")</string>
-			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Bartender 3.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>chown</key>
-					<array>
-						<dict>
-							<key>group</key>
-							<string>admin</string>
-							<key>path</key>
-							<string>Applications</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-					</array>
-					<key>id</key>
-					<string>%BUNDLE_ID%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-					<key>pkgroot</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
