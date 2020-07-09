@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Installs the latest version of App Wrapper 3.</string>
 	<key>Identifier</key>
@@ -14,7 +14,7 @@
 		<string>App Wrapper 3</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.AppWrapper3</string>
 	<key>Process</key>
@@ -23,18 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pathname%</string>
 				<key>items_to_copy</key>
 				<array>
 					<dict>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of App Wrapper 3 and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -23,7 +23,7 @@
 			<key>description</key>
 			<string>App packager for the Mac App Store.</string>
 			<key>developer</key>
-			<string>Ohanaware Co., LTD</string>
+			<string>Ohanaware Co</string>
 			<key>display_name</key>
 			<string>App Wrapper 3</string>
 			<key>name</key>
@@ -33,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.AppWrapper3</string>
 	<key>Process</key>
@@ -41,19 +41,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
