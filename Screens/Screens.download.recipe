@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Screens</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>https://updates.edovia.com/com.edovia.screens.mac/appcast.xml</string>
+		<string>https://updates.edovia.com/com.edovia.screens4.mac/appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -58,9 +58,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Screens.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Screens 4.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.edovia.screens.mac" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = F69M46B76S)</string>
+				<string>anchor apple generic and identifier "com.edovia.screens4.mac" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = F69M46B76S)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
