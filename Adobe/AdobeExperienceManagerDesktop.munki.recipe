@@ -26,6 +26,8 @@
 			<string>Adobe</string>
 			<key>display_name</key>
 			<string>Adobe Experience Manager Desktop</string>
+			<key>minimum_os</key>
+			<string>10.14</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
