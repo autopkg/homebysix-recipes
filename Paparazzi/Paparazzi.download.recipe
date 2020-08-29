@@ -12,8 +12,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Paparazzi</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>https://derailer.org/paparazzi/appcast/</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -22,24 +20,28 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<key>re_pattern</key>
+				<string>class="version"&gt;([\d\.b]+)&lt;/span&gt;</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+				<key>url</key>
+				<string>https://derailer.org/paparazzi/downloads</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>find</key>
-				<string>%2520</string>
-				<key>input_string</key>
-				<string>%url%</string>
-				<key>replace</key>
-				<string>%20</string>
+				<key>re_pattern</key>
+				<string>href="(downloads/Paparazzi!%20%version%.dmg)"&gt;</string>
+				<key>result_output_var_name</key>
+				<string>urlpath</string>
+				<key>url</key>
+				<string>https://derailer.org/paparazzi/downloads</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -47,7 +49,7 @@
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
-				<string>%output_string%</string>
+				<string>https://derailer.org/paparazzi/%urlpath%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -55,6 +57,17 @@
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Paparazzi!.app</string>
+				<key>requirement</key>
+				<string>identifier "org.derailer.Paparazzi" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = M72QZ9W58G</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 	</array>
 </dict>
