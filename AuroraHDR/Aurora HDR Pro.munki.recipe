@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Aurora HDR Pro and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -25,7 +23,7 @@
 			<key>developer</key>
 			<string>macphun.com, LLC</string>
 			<key>display_name</key>
-			<string>Aurora HDR Pro</string>
+			<string>Aurora HDR</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
