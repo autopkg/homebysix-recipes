@@ -22,6 +22,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Tokens is under new management (https://gikken.co/tokens/about/) and a new major version is due September 2020. This recipe will be updated after that release is available.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>appcast_url</key>
 				<string>%SPARKLE_FEED_URL%</string>
 			</dict>

@@ -18,6 +18,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Transmit Disk has been discontinued. For more information: https://library.panic.com/transmit/transmit5/transmit-disk/#transmit-disk-has-been-discontinued-as-of-transmit-5-6-0</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>re_pattern</key>
 				<string>href="\/transmit\/Transmit%20Disk%20([\d\.]+)\.pkg\.zip"</string>
 				<key>result_output_var_name</key>
