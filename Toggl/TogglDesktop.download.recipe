@@ -12,8 +12,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>TogglDesktop</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>https://assets.toggl.com/installers/darwin_stable_appcast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -22,11 +20,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<key>re_pattern</key>
+				<string>"(?P&lt;url&gt;https:\/\/github\.com\/toggl-open-source\/toggldesktop\/releases\/download\/v(?P&lt;version&gt;[\d\.]+)\/TogglDesktop-.+\.dmg)"</string>
+				<key>url</key>
+				<string>https://toggl-open-source.github.io/toggldesktop/download/macos-stable/</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
