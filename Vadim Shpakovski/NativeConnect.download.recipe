@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>"download_url":"(https:\/\/rink\.hockeyapp\.net\/api\/2\/apps\/136709643b7d4ed48cb3eb65b2bda842\/app_versions\/%release_id%\?.+)","install_url":</string>
+				<string>"download_url":"(https:\/\/.+\.app\.zip\?.+)","install_url":</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
