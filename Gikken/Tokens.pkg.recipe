@@ -5,9 +5,14 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.1.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Installs the latest version of Tokens.</string>
+	<string>Downloads the latest version of Tokens and creates a package.
+
+Note: Tokens was taken over by a new developer, Gikken, and Tokens 2 was released in September 2020.
+Despite the name and path (/Applications/Tokens 2.app), the first version of this new app is 1.0.0.
+This may require you to manually adjust your distribution method (e.g. Munki pkginfo) if you wish to
+upgrade from the old app from developer Peer Assembly.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.install.Tokens</string>
+	<string>com.github.homebysix.pkg.Tokens</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -22,31 +27,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>app_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Tokens 2.app</string>
 			</dict>
 			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%dmg_path%</string>
-				<key>items_to_copy</key>
-				<array>
-					<dict>
-						<key>destination_path</key>
-						<string>/Applications</string>
-						<key>source_item</key>
-						<string>Tokens.app</string>
-					</dict>
-				</array>
-			</dict>
-			<key>Processor</key>
-			<string>InstallFromDMG</string>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
