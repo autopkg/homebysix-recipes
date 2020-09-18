@@ -1,0 +1,14 @@
+Description: Downloads the current release version of Quicksilver and builds a package.
+Identifier: com.github.homebysix.pkg.Quicksilver
+MinimumVersion: 1.0.0
+ParentRecipe: com.github.keeleysam.recipes.Quicksilver.download
+
+Input:
+  NAME: Quicksilver
+
+Process:
+  - Arguments:
+      dmg_path: "%pathname%"
+    Processor: QuicksilverDmgVersioner
+
+  - Processor: QuicksilverPkgCreator
