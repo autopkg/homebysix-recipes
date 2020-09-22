@@ -1,6 +1,7 @@
 #!/usr/local/autopkg/python
 #
-# Copyright 2016 Greg Neagle
+# Based on AppPkgCreator, Copyright 2016 Greg Neagle
+# Adapted to use Foundation, 2020 Graham Pugh
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +14,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""See docstring for AppPkgCreator class"""
+"""See docstring for QuicksilverPkgCreator class"""
 
 import os.path
 import plistlib
