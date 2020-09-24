@@ -35,15 +35,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pattern</key>
-				<string>%RECIPE_CACHE_DIR%/unzipped/*/bin/gh</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileFinder</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkgdirs</key>
 				<dict>
 					<key>usr</key>
@@ -51,6 +42,12 @@
 					<key>usr/local</key>
 					<string>0775</string>
 					<key>usr/local/bin</key>
+					<string>0775</string>
+					<key>usr/local/share/</key>
+					<string>0775</string>
+					<key>usr/local/share/man</key>
+					<string>0775</string>
+					<key>usr/local/share/man/man1</key>
 					<string>0775</string>
 				</dict>
 				<key>pkgroot</key>
@@ -62,13 +59,26 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source</key>
-				<string>%found_filename%</string>
-				<key>target</key>
-				<string>%RECIPE_CACHE_DIR%/pkgroot/usr/local/bin/gh</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unzipped/*/bin/gh</string>
+				<key>target_path</key>
+				<string>%pkgroot%/usr/local/bin/gh</string>
 			</dict>
 			<key>Processor</key>
-			<string>FileMover</string>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unzipped/*/share/man/man1</string>
+				<key>destination_path</key>
+				<string>%pkgroot%/usr/local/share/man/man1</string>
+				<key>overwrite</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -83,7 +93,7 @@
 							<key>mode</key>
 							<string>0755</string>
 							<key>path</key>
-							<string>usr/local/bin/gh</string>
+							<string>usr</string>
 							<key>user</key>
 							<string>root</string>
 						</dict>
