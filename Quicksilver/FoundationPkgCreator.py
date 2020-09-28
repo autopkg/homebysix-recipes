@@ -41,7 +41,7 @@ from autopkglib.PkgCreator import PkgCreator  # pylint: disable=import-error
 __all__ = ["FoundationPkgCreator"]
 
 
-class QuicksilverPkgCreator(DmgMounter, PkgCreator):
+class FoundationPkgCreator(DmgMounter, PkgCreator):
     """Calls autopkgserver to create a package from an application."""
 
     description = __doc__
