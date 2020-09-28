@@ -1,7 +1,7 @@
 #!/usr/local/autopkg/python
 #
 # Based on AppDmgVersioner, Copyright 2010 Per Olofsson
-#  Adapted to use Foundation, 2020 Graham Pugh
+# Adapted to use Foundation, 2020 Graham Pugh
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""See docstring for QuicksilverDmgVersioner class"""
+"""See docstring for FoundationDmgVersioner class"""
 
 import glob
 import os.path
@@ -35,10 +35,10 @@ from Foundation import NSPropertyListXMLFormat_v1_0
 from autopkglib import ProcessorError  # pylint: disable=import-error
 from autopkglib.DmgMounter import DmgMounter  # pylint: disable=import-error
 
-__all__ = ["QuicksilverDmgVersioner"]
+__all__ = ["FoundationDmgVersioner"]
 
 
-class QuicksilverDmgVersioner(DmgMounter):
+class FoundationDmgVersioner(DmgMounter):
     # we dynamically set the docstring from the description (DRY), so:
     description = "Extracts bundle ID and version of app inside dmg."
     input_variables = {
@@ -144,5 +144,5 @@ class QuicksilverDmgVersioner(DmgMounter):
 
 
 if __name__ == "__main__":
-    PROCESSOR = QuicksilverDmgVersioner()
+    PROCESSOR = FoundationDmgVersioner()
     PROCESSOR.execute_shell()

@@ -24,11 +24,11 @@
 				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
-			<string>QuicksilverDmgVersioner</string>
+			<string>FoundationDmgVersioner</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>QuicksilverPkgCreator</string>
+			<string>FoundationPkgCreator</string>
 		</dict>
 	</array>
 </dict>

@@ -14,7 +14,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""See docstring for QuicksilverPkgCreator class"""
+"""See docstring for FoundationPkgCreator class"""
 
 import os.path
 import plistlib
@@ -38,7 +38,7 @@ from autopkglib import ProcessorError  # pylint: disable=import-error
 from autopkglib.DmgMounter import DmgMounter  # pylint: disable=import-error
 from autopkglib.PkgCreator import PkgCreator  # pylint: disable=import-error
 
-__all__ = ["QuicksilverPkgCreator"]
+__all__ = ["FoundationPkgCreator"]
 
 
 class QuicksilverPkgCreator(DmgMounter, PkgCreator):
@@ -303,5 +303,5 @@ class QuicksilverPkgCreator(DmgMounter, PkgCreator):
 
 
 if __name__ == "__main__":
-    PROCESSOR = QuicksilverPkgCreator()
+    PROCESSOR = FoundationPkgCreator()
     PROCESSOR.execute_shell()
