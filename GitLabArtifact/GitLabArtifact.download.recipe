@@ -19,7 +19,7 @@
 		<key>URLENCODED_PROJECT</key>
 		<string>owner%2frepository</string>
 		<key>VIRUSTOTAL_AUTO_SUBMIT</key>
-		<string>False</string>
+		<false/>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.4</string>
