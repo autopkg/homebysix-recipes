@@ -1,0 +1,15 @@
+#!/bin/bash
+# Install BlueJeans audio driver and privileged helper tool
+HELPER_SRC="$3/Applications/BlueJeans.app/Contents/Library/LaunchServices/com.bluejeansnet.PrivilegedHelper"
+HELPER_DST="$3/Library/PrivilegedHelperTools/com.bluejeansnet.PrivilegedHelper"
+if [[ -f $HELPER_SRC ]]; then
+    /bin/mkdir -pv "$3/Library/PrivilegedHelperTools/"
+    /bin/cp -v "$HELPER_SRC" "$HELPER_DST"
+fi
+DRIVER_SRC="$3/Applications/BlueJeans.app/Contents/Resources/BlueJeans Audio.driver"
+DRIVER_DST="$3/Library/Audio/Plug-Ins/HAL/BlueJeans Audio.driver"
+if [[ -d $DRIVER_SRC ]]; then
+    /bin/mkdir -pv "$3/Library/Audio/Plug-Ins/HAL/"
+    /bin/cp -Rv "$DRIVER_SRC" "$DRIVER_DST"
+fi
+exit 0

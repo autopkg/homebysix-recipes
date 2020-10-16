@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v1.1.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of BlueJeans and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -33,13 +31,33 @@
 			<string>BlueJeans</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
+# Install BlueJeans audio driver and privileged helper tool
+HELPER_SRC="/Applications/BlueJeans.app/Contents/Library/LaunchServices/com.bluejeansnet.PrivilegedHelper"
+HELPER_DST="/Library/PrivilegedHelperTools/com.bluejeansnet.PrivilegedHelper"
+if [[ -f $HELPER_SRC ]]; then
+    /bin/mkdir -pv "/Library/PrivilegedHelperTools/"
+    /bin/cp -v "$HELPER_SRC" "$HELPER_DST"
+fi
+DRIVER_SRC="/Applications/BlueJeans.app/Contents/Resources/BlueJeans Audio.driver"
+DRIVER_DST="/Library/Audio/Plug-Ins/HAL/BlueJeans Audio.driver"
+if [[ -d $DRIVER_SRC ]]; then
+    /bin/mkdir -pv "/Library/Audio/Plug-Ins/HAL/"
+    /bin/cp -Rv "$DRIVER_SRC" "$DRIVER_DST"
+fi
+exit 0
+</string>
+			<key>postuninstall_script</key>
+			<string>#!/bin/bash
+/bin/rm -f "/Library/PrivilegedHelperTools/com.bluejeansnet.PrivilegedHelper"
+/bin/rm -rf "/Library/Audio/Plug-Ins/HAL/BlueJeans Audio.driver"
+</string>
 			<key>preinstall_script</key>
 			<string>#!/bin/bash
-# remove any existing 1.x version of "Blue Jeans.app"
-if [[ -d "/Applications/Blue Jeans.app" ]]; then
-		/bin/rm -rf "/Applications/Blue Jeans.app"
-fi
-			</string>
+# Remove any existing 1.x version of "Blue Jeans.app"
+/bin/rm -rf "/Applications/Blue Jeans.app"
+</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
