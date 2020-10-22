@@ -1,0 +1,9 @@
+#!/bin/bash
+# Install DropDMG command line tool
+CLI_SRC="$3/Applications/DropDMG.app/Contents/Frameworks/DropDMGFramework.framework/Versions/Current/dropdmg"
+CLI_DST="$3/usr/local/bin/dropdmg"
+if [[ -f $CLI_SRC ]]; then
+    /bin/mkdir -pv "$3/usr/local/bin/"
+    /bin/cp -v "$CLI_SRC" "$CLI_DST"
+fi
+exit 0

@@ -28,6 +28,21 @@
 			<string>DropDMG</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
+# Install DropDMG command line tool
+CLI_SRC="/Applications/DropDMG.app/Contents/Frameworks/DropDMGFramework.framework/Versions/Current/dropdmg"
+CLI_DST="/usr/local/bin/dropdmg"
+if [[ -f $CLI_SRC ]]; then
+    /bin/mkdir -pv "/usr/local/bin/"
+    /bin/cp -v "$CLI_SRC" "$CLI_DST"
+fi
+exit 0
+</string>
+			<key>postuninstall_script</key>
+			<string>#!/bin/bash
+/bin/rm -f "/usr/local/bin/dropdmg"
+</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
