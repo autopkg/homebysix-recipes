@@ -31,8 +31,25 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>find</key>
+				<string>%2520</string>
+				<key>input_string</key>
+				<string>%url%</string>
+				<key>replace</key>
+				<string>%20</string>
+			</dict>
+			<key>Comment</key>
+			<string>The Screens Sparkle feed contains a double-encoded download URL, so we must manually fix it here.</string>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%-%version%.zip</string>
+				<key>url</key>
+				<string>%output_string%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
