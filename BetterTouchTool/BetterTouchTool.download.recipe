@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>BetterTouchTool</string>
 		<key>DOWNLOAD_URL</key>
-		<string>https://bettertouchtool.net/releases/BetterTouchTool.zip</string>
+		<string>https://folivora.ai/releases/BetterTouchTool.zip</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
