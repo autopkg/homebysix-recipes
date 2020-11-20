@@ -38,6 +38,21 @@
 	<string>com.github.homebysix.pkg.Hazel</string>
 	<key>Process</key>
 	<array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>additional_pkginfo</key>
+                <dict>
+                	<key>preinstall_script</key>
+                	<string>#!/bin/sh
+
+rm -r /Library/PreferencePanes/Hazel.prefpane
+/usr/sbin/pkgutil --forget com.noodlesoft.Hazel</string>
+                </dict>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
