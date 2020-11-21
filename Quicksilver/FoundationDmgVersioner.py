@@ -21,6 +21,7 @@ import os.path
 
 from autopkglib import ProcessorError  # pylint: disable=import-error
 from autopkglib.DmgMounter import DmgMounter  # pylint: disable=import-error
+
 # PyLint cannot properly find names inside Cocoa libraries, so issues bogus
 # No name 'Foo' in module 'Bar' warnings. Disable them.
 # pylint: disable=E0611
@@ -28,7 +29,6 @@ from Foundation import (
     NSData,
     NSPropertyListMutableContainers,
     NSPropertyListSerialization,
-    NSPropertyListXMLFormat_v1_0,
 )
 
 # pylint: enable=E0611

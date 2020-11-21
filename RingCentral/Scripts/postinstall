@@ -10,7 +10,7 @@ function removePluginsInUserFolder
     for name in $(/usr/bin/dscl /Local/Default list /Users UniqueID | /usr/bin/awk '$2 > 500 {print $1}'); do
         # Determine home directory of user
         userHome="$(/usr/bin/dscl /Local/Default read /Users/$name NFSHomeDirectory | /usr/bin/awk '{print $2}')"
-        
+
         if [[ -d "$userHome/Library/Application Support/RingCentral Meetings/Plugins" ]] ; then
             /bin/rm -rf "$userHome/Library/Application Support/RingCentral Meetings/Plugins"
         fi

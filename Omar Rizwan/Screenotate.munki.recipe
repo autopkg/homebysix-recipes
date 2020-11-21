@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Adobe Experience Manager Desktop and imports it into Munki.</string>
+	<string>Downloads the latest version of Screenotate and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.AdobeExperienceManagerDesktop</string>
+	<string>com.github.homebysix.munki.Screenotate</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Adobe Experience Manager Desktop</string>
+		<string>Screenotate</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,23 +21,23 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>The Adobe Experience Manager desktop app connects repositories and desktop applications, including Adobe and third-party ones, to provide faster access to resources and streamlined workflows.</string>
+			<string>Utility that runs optical character recognition (OCR) on screenshots as you take them, allowing you to better search their contents.</string>
 			<key>developer</key>
-			<string>Adobe</string>
+			<string>Omar Rizwan</string>
 			<key>display_name</key>
-			<string>Adobe Experience Manager Desktop</string>
-			<key>minimum_os_version</key>
-			<string>10.14</string>
+			<string>Screenotate</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
 			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.AdobeExperienceManagerDesktop</string>
+	<string>com.github.homebysix.download.Screenotate</string>
 	<key>Process</key>
 	<array>
 		<dict>

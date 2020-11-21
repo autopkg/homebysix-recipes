@@ -17,13 +17,13 @@
 """See docstring for FoundationPkgCreator class"""
 
 import os.path
-import plistlib
 import shutil
 from glob import glob
 
 from autopkglib import ProcessorError  # pylint: disable=import-error
 from autopkglib.DmgMounter import DmgMounter  # pylint: disable=import-error
 from autopkglib.PkgCreator import PkgCreator  # pylint: disable=import-error
+
 # PyLint cannot properly find names inside Cocoa libraries, so issues bogus
 # No name 'Foo' in module 'Bar' warnings. Disable them.
 # pylint: disable=E0611
@@ -31,7 +31,6 @@ from Foundation import (
     NSData,
     NSPropertyListMutableContainers,
     NSPropertyListSerialization,
-    NSPropertyListXMLFormat_v1_0,
 )
 
 # pylint: enable=E0611
