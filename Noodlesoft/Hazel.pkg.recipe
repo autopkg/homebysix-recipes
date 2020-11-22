@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with some help from Recipe Robot v1.0.2 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with some help from Recipe Robot v2.1.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Hazel and creates a package.</string>
 	<key>Identifier</key>
@@ -22,62 +22,8 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Library</key>
-					<string>0775</string>
-					<key>Library/PreferencePanes</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
 			<key>Processor</key>
-			<string>PkgRootCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Library/PreferencePanes/Hazel.prefPane</string>
-				<key>source_path</key>
-				<string>%pathname%/Install Hazel.app/Contents/Resources/Hazel.prefPane</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>chown</key>
-					<array>
-						<dict>
-							<key>group</key>
-							<string>admin</string>
-							<key>path</key>
-							<string>Library/PreferencePanes</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-					</array>
-					<key>id</key>
-					<string>%BUNDLE_ID%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-					<key>pkgroot</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>

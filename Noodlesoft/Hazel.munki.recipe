@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with some help from Recipe Robot v1.0.2 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with some help from Recipe Robot v2.1.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Hazel and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -38,9 +38,26 @@
 	<string>com.github.homebysix.pkg.Hazel</string>
 	<key>Process</key>
 	<array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>additional_pkginfo</key>
+                <dict>
+                	<key>preinstall_script</key>
+                	<string>#!/bin/sh
+
+rm -r /Library/PreferencePanes/Hazel.prefpane
+/usr/sbin/pkgutil --forget com.noodlesoft.Hazel</string>
+                </dict>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with some help from Recipe Robot v1.0.2 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with some help from Recipe Robot v2.1.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Installs the latest version of Hazel.</string>
 	<key>Identifier</key>
@@ -28,9 +28,9 @@
 				<array>
 					<dict>
 						<key>destination_path</key>
-						<string>/Library/PreferencePanes</string>
+						<string>/Applications</string>
 						<key>source_item</key>
-						<string>Install Hazel.app/Contents/Resources/Hazel.prefPane</string>
+						<string>Hazel.app</string>
 					</dict>
 				</array>
 			</dict>
