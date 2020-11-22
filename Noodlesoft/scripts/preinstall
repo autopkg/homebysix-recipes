@@ -1,0 +1,5 @@
+#!/bin/sh
+# Remove old Hazel preference pane
+rm -rf "$3/Library/PreferencePanes/Hazel.prefpane"
+/usr/sbin/pkgutil --forget com.noodlesoft.Hazel
+exit 0
