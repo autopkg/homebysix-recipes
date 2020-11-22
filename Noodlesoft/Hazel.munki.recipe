@@ -28,6 +28,13 @@
 			<string>Hazel</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>preinstall_script</key>
+			<string>#!/bin/sh
+# Remove old Hazel preference pane
+rm -rf "/Library/PreferencePanes/Hazel.prefpane"
+/usr/sbin/pkgutil --forget com.noodlesoft.Hazel
+exit 0
+</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
@@ -35,24 +42,9 @@
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.Hazel</string>
+	<string>com.github.homebysix.download.Hazel</string>
 	<key>Process</key>
 	<array>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>additional_pkginfo</key>
-                <dict>
-                	<key>preinstall_script</key>
-                	<string>#!/bin/sh
-
-rm -r /Library/PreferencePanes/Hazel.prefpane
-/usr/sbin/pkgutil --forget com.noodlesoft.Hazel</string>
-                </dict>
-            </dict>
-            <key>Processor</key>
-            <string>MunkiPkginfoMerger</string>
-        </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
