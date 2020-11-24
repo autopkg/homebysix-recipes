@@ -26,7 +26,7 @@
 			<string>Adobe</string>
 			<key>display_name</key>
 			<string>Adobe Experience Manager Desktop</string>
-			<key>minimum_os</key>
+			<key>minimum_os_version</key>
 			<string>10.14</string>
 			<key>name</key>
 			<string>%NAME%</string>

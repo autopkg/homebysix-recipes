@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with some help from Recipe Robot v2.1.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Hazel and imports it into Munki.</string>
+	<string>Downloads the latest version of Screenotate and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.Hazel</string>
+	<string>com.github.homebysix.munki.Screenotate</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Hazel</string>
+		<string>Screenotate</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,28 +21,23 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Automation tool to keep your files and folders organized and tidy.</string>
+			<string>Utility that runs optical character recognition (OCR) on screenshots as you take them, allowing you to better search their contents.</string>
 			<key>developer</key>
-			<string>Noodlesoft, LLC</string>
+			<string>Omar Rizwan</string>
 			<key>display_name</key>
-			<string>Hazel</string>
+			<string>Screenotate</string>
 			<key>name</key>
 			<string>%NAME%</string>
-			<key>preinstall_script</key>
-			<string>#!/bin/sh
-# Remove old Hazel preference pane
-rm -rf "/Library/PreferencePanes/Hazel.prefpane"
-/usr/sbin/pkgutil --forget com.noodlesoft.Hazel
-exit 0
-</string>
 			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
 			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Hazel</string>
+	<string>com.github.homebysix.download.Screenotate</string>
 	<key>Process</key>
 	<array>
 		<dict>
