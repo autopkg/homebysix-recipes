@@ -1,0 +1,8 @@
+Description: Downloads the latest version of Coppice and creates a package.
+Identifier: com.github.homebysix.pkg.Coppice
+Input:
+  NAME: Coppice
+MinimumVersion: '2.3'
+ParentRecipe: com.github.homebysix.download.Coppice
+Process:
+- Processor: AppPkgCreator

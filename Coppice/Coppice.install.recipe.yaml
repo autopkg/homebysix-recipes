@@ -1,0 +1,13 @@
+Description: Installs the latest version of Coppice.
+Identifier: com.github.homebysix.install.Coppice
+Input:
+  NAME: Coppice
+MinimumVersion: '2.3'
+ParentRecipe: com.github.homebysix.download.Coppice
+Process:
+- Processor: InstallFromDMG
+  Arguments:
+    dmg_path: '%pathname%'
+    items_to_copy:
+    - destination_path: /Applications
+      source_item: Coppice.app
