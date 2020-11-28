@@ -2,7 +2,7 @@ Description: Downloads the latest version of Gitfox.
 Identifier: com.github.homebysix.download.Gitfox
 Input:
   NAME: Gitfox
-MinimumVersion: '2.0.3'
+MinimumVersion: '2.3'
 Process:
 - Processor: URLDownloader
   Arguments:

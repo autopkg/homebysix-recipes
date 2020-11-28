@@ -2,7 +2,7 @@ Description: Installs the latest version of Gitfox.
 Identifier: com.github.homebysix.install.Gitfox
 Input:
   NAME: Gitfox
-MinimumVersion: '2.0.3'
+MinimumVersion: '2.3'
 ParentRecipe: com.github.homebysix.download.Gitfox
 Process:
 - Processor: DmgCreator

@@ -1,0 +1,20 @@
+Description: Downloads the latest version of Coppice and imports it into Munki.
+Identifier: com.github.homebysix.munki.Coppice
+Input:
+  MUNKI_REPO_SUBDIR: apps/%NAME%
+  NAME: Coppice
+  pkginfo:
+    catalogs:
+    - testing
+    description: Mind mapping and thought organizing tool.
+    developer: M Cubed Software
+    display_name: Coppice
+    name: '%NAME%'
+    unattended_install: true
+MinimumVersion: '2.3'
+ParentRecipe: com.github.homebysix.download.Coppice
+Process:
+- Processor: MunkiImporter
+  Arguments:
+    pkg_path: '%pathname%'
+    repo_subdirectory: '%MUNKI_REPO_SUBDIR%'
