@@ -14,7 +14,7 @@
 		<string>VyprVPN</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.4.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.VyprVPN</string>
 	<key>Process</key>
