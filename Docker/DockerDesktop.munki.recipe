@@ -2,33 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.2.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Transmit Disk and imports it into Munki.</string>
+	<string>Downloads the latest version of Docker Desktop and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.TransmitDisk</string>
+	<string>com.github.homebysix.munki.DockerDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Transmit Disk</string>
+		<string>Docker</string>
 		<key>pkginfo</key>
 		<dict>
-			<key>blocking_applications</key>
-			<array>
-				<string>Transmit Disk.app</string>
-				<string>Transmit.app</string>
-			</array>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Transmit Disk allows you to mount any of your Favorites in the Finder itself, even if Transmit’s not running.</string>
+			<string>Automates deployment of containerized applications.</string>
 			<key>developer</key>
-			<string>Panic, Inc.</string>
+			<string>Docker</string>
 			<key>display_name</key>
-			<string>Transmit Disk</string>
+			<string>Docker</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -36,28 +33,16 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.4.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.TransmitDisk</string>
+	<string>com.github.homebysix.download.DockerDesktop</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>additional_pkginfo</key>
-				<dict>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/unzipped/Transmit Disk %version%.pkg</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>

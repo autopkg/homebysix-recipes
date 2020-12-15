@@ -16,6 +16,15 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>Docker Toolbox has been deprecated and is no longer in active development. Please use Docker Desktop instead. (Details: https://docs.docker.com/docker-for-windows/docker-toolbox/)</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>

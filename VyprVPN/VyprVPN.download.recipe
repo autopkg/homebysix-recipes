@@ -12,7 +12,7 @@
 		<string>VyprVPN</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.4.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -23,7 +23,7 @@
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>https://www.vyprvpn.com/vpn-apps/vpn-for-mac-matrix</string>
+				<string>https://www.vyprvpn.com/vpn-apps/vpn-for-mac</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>

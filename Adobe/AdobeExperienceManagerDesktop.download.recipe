@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Adobe Experience Manager Desktop.</string>
+	<string>Downloads the latest version of Adobe Experience Manager Desktop.
+	
+As of December 2020, AEM requires logging in to an Adobe ID in order to download.
+Therefore, this recipe now requires you to specify the path to your downloaded AEM disk image 
+using the `-p` flag.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.AdobeExperienceManagerDesktop</string>
 	<key>Input</key>
@@ -18,26 +20,8 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>(https:\/\/\S+/aem\-desktop\-osx\-[\d\.]+\.dmg)</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
-				<key>url</key>
-				<string>https://docs.adobe.com/content/help/en/experience-manager-desktop-app/using/release-notes.html</string>
-			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>PackageRequired</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
@@ -47,7 +31,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Adobe Experience Manager Desktop.app</string>
+				<string>%PKG%/Adobe Experience Manager Desktop.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JQ525L2MZD)</string>
 			</dict>
@@ -60,7 +44,7 @@
 				<key>Comment</key>
 				<string>Overwrite the version we scraped from the Adobe support page, as it isn't accurate enough for some recipe types.</string>
 				<key>input_plist_path</key>
-				<string>%pathname%/Adobe Experience Manager Desktop.app/Contents/Info.plist</string>
+				<string>%PKG%/Adobe Experience Manager Desktop.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
