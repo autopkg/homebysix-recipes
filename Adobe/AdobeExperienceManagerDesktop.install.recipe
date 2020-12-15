@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Installs the latest version of Adobe Experience Manager Desktop.</string>
+	<string>Installs the latest version of Adobe Experience Manager Desktop.
+	
+As of December 2020, AEM requires logging in to an Adobe ID in order to download.
+Therefore, this recipe now requires you to specify the path to your downloaded AEM disk image 
+using the `-p` flag.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.AdobeExperienceManagerDesktop</string>
 	<key>Input</key>
@@ -23,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_path</key>
-				<string>%pathname%</string>
+				<string>%PKG%</string>
 				<key>items_to_copy</key>
 				<array>
 					<dict>
