@@ -35,17 +35,18 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Application: Weird Kid Software LLC (5354MQYYTT)</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
 				<key>input_path</key>
 				<string>%pathname%/Emailchemy.app</string>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.install4j.6029-5726-8846-0121.357" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "5354MQYYTT")</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+			<key>Comment</key>
+			<string>The Emailchemy app reports a code signature requirement of `always`, which is
+			not strict enough to be useful with AutoPkg. Therefore the requirement argument above
+			has been created manually to match Emailchemy's code signing more strictly as of
+			December 2020.</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

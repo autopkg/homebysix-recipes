@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.2.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Marked 2.</string>
+	<string>Downloads the latest version of Cisdem Unarchiver (formerly known as BetterUnarchiver).</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.Marked2</string>
+	<string>com.github.homebysix.download.CisdemUnarchiver</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Marked 2</string>
+		<string>Cisdem Unarchiver</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -20,8 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://marked2app.com/download/Marked.dmg</string>
+				<string>https://www.cisdem.com/download/cisdem-betterunarchiver.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -34,9 +36,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Marked 2.app</string>
+				<string>%pathname%/Cisdem Unarchiver.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.brettterpstra.marked2" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "47TRS7H4BH")</string>
+				<string>anchor apple generic and identifier "com.cisdem.betterunarchiver" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "5HGV8EX6BQ")</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -45,7 +47,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Marked 2.app/Contents/Info.plist</string>
+				<string>%pathname%/Cisdem Unarchiver.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

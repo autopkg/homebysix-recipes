@@ -3,20 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.5 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.2.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Cisdem BetterUnarchiver.</string>
+	<string>Downloads the latest version of Docker Desktop.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.BetterUnarchiver</string>
+	<string>com.github.homebysix.download.DockerDesktop</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://www.cisdem.com/download/cisdem-betterunarchiver.dmg</string>
 		<key>NAME</key>
-		<string>Cisdem BetterUnarchiver</string>
+		<string>Docker</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.4.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -25,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://desktop.docker.com/mac/stable/Docker.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -38,9 +36,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Cisdem BetterUnarchiver.app</string>
+				<string>%pathname%/Docker.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.enolsoft.powerunarchiver" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "7MKX2HCE2X")</string>
+				<string>anchor apple generic and identifier "com.docker.docker" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "9BNSXJN65R")</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -49,7 +47,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Cisdem BetterUnarchiver.app/Contents/Info.plist</string>
+				<string>%pathname%/Docker.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

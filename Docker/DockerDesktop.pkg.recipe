@@ -3,22 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.2.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Wondershare Filmora and creates a package.</string>
+	<string>Downloads the latest version of Docker Desktop and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.Filmora</string>
+	<string>com.github.homebysix.pkg.DockerDesktop</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.Wondershare.Video Editor</string>
 		<key>NAME</key>
-		<string>Wondershare Filmora</string>
+		<string>Docker</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.4.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Filmora</string>
+	<string>com.github.homebysix.download.DockerDesktop</string>
 	<key>Process</key>
 	<array>
 		<dict>

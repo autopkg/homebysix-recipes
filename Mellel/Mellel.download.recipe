@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Mellel.</string>
 	<key>Identifier</key>
@@ -11,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>APPNAME</key>
-		<string>Mellel 4.app</string>
+		<string>Mellel 5.app</string>
 		<key>NAME</key>
 		<string>Mellel</string>
 	</dict>
@@ -23,11 +21,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(http://d1riogbqt3a9uw\.cloudfront\.net/mellel_[\w]+\.dmg)</string>
+				<string>(https://d1riogbqt3a9uw\.cloudfront\.net/mellel_[\w]+\.dmg)</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>http://www.mellel.com/thanks-for-downloading</string>
+				<string>https://www.mellel.com/thanks-for-downloading</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -51,7 +49,7 @@
 				<key>input_path</key>
 				<string>%pathname%/%APPNAME%</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.redlex.mellel4" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = DS2QH574BD)</string>
+				<string>anchor apple generic and identifier "com.redlex.mellel5" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = DS2QH574BD)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>

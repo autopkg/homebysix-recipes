@@ -45,7 +45,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/TogglDesktop.app</string>
+				<string>%pathname%/Toggl Track.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.toggl.toggldesktop.TogglDesktop" and certificate leaf[subject.OU] = B227VTMZ94</string>
 			</dict>
