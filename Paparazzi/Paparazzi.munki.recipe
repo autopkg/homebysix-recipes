@@ -30,6 +30,27 @@
 			<string>10.9</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/zsh
+
+# Command line tool source and destination paths.
+CMD_TOOL_SRC="/Applications/Paparazzi!.app/Contents/Helpers/pzi"
+CMD_TOOL_DST="/usr/local/bin"
+
+if [[ -d "$CMD_TOOL_DST" ]]; then
+    # Remove old tool, if it exists.
+    rm -f "$CMD_TOOL_DST/pzi"
+else
+    # Create destination folder, if it doesn't exist.
+    mkdir -p "$CMD_TOOL_DST"
+fi
+
+cp "$CMD_TOOL_SRC" "$CMD_TOOL_DST/pzi"
+</string>
+			<key>postuninstall_script</key>
+			<string>#!/bin/zsh
+rm -f "/usr/local/bin/pzi"
+</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>

@@ -81,6 +81,8 @@ NOTE: Cannot use AppPkgCreator for this recipe because the exclamation point in 
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<key>scripts</key>
+					<string>scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
