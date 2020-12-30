@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Noise Machine</string>
 		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.publicspace.net/app/nm.xml</string>
+		<string>https://www.publicspace.net/app/nm.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
