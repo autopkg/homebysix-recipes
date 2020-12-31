@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+# Command line tool source and destination paths.
+CMD_TOOL_SRC="$3/Applications/Paparazzi!.app/Contents/Helpers/pzi"
+CMD_TOOL_DST="$3/usr/local/bin"
+
+if [[ -d "$CMD_TOOL_DST" ]]; then
+    # Remove old tool, if it exists.
+    rm -f "$CMD_TOOL_DST/pzi"
+else
+    # Create destination folder, if it doesn't exist.
+    mkdir -p "$CMD_TOOL_DST"
+fi
+
+cp "$CMD_TOOL_SRC" "$CMD_TOOL_DST/pzi"
