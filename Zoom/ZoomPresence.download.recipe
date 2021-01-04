@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.ZoomPresence</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://zoom.us/client/latest/ZoomRooms.pkg</string>
 		<key>NAME</key>
 		<string>ZoomPresence</string>
 	</dict>
@@ -23,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://zoom.us/client/latest/ZoomRooms.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

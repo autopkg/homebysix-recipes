@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.iNotepad</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://www.apimac.com/download/iNotepad.zip</string>
 		<key>NAME</key>
 		<string>iNotepad</string>
 	</dict>
@@ -25,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://www.apimac.com/download/iNotepad.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

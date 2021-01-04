@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.download.SkalaColor</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://download.bjango.com/skalacolor/</string>
 		<key>NAME</key>
 		<string>SkalaColor</string>
 	</dict>
@@ -23,7 +21,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://download.bjango.com/skalacolor/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

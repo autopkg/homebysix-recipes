@@ -25,7 +25,7 @@
 				<key>filename</key>
 				<string>textsoap.zip</string>
 				<key>url</key>
-				<string>http://unmarked.s3.amazonaws.com/textsoap%MAJOR_VERSION%.zip</string>
+				<string>https://unmarked.s3.amazonaws.com/textsoap%MAJOR_VERSION%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

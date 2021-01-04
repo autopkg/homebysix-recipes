@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.download.TimeMachineEditor</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://tclementdev.com/timemachineeditor/TimeMachineEditor.pkg</string>
 		<key>NAME</key>
 		<string>TimeMachineEditor</string>
 	</dict>
@@ -21,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://tclementdev.com/timemachineeditor/TimeMachineEditor.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

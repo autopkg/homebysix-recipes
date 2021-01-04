@@ -3,11 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Bartender.</string>
+	<string>Downloads the latest version of Bartender.
+	
+Specify which major version you want in the MAJOR_VERSION input variable. Supported values are 3 or 4.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Bartender</string>
 	<key>Input</key>
 	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>4</string>
 		<key>NAME</key>
 		<string>Bartender</string>
 	</dict>
@@ -19,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>https://www.macbartender.com/B2/updates/AppcastB3.xml</string>
+				<string>https://www.macbartender.com/B2/updates/AppcastB%MAJOR_VERSION%.xml</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
@@ -69,7 +73,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Bartender 3.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Bartender %MAJOR_VERSION%.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.surteesstudios.Bartender" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8DD663WDX4")</string>
 			</dict>

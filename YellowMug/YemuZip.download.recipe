@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.YemuZip</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://www.yellowmug.com/download/YemuZip.dmg</string>
 		<key>NAME</key>
 		<string>YemuZip</string>
 	</dict>
@@ -23,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://www.yellowmug.com/download/YemuZip.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

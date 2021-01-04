@@ -3,11 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Bartender and creates a package.</string>
+	<string>Downloads the latest version of Bartender and creates a package.
+	
+Specify which major version you want in the MAJOR_VERSION input variable. Supported values are 3 or 4.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.Bartender</string>
 	<key>Input</key>
 	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>4</string>
 		<key>NAME</key>
 		<string>Bartender</string>
 	</dict>
@@ -21,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Bartender 3.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Bartender %MAJOR_VERSION%.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>

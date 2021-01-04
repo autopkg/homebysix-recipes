@@ -13,8 +13,6 @@ still relies on GitHubReleasesInfoProvider in order to minimize points of failur
 	<string>com.github.homebysix.download.RecipeRobot</string>
 	<key>Input</key>
 	<dict>
-		<key>GITHUB_REPO</key>
-		<string>homebysix/recipe-robot</string>
 		<key>NAME</key>
 		<string>Recipe Robot</string>
 	</dict>
@@ -26,7 +24,7 @@ still relies on GitHubReleasesInfoProvider in order to minimize points of failur
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
+				<string>homebysix/recipe-robot</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

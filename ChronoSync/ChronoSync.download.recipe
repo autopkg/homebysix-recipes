@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.download.ChronoSync</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://downloads.econtechnologies.com/CS4_Download.dmg</string>
 		<key>NAME</key>
 		<string>ChronoSync</string>
 	</dict>
@@ -23,7 +21,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://downloads.econtechnologies.com/CS4_Download.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

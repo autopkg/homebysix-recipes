@@ -2,14 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Bartender and imports it into Munki.</string>
+	<string>Downloads the latest version of Bartender and imports it into Munki.
+	
+Specify which major version you want in the MAJOR_VERSION input variable. Supported values are 3 or 4.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.Bartender</string>
 	<key>Input</key>
 	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>4</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
@@ -21,7 +23,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Bartender 3 lets you organize your menu bar icons, by hiding them, rearranging them, show hidden items with a click or keyboard shortcut and have icons show when they update.</string>
+			<string>Bartender lets you organize your menu bar icons, by hiding them, rearranging them, show hidden items with a click or keyboard shortcut and have icons show when they update.</string>
 			<key>developer</key>
 			<string>Surtees Studios</string>
 			<key>display_name</key>

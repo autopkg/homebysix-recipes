@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.ShareMouse</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>http://www.keyboard-and-mouse-sharing.com/ShareMouseSetup.dmg</string>
 		<key>NAME</key>
 		<string>ShareMouse</string>
 	</dict>
@@ -25,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>http://www.keyboard-and-mouse-sharing.com/ShareMouseSetup.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
