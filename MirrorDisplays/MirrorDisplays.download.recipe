@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.download.MirrorDisplays</string>
 	<key>Input</key>
 	<dict>
-		<key>GITHUB_REPO</key>
-		<string>fcanas/mirror-displays</string>
 		<key>NAME</key>
 		<string>MirrorDisplays</string>
 	</dict>
@@ -23,7 +21,7 @@
 				<key>asset_regex</key>
 				<string>MirrorDisplays*.zip</string>
 				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
+				<string>fcanas/mirror-displays</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.download.TableauReader</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://www.tableau.com/downloads/reader/mac</string>
 		<key>NAME</key>
 		<string>Tableau Reader</string>
 	</dict>
@@ -23,7 +21,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://www.tableau.com/downloads/reader/mac</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

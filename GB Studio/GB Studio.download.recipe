@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.GBStudio</string>
 	<key>Input</key>
 	<dict>
-		<key>GITHUB_REPO</key>
-		<string>chrismaltby/gb-studio</string>
 		<key>NAME</key>
 		<string>GB Studio</string>
 	</dict>
@@ -25,7 +23,7 @@
 				<key>asset_regex</key>
 				<string>.*\-darwin\-x64\-.*\.zip$</string>
 				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
+				<string>chrismaltby/gb-studio</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

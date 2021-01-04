@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.AutoCasperNBI</string>
 	<key>Input</key>
 	<dict>
-		<key>GITHUB_REPO</key>
-		<string>macmule/AutoCasperNBI</string>
 		<key>NAME</key>
 		<string>AutoCasperNBI</string>
 	</dict>
@@ -23,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
+				<string>macmule/AutoCasperNBI</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.Proximity</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://proximity.cisco.com/mac/Proximity.dmg</string>
 		<key>NAME</key>
 		<string>Cisco Proximity</string>
 	</dict>
@@ -25,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://proximity.cisco.com/mac/Proximity.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

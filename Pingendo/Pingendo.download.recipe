@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.Pingendo</string>
 	<key>Input</key>
 	<dict>
-		<key>GITHUB_REPO</key>
-		<string>Pingendo/pingendo</string>
 		<key>NAME</key>
 		<string>Pingendo</string>
 	</dict>
@@ -25,7 +23,7 @@
 				<key>asset_regex</key>
 				<string>.*\.dmg$</string>
 				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
+				<string>Pingendo/pingendo</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

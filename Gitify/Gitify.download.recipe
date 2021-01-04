@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.Gitify</string>
 	<key>Input</key>
 	<dict>
-		<key>GITHUB_REPO</key>
-		<string>manosim/gitify</string>
 		<key>NAME</key>
 		<string>Gitify</string>
 	</dict>
@@ -23,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
+				<string>manosim/gitify</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

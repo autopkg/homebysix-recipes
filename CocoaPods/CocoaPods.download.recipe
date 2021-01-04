@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.CocoaPods</string>
 	<key>Input</key>
 	<dict>
-		<key>GITHUB_REPO</key>
-		<string>CocoaPods/CocoaPods-app</string>
 		<key>NAME</key>
 		<string>CocoaPods</string>
 	</dict>
@@ -23,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
+				<string>CocoaPods/CocoaPods-app</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

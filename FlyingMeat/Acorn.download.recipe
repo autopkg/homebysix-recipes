@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.Acorn</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://flyingmeat.com/download/Acorn.zip</string>
 		<key>NAME</key>
 		<string>Acorn</string>
 	</dict>
@@ -25,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://flyingmeat.com/download/Acorn.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

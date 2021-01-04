@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.download.MockSmtp</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>http://www.mocksmtpapp.com/MockSmtp.zip</string>
 		<key>NAME</key>
 		<string>MockSmtp</string>
 	</dict>
@@ -20,13 +18,13 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
 			<key>Arguments</key>
 			<dict>
 				<key>warning_message</key>
 				<string>MockSMTP has not been updated in some time and its domain appears to be abandoned. This recipe is deprecated and will be removed in the future.</string>
 			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -34,7 +32,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>http://www.mocksmtpapp.com/MockSmtp.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.download.Emailchemy</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://s3.amazonaws.com/wksdownload/Emailchemy-Mac.dmg</string>
 		<key>NAME</key>
 		<string>Emailchemy</string>
 	</dict>
@@ -23,7 +21,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://s3.amazonaws.com/wksdownload/Emailchemy-Mac.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -40,13 +38,13 @@
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.install4j.6029-5726-8846-0121.357" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "5354MQYYTT")</string>
 			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
 			<key>Comment</key>
 			<string>The Emailchemy app reports a code signature requirement of `always`, which is
 			not strict enough to be useful with AutoPkg. Therefore the requirement argument above
 			has been created manually to match Emailchemy's code signing more strictly as of
 			December 2020.</string>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

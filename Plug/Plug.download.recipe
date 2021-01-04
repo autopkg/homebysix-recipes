@@ -12,8 +12,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Plug</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>https://www.plugformac.com/updates/plug2/sparklecast.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -23,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<string>https://www.plugformac.com/updates/plug2/sparklecast.xml</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>

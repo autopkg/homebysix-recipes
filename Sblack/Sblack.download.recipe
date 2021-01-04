@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.download.Sblack</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://boxyteam-static.s3.amazonaws.com/release/Sblack.dmg</string>
 		<key>NAME</key>
 		<string>Sblack</string>
 	</dict>
@@ -21,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://boxyteam-static.s3.amazonaws.com/release/Sblack.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
