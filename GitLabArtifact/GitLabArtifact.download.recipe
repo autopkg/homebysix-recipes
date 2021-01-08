@@ -40,7 +40,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>http://captive.apple.com</string>
+				<string>https://captive.apple.com</string>
 			</dict>
 			<key>Comments</key>
 			<string>This overwrites the previous download, if it exists, to work around GitLab's tendency to return the same etag across multiple URLDownloader runs.</string>

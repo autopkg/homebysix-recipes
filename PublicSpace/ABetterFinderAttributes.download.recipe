@@ -23,7 +23,7 @@ The MAJOR_VERSION input variable can be overridden to determine which version of
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>http://www.publicspace.net/app/signed_abfa%MAJOR_VERSION%.xml</string>
+				<string>https://www.publicspace.net/app/signed_abfa%MAJOR_VERSION%.xml</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
