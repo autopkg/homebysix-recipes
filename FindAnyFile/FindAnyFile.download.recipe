@@ -23,7 +23,7 @@
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>http://apps.tempel.org/FindAnyFile/index.php</string>
+				<string>https://apps.tempel.org/FindAnyFile/index.php</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
