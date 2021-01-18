@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Celestia</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>net.shatters.Celestia</string>
 		<key>NAME</key>
 		<string>Celestia</string>
 	</dict>
@@ -24,13 +22,9 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%pathname%</string>
+				<key>app_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Celestia.app</string>
 			</dict>
-			<key>Processor</key>
-			<string>AppDmgVersioner</string>
-		</dict>
-		<dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
 		</dict>

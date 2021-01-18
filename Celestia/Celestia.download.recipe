@@ -5,8 +5,7 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Celestia.
-	Note: Celestia.app's code object is not signed at all</string>
+	<string>Downloads the latest version of Celestia.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Celestia</string>
 	<key>Input</key>
@@ -21,19 +20,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>SOURCEFORGE_FILE_PATTERN</key>
-				<string>celestia-osx-[\d.]*\.dmg</string>
-				<key>SOURCEFORGE_PROJECT_ID</key>
-				<integer>21302</integer>
+				<key>asset_regex</key>
+				<string>^.*.zip$</string>
+				<key>github_repo</key>
+				<string>CelestiaProject/Celestia</string>
+				<key>include_prereleases</key>
+				<string>true</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.jessepeterson.munki.GrandPerspective/SourceForgeURLProvider</string>
+			<string>GitHubReleasesInfoProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -41,6 +42,30 @@
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Celestia.app</string>
+				<key>requirements</key>
+				<string>anchor apple generic and identifier "space.celestia.Celestia" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "22NR5428TD")</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 	</array>
 </dict>

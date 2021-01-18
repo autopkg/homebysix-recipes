@@ -18,22 +18,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>\/files\/(cakebrew-[\d\.]+\.dmg)\"&gt;Direct Download&lt;\/a&gt;</string>
-				<key>result_output_var_name</key>
-				<string>filename</string>
-				<key>url</key>
-				<string>https://www.cakebrew.com/</string>
+				<key>appcast_url</key>
+				<string>http://www.cakebrew.com/appcast/profileInfo.php</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>SparkleUpdateInfoProvider</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>https://www.cakebrew.com/files/%filename%</string>
-			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
@@ -44,8 +35,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Cakebrew.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Cakebrew.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.brunophilipe.Cakebrew" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = R85D3K8ATT)</string>
 			</dict>
@@ -56,7 +60,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Cakebrew.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Cakebrew.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
