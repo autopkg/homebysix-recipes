@@ -26,10 +26,6 @@
 			<string>Inkscape</string>
 			<key>name</key>
 			<string>%NAME%</string>
-			<key>requires</key>
-			<array>
-				<string>XQuartz</string>
-			</array>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
