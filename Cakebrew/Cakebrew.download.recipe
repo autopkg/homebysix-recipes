@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>http://www.cakebrew.com/appcast/profileInfo.php</string>
+				<string>https://www.cakebrew.com/appcast/profileInfo.php</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
