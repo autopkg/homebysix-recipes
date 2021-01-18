@@ -21,11 +21,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>^.*.zip$</string>
+				<string>^.*-macOS\.zip$</string>
 				<key>github_repo</key>
 				<string>CelestiaProject/Celestia</string>
-				<key>include_prereleases</key>
-				<string>true</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
