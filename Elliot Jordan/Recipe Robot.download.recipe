@@ -6,7 +6,7 @@
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Recipe Robot.
-	
+
 Note: Although Recipe Robot has a Sparkle feed as of version 2.2.0, this recipe
 still relies on GitHubReleasesInfoProvider in order to minimize points of failure.</string>
 	<key>Identifier</key>

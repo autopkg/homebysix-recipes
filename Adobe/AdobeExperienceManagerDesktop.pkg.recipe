@@ -4,9 +4,9 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the latest version of Adobe Experience Manager Desktop and creates a package.
-	
+
 As of December 2020, AEM requires logging in to an Adobe ID in order to download.
-Therefore, this recipe now requires you to specify the path to your downloaded AEM disk image 
+Therefore, this recipe now requires you to specify the path to your downloaded AEM disk image
 using the `-p` flag.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.AdobeExperienceManagerDesktop</string>
