@@ -57,7 +57,13 @@ def clear_cache(identifier):
 def run_recipe(relpath):
     """Run the recipe and check the exit code."""
     retcode = subprocess.call(
-        ["/usr/local/bin/autopkg", "info", relpath, "--pull", "--quiet",]
+        [
+            "/usr/local/bin/autopkg",
+            "info",
+            relpath,
+            "--pull",
+            "--quiet",
+        ]
     )
     assert_equal(
         retcode, 0, "{}: autopkg info exited with code {}".format(relpath, retcode)
