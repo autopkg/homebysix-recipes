@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/homebysix/pre-commit-macadmin
-  rev: v1.8.0
+  rev: v1.8.2
   hooks:
   - id: check-autopkg-recipes
     args: ['--recipe-prefix=com.github.homebysix.', '--ignore-min-vers-before=1.4.1', '--']
@@ -12,7 +12,7 @@ repos:
   hooks:
   - id: black
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v3.3.0
+  rev: v3.4.0
   hooks:
   - id: check-added-large-files
     args: ['--maxkb=100']
