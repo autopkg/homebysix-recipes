@@ -54,7 +54,7 @@
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>file://%RECIPE_CACHE_DIR%/Info.plist</string>
+				<string>file://%RECIPE_CACHE_DIR%/%NAME%/Applications/Royal TSX.app/Contents/Info.plist</string>
 			</dict>
 			<key>Comment</key>
 			<string>Using a URLTextSearcher processor in order to find the version from the app's Info.plist, which is improperly formatted as of 12/15/2020 and doesn't work with Versioner style processors.</string>
