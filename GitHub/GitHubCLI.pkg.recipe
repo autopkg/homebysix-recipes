@@ -61,7 +61,7 @@
 			<dict>
 				<key>source_path</key>
 				<string>%RECIPE_CACHE_DIR%/unzipped/*/bin/gh</string>
-				<key>target_path</key>
+				<key>destination_path</key>
 				<string>%pkgroot%/usr/local/bin/gh</string>
 			</dict>
 			<key>Processor</key>
