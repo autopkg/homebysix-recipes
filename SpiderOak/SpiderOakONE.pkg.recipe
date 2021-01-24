@@ -24,13 +24,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>destination_path</key>
+				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
-				<key>source_path</key>
+				<key>source_pkg</key>
 				<string>%pathname%/%NAME%.pkg</string>
 			</dict>
 			<key>Processor</key>
-			<string>Copier</string>
+			<string>PkgCopier</string>
 		</dict>
 	</array>
 </dict>
