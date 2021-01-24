@@ -10,7 +10,7 @@ repos:
             "--strict",
             "--",
           ]
-        exclude: Kitematic
+        exclude: ^Docker\/|^Quicksilver\/Quicksilver\.pkg\.recipe$
       - id: forbid-autopkg-overrides
       - id: forbid-autopkg-trust-info
   - repo: https://github.com/ambv/black
