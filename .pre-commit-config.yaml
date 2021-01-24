@@ -1,31 +1,36 @@
 repos:
-- repo: https://github.com/homebysix/pre-commit-macadmin
-  rev: v1.8.2
-  hooks:
-  - id: check-autopkg-recipes
-    args: ['--recipe-prefix=com.github.homebysix.', '--ignore-min-vers-before=1.4.1', '--']
-    exclude: Kitematic
-  - id: forbid-autopkg-overrides
-  - id: forbid-autopkg-trust-info
-- repo: https://github.com/ambv/black
-  rev: 20.8b1
-  hooks:
-  - id: black
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v3.4.0
-  hooks:
-  - id: check-added-large-files
-    args: ['--maxkb=100']
-  - id: check-byte-order-marker
-  - id: check-case-conflict
-  - id: check-docstring-first
-  - id: check-executables-have-shebangs
-  - id: check-merge-conflict
-  - id: mixed-line-ending
-  - id: no-commit-to-branch
-  - id: trailing-whitespace
-    args: ['--markdown-linebreak-ext=md']
-- repo: https://gitlab.com/pycqa/flake8
-  rev: 3.8.4
-  hooks:
-  - id: flake8
+  - repo: https://github.com/homebysix/pre-commit-macadmin
+    rev: v1.8.2
+    hooks:
+      - id: check-autopkg-recipes
+        args:
+          [
+            "--recipe-prefix=com.github.homebysix.",
+            "--ignore-min-vers-before=1.4.1",
+            "--",
+          ]
+        exclude: Kitematic
+      - id: forbid-autopkg-overrides
+      - id: forbid-autopkg-trust-info
+  - repo: https://github.com/ambv/black
+    rev: 20.8b1
+    hooks:
+      - id: black
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=100"]
+      - id: check-byte-order-marker
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+      - id: no-commit-to-branch
+      - id: trailing-whitespace
+        args: ["--markdown-linebreak-ext=md"]
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.4
+    hooks:
+      - id: flake8
