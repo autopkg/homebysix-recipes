@@ -12,7 +12,7 @@
 		<string>Aurora HDR Pro</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.4.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.AuroraHDRPro</string>
 	<key>Process</key>
