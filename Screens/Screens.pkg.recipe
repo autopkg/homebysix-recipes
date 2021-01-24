@@ -14,7 +14,7 @@
 		<string>Screens</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.4.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Screens</string>
 	<key>Process</key>
