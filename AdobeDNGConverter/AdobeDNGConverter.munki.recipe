@@ -53,8 +53,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>overwrite</key>
-				<string>true</string>
 				<key>source</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked/Adobe DNG Converter.app</string>
 				<key>target</key>

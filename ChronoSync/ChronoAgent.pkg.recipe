@@ -24,8 +24,6 @@
 			<dict>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
-				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
 				<key>source_path</key>
 				<string>%pathname%/Install.pkg</string>
 			</dict>

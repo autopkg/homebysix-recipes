@@ -55,8 +55,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>purge_destination</key>
-				<true/>
 				<key>source</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Users/bill/Desktop/Persona.app</string>
 				<key>target</key>
