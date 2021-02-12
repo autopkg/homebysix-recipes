@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.iMazing</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.DigiDNA.iMazingMac</string>
 		<key>NAME</key>
 		<string>iMazing</string>
 	</dict>
