@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.FuzzMeasure</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.supermegaultragroovy.fuzzmeasure4.mac</string>
 		<key>NAME</key>
 		<string>FuzzMeasure</string>
 	</dict>

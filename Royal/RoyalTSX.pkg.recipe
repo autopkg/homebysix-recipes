@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.RoyalTSX</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.lemonmojo.RoyalTSX.App</string>
 		<key>NAME</key>
 		<string>Royal TSX</string>
 	</dict>

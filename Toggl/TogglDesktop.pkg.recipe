@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.TogglDesktop</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.toggl.toggldesktop.TogglDesktop</string>
 		<key>NAME</key>
 		<string>TogglDesktop</string>
 	</dict>

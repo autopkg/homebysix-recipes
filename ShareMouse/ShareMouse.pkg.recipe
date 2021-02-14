@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.ShareMouse</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.bartelsmedia.ShareMouse</string>
 		<key>NAME</key>
 		<string>ShareMouse</string>
 	</dict>

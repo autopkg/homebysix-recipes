@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.DiskDiet</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.tunabellysoftware.diskdiet</string>
 		<key>NAME</key>
 		<string>Disk Diet</string>
 	</dict>

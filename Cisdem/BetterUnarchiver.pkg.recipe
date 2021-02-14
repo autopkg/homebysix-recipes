@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.BetterUnarchiver</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.enolsoft.powerunarchiver</string>
 		<key>NAME</key>
 		<string>Cisdem BetterUnarchiver</string>
 	</dict>

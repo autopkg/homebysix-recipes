@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Bookends</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.sonnysoftware.bookends</string>
 		<key>NAME</key>
 		<string>Bookends</string>
 	</dict>

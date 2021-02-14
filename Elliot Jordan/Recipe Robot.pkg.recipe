@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.RecipeRobot</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.elliotjordan.recipe-robot</string>
 		<key>NAME</key>
 		<string>Recipe Robot</string>
 	</dict>

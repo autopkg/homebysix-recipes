@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Flinto</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.flinto.Flinto</string>
 		<key>NAME</key>
 		<string>Flinto</string>
 	</dict>

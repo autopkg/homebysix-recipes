@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.FoldingText</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.foldingtext.paddle.FoldingText</string>
 		<key>NAME</key>
 		<string>FoldingText</string>
 	</dict>

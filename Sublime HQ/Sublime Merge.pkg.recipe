@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.SublimeMerge</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.sublimemerge</string>
 		<key>NAME</key>
 		<string>Sublime Merge</string>
 	</dict>

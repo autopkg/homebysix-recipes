@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Plug</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.plug.Plug2</string>
 		<key>NAME</key>
 		<string>Plug</string>
 	</dict>

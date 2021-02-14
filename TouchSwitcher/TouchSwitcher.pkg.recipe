@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.TouchSwitcher</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.pointum.TouchSwitcher</string>
 		<key>NAME</key>
 		<string>TouchSwitcher</string>
 	</dict>

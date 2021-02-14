@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.Caffeine</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.lightheadsw.Caffeine</string>
 		<key>NAME</key>
 		<string>Caffeine</string>
 	</dict>

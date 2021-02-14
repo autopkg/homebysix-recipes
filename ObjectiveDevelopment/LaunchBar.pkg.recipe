@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.LaunchBar</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>at.obdev.LaunchBar</string>
 		<key>NAME</key>
 		<string>LaunchBar</string>
 	</dict>

@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.Revisions</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.bayesbits.Revisions</string>
 		<key>NAME</key>
 		<string>Revisions</string>
 	</dict>

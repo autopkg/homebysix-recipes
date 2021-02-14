@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.ApacheDirectoryStudio</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>org.apache.directory.studio.product</string>
 		<key>NAME</key>
 		<string>ApacheDirectoryStudio</string>
 	</dict>

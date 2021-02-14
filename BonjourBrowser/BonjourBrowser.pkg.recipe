@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.BonjourBrowser</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.tildesoft.RendezvousBrowser</string>
 		<key>NAME</key>
 		<string>BonjourBrowser</string>
 	</dict>

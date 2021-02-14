@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.miXscope</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.edhsw.miXscope</string>
 		<key>NAME</key>
 		<string>miXscope</string>
 	</dict>

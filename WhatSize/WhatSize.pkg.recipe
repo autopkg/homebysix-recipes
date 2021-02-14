@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.WhatSize</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.id-design.whatsize</string>
 		<key>NAME</key>
 		<string>WhatSize</string>
 	</dict>

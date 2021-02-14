@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.SpiderOakONE</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.spideroak.orange.client</string>
 		<key>NAME</key>
 		<string>SpiderOakONE</string>
 		<key>pkg_path</key>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Emailchemy</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.install4j.6029-5726-8846-0121.89</string>
 		<key>NAME</key>
 		<string>Emailchemy</string>
 	</dict>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.iStumbler</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>net.istumbler</string>
 		<key>NAME</key>
 		<string>iStumbler</string>
 	</dict>

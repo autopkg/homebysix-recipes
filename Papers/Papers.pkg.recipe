@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Papers</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.mekentosj.papers3</string>
 		<key>NAME</key>
 		<string>Papers</string>
 	</dict>

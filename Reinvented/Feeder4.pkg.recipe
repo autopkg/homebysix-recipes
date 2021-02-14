@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.Feeder4</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.reinvented.Feeder4</string>
 		<key>NAME</key>
 		<string>Feeder 4</string>
 	</dict>

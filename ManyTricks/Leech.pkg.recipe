@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Leech</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.manytricks.Leech</string>
 		<key>NAME</key>
 		<string>Leech</string>
 	</dict>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.ColorSnapper</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.koolesache.ColorSnapper2</string>
 		<key>NAME</key>
 		<string>ColorSnapper2</string>
 	</dict>

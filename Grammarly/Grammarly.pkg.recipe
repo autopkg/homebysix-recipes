@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Grammarly</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.grammarly.DesktopEditor</string>
 		<key>NAME</key>
 		<string>Grammarly</string>
 	</dict>
