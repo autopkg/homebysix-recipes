@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.WordPress.com</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.automattic.wordpress</string>
 		<key>NAME</key>
 		<string>WordPress.com</string>
 	</dict>

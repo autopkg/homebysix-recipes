@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Adapter</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.macroplant.adapter</string>
 		<key>NAME</key>
 		<string>Adapter</string>
 	</dict>

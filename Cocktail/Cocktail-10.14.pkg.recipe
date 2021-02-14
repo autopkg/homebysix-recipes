@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Cocktail-10.14</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.maintain.cocktail.mojave</string>
 		<key>NAME</key>
 		<string>Cocktail</string>
 	</dict>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.CCleaner</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.piriform.ccleaner</string>
 		<key>NAME</key>
 		<string>CCleaner</string>
 	</dict>

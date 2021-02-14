@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.AutoPkgr</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.lindegroup.AutoPkgr</string>
 		<key>NAME</key>
 		<string>AutoPkgr</string>
 	</dict>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.KeePassX</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>org.keepassx.keepassx</string>
 		<key>NAME</key>
 		<string>KeePassX</string>
 	</dict>

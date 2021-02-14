@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Mellel</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.redlex.mellel</string>
 		<key>NAME</key>
 		<string>Mellel</string>
 	</dict>

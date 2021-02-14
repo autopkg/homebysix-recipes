@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.CocktailBigSur</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.maintain.cocktail.catalina</string>
 		<key>NAME</key>
 		<string>Cocktail</string>
 	</dict>

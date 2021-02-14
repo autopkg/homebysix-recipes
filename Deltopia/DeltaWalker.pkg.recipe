@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.DeltaWalker</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.deltopia.DeltaWalker</string>
 		<key>NAME</key>
 		<string>DeltaWalker</string>
 	</dict>

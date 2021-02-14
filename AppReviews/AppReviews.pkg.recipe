@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.AppReviews</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.cocmoc.appreviews</string>
 		<key>NAME</key>
 		<string>App Reviews</string>
 	</dict>

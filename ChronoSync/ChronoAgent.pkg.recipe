@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.ChronoAgent</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.econtechnologies.chronosync</string>
 		<key>NAME</key>
 		<string>ChronoAgent</string>
 	</dict>

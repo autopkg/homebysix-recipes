@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Gemini2</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.macpaw.site.Gemini2</string>
 		<key>NAME</key>
 		<string>Gemini 2</string>
 	</dict>

@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.VyprVPN</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.goldenfrog.VyprVPN</string>
 		<key>NAME</key>
 		<string>VyprVPN</string>
 	</dict>

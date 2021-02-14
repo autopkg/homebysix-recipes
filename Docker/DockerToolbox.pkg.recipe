@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.DockerToolbox</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>io.docker.pkg.docker</string>
 		<key>NAME</key>
 		<string>DockerToolbox</string>
 		<key>pathname</key>

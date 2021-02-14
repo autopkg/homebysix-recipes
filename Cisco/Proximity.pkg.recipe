@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Proximity</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.cisco.experimental.Proximity</string>
 		<key>NAME</key>
 		<string>Cisco Proximity</string>
 	</dict>

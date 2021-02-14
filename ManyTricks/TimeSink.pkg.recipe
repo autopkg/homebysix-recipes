@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.TimeSink</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.manytricks.TimeSinkClient</string>
 		<key>NAME</key>
 		<string>Time Sink</string>
 	</dict>

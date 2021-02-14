@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.OpeninAtomforFinder</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>cdz.finder-atom-integration</string>
 		<key>NAME</key>
 		<string>Open in Atom</string>
 	</dict>

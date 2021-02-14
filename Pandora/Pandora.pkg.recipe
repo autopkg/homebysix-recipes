@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Pandora</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.pandora.desktop</string>
 		<key>NAME</key>
 		<string>Pandora</string>
 	</dict>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.AutoCasperNBI</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.macmule.AutoCasperNBI</string>
 		<key>NAME</key>
 		<string>AutoCasperNBI</string>
 	</dict>

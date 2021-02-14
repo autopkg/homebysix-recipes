@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.TermHere</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>ws.hbang.TermHere</string>
 		<key>NAME</key>
 		<string>TermHere</string>
 	</dict>

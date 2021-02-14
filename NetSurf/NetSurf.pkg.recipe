@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.NetSurf</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>org.netsurf-browser.NetSurf</string>
 		<key>NAME</key>
 		<string>NetSurf</string>
 	</dict>

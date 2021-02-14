@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Tags</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.gravityapps.Tags</string>
 		<key>NAME</key>
 		<string>Tags</string>
 	</dict>

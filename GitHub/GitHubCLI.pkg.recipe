@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.GitHubCLI</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.github.GitHub</string>
 		<key>NAME</key>
 		<string>GitHub CLI</string>
 	</dict>
@@ -59,10 +57,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unzipped/*/bin/gh</string>
 				<key>destination_path</key>
 				<string>%pkgroot%/usr/local/bin/gh</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unzipped/*/bin/gh</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -70,12 +68,12 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unzipped/*/share/man/man1</string>
 				<key>destination_path</key>
 				<string>%pkgroot%/usr/local/share/man/man1</string>
 				<key>overwrite</key>
 				<true/>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unzipped/*/share/man/man1</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

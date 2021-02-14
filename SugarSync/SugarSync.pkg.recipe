@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.SugarSync</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.SugarSync.SugarSync</string>
 		<key>NAME</key>
 		<string>SugarSync</string>
 	</dict>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.YemuZip</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.yellowmug.YemuZip</string>
 		<key>NAME</key>
 		<string>YemuZip</string>
 	</dict>

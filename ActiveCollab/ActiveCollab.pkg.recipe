@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.ActiveCollab</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.activecollab.activecollab-desktop</string>
 		<key>NAME</key>
 		<string>ActiveCollab</string>
 	</dict>

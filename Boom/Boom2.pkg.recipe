@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Boom2</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.globaldelight.Boom2</string>
 		<key>NAME</key>
 		<string>Boom 2</string>
 	</dict>

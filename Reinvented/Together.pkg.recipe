@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Together3</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.reinvented.Together3</string>
 		<key>NAME</key>
 		<string>Together 3</string>
 	</dict>

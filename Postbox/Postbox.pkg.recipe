@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.Postbox</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.postbox-inc.postbox</string>
 		<key>NAME</key>
 		<string>Postbox</string>
 	</dict>

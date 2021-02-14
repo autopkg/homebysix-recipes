@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.Kite</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.kite.Kite</string>
 		<key>NAME</key>
 		<string>Kite</string>
 	</dict>

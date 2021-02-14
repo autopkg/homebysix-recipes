@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Butler</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.manytricks.Butler</string>
 		<key>NAME</key>
 		<string>Butler</string>
 	</dict>

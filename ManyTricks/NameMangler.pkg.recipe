@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.NameMangler</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.manytricks.NameMangler</string>
 		<key>NAME</key>
 		<string>Name Mangler</string>
 	</dict>

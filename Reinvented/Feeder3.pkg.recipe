@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Feeder3</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.reinvented.Feeder3</string>
 		<key>NAME</key>
 		<string>Feeder 3</string>
 	</dict>

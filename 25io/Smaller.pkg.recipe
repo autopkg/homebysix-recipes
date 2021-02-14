@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.Smaller</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.smallerapp.Smaller</string>
 		<key>NAME</key>
 		<string>Smaller</string>
 	</dict>

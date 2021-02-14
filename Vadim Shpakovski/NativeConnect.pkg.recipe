@@ -10,13 +10,11 @@
 	<string>com.github.homebysix.pkg.NativeConnect</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.shpakovski.NativeConnect</string>
 		<key>NAME</key>
 		<string>NativeConnect</string>
 	</dict>
 	<key>MinimumVersion</key>
-    <string>1.4</string>
+	<string>1.4</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.NativeConnect</string>
 	<key>Process</key>

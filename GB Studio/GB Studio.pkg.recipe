@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.GBStudio</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.electron.gb-studio</string>
 		<key>NAME</key>
 		<string>GB Studio</string>
 	</dict>

@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.EasyBatchPhoto</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.yellowmug.EasyBatchPhoto</string>
 		<key>NAME</key>
 		<string>EasyBatchPhoto</string>
 	</dict>

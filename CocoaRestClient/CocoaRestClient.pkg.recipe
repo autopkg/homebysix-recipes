@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.CocoaRestClient</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>org.restlesscode.cocoarestclient</string>
 		<key>NAME</key>
 		<string>CocoaRestClient</string>
 	</dict>

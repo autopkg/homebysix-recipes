@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.OpenWithManager</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.manytricks.Open-With Manager</string>
 		<key>NAME</key>
 		<string>Open-With Manager</string>
 	</dict>

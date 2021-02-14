@@ -10,8 +10,6 @@
 	<string>com.github.homebysix.pkg.TMNotifier</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.everythingisgray.TMNotifier</string>
 		<key>NAME</key>
 		<string>TMNotifier</string>
 	</dict>
