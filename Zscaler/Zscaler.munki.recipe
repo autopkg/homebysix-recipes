@@ -80,7 +80,7 @@ exit 0
 			<true/>
 		</dict>
 	</dict>
-	<key>MiniumumVersion</key>
+	<key>MinimumVersion</key>
 	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.rtrouton.pkg.zscaler</string>
