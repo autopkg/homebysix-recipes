@@ -5,8 +5,8 @@ Input:
   NAME: Coppice
   pkginfo:
     catalogs:
-      - testing
-        description: 'Mind mapping and thought organizing tool.'
+      - testing:
+        description: Mind mapping and thought organizing tool.
         developer: M Cubed Software
         display_name: Coppice
         name: '%NAME%'

@@ -5,8 +5,8 @@ Input:
   NAME: Gitfox
   pkginfo:
     catalogs:
-      - testing
-        description: 'Fast and powerful Git client.'
+      - testing:
+        description: Fast and powerful Git client.
         developer: Erik Aigner
         display_name: Gitfox
         name: '%NAME%'
