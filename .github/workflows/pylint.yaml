@@ -19,4 +19,4 @@ jobs:
       - name: GitHub Action for pylint
         uses: cclauss/GitHub-Action-for-pylint@0.7.0
         with:
-          args: "pylint SharedProcessors/*.py"
+          args: "pylint test/*.py Quicksilver/*.py GoToMeeting/*.py VersionSplitter/*.py FindAndReplace/*.py Zoom/*.py BinaryFileVersioner/*.py"

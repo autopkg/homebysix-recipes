@@ -158,7 +158,7 @@ class Zoom7zUnarchiver(Processor):
             elif fmt.endswith("bzip2"):
                 cmd.append("-j")
 
-        # Call shell command.
+        # Call the shell command.
         try:
             proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             (_, stderr) = proc.communicate()
