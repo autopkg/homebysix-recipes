@@ -35,7 +35,7 @@ EXTNS = {
 }
 
 
-class Zoom7zUnarchiver(Processor):
+class Zoom7zUnarchiver(Processor):  # pylint: disable=invalid-name
     """Archive decompressor for zip and common tar-compressed formats."""
 
     description = __doc__
