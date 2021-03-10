@@ -6,11 +6,11 @@ Input:
   pkginfo:
     catalogs:
       - testing
-      description: Fast and powerful Git client.
-      developer: Erik Aigner
-      display_name: Gitfox
-      name: '%NAME%'
-      unattended_install: true
+        description: Fast and powerful Git client.
+        developer: Erik Aigner
+        display_name: Gitfox
+        name: '%NAME%'
+        unattended_install: true
 MinimumVersion: '2.3'
 ParentRecipe: com.github.homebysix.download.Gitfox
 Process:
