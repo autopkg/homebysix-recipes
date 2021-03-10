@@ -5,4 +5,4 @@ Input:
 MinimumVersion: '2.3'
 ParentRecipe: com.github.homebysix.download.Coppice
 Process:
-- Processor: AppPkgCreator
+  - Processor: AppPkgCreator
