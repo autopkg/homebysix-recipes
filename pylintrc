@@ -1,0 +1,13 @@
+[MAIN]
+
+disable=
+    duplicate-code,
+    import-error,
+    invalid-name,
+    invalid-name,
+    line-too-long,
+    missing-module-docstring,
+    raise-missing-from,
+    too-few-public-methods,
+    too-many-branches,
+    too-many-statements,

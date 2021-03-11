@@ -22,6 +22,7 @@ import platform
 import socket
 from distutils.version import LooseVersion
 
+# pylint: disable=unused-import
 from autopkglib import Processor, ProcessorError, URLGetter  # noqa: F401
 
 __all__ = ["GoToMeetingURLProvider"]

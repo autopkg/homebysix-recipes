@@ -22,11 +22,13 @@ repos:
     hooks:
       - id: check-added-large-files
         args: ["--maxkb=100"]
+      - id: check-ast
       - id: check-byte-order-marker
       - id: check-case-conflict
       - id: check-docstring-first
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
+      - id: fix-encoding-pragma
       - id: mixed-line-ending
       - id: no-commit-to-branch
       - id: trailing-whitespace
