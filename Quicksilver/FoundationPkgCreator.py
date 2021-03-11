@@ -1,4 +1,5 @@
 #!/usr/local/autopkg/python
+# pylint: disable=no-self-use, no-else-raise, invalid-name
 #
 # Based on AppPkgCreator, Copyright 2016 Greg Neagle
 # Adapted to use Foundation, 2020 Graham Pugh

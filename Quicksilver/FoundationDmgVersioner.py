@@ -1,4 +1,5 @@
 #!/usr/local/autopkg/python
+# pylint: disable=no-self-use, no-else-raise, invalid-name
 #
 # Based on AppDmgVersioner, Copyright 2010 Per Olofsson
 # Adapted to use Foundation, 2020 Graham Pugh
@@ -126,6 +127,7 @@ class FoundationDmgVersioner(DmgMounter):  # pylint: disable=invalid-name
         return info
 
     def main(self):
+        """Main process."""
         # Mount the image.
         mount_point = self.mount(self.env["dmg_path"])
         # Wrap all other actions in a try/finally so the image is always
