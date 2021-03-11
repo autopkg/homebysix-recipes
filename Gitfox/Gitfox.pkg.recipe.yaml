@@ -5,6 +5,6 @@ Input:
 MinimumVersion: '2.3'
 ParentRecipe: com.github.homebysix.download.Gitfox
 Process:
-- Processor: AppPkgCreator
-  Arguments:
-    app_path: '%RECIPE_CACHE_DIR%/%NAME%/Gitfox.app'
+  - Processor: AppPkgCreator
+    Arguments:
+      app_path: '%RECIPE_CACHE_DIR%/%NAME%/Gitfox.app'

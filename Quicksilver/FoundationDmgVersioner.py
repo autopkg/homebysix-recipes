@@ -40,7 +40,7 @@ from Foundation import (
 __all__ = ["FoundationDmgVersioner"]
 
 
-class FoundationDmgVersioner(DmgMounter):
+class FoundationDmgVersioner(DmgMounter):  # pylint: disable=invalid-name
     # we dynamically set the docstring from the description (DRY), so:
     description = "Extracts bundle ID and version of app inside dmg."
     input_variables = {

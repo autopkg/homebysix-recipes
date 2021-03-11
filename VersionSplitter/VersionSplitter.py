@@ -14,12 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from autopkglib import Processor, ProcessorError  # noqa: F401
+from autopkglib import Processor, ProcessorError  # noqa: F401  # pylint: disable=import-error
 
 __all__ = ["VersionSplitter"]
 
 
-class VersionSplitter(Processor):
+class VersionSplitter(Processor):  # pylint: disable=invalid-name
     """This processor splits version numbers and returns the specified index.
     By default, it splits using a space, and returns the first item. Default
     behavior example: "3.0.8 :074a131:" --> "3.0.8".

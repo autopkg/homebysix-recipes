@@ -42,7 +42,7 @@ from Foundation import (
 __all__ = ["FoundationPkgCreator"]
 
 
-class FoundationPkgCreator(DmgMounter, PkgCreator):
+class FoundationPkgCreator(DmgMounter, PkgCreator):  # pylint: disable=invalid-name
     """Calls autopkgserver to create a package from an application."""
 
     description = __doc__

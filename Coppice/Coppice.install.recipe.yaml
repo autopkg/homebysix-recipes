@@ -5,9 +5,9 @@ Input:
 MinimumVersion: '2.3'
 ParentRecipe: com.github.homebysix.download.Coppice
 Process:
-- Processor: InstallFromDMG
-  Arguments:
-    dmg_path: '%pathname%'
-    items_to_copy:
-    - destination_path: /Applications
-      source_item: Coppice.app
+  - Processor: InstallFromDMG
+    Arguments:
+      dmg_path: '%pathname%'
+      items_to_copy:
+        - destination_path: /Applications
+          source_item: Coppice.app
