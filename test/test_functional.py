@@ -1,4 +1,5 @@
 #!/usr/bin/python
+
 """test_functional.py.
 
 Functional tests for homebysix-recipes.
@@ -101,7 +102,8 @@ def test_functional():
         print(
             "Testing {} ({} of {})...".format(recipe_path, index + 1, len(recipe_paths))
         )
-        recipe = plistlib.readPlist(recipe_path)
+        with open(recipe_path, "rb") as infile:
+            recipe = plistlib.load(infile)
         yield check_recipe, recipe_path, recipe
         clear_cache(recipe["Identifier"])
         yield run_recipe, recipe_path
