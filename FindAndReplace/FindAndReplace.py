@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from autopkglib import Processor, ProcessorError  # noqa: F401
+from autopkglib import Processor  # noqa: F401
 
 __all__ = ["FindAndReplace"]
 
