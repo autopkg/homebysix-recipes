@@ -10,15 +10,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Spotify</string>
-	</dict>
-	<key>MinimumVersion</key>
-	<string>0.2.0</string>
-	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.Spotify</string>
-	<key>Input</key>
-	<dict>
-		<key>NAME</key>
-		<string>Spotify</string>
 		<key>VERSION_SPLIT_ON</key>
 		<string>.g</string>
 	</dict>
@@ -41,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>split_on</key>
-				<string>%VERSION_SPLIT_ON%</string>
+				<string>.g</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
