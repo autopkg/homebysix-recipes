@@ -5,9 +5,13 @@ on:
   push:
     paths:
       - "**.py"
+      - ".pylintrc"
+      - ".github/workflows/pylint.yaml"
   pull_request:
     paths:
       - "**.py"
+      - ".pylintrc"
+      - ".github/workflows/pylint.yaml"
 
 jobs:
   pylint:
