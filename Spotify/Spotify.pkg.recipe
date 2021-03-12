@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>split_on</key>
-				<string>.g</string>
+				<string>%VERSION_SPLIT_ON%</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
