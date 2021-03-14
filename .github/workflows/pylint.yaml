@@ -6,11 +6,13 @@ on:
     paths:
       - "**.py"
       - ".pylintrc"
+      - "requirements.txt"
       - ".github/workflows/pylint.yaml"
   pull_request:
     paths:
       - "**.py"
       - ".pylintrc"
+      - "requirements.txt"
       - ".github/workflows/pylint.yaml"
 
 jobs:
@@ -20,7 +22,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: GitHub Action for pylint
-        uses: cclauss/GitHub-Action-for-pylint@0.7.0
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          args: "pylint */*.py"
+          python-version: 3.8
+      - name: Install pylint
+        run: pip install pylint
+      - name: pylint files
+        # https://stackoverflow.com/a/63044665/861745
+        run: pylint $(git ls-files '*.py')
