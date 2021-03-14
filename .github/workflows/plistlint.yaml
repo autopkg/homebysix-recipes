@@ -27,5 +27,5 @@ jobs:
       - name: Install validate-plist-xml
         run: pip install validate-plist-xml
 
-      - name: Lint Plist files
+      - name: Validate Plist files
         run: python3 -m validate_plist_xml
