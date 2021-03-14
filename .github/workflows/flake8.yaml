@@ -6,11 +6,13 @@ on:
     paths:
       - "**.py"
       - ".flake8"
+      - "requirements.txt"
       - ".github/workflows/flake8.yaml"
   pull_request:
     paths:
       - "**.py"
       - ".flake8"
+      - "requirements.txt"
       - ".github/workflows/flake8.yaml"
 
 jobs:
@@ -22,10 +24,9 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: "3.8"
+      - name: Install flake8
+        run: pip install flake8
+      - name: Install requirements
+        run: pip install -r requirements.txt
       - name: Run flake8
-        uses: julianwachholz/flake8-action@v1.1.0
-        with:
-          checkName: "Python Lint Flake8"
-          path: "."
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: flake8 --show-source --statistics .
