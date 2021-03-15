@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Dirty script built in the Zoom installer
 # Barely updated by @ygini to act as a munki postinstall script
@@ -39,7 +39,7 @@ use_sig_file=0
 # use audio device plugin
 AudioPluginPath="/Library/Audio/Plug-Ins/HAL"
 audioPluginfile="$app_path/Contents/Plugins/ZoomAudioDevice.driver"
-if [ "$minorver" -gt 9 ]; then
+if [[ "$majorver" -eq 10 && "$minorver" -gt 9 ]] || [[ "$majorver" -gt 10 ]]; then
     echo "Install audio device drive" >> "$LOG_PATH"
 
     #install audio driver
@@ -55,7 +55,7 @@ if [ "$minorver" -gt 9 ]; then
 #################################
 # use audio device kernel
 else
-    if [ "$minorver" -gt 9 ]; then
+    if [[ "$majorver" -eq 10 && "$minorver" -gt 9 ]] || [[ "$majorver" -gt 10 ]]; then
         vsig="$(/usr/bin/codesign -dv $kext_file 2>&1)"
         ret="$?"
         echo "verify signature:$vsig, $ret" >> "$LOG_PATH"
