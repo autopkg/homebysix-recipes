@@ -33,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-    <string>1.4</string>
+	<string>1.4</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.NativeConnect</string>
 	<key>Process</key>

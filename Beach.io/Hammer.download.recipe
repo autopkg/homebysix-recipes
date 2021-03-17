@@ -16,13 +16,13 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
 			<key>Arguments</key>
 			<dict>
 				<key>warning_message</key>
 				<string>Hammer hasn't been updated recently and the Sparkle feed is offline as of December 2020. However I'll keep this recipe deprecated for a while because the developer seems to still be active.</string>
 			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
