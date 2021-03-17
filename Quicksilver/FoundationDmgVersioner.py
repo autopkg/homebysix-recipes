@@ -1,4 +1,5 @@
 #!/usr/local/autopkg/python
+# -*- coding: utf-8 -*-
 # pylint: disable=no-self-use, no-else-raise, invalid-name
 #
 # Based on AppDmgVersioner, Copyright 2010 Per Olofsson
