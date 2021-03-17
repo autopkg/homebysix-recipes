@@ -1,4 +1,5 @@
 #!/usr/local/autopkg/python
+# -*- coding: utf-8 -*-
 # pylint: disable=no-self-use, no-else-raise, invalid-name
 #
 # Based on AppPkgCreator, Copyright 2016 Greg Neagle

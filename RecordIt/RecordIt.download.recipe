@@ -20,10 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://recordit.co/latest-osx</string>
 				<key>filename</key>
 				<string>%NAME%.zip</string>
+				<key>url</key>
+				<string>https://recordit.co/latest-osx</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

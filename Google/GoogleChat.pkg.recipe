@@ -66,10 +66,10 @@
 					<string>purge_ds_store</string>
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
-					<key>scripts</key>
-					<string>Scripts</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
+					<key>scripts</key>
+					<string>Scripts</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
