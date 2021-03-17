@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the Treasure Data "td-agent" disk image, which is a stable distribution package for the fluentd-tdagent log collector (https://www.fluentd.org/faqs).</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.fluentd-tdagent</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>tdagent</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>href="http://packages\.treasuredata\.com\.s3\.amazonaws\.com/3/macosx/td-agent-([\d\.-]+)\.dmg"</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+				<key>url</key>
+				<string>https://td-agent-package-browser.herokuapp.com/3/macosx</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://packages.treasuredata.com/3/macosx/td-agent-%version%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
