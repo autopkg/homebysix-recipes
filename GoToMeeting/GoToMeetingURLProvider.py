@@ -21,7 +21,6 @@ import json
 import os
 import platform
 import socket
-from urllib import parse
 from distutils.version import LooseVersion
 
 # pylint: disable=unused-import
