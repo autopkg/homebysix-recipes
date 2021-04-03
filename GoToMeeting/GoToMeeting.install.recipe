@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Installs the latest version of GoToMeeting.</string>
+	<string>Installs the latest version of GoToMeeting on the Mac running AutoPkg.
+	
+NOTE: This recipe does not utilize the preinstall cleanup script used by the pkg and munki recipes.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.GoToMeeting</string>
 	<key>Input</key>
@@ -20,39 +22,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
+				<key>dmg_path</key>
 				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%dmg_path%</string>
 				<key>items_to_copy</key>
 				<array>
 					<dict>
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%NAME% (%build%).app</string>
+						<string>GoToMeeting.app</string>
 					</dict>
 				</array>
 			</dict>

@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.GoToMeeting</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.citrixonline.GoToMeeting</string>
 		<key>NAME</key>
 		<string>GoToMeeting</string>
 	</dict>
@@ -19,6 +17,31 @@
 	<string>com.github.homebysix.download.GoToMeeting</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict>
+					<key>Applications</key>
+					<string>0775</string>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/GoToMeeting.app</string>
+				<key>source_path</key>
+				<string>%pathname%/GoToMeeting.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -38,7 +61,7 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>%BUNDLE_ID%</string>
+					<string>com.citrixonline.GoToMeeting</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
