@@ -32,12 +32,12 @@
 			<string>10.7</string>
 			<key>name</key>
 			<string>%NAME%</string>
-			<key>unattended_install</key>
-			<true/>
-      <key>postuninstall_script</key>
-      <string>#!/bin/sh
+			<key>postuninstall_script</key>
+			<string>#!/bin/sh
 rm -rf /Applications/zoom.us.app
 </string>
+			<key>unattended_install</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
