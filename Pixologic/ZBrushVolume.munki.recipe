@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>Processes a downloaded ZBrush installer, creates a pkg, and imports it into Munki.
-	
+
 IMPORTANT: See the parent ZBrushVolume.pkg recipe description for important
 information on running this recipe:
 https://github.com/autopkg/jazzace-recipes/blob/master/Pixologic/ZBrushVolume.pkg.recipe
