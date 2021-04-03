@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>Installs the latest version of GoToMeeting on the Mac running AutoPkg.
-	
+
 NOTE: This recipe does not utilize the preinstall cleanup script used by the pkg and munki recipes.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.GoToMeeting</string>
