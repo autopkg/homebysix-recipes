@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.install.ParallelsDesktop</string>
 	<key>Input</key>
 	<dict>
-		<key>MAJOR_VERSION</key>
-		<string>14</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
 	</dict>
