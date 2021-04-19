@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of MySQLWorkbench version and builds a pkg, installs it.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.install.MySQLWorkbench</string>
+	<key>Input</key>
+	<dict/>
+	<key>MinimumVersion</key>
+	<string>0.6.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.pkg.MySQLWorkbench</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>Installer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
