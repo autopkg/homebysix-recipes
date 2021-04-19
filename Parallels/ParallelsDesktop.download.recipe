@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 9, 10, 11, 12, 13, and 14.
+	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 9 through 16.
+
+To download the Intel or Apple Silicon build for version 16, set PLATFORM_ARCH in your override to intel or m1.
 
 This recipe differs from the one in keeleysam-recipes because it offers code signature verification, does not require a ParallelsURLProvider processor, and also includes pkg and install recipes.</string>
 	<key>Identifier</key>
@@ -14,6 +16,8 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 		<string>15</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
+		<key>PLATFORM_ARCH</key>
+		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -25,7 +29,7 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 				<key>filename</key>
 				<string>%NAME%-%MAJOR_VERSION%.dmg</string>
 				<key>url</key>
-				<string>https://www.parallels.com/directdownload/pd%MAJOR_VERSION%</string>
+				<string>https://www.parallels.com/directdownload/pd%MAJOR_VERSION%/%PLATFORM_ARCH%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
