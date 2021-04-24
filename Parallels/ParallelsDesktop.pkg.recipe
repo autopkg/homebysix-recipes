@@ -3,7 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Parallels Desktop and creates a package. This recipe has been tested with major versions 9 through 15.</string>
+	<string>Downloads the latest version of Parallels Desktop and creates a package. This recipe has been tested with major versions 9 through 16.
+
+For major versions 9 through 15, leave the PLATFORM_ARCH blank in your override.
+
+For major version 16, set the PLATFORM_ARCH in your override to either "intel" or "m1" depending on your desired architecture.
+
+This recipe differs from the one in keeleysam-recipes because it offers code signature verification, does not require a ParallelsURLProvider processor, and also includes pkg and install recipes.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.ParallelsDesktop</string>
 	<key>Input</key>
