@@ -8,6 +8,8 @@
 	<string>com.github.homebysix.download.RingCentralMeetings</string>
 	<key>Input</key>
 	<dict>
+		<key>DOWNLOAD_URL</key>
+		<string>https://downloads.ringcentral.com/RCM/RC/meetings/mac/RCMeetingsClientSetup.pkg</string>
 		<key>NAME</key>
 		<string>RingCentral Meetings</string>
 	</dict>
@@ -18,21 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>(dn\.ringcentral\.com\/data\/web\/download\/RCMeetings\/[\d]+\/RCMeetingsClientSetup\.pkg)</string>
-				<key>result_output_var_name</key>
-				<string>download_path</string>
+				<key>filename</key>
+				<string>%NAME%.pkg</string>
 				<key>url</key>
-				<string>https://www.ringcentral.com/apps/rc-meetings</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>http://%download_path%</string>
+				<string>%DOWNLOAD_URL%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
