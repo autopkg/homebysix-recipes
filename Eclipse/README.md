@@ -22,7 +22,7 @@ Valid choices are:
 - Eclipse Modeling Tools
 - Eclipse IDE for Java and Report Developers
 - Eclipse for Parallel Application Developers
-- Eclipse for Testers 
+- Eclipse for Testers
 - Eclipse for Scout Developers
 
 Also, you may wish to override `NAME` to differentiate the package from others.
