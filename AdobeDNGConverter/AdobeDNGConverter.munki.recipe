@@ -37,6 +37,15 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The parent recipe is not working (https://github.com/autopkg/sheagcraig-recipes/issues/65) due to change on Adobe's side, and this AdobeDNGConverter.munki recipe will be removed in the future.</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkgdirs</key>
