@@ -14,7 +14,7 @@
         <string>Jin</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.2.9</string>
     <key>Process</key>
     <array>
         <dict>

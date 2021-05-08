@@ -14,7 +14,7 @@
         <string>Eclipse IDE for Java Developers</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.2.9</string>
     <key>Process</key>
     <array>
         <dict>
@@ -48,7 +48,7 @@
                     <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-reporting[\w-]+macosx-cocoa-x86_64\.dmg)</string>
                     <key>Eclipse for Parallel Application Developers</key>
                     <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-parallel[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse for Testers</key> 
+                    <key>Eclipse for Testers</key>
                     <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-testing[\w-]+macosx-cocoa-x86_64\.dmg)</string>
                     <key>Eclipse for Scout Developers</key>
                     <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-scout[\w-]+macosx-cocoa-x86_64\.dmg)</string>
