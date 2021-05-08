@@ -14,7 +14,7 @@ repos:
       - id: forbid-autopkg-overrides
       - id: forbid-autopkg-trust-info
   - repo: https://github.com/ambv/black
-    rev: 20.8b1
+    rev: 21.5b0
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -34,6 +34,10 @@ repos:
       - id: trailing-whitespace
         args: ["--markdown-linebreak-ext=md"]
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.9.0
+    rev: 3.9.2
     hooks:
       - id: flake8
+  - repo: https://github.com/PyCQA/pylint
+    rev: v2.8.2
+    hooks:
+      - id: pylint
