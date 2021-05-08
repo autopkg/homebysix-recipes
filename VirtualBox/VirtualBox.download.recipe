@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of VirtualBox</string>
+    <key>Identifier</key>
+    <string>com.github.homebysix.download.VirtualBox</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>VirtualBox</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.6.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>https://www.virtualbox.org/wiki/Downloads</string>
+                <key>re_pattern</key>
+                <string>https://download\.virtualbox\.org/virtualbox/[0-9\.]*/VirtualBox-[0-9\.-]*-OSX.dmg</string>
+                <key>comment</key>
+                <string>Example: https://download.virtualbox.org/virtualbox/4.3.10/VirtualBox-4.3.10-93012-OSX.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%match%</string>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+          <key>Processor</key>
+          <string>CodeSignatureVerifier</string>
+          <key>Arguments</key>
+          <dict>
+            <key>input_path</key>
+            <string>%pathname%/%NAME%.pkg</string>
+            <key>expected_authority_names</key>
+            <array>
+              <string>Developer ID Installer: Oracle America, Inc. (VB5E2TV963)</string>
+              <string>Developer ID Certification Authority</string>
+              <string>Apple Root CA</string>
+            </array>
+          </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
