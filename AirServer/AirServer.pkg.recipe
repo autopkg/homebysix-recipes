@@ -11,8 +11,9 @@
     <dict>
         <key>NAME</key>
         <string>AirServer</string>
-        <!--The CFBundleIdentifier is com.pratikkumar.airserver-mac, but is an
-        invalid identifier. Thus, we use below: -->
+        <key>Comment</key>
+        <string>The CFBundleIdentifier is com.pratikkumar.airserver-mac, but is an
+        invalid identifier. Thus, we use below:</string>
         <key>PKG_ID</key>
         <string>com.airserver.AirServer</string>
     </dict>
@@ -60,9 +61,6 @@
                 <dict>
                     <key>CFBundleVersion</key>
                     <string>version</string>
-                    <!--
-                    <key>CFBundleIdentifier</key>
-                    <string>PKG_ID</string>-->
                 </dict>
             </dict>
         </dict>

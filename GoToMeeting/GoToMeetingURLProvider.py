@@ -32,6 +32,7 @@ HOSTNAME = "builds.cdn.getgo.com"
 
 # workaround for 10.12.x SNI issue
 if LooseVersion(platform.mac_ver()[0]) < LooseVersion("10.13.0"):
+    # pylint: disable=no-member
     HOSTNAME = socket.gethostbyname_ex("builds.cdn.getgo.com")[0]
 
 BASE_URL = "https://" + HOSTNAME + "/g2mupdater/live/config.json"

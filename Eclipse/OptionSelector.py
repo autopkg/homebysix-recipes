@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 #
 # Copyright 2015 Shea G. Craig
 #
@@ -21,6 +22,7 @@ from autopkglib import Processor, ProcessorError
 
 __all__ = ["OptionSelector"]
 
+
 class OptionSelector(Processor):
     """Selects an option from a dictionary to assign to a variable.
 
@@ -36,47 +38,45 @@ class OptionSelector(Processor):
     input_variables = {
         "result_output_var_name": {
             "description": "The name of the output variable that is returned. "
-                           "If not specified, a default of 'selection' will "
-                           "be used.",
+            "If not specified, a default of 'selection' will "
+            "be used.",
             "required": False,
             "default": "selection",
         },
         "selection": {
             "description": "Key of option to select. The corresponding value "
-                           "will be returned as the result_output_var_name's "
-                           "value.",
+            "will be returned as the result_output_var_name's "
+            "value.",
             "required": True,
         },
         "options": {
             "description": "Dictionary of options. Keys are used as values "
-                           "for the selection argument. The value is returned "
-                           "as the output of this processor.",
+            "for the selection argument. The value is returned "
+            "as the output of this processor.",
             "required": True,
         },
     }
     output_variables = {
         "result_output_var_name": {
             "description": "The value of 'selection' in the 'options'. "
-                           "NOTE: The name of this variable is controlled "
-                           "by the 'result_output_var_name' variable "
-                           "(the default is 'selection')",
+            "NOTE: The name of this variable is controlled "
+            "by the 'result_output_var_name' variable "
+            "(the default is 'selection')",
         }
     }
 
     description = __doc__
 
     def main(self):
+        """Main process."""
         output_name = self.env["result_output_var_name"]
         selection = self.env["selection"]
         options = self.env["options"]
         if selection not in options:
-            raise ProcessorError(
-                "Specified selection is not in the dictionary!")
-        else:
-            result = options[selection]
+            raise ProcessorError("Specified selection is not in the dictionary!")
 
-        self.output_variables = {
-            output_name: {"description": "Selected option."}}
+        result = options[selection]
+        self.output_variables = {output_name: {"description": "Selected option."}}
         self.env[output_name] = result
         self.output("Selection '{}': '{}'".format(selection, result))
 

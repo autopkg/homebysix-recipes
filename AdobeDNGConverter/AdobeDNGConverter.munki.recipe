@@ -31,7 +31,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.sheagcraig.pkg.AdobeDNGConverter</string>
 	<key>Process</key>
