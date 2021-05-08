@@ -51,11 +51,11 @@ class BinaryFileVersioner(Processor):  # pylint: disable=invalid-name
         cmd = "/bin/launchctl plist __TEXT,__info_plist '{}'".format(
             self.env["input_file_path"]
         )
-        proc = Popen(
+        with Popen(
             shlex.split(cmd.strip()), stdin=PIPE, stdout=PIPE, stderr=PIPE, text=True
-        )
-        out, err = proc.communicate()
-        exitcode = proc.returncode
+        ) as proc:
+            out, err = proc.communicate()
+            exitcode = proc.returncode
 
         if exitcode != 0:
             raise ProcessorError("/bin/launchctl failed with error: {}".format(err))

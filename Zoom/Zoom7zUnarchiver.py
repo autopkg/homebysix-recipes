@@ -161,8 +161,10 @@ class Zoom7zUnarchiver(Processor):  # pylint: disable=invalid-name
 
         # Call the shell command.
         try:
-            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            (_, stderr) = proc.communicate()
+            with subprocess.Popen(
+                cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            ) as proc:
+                _, stderr = proc.communicate()
         except OSError as err:
             raise ProcessorError(
                 "%s execution failed with error code %d: %s"
