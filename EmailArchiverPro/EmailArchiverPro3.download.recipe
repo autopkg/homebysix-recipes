@@ -18,13 +18,12 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>request_headers</key>
-				<dict>
-					<key>user-agent</key>
-					<string>Mozilla/5.0</string>
-				</dict>
 				<key>url</key>
 				<string>https://emailarchiverpro.com/downloads/EmailArchiverPro.zip</string>
 			</dict>
