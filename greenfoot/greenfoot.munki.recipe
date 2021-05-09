@@ -33,7 +33,7 @@
 	<key>MinimumVersion</key>
 	<string>1.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.sheagcraig.pkg.Greenfoot</string>
+	<string>com.github.homebysix.pkg.Greenfoot</string>
 	<key>Process</key>
 	<array>
 		<dict>
