@@ -1,0 +1,10 @@
+#!/bin/bash
+
+path_root="$3"; if [ -z "${path_root}" ] || [ "${path_root}" = "/" ]; then path_root=""; fi #++ fix //
+formatted_date=$(date +"%Y%m%d%H%M%S") #++ date to string
+
+#++ not configuring JAVA_HOME, EC2_HOME, AWS_ACCESS_KEY or AWS_SECRET_KEY here but that could be an option...
+
+sudo /tmp/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+exit 0

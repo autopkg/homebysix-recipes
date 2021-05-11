@@ -89,7 +89,7 @@
 				<key>pkgtype</key>
 				<string>flat</string>
 				<key>template_path</key>
-				<string>%RECIPE_DIR%/%NAME%/PackageInfoTemplate</string>
+				<string>%RECIPE_DIR%/PackageInfoTemplate</string>
 				<key>version</key>
 				<string>%output_string%</string>
 			</dict>
@@ -121,9 +121,9 @@
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>resources</key>
-					<string>%RECIPE_DIR%/%NAME%/Resources</string>
+					<string>%RECIPE_DIR%/Resources</string>
 					<key>scripts</key>
-					<string>%RECIPE_DIR%/%NAME%/Scripts</string>
+					<string>%RECIPE_DIR%/Scripts</string>
 				</dict>
 				<key>pkgname</key>
 				<string>%NAME%-%version%</string>
