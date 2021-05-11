@@ -2,18 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.3.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Usues sheagcraig's AdobeDNGConverter.pkg and imports into Munki.</string>
+	<string>Downloads the latest version of DNG Converter and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.AdobeDNGConverter</string>
+	<string>com.github.homebysix.munki.DNGConverter</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Adobe DNG Converter</string>
+		<string>DNG Converter</string>
 		<key>pkginfo</key>
 		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Adobe DNG Converter.app</string>
+			</array>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
@@ -23,7 +29,7 @@
 			<key>developer</key>
 			<string>Adobe</string>
 			<key>display_name</key>
-			<string>%NAME%</string>
+			<string>DNG Converter</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -31,62 +37,11 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.1</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.sheagcraig.pkg.AdobeDNGConverter</string>
+	<string>com.github.homebysix.download.DNGConverter</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
-			<key>Arguments</key>
-			<dict>
-				<key>warning_message</key>
-				<string>The parent recipe is not working (https://github.com/autopkg/sheagcraig-recipes/issues/65) due to change on Adobe's side, and this AdobeDNGConverter.munki recipe will be removed in the future.</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0755</string>
-				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/fauxroot</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>source</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/Adobe DNG Converter.app</string>
-				<key>target</key>
-				<string>%RECIPE_CACHE_DIR%/fauxroot/Applications/Adobe DNG Converter.app</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileMover</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>faux_root</key>
-				<string>%RECIPE_CACHE_DIR%/fauxroot</string>
-				<key>installs_item_paths</key>
-				<array>
-					<string>/Applications/Adobe DNG Converter.app</string>
-				</array>
-			</dict>
-			<key>Processor</key>
-			<string>MunkiInstallsItemsCreator</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -102,8 +57,25 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>faux_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>installs_item_paths</key>
+				<array>
+					<string>/Applications/Adobe DNG Converter.app</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiInstallsItemsCreator</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
