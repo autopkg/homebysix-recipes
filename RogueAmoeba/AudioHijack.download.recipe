@@ -23,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://d2oxtzozd38ts8.cloudfront.net/audiohijack/download/AudioHijack.zip</string>
+				<string>https://rogueamoeba.com/audiohijack/download/AudioHijack.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
