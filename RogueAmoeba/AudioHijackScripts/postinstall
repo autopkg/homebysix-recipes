@@ -1,0 +1,5 @@
+#!/bin/bash
+# Install ACE driver audio plugin
+if [[ -x "$3/Applications/Audio Hijack.app/Contents/Resources/aceinstaller" ]]; then
+    "$3/Applications/Audio Hijack.app/Contents/Resources/aceinstaller" install -s
+fi
