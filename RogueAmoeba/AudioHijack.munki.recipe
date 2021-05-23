@@ -28,6 +28,13 @@
 			<string>Audio Hijack</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
+# Install ACE driver audio plugin
+if [[ -x "/Applications/Audio Hijack.app/Contents/Resources/aceinstaller" ]]; then
+    "/Applications/Audio Hijack.app/Contents/Resources/aceinstaller" install -s
+fi
+</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
