@@ -56,39 +56,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>additional_pkginfo</key>
-				<dict>
-					<key>installcheck_script</key>
-					<string>#!/usr/bin/python
-
-import os
-import subprocess
-import sys
-from distutils.version import LooseVersion
-
-kubectl = "/usr/local/bin/kubectl"
-offered_version = "%version%"
-
-if not os.path.isfile(kubectl):
-    sys.exit(1)
-
-installed_version = subprocess.check_output([kubectl, "version", "--short", "--client"])
-if "Client Version" not in installed_version:
-    sys.exit(1)
-
-installed_version = installed_version.replace("Client Version: v", "").strip()
-print("kubectl installed version: %s" % installed_version)
-
-sys.exit(int(LooseVersion(offered_version) &lt;= LooseVersion(installed_version)))
-</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
