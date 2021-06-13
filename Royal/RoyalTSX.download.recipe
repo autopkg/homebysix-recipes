@@ -20,17 +20,18 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>https://royaltsx-v[\d]+\.royalapps\.com/updates/royaltsx_.+\.dmg</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
-				<key>url</key>
-				<string>https://www.royalapps.com/ts/mac/download</string>
+				<key>appcast_url</key>
+				<string>https://royaltsx-v5.royalapps.com/updates_stable</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>SparkleUpdateInfoProvider</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
