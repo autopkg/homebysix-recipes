@@ -20,64 +20,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>input_plist_path</key>
+				<string>%pathname%/Royal TSX.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
-			<string>PkgRootCreator</string>
+			<string>Versioner</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Royal TSX.app</string>
-				<key>overwrite</key>
-				<true/>
-				<key>source_path</key>
-				<string>%pathname%/Royal TSX.app</string>
-			</dict>
 			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>&lt;key&gt;CFBundleShortVersionString&lt;/key&gt;&lt;string&gt;([\d\.]+)&lt;/string&gt;</string>
-				<key>result_output_var_name</key>
-				<string>version</string>
-				<key>url</key>
-				<string>file://%RECIPE_CACHE_DIR%/%NAME%/Applications/Royal TSX.app/Contents/Info.plist</string>
-			</dict>
-			<key>Comment</key>
-			<string>Using a URLTextSearcher processor in order to find the version from the app's Info.plist, which is improperly formatted as of 12/15/2020 and doesn't work with Versioner style processors.</string>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>id</key>
-					<string>com.lemonmojo.RoyalTSX.App</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-					<key>pkgroot</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
