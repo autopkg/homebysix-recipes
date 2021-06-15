@@ -2,42 +2,42 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Download the current built package of jss_helper.</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.download.jss_helper</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>jss_helper</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.5.0</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>GitHubReleasesInfoProvider</string>
-            <key>Comment</key>
-            <string>Get the latest release package.</string>
-            <key>Arguments</key>
-            <dict>
-                <key>github_repo</key>
-                <string>sheagcraig/jss_helper</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Comment</key>
-            <string>Download latest jss_helper package.</string>
-            <key>Arguments</key>
-            <dict />
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Download the current built package of jss_helper.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.jss_helper</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>jss_helper</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>github_repo</key>
+				<string>sheagcraig/jss_helper</string>
+			</dict>
+			<key>Comment</key>
+			<string>Get the latest release package.</string>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict/>
+			<key>Comment</key>
+			<string>Download latest jss_helper package.</string>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
 </dict>
 </plist>

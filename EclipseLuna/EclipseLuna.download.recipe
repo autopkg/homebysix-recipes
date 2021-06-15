@@ -2,34 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the current release version of Eclipse Luna</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.download.EclipseLuna</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>EclipseLuna</string>
-        <key>url</key>
-        <string>https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-standard-luna-R-macosx-cocoa-x86_64.tar.gz&amp;r=1</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.0</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>filename</key>
-                <string>%NAME%.tar.gz</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Downloads the current release version of Eclipse Luna</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.EclipseLuna</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>EclipseLuna</string>
+		<key>url</key>
+		<string>https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-standard-luna-R-macosx-cocoa-x86_64.tar.gz&amp;r=1</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.tar.gz</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
 </dict>
 </plist>

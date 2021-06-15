@@ -2,48 +2,48 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the current release version of Vivaldi.</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.download.Vivaldi</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>Vivaldi</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.4.0</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>https://vivaldi.com/download/</string>
-                <key>re_pattern</key>
-                <string>https:\/\/downloads\.vivaldi\.com\/stable\/Vivaldi[0-9\.]+universal\.dmg</string>
-                <key>result_output_var_name</key>
-                <string>match</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%match%</string>
-                <key>filename</key>
-                <string>Vivaldi.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-        <dict>
+	<key>Description</key>
+	<string>Downloads the current release version of Vivaldi.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.Vivaldi</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Vivaldi</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>https:\/\/downloads\.vivaldi\.com\/stable\/Vivaldi[0-9\.]+universal\.dmg</string>
+				<key>result_output_var_name</key>
+				<string>match</string>
+				<key>url</key>
+				<string>https://vivaldi.com/download/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>Vivaldi.dmg</string>
+				<key>url</key>
+				<string>%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
@@ -54,6 +54,6 @@
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
 		</dict>
-    </array>
+	</array>
 </dict>
 </plist>

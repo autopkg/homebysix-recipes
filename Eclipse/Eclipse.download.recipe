@@ -2,90 +2,90 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the current release version of Eclipse.</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.download.Eclipse</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>Eclipse</string>
-        <key>SELECTION</key>
-        <string>Eclipse IDE for Java Developers</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.9</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>OptionSelector</string>
-            <key>Arguments</key>
-            <dict>
-                <key>selection</key>
-                <string>%SELECTION%</string>
-                <key>options</key>
-                <dict>
-                    <key>Eclipse IDE for Java EE Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-jee[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse IDE for Java Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-java[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse IDE for C/C++ Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-cpp[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse IDE for Eclipse Committers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-committers[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse for PHP Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-php[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse IDE for Java and DSL Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-dsl[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse for RCP and RAP Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-rcp[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse IDE for Automotive Software Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-automotive[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse Modeling Tools</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-modeling[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse IDE for Java and Report Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-reporting[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse for Parallel Application Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-parallel[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse for Testers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-testing[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                    <key>Eclipse for Scout Developers</key>
-                    <string>\/downloads\/download\.php\?file=([/\w-]+eclipse-scout[\w-]+macosx-cocoa-x86_64\.dmg)</string>
-                </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>https://eclipse.org/downloads/eclipse-packages/</string>
-                <key>re_pattern</key>
-                <string>%selection%</string>
-                <key>result_output_var_name</key>
-                <string>match</string>
-                <key>request_headers</key>
-                <dict>
-                    <key>user-agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.39 (KHTML, like Gecko) Version/9.0 Safari/601.1.39</string>
-                </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>https://eclipse.org/downloads/download.php?r=1&amp;file=%match%</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Downloads the current release version of Eclipse.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.Eclipse</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Eclipse</string>
+		<key>SELECTION</key>
+		<string>Eclipse IDE for Java Developers</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>options</key>
+				<dict>
+					<key>Eclipse IDE for Automotive Software Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-automotive[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse IDE for C/C++ Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-cpp[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse IDE for Eclipse Committers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-committers[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse IDE for Java Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-java[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse IDE for Java EE Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-jee[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse IDE for Java and DSL Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-dsl[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse IDE for Java and Report Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-reporting[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse Modeling Tools</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-modeling[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse for PHP Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-php[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse for Parallel Application Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-parallel[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse for RCP and RAP Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-rcp[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse for Scout Developers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-scout[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<key>Eclipse for Testers</key>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-testing[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+				</dict>
+				<key>selection</key>
+				<string>%SELECTION%</string>
+			</dict>
+			<key>Processor</key>
+			<string>OptionSelector</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>%selection%</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.39 (KHTML, like Gecko) Version/9.0 Safari/601.1.39</string>
+				</dict>
+				<key>result_output_var_name</key>
+				<string>match</string>
+				<key>url</key>
+				<string>https://eclipse.org/downloads/eclipse-packages/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>https://eclipse.org/downloads/download.php?r=1&amp;file=%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
 </dict>
 </plist>

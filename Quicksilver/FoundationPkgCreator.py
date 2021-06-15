@@ -1,4 +1,3 @@
-#!/usr/local/autopkg/python
 # -*- coding: utf-8 -*-
 # pylint: disable=no-self-use, no-else-raise, invalid-name
 #
