@@ -2,45 +2,45 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the current release version of Jin
+	<key>Description</key>
+	<string>Downloads the current release version of Jin
     Note: Code signature verification for Jin probably cannot be done at this time. It doesn't appear to be using version 2
     or even version 1: Sealed Resources=none</string>
-    <key>Identifier</key>
-    <string>com.github.homebysix.download.Jin</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>Jin</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.9</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>re_pattern</key>
-                <string>href="(?P&lt;url&gt;http://sourceforge\.net/projects/jin/files/jin/jin-(?P&lt;version&gt;[\d\.]+)/jin-[\d\.]+-macosx-lion.dmg/download)"</string>
-                <key>url</key>
-                <string>https://www.jinchess.com/osx_download</string>
-            </dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>filename</key>
-                <string>%NAME%-%version%.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-    </array>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.Jin</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Jin</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>href="(?P&lt;url&gt;http://sourceforge\.net/projects/jin/files/jin/jin-(?P&lt;version&gt;[\d\.]+)/jin-[\d\.]+-macosx-lion.dmg/download)"</string>
+				<key>url</key>
+				<string>https://www.jinchess.com/osx_download</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
 </dict>
 </plist>

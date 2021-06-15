@@ -8,12 +8,12 @@
 	<string>com.github.homebysix.munki.Eclipse</string>
 	<key>Input</key>
 	<dict>
-        <key>NAME</key>
-        <string>Eclipse</string>
-        <key>SELECTION</key>
-        <string>Eclipse IDE for Java Developers</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>developer</string>
+		<key>NAME</key>
+		<string>Eclipse</string>
+		<key>SELECTION</key>
+		<string>Eclipse IDE for Java Developers</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>

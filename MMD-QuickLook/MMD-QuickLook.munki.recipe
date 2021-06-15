@@ -44,7 +44,7 @@
 				<key>archive_path</key>
 				<string>%pathname%</string>
 				<key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Library/QuickLook</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Library/QuickLook</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
@@ -57,7 +57,7 @@
 				<key>dmg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				<key>dmg_root</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/Library/QuickLook</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Library/QuickLook</string>
 			</dict>
 			<key>Processor</key>
 			<string>DmgCreator</string>
@@ -66,13 +66,13 @@
 			<key>Arguments</key>
 			<dict>
 				<key>additional_makepkginfo_options</key>
-                <array>
-                    <string>--owner=root</string>
-                    <string>--group=wheel</string>
-                    <string>--destinationpath=/Library/QuickLook</string>
-                </array>
+				<array>
+					<string>--owner=root</string>
+					<string>--group=wheel</string>
+					<string>--destinationpath=/Library/QuickLook</string>
+				</array>
 				<key>app_name</key>
-                <string>-MultiMarkdown QuickLook.qlgenerator</string>
+				<string>-MultiMarkdown QuickLook.qlgenerator</string>
 				<key>pkg_path</key>
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>

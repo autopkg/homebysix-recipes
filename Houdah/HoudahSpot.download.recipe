@@ -10,10 +10,10 @@
 	<string>com.github.homebysix.download.HoudahSpot</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>HoudahSpot</string>
 		<key>MAJOR_VERSION</key>
 		<string>6</string>
+		<key>NAME</key>
+		<string>HoudahSpot</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
