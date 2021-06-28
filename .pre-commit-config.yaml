@@ -3,13 +3,7 @@ repos:
     rev: v1.10.1
     hooks:
       - id: check-autopkg-recipes
-        args:
-          [
-            "--recipe-prefix=com.github.homebysix.",
-            "--ignore-min-vers-before=1.4.1",
-            "--strict",
-            "--",
-          ]
+        args: ["--recipe-prefix=com.github.homebysix.", "--strict", "--"]
         exclude: ^Docker\/|^Quicksilver\/Quicksilver\.pkg\.recipe$
       - id: forbid-autopkg-overrides
       - id: forbid-autopkg-trust-info
