@@ -21,6 +21,9 @@ repos:
       - id: check-docstring-first
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: fix-encoding-pragma
       - id: mixed-line-ending
