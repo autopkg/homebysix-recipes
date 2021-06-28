@@ -3,22 +3,12 @@ repos:
     rev: v1.10.1
     hooks:
       - id: check-autopkg-recipes
-        args:
-          [
-            "--recipe-prefix=com.github.homebysix.",
-            "--ignore-min-vers-before=1.4.1",
-            "--strict",
-            "--",
-          ]
+        args: ["--recipe-prefix=com.github.homebysix.", "--strict", "--"]
         exclude: ^Docker\/|^Quicksilver\/Quicksilver\.pkg\.recipe$
       - id: forbid-autopkg-overrides
       - id: forbid-autopkg-trust-info
-  - repo: https://github.com/ambv/black
-    rev: 21.5b0
-    hooks:
-      - id: black
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
+    rev: v4.0.1
     hooks:
       - id: check-added-large-files
         args: ["--maxkb=100"]
@@ -27,17 +17,24 @@ repos:
       - id: check-docstring-first
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: fix-encoding-pragma
       - id: mixed-line-ending
       - id: no-commit-to-branch
       - id: trailing-whitespace
         args: ["--markdown-linebreak-ext=md"]
+  - repo: https://github.com/ambv/black
+    rev: 21.6b0
+    hooks:
+      - id: black
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.9.2
     hooks:
       - id: flake8
   - repo: https://github.com/PyCQA/pylint
-    rev: v2.8.2
+    rev: v2.8.3
     hooks:
       - id: pylint
