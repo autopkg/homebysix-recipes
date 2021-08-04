@@ -2,32 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Imports EclipseLuna to Munki</string>
+	<string>Downloads the latest version of Unexpectedly and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.Eclipse</string>
+	<string>com.github.homebysix.munki.Unexpectedly</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>developer</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Eclipse</string>
-		<key>SELECTION</key>
-		<string>Eclipse IDE for Java Developers</string>
+		<string>Unexpectedly</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
 			</array>
-			<key>category</key>
-			<string>Developer</string>
 			<key>description</key>
-			<string>The essential tools for any Java developer, including a Java IDE, a CVS client, Git client, XML Editor, Mylyn, Maven integration...</string>
+			<string>A utility for intelligently inspecting macOS crash logs.</string>
 			<key>developer</key>
-			<string>Eclipse Foundation</string>
+			<string>Stephane Sudre</string>
 			<key>display_name</key>
-			<string>Eclipse IDE for Java Developers</string>
+			<string>Unexpectedly</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,9 +33,9 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.3</string>
+	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Eclipse</string>
+	<string>com.github.homebysix.download.Unexpectedly</string>
 	<key>Process</key>
 	<array>
 		<dict>
