@@ -31,6 +31,7 @@ HOSTNAME = "builds.cdn.getgo.com"
 if is_mac():
     import platform
     from distutils.version import LooseVersion
+
     # the following check is mac specific:
     if LooseVersion(platform.mac_ver()[0]) < LooseVersion("10.13.0"):
         # pylint: disable=no-member
