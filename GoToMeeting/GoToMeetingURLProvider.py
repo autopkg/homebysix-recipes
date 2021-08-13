@@ -18,9 +18,7 @@
 import gzip
 import json
 import os
-import platform
 import socket
-from distutils.version import LooseVersion
 
 # pylint: disable=unused-import
 from autopkglib import Processor, ProcessorError, URLGetter, is_mac  # noqa: F401
@@ -31,6 +29,8 @@ HOSTNAME = "builds.cdn.getgo.com"
 
 # workaround for 10.12.x SNI issue
 if is_mac():
+    import platform
+    from distutils.version import LooseVersion
     # the following check is mac specific:
     if LooseVersion(platform.mac_ver()[0]) < LooseVersion("10.13.0"):
         # pylint: disable=no-member
