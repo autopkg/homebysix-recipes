@@ -3,7 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Airfoil.</string>
+	<string>Downloads the latest version of Airfoil.
+
+NOTE: This recipe used to use the vendor's CloudFront CDN download URL
+(https://d2oxtzozd38ts8.cloudfront.net/airfoil/download/Airfoil.zip)
+however AutoPkg users found that CloudFront was sometimes not kept updated
+as new versions were releaesd. We are using the slower but more reliably
+updated rogueamoeba.com download link now.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.AirFoil</string>
 	<key>Input</key>
@@ -19,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://d2oxtzozd38ts8.cloudfront.net/airfoil/download/Airfoil.zip</string>
+				<string>https://rogueamoeba.com/airfoil/download/Airfoil.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
