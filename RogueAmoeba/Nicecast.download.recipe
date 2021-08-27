@@ -10,7 +10,7 @@
 NOTE: This recipe used to use the vendor's CloudFront CDN download URL
 (https://d2oxtzozd38ts8.cloudfront.net/nicecast/download/Nicecast.zip)
 however AutoPkg users found that CloudFront was sometimes not kept updated
-as new versions were releaesd. We are using the slower but more reliably
+as new versions were released. We are using the slower but more reliably
 updated rogueamoeba.com download link now.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Nicecast</string>
