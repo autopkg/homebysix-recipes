@@ -5,7 +5,13 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Audio Hijack.</string>
+	<string>Downloads the latest version of Audio Hijack.
+
+NOTE: This recipe used to use the vendor's CloudFront CDN download URL
+(https://d2oxtzozd38ts8.cloudfront.net/audiohijack/download/AudioHijack.zip)
+however AutoPkg users found that CloudFront was sometimes not kept updated
+as new versions were released. We are using the slower but more reliably
+updated rogueamoeba.com download link now.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.AudioHijack</string>
 	<key>Input</key>

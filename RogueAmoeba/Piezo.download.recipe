@@ -5,7 +5,13 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Piezo.</string>
+	<string>Downloads the latest version of Piezo.
+
+NOTE: This recipe used to use the vendor's CloudFront CDN download URL
+(https://d2oxtzozd38ts8.cloudfront.net/piezo/download/Piezo.zip)
+however AutoPkg users found that CloudFront was sometimes not kept updated
+as new versions were released. We are using the slower but more reliably
+updated rogueamoeba.com download link now.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Piezo</string>
 	<key>Input</key>
@@ -23,7 +29,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://d2oxtzozd38ts8.cloudfront.net/piezo/download/Piezo.zip</string>
+				<string>https://rogueamoeba.com/piezo/download/Piezo.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
