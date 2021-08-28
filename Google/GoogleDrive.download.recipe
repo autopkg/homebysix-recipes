@@ -20,6 +20,18 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>This recipe downloads the old "Backup and Sync" app, which has been deprecated
+				(https://support.google.com/a/answer/10309431?hl=en&amp;ref_topic=7455083) and is being
+				replaced with the new "Google Drive" app. I suggest using the download and pkg recipes
+				in nstrauss-recipes, or the munki recipe in apizz-recipes.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
