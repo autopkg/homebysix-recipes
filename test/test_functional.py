@@ -11,7 +11,7 @@ import plistlib
 import shutil
 import subprocess
 
-from nose.tools import (  # assert_false,
+from nose.tools import (
     assert_equal,
     assert_in,
     assert_is_instance,
@@ -25,6 +25,12 @@ IDENTIFIER_EXEMPTIONS = (
     "com.github.jps3.download.Kitematic",
     "com.github.jps3.pkg.Kitematic",
 )
+
+# Skip run if the recipe contains these processors.
+PROCESSOR_EXCEPTIONS = ("PackageRequired", "DeprecationWarning")
+
+# Path to the AutoPkg binary.
+AUTOPKG = "/usr/local/bin/autopkg"
 
 # Path to the AutoPkg cache.
 AUTOPKG_CACHE = os.path.expanduser("~/Library/AutoPkg/Cache")
@@ -55,11 +61,18 @@ def clear_cache(identifier):
         shutil.rmtree(recipe_cache, ignore_errors=True)
 
 
-def run_recipe(relpath):
+def run_recipe(relpath, recipe):
     """Run the recipe and check the exit code."""
+
+    # Skip any recipe that contains certain processors
+    for proc_exc in PROCESSOR_EXCEPTIONS:
+        if proc_exc in [x["Processor"] for x in recipe.get("Process", [{}])]:
+            print("Skipping due to %s." % proc_exc)
+            return
+
     retcode = subprocess.call(
         [
-            "/usr/local/bin/autopkg",
+            AUTOPKG,
             "info",
             relpath,
             "--pull",
@@ -71,7 +84,7 @@ def run_recipe(relpath):
     )
     retcode = subprocess.call(
         [
-            "/usr/local/bin/autopkg",
+            AUTOPKG,
             "run",
             relpath,
             "--report-plist=test/report.plist",
@@ -96,6 +109,14 @@ def test_functional():
         for filename in files:
             if filename.endswith(tuple("." + x + ".recipe" for x in recipe_types)):
                 recipe_paths.append(os.path.join(root, filename))
+            elif filename.endswith(
+                tuple("." + x + ".recipe.yaml" for x in recipe_types)
+            ):
+                recipe_paths.append(os.path.join(root, filename))
+            elif filename.endswith(
+                tuple("." + x + ".recipe.plist" for x in recipe_types)
+            ):
+                recipe_paths.append(os.path.join(root, filename))
 
     # Check and run each recipe we found.
     for index, recipe_path in enumerate(recipe_paths):
@@ -106,5 +127,5 @@ def test_functional():
             recipe = plistlib.load(infile)
         yield check_recipe, recipe_path, recipe
         clear_cache(recipe["Identifier"])
-        yield run_recipe, recipe_path
+        yield run_recipe, recipe_path, recipe
         clear_cache(recipe["Identifier"])
