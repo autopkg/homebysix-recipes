@@ -22,6 +22,15 @@ NOTE: According to Egnyte, Desktop Sync will no longer be supported after Decemb
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Egnyte's download page is now protected by a CloudFlare captcha page that prevents automatic retrieval. Pull requests welcome if you are able to find a workaround for this.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>re_pattern</key>
 				<string>"https?:\/\/egnyte-cdn\.egnyte\.com\/desktopsync\/mac\/%LOCALE%\/(?P&lt;version&gt;[\d\.]+)\/(?P&lt;download_file&gt;EgnyteDesktopSync_[\S]+\.pkg+)[\?"]</string>
 				<key>url</key>
