@@ -26,6 +26,15 @@ updated rogueamoeba.com download link now.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Nicecast has been retired, and Rogue Amoeba recommends migrating to Audio Hijack. Details: https://rogueamoeba.com/nicecast/</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
