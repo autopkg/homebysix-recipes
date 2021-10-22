@@ -20,25 +20,23 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>https://viennarss.github.io/sparkle-files/changelog.xml</string>
+				<key>asset_regex</key>
+				<string>Vienna\d{1,2}\.\d{1,2}\.\d{1,2}\.tar\.gz</string>
+				<key>github_repo</key>
+				<string>ViennaRSS/vienna-rss</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
+			<string>GitHubReleasesInfoProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>find</key>
-				<string>%252F</string>
-				<key>input_string</key>
-				<string>%url%</string>
-				<key>replace</key>
 				<string>/</string>
+				<key>input_string</key>
+				<string>%version%</string>
+				<key>replace</key>
+				<string></string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
@@ -47,9 +45,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.tgz</string>
-				<key>url</key>
-				<string>%output_string%</string>
+				<string>%NAME%-%output_string%.tar.gz</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

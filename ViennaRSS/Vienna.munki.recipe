@@ -55,7 +55,7 @@
 				<key>additional_pkginfo</key>
 				<dict>
 					<key>version</key>
-					<string>%version%</string>
+					<string>%output_string%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
