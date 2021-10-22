@@ -8,8 +8,8 @@
 For major versions 9 through 15, leave the PLATFORM_ARCH blank in your override.
 
 For major version 16, set the PLATFORM_ARCH in your override to either "intel" or "m1" depending on your desired architecture.
-		
-For major version 17, set the PLATFORM_ARCH in your override to "image"	
+
+For major version 17, set the PLATFORM_ARCH in your override to "image"
 
 This recipe differs from the one in keeleysam-recipes because it offers code signature verification, does not require a ParallelsURLProvider processor, and also includes pkg and install recipes.</string>
 	<key>Identifier</key>
