@@ -74,6 +74,17 @@
 			<key>Processor</key>
 			<string>MunkiImporter</string>
 		</dict>
+        <dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/%NAME%/</string>
+                </array>
+            </dict>
+        </dict>
 	</array>
 </dict>
 </plist>
