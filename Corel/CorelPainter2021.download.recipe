@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest Corel Painter 2021. This is an abstract base recipe intended to be overridden.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.CorelPainter2021</string>
+	<key>Input</key>
+	<dict>
+		<key>DOWNLOAD_URL</key>
+		<string>https://www.corel.com/akdlm/6763/downloads/pd/esd/Painter/2021/Stub/CorelPainter2021.pkg</string>
+		<key>NAME</key>
+		<string>Corel Painter 2021</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.CorelProduct</string>
+</dict>
+</plist>
