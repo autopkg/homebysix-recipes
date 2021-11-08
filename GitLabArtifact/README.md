@@ -15,39 +15,39 @@ You will need a [macOS GitLab runner](https://docs.gitlab.com/runner/install/osx
 Configure the .gitlab-ci.yml file with the job for building MunkiPkg projects. If your repo contains a single MunkiPkg project, your job might look like this:
 
 ```yaml
-munkipkg_building:
+munkipkg_build:
   stage: build
   tags:
-    - macOS
-  script: /usr/local/bin/munkipkg .
+    - munkipkg
+  script: python3 /usr/local/bin/munkipkg .
   artifacts:
     paths:
-    - build/*.pkg
+      - "build/*.pkg"
   only:
-    - master
+    - main
 ```
 
 If your repo contains multiple MunkiPkg project folders, your job might reference a separate build script and different artifact paths, like this:
 
 ```yaml
-munkipkg_building:
+munkipkg_build:
   stage: build
   tags:
-    - macOS
-    script: munkipkg_building.sh
+    - munkipkg
+    script: munkipkg_build.sh
   artifacts:
     paths:
-    - */build/*.pkg
+      - "*/build/*.pkg"
   only:
-    - master
+    - main
 ```
 
-The contents of the munkipkg_building.sh script would look something like this:
+The contents of the munkipkg_build.sh script would look something like this:
 
 ```sh
 #!/bin/bash
 for proj in */build-info.*; do
-    /usr/local/bin/munkipkg "$(dirname "$proj")" || exit 1
+    python3 /usr/local/bin/munkipkg "$(dirname "$proj")" || exit 1
 done
 ```
 
