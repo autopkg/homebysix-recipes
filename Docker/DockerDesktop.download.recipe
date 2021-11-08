@@ -7,7 +7,12 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Docker Desktop.
 
-Change the PLATFORM_ARCH in your override to "arm64" to download Docker for Apple Silicon Macs. Note that the Intel build does not function with Rosetta2, so separate packaging is required to support Apple Silicon Macs.</string>
+Acceptable values for PLATFORM_ARCH include:
+- 'amd64': Downloads the Intel version of Docker. (This is the default.)
+- 'arm64': Downloads the Apple Silicon version of Docker.
+
+NOTE: The Intel build does not function with Rosetta2, so separate packaging is
+required to support Apple Silicon Macs.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.DockerDesktop</string>
 	<key>Input</key>
