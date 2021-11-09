@@ -14,12 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# pylint: disable=unused-import
-from autopkglib import ProcessorError, Processor
-
-import subprocess
 import os
 import plistlib
+import subprocess
+
+# pylint: disable=unused-import
+from autopkglib import Processor, ProcessorError
 
 __all__ = ["Processor"]
 
