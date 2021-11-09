@@ -1,6 +1,7 @@
 [MAIN]
 
 disable=
+    consider-using-f-string,
     duplicate-code,
     import-error,
     invalid-name,

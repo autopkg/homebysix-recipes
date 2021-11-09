@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest Corel Painter 2020. This is an abstract base recipe intended to be overridden.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.pkg.CorelPainter2020</string>
+	<key>Input</key>
+	<dict>
+		<key>DOWNLOAD_URL</key>
+		<string>https://www.corel.com/akdlm/6763/downloads/pd/esd/Painter/2020/Stub/CorelPainter2020.pkg</string>
+		<key>APP_PAYLOAD</key>
+		<string>painter.pkg/Payload</string>
+		<key>APP_RELPATH</key>
+		<string>Corel Painter 2020/Corel Painter 2020.app</string>
+		<key>CHOICE_CHANGES_XML</key>
+		<string>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;array&gt;
+	 &lt;dict&gt;
+		&lt;key&gt;choiceIdentifier&lt;/key&gt;
+		&lt;string&gt;com.corel.pkg.painter2020.zh_TW&lt;/string&gt;
+		&lt;key&gt;choiceAttribute&lt;/key&gt;
+		&lt;string&gt;selected&lt;/string&gt;
+		&lt;key&gt;attributeSetting&lt;/key&gt;
+		&lt;integer&gt;0&lt;/integer&gt;
+	&lt;/dict&gt;
+	 &lt;dict&gt;
+		&lt;key&gt;choiceIdentifier&lt;/key&gt;
+		&lt;string&gt;com.corel.pkg.painter2020.Japanese&lt;/string&gt;
+		&lt;key&gt;choiceAttribute&lt;/key&gt;
+		&lt;string&gt;selected&lt;/string&gt;
+		&lt;key&gt;attributeSetting&lt;/key&gt;
+		&lt;integer&gt;0&lt;/integer&gt;
+	&lt;/dict&gt;
+	 &lt;dict&gt;
+		&lt;key&gt;choiceIdentifier&lt;/key&gt;
+		&lt;string&gt;com.corel.pkg.painter2020.German&lt;/string&gt;
+		&lt;key&gt;choiceAttribute&lt;/key&gt;
+		&lt;string&gt;selected&lt;/string&gt;
+		&lt;key&gt;attributeSetting&lt;/key&gt;
+		&lt;integer&gt;0&lt;/integer&gt;
+	&lt;/dict&gt;
+	 &lt;dict&gt;
+		&lt;key&gt;choiceIdentifier&lt;/key&gt;
+		&lt;string&gt;com.corel.pkg.painter2020.French&lt;/string&gt;
+		&lt;key&gt;choiceAttribute&lt;/key&gt;
+		&lt;string&gt;selected&lt;/string&gt;
+		&lt;key&gt;attributeSetting&lt;/key&gt;
+		&lt;integer&gt;0&lt;/integer&gt;
+	&lt;/dict&gt;
+&lt;/array&gt;
+&lt;/plist&gt;
+	</string>
+		<key>NAME</key>
+		<string>CorelPainter2020</string>
+		<key>PKG_ID</key>
+		<string>com.corel.pkg.Painter2020.serialized</string>
+		<key>SERIAL_NUMBER</key>
+		<string>(Put your serial number here in your override)</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.pkg.CorelProduct</string>
+</dict>
+</plist>
