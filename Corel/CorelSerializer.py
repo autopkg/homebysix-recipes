@@ -74,7 +74,7 @@ class CorelSerializer(Processor):
             "dta_path",
             os.path.join(self.env["RECIPE_CACHE_DIR"], product_code + ".dta"),
         )
-        subprocess.run([create_dta, self.env["serial_number"], dta_path])
+        subprocess.run([create_dta, self.env["serial_number"], dta_path], check=True)
         self.env["dta_path"] = dta_path
         self.env["dta_installed_path"] = dta_installed_path
         self.env["product_code"] = product_code
