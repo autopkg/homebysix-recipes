@@ -11,7 +11,7 @@
 		<key>DOWNLOAD_URL</key>
 		<string>https://www.corel.com/akdlm/6763/downloads/pd/esd/Painter/2022/Stub/CorelPainter2022.pkg</string>
 		<key>NAME</key>
-		<string>Corel Painter 2022</string>
+		<string>CorelPainter2022</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
