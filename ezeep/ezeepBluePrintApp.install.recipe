@@ -10,7 +10,7 @@ https://www.ezeep.com/downloads/ezeep-blue/
 
 For the older "ezeep Desktop" app, use the ezeepDesktop recipes.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.install.ezeepPrintApp</string>
+	<string>com.github.homebysix.install.ezeepBluePrintApp</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -19,7 +19,7 @@ For the older "ezeep Desktop" app, use the ezeepDesktop recipes.</string>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.ezeepPrintApp</string>
+	<string>com.github.homebysix.download.ezeepBluePrintApp</string>
 	<key>Process</key>
 	<array>
 		<dict>

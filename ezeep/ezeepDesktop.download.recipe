@@ -10,7 +10,7 @@ https://www.ezeep.com/downloads/ezeep/
 
 For the newer "ezeep Blue" app, use the ezeepBluePrintApp recipes.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.ezeep</string>
+	<string>com.github.homebysix.download.ezeepDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
