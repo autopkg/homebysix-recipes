@@ -1,6 +1,6 @@
 # Corel recipes
 
-These AutoPkg recipes aim to automate the process of packaging Corel software products for IT administrators. **These recipes are a rough draft only and largely unfinished.**
+These AutoPkg recipes aim to automate the process of packaging Corel software products for IT administrators, based on the workflow described [here](https://community.jamf.com/t5/jamf-pro/deploying-corel-painter-2018-to-a-lab/m-p/205674). **These recipes are a rough draft only and largely unfinished.**
 
 ## Usage
 
