@@ -10,7 +10,7 @@ https://www.ezeep.com/downloads/ezeep/
 
 For the newer "ezeep Blue" app, use the ezeepBluePrintApp recipes.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.ezeep</string>
+	<string>com.github.homebysix.munki.ezeepDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
@@ -42,7 +42,7 @@ For the newer "ezeep Blue" app, use the ezeepBluePrintApp recipes.</string>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.ezeep</string>
+	<string>com.github.homebysix.download.ezeepDesktop</string>
 	<key>Process</key>
 	<array>
 		<dict>
