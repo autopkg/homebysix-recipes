@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Installs the latest version of ezeep.
+
+This is for the older "ezeep Desktop" app. Details:
+https://www.ezeep.com/downloads/ezeep/
+
+For the newer "ezeep Blue" app, use the ezeepBluePrintApp recipes.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.pkg.ezeepDesktop</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>ezeep</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.ezeepDesktop</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source_pkg</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
