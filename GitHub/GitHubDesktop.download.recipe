@@ -3,13 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of GitHub Desktop.</string>
+	<string>Downloads the latest version of GitHub Desktop.
+Valid BUILD arguments are:
+		x64: darwin
+		arm64: darwin-arm64
+	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.GitHubDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>GitHub Desktop</string>
+		<key>BUILD</key>
+		<string>darwin</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.2</string>
@@ -19,9 +25,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>GitHubDesktop.zip</string>
+				<string>GitHubDesktop-%BUILD%.zip</string>
 				<key>url</key>
-				<string>https://central.github.com/deployments/desktop/desktop/latest/darwin</string>
+				<string>https://central.github.com/deployments/desktop/desktop/latest/%BUILD%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
