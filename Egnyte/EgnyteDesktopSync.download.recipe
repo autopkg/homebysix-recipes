@@ -16,7 +16,7 @@ NOTE: According to Egnyte, Desktop Sync will no longer be supported after Decemb
 		<string>Egnyte Desktop Sync</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.1</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
