@@ -4,8 +4,9 @@ repos:
     hooks:
       - id: check-autopkg-recipes
         args: ["--recipe-prefix=com.github.homebysix.", "--strict", "--"]
-        exclude: ^Docker\/|^Quicksilver\/Quicksilver\.pkg\.recipe$
+        exclude: ^Corel\/|Docker\/|^Quicksilver\/Quicksilver\.pkg\.recipe$
       - id: forbid-autopkg-overrides
+        exclude: ^Corel\/
       - id: forbid-autopkg-trust-info
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
