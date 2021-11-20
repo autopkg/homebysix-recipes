@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Installs the latest version of Marmoset Viewer.</string>
+	<string>Creates a package for the latest version of Marmoset Viewer.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.install.MarmosetViewer</string>
+	<string>com.github.homebysix.pkg.MarmosetViewer</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
