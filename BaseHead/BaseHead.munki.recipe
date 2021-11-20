@@ -28,6 +28,8 @@
 			<string>Steve Tushar</string>
 			<key>display_name</key>
 			<string>BaseHead</string>
+			<key>minimum_os_version</key>
+			<string>10.13</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
