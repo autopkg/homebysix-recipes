@@ -3,36 +3,40 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.0.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of App Wrapper 3.</string>
+	<string>Downloads the latest version of Evercast EBS.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.AppWrapper3</string>
+	<string>com.github.homebysix.download.EBS</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>App Wrapper 3</string>
+		<string>EBS</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.1</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>warning_message</key>
-				<string>AppWrapper 4 is now available, and the AppWrapper 3 recipes are deprecated.</string>
+				<key>re_pattern</key>
+				<string>EBS_([\d\.]+)_Install.dmg</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+				<key>url</key>
+				<string>https://www.evercast.us/ebs</string>
 			</dict>
 			<key>Processor</key>
-			<string>DeprecationWarning</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
-				<string>https://www.ohanaware.com/appwrapper/appWrapper3.dmg</string>
+				<string>https://files.evercast.us/EBS_%version%_Install.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -45,9 +49,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/App Wrapper 3.app</string>
+				<string>%pathname%/EBS.app</string>
 				<key>requirement</key>
-				<string>identifier "com.ohanaware.appWrapper3" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = QXAFMEPH6X</string>
+				<string>identifier "ci.cosmosoftware.obs-webrtc" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = H2J9VR2HM2</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -56,7 +60,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/App Wrapper 3.app/Contents/Info.plist</string>
+				<string>%pathname%/EBS.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
