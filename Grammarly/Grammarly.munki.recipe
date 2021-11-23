@@ -25,7 +25,7 @@
 			<key>developer</key>
 			<string>Grammarly, Inc</string>
 			<key>display_name</key>
-			<string>Grammarly</string>
+			<string>Grammarly Desktop</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -43,6 +43,17 @@
 			<dict>
 				<key>additional_pkginfo</key>
 				<dict>
+					<key>items_to_copy</key>
+					<array>
+						<dict>
+							<key>destination_item</key>
+							<string>Grammarly Desktop.app</string>
+							<key>destination_path</key>
+							<string>/Applications</string>
+							<key>source_item</key>
+							<string>Grammarly Installer.app</string>
+						</dict>
+					</array>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>

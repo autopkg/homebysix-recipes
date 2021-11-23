@@ -27,10 +27,12 @@
 				<key>items_to_copy</key>
 				<array>
 					<dict>
+						<key>destination_item</key>
+						<string>Grammarly Desktop.app</string>
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>Grammarly.app</string>
+						<string>Grammarly Installer.app</string>
 					</dict>
 				</array>
 			</dict>
