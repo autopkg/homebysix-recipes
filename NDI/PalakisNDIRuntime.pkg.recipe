@@ -6,8 +6,6 @@
 	<string>Creates an installer for the NDI OBS runtime.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.PalakisNDIRuntime</string>
-	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.PalakisNDIRuntime</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -15,6 +13,8 @@
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.PalakisNDIRuntime</string>
 	<key>Process</key>
 	<array>
 		<dict>
