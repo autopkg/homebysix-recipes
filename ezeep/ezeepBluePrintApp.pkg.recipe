@@ -25,10 +25,10 @@ For the older "ezeep Desktop" app, use the ezeepDesktop recipes.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source_pkg</key>
-				<string>%found_filename%</string>
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+				<key>source_pkg</key>
+				<string>%found_filename%</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCopier</string>
