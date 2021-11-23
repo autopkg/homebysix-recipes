@@ -12,10 +12,10 @@ Valid BUILD arguments are:
 	<string>com.github.homebysix.download.GitHubDesktop</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>GitHub Desktop</string>
 		<key>BUILD</key>
 		<string>darwin</string>
+		<key>NAME</key>
+		<string>GitHub Desktop</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.2</string>

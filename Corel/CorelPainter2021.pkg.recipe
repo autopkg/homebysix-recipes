@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.pkg.CorelPainter2021</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://www.corel.com/akdlm/6763/downloads/pd/esd/Painter/2021/Stub/CorelPainter2021.pkg</string>
 		<key>APP_PAYLOAD</key>
 		<string>painter.pkg/Payload</string>
 		<key>APP_RELPATH</key>
@@ -54,6 +52,8 @@
 &lt;/array&gt;
 &lt;/plist&gt;
 	</string>
+		<key>DOWNLOAD_URL</key>
+		<string>https://www.corel.com/akdlm/6763/downloads/pd/esd/Painter/2021/Stub/CorelPainter2021.pkg</string>
 		<key>NAME</key>
 		<string>CorelPainter2021</string>
 		<key>PKG_ID</key>

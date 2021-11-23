@@ -35,10 +35,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/Plugins</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/plugins</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked/Plugins</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
