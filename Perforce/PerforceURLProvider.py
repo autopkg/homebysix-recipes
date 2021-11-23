@@ -81,7 +81,7 @@ class PerforceURLProvider(URLGetter):
         if len(links) == 0:
             # No match, toss back to parent caller and continue recursing.
             return None
-        elif len(links) == 1 and len(path) == 1:
+        if len(links) == 1 and len(path) == 1:
             # We found a match, return the URL.
             return url + links[0]
 
