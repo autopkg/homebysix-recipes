@@ -31,16 +31,16 @@ PRODUCT_DETAILS = {
     "P4V": {
         "start": "perforce",
         "path": [
-            r"r[\d\.]+/",
-            r"bin\.macosx[\w]+/",
-            r"P4V\.dmg",
+            r"r[\d\.]+/",  # Version number prefixed with "r"
+            r"bin\.macosx[\w]+/",  # For example: "bin.macosx1015x86_64/"
+            r"P4V\.dmg",  # Literal filename "P4V.dmg"
         ],
     },
     "HelixALM": {
         "start": "alm/helixalm",
         "path": [
-            r"r[\d\.]+/",
-            r"ttmacclientinstall\.zip",
+            r"r[\d\.]+/",  # Version number prefixed with "r"
+            r"ttmacclientinstall\.zip",  # Literal filename "ttmacclientinstall.zip"
         ],
     },
 }
@@ -48,8 +48,7 @@ PRODUCT_DETAILS = {
 
 class PerforceURLProvider(URLGetter):
     """Provides a download URL for Perforce products. Currently only supports
-    recent versions of P4V, but could be extended for HelixALM and others in
-    the future.
+    recent versions of P4V and HelixALM.
     """
 
     input_variables = {
@@ -75,7 +74,7 @@ class PerforceURLProvider(URLGetter):
             url = url + "/"
         self.output("Searching %s for %s" % (url, path[0]))
 
-        # Get content of directory listing and parse for links.
+        # Get content of directory listing and parse for links matching path regex.
         html = self.download(url, text=True)
         link_pattern = re.compile('<a href="(%s)">' % path[0])
         links = re.findall(link_pattern, html)
@@ -86,7 +85,7 @@ class PerforceURLProvider(URLGetter):
             # We found a match, return the URL.
             return url + links[0]
 
-        # Sort versions in reverse LooseVersion order before continuing.
+        # Sort "r"-prefixed versions in reverse LooseVersion order before continuing.
         if path[0] == r"r[\d\.]+/":
             links = sorted(
                 links, key=lambda x: LooseVersion(x.lstrip("r")), reverse=True
