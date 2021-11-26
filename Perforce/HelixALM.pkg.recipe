@@ -8,8 +8,6 @@
 WARNING: This recipe is a work in progress and has not been tested as of November 2021.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.HelixALM</string>
-	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.HelixALM</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -17,6 +15,8 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.HelixALM</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -29,6 +29,8 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 			</dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>
+			<key>_Comment</key>
+			<string>Unpack downloaded zip file.</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -40,6 +42,8 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 			</dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>
+			<key>_Comment</key>
+			<string>Unpack installer resources zip file.</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -51,6 +55,8 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 			</dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>
+			<key>_Comment</key>
+			<string>Unpack Helix ALM Client app archive from inside installer resources.</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -62,6 +68,8 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+			<key>_Comment</key>
+			<string>Check code signature of unpacked app before proceeding with repackaging.</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -75,6 +83,8 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
+			<key>_Comment</key>
+			<string>Get the Helix ALM Client app version from the whatsnew.txt file. (The app bundle does not have a standard CFBundleShortVersionString.)</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -93,6 +103,10 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 					<string>0775</string>
 					<key>Library/Application Support/Seapine/TestTrackIntegration.framework</key>
 					<string>0775</string>
+					<key>private</key>
+					<string>0775</string>
+					<key>private/etc</key>
+					<string>0775</string>
 					<key>usr</key>
 					<string>0775</string>
 					<key>usr/local</key>
@@ -101,16 +115,60 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 					<string>0775</string>
 					<key>usr/local/seapine/tt</key>
 					<string>0775</string>
-					<key>private</key>
-					<string>0775</string>
-					<key>private/etc</key>
-					<string>0775</string>
 				</dict>
 				<key>pkgroot</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgRootCreator</string>
+			<key>_Comment</key>
+			<string>Create pkgroot with desired folder structure.</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/Aspose.Total.Java.lic</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/Aspose.Total.Java.lic</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+			<key>_Comment</key>
+			<string>Copy or unarchive /Applications/HelixALM folder contents in alphabetical order.</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/Aspose.Words.lic</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/Aspose.Words.lic</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/Assignments.wav</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/Assignments.wav</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/dot</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/MacOSX/dot</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -119,50 +177,6 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 				<string>%pkgroot%/Applications/HelixALM/Helix ALM Client.app</string>
 				<key>source_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked3/Helix ALM Client.app</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked1/ttclientinstall.app/Contents/Resources/ttclientinstall.app/Contents/Resources/Java/jre.zip</string>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/HelixALM</string>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/HelixALM/whatsnew.txt</string>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/whatsnew.txt</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/HelixALM/whatsnew.htm</string>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/whatsnew.htm</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/HelixALM/Qt License.txt</string>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/Qt License.txt</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -192,24 +206,41 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_format</key>
+				<string>zip</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/MacOSX/qt_tt/imageformats_zg_ia_sf.jar</string>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/HelixALM/Aspose.Words.lic</string>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/Aspose.Words.lic</string>
+				<string>%pkgroot%/Applications/HelixALM/imageformats</string>
 			</dict>
 			<key>Processor</key>
-			<string>Copier</string>
+			<string>Unarchiver</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_format</key>
+				<string>zip</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/Reports/images/workflowtab_fad60d4cba11_zg_ia_sf.jar</string>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/HelixALM/Aspose.Total.Java.lic</string>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/Aspose.Total.Java.lic</string>
+				<string>%pkgroot%/Applications/HelixALM/images/workflowtab</string>
 			</dict>
 			<key>Processor</key>
-			<string>Copier</string>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_content</key>
+				<string>Components: 'Client'
+InstallSet: 'Client'
+</string>
+				<key>file_path</key>
+				<string>%pkgroot%/Applications/HelixALM/installclient.rc</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -225,13 +256,100 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked1/ttclientinstall.app/Contents/Resources/ttclientinstall.app/Contents/Resources/Java/jre.zip</string>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/HelixALM/Assignments.wav</string>
+				<string>%pkgroot%/Applications/HelixALM</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_format</key>
+				<string>zip</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/lexicons_fad60cf3b874_zg_ia_sf.jar</string>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/lexicons</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_format</key>
+				<string>zip</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/MacOSX/qt_tt/platforms_zg_ia_sf.jar</string>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/platforms</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_format</key>
+				<string>zip</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/MacOSX/qt_tt/printsupport_zg_ia_sf.jar</string>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/printsupport</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/Qt License.txt</string>
 				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/Assignments.wav</string>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/Qt License.txt</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_format</key>
+				<string>zip</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/MacOSX/qt_tt/styles_zg_ia_sf.jar</string>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/styles</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/templates</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/templates</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_format</key>
+				<string>tar_gzip</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/MacOSX/TestTrack URL Redirector.app.tar.gz</string>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -240,6 +358,54 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 				<string>%pkgroot%/Applications/HelixALM/TestTrackData.dtd</string>
 				<key>source_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/TestTrackData.dtd</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/TinyMCE License.txt</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/TinyMCE License.txt</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_format</key>
+				<string>zip</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/webcomponents_fad60d0bb8f1_zg_ia_sf.jar</string>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/webcomponents</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+			<key>_Comment</key>
+			<string>NOTE: Alphabetically "UninstallData" would be here, but I haven't been able to locate the contents of this folder in the installation resources.</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/whatsnew.htm</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/whatsnew.htm</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/HelixALM/whatsnew.txt</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/whatsnew.txt</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -259,46 +425,24 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/HelixALM/TinyMCE License.txt</string>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/TinyMCE License.txt</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/webcomponents_fad60d0bb8f1_zg_ia_sf.jar</string>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/HelixALM/webcomponents</string>
-				<key>archive_format</key>
-				<string>zip</string>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
 				<string>%pkgroot%/Library/Application Support/Seapine/TestTrackIntegration.framework/libttintegration.dylib</string>
 				<key>source_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/MacOSX/libttintegration.dylib</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
+			<key>_Comment</key>
+			<string>Copy or unarchive /Applications/HelixALM folder contents.</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_format</key>
+				<string>tar_gzip</string>
 				<key>archive_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/MacOSX/ttqtframeworks.tar.gz</string>
 				<key>destination_path</key>
 				<string>%pkgroot%/Library/Application Support/Seapine/tt/Frameworks</string>
-				<key>archive_format</key>
-				<string>tar_gzip</string>
 			</dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>
