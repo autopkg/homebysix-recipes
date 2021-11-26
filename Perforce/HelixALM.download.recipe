@@ -32,63 +32,6 @@
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked1</string>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked1/ttclientinstall.app/Contents/Resources/ttclientinstall.app/Contents/Resources/Java/Disk1/InstData/Resource1.zip</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2</string>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/MacOSX/Helix ALM Client.app.tar.gz</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked3</string>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked3/Helix ALM Client.app</string>
-				<key>requirement</key>
-				<string>identifier "com.seapine.testtrackclient" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = PYYFSY54S7</string>
-			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>Helix ALM ([\d\.]+)</string>
-				<key>result_output_var_name</key>
-				<string>version</string>
-				<key>url</key>
-				<string>file://%RECIPE_CACHE_DIR%/unpacked2/$IA_PROJECT_DIR$/whatsnew.txt</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
 	</array>
 </dict>
 </plist>
