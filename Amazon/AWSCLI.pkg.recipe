@@ -37,12 +37,12 @@ Tags are used since contents of pkg don't have easily parse-able version, probab
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>Copier</string>
+			<string>PkgCopier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>source_path</key>
+				<key>source_pkg</key>
 				<string>%pathname%</string>
-				<key>destination_path</key>
+				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
 			</dict>
 		</dict>

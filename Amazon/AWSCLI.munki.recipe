@@ -18,8 +18,12 @@
 			<array>
 				<string>testing</string>
 			</array>
+			<key>category</key>
+			<string>Developer</string>
 			<key>description</key>
-			<string>Amazon CLI Tools, which are symlinked to /usr/local/bin/aws</string>
+			<string>The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services, symlinked into your path at /usr/local/bin/aws</string>
+			<key>developer</key>
+			<string>Amazon Web Services</string>
 			<key>display_name</key>
 			<string>AWS Command Line Interface</string>
 			<key>name</key>
@@ -35,6 +39,8 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
@@ -42,8 +48,6 @@
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
-			<key>Processor</key>
-			<string>MunkiImporter</string>
 		</dict>
 	</array>
 </dict>
