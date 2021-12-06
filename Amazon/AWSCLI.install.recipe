@@ -11,12 +11,17 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.AWSCLI</string>
+	<string>com.github.homebysix.download.AWSCLI</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Processor</key>
 			<string>Installer</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+			</dict>
 		</dict>
 	</array>
 </dict>

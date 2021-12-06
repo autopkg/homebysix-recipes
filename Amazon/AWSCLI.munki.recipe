@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps</string>
+		<string></string>
 		<key>NAME</key>
 		<string>AWSCLI</string>
 		<key>pkginfo</key>
@@ -19,9 +19,9 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Downloads the latest version of Amazon EC2 Tools and creates a package for deployment.</string>
+			<string>Amazon CLI Tools, which are symlinked to /usr/local/bin/aws</string>
 			<key>display_name</key>
-			<string>AWSCLI</string>
+			<string>AWS Command Line Interface</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -31,14 +31,14 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.AWSCLI</string>
+	<string>com.github.homebysix.download.AWSCLI</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
