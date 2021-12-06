@@ -12,36 +12,36 @@
 		<string>AWSCLI</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>0.3.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>awscli-bundle.zip</string>
-				<key>url</key>
-				<string>https://s3.amazonaws.com/aws-cli/awscli-bundle.zip</string>
-			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>https://awscli.amazonaws.com/AWSCLIV2.pkg</string>
+			</dict>
 		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
+				<key>input_path</key>
 				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/source</string>
-				<key>purge_destination</key>
-				<true/>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: AMZN Mobile LLC (94KV3E626L)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
 			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
 		</dict>
 	</array>
 </dict>

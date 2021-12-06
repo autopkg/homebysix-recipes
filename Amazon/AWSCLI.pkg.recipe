@@ -3,7 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Creates a pkg to deploy http://aws.amazon.com/cli/</string>
+	<string>Creates a pkg to deploy http://aws.amazon.com/cli/
+
+Tags are used since contents of pkg don't have easily parse-able version, probably brittle.
+</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.AWSCLI</string>
 	<key>Input</key>
@@ -18,120 +21,30 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
 			<key>Arguments</key>
 			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>tmp</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
+				<key>Comment</key>
+				<string>Regex allows for double-digits in any position but assumes 1.2.3 format</string>
+				<key>re_pattern</key>
+				<string>\d*\.\d*\.\d*</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+				<key>url</key>
+				<string>https://api.github.com/repos/aws/aws-cli/tags</string>
+			 </dict>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/tmp/awscli-bundle</string>
-				<key>source_path</key>
-				<string>%RECIPE_CACHE_DIR%/source/awscli-bundle</string>
+				<key>source_pkg</key>
+				<string>%pathname%</string>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
 			</dict>
-			<key>Comment</key>
-			<string>Copy resources.</string>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pattern</key>
-				<string>%RECIPE_CACHE_DIR%/source/awscli-bundle/packages/awscli-*.tar.gz</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileFinder</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>find</key>
-				<string>%RECIPE_CACHE_DIR%/source/awscli-bundle/packages/awscli-</string>
-				<key>input_string</key>
-				<string>%found_filename%</string>
-				<key>replace</key>
-				<string></string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>find</key>
-				<string>.tar.gz</string>
-				<key>input_string</key>
-				<string>%output_string%</string>
-				<key>replace</key>
-				<string></string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>infofile</key>
-				<string>%RECIPE_CACHE_DIR%/PackageInfo</string>
-				<key>pkgroot</key>
-				<string>%pkgroot%</string>
-				<key>pkgtype</key>
-				<string>flat</string>
-				<key>template_path</key>
-				<string>%RECIPE_DIR%/PackageInfoTemplate</string>
-				<key>version</key>
-				<string>%output_string%</string>
-			</dict>
-			<key>Comment</key>
-			<string>Create a PackageInfo file using the template.</string>
-			<key>Processor</key>
-			<string>PkgInfoCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>chown</key>
-					<array>
-						<dict>
-							<key>group</key>
-							<string>wheel</string>
-							<key>path</key>
-							<string>tmp</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-					</array>
-					<key>id</key>
-					<string>com.github.homebysix.%NAME%</string>
-					<key>infofile</key>
-					<string>%RECIPE_CACHE_DIR%/PackageInfo</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>resources</key>
-					<string>%RECIPE_DIR%/Resources</string>
-					<key>scripts</key>
-					<string>%RECIPE_DIR%/Scripts</string>
-				</dict>
-				<key>pkgname</key>
-				<string>%NAME%-%version%</string>
-			</dict>
-			<key>Comment</key>
-			<string>Build the package.</string>
-			<key>Processor</key>
-			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>
