@@ -7,7 +7,7 @@
 
 Valid BUILD arguments are:
 - "darwin": Downloads GitHub Desktop for Intel Macs
-- "arm64": Downloads GitHub Desktop for Apple Silicon Macs
+- "darwin-arm64": Downloads GitHub Desktop for Apple Silicon Macs
 	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.GitHubDesktop</string>
