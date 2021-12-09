@@ -4,9 +4,10 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the latest version of GitHub Desktop.
+
 Valid BUILD arguments are:
-		x64: darwin
-		arm64: darwin-arm64
+- "darwin": Downloads GitHub Desktop for Intel Macs
+- "arm64": Downloads GitHub Desktop for Apple Silicon Macs
 	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.GitHubDesktop</string>
