@@ -36,6 +36,13 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 			<string>10.10</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>preuninstall_script</key>
+			<string>#!/bin/bash
+if [ -f /usr/local/bin/prlsrvctl ]; then
+    /usr/local/bin/prlsrvctl deactivate-license
+fi
+exit 0
+</string>
 			<key>unattended_install</key>
 			<true/>
 			<key>uninstall_method</key>
@@ -45,6 +52,7 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 
 # App bundle to remove
 app_Bundle="/Applications/Parallels Desktop.app/"
+lib_files="/Library/Parallels/"
 
 if [ -d "${app_Bundle}" ]
 then
@@ -52,11 +60,18 @@ then
     /bin/rm -rf "${app_Bundle}"
 fi
 
+if [ -d "${lib_files}" ]
+then
+    /bin/echo "Found ${lib_files}, removing..."
+    /bin/rm -rf "${lib_files}"
+fi
+
 # Remove the pkg receipt
 pkgReceipt="com.parallels.desktop.installer"
 
 /bin/echo "Removing ${pkgReceipt}, removing..."
-pkgutil --forget "${pkgReceipt}"</string>
+pkgutil --forget "${pkgReceipt}"
+</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
