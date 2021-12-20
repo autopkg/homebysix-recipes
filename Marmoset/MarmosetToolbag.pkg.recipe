@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Installs the latest version of Marmoset Toolbag.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.install.MarmosetToolbag</string>
+	<string>com.github.homebysix.pkg.MarmosetToolbag</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
