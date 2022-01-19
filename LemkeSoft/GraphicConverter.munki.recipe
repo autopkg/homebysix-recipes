@@ -7,13 +7,13 @@
 	<key>Description</key>
 	<string>Downloads the latest version of GraphicConverter and imports it into Munki.
 
-The MAJOR_VERSION input variable can be overridden to select either version 10 (default) or version 9 of GraphicConverter.</string>
+The MAJOR_VERSION input variable can be overridden to select the major version of GraphicConverter used.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.GraphicConverter</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>10</string>
+		<string>11</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
