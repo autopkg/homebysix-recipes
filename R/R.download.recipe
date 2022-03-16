@@ -3,11 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of R for Mac OS X. (Also known as "The R Project for Statistical Computing.")</string>
+	<string>Downloads the latest version of R for macOS. (Also known as "The R Project for Statistical Computing.")
+
+Possible values for the ARCH input variable include:
+- 'x86_64' (Intel, default)
+- 'arm64' (Apple Silicon)
+	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.R</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>x86_64</string>
 		<key>NAME</key>
 		<string>R</string>
 	</dict>
@@ -18,19 +25,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>&lt;a href="base\/(?P&lt;filename&gt;R-(?P&lt;version&gt;[\d.]+)\.pkg)"&gt;R-[\d.]+\.pkg&lt;/a&gt;</string>
-				<key>url</key>
-				<string>https://cran.r-project.org/bin/macosx/</string>
+				<key>architecture</key>
+				<string>%ARCH%</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>RProjectURLProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://cran.r-project.org/bin/macosx/base/%filename%</string>
+				<key>filename</key>
+				<string>%NAME%_%ARCH%-%version%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

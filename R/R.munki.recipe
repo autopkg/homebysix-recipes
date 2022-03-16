@@ -3,11 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of R for Mac OS X and imports it into Munki. (Also known as "The R Project for Statistical Computing.")</string>
+	<string>Downloads the latest version of R for macOS and imports it into Munki. (Also known as "The R Project for Statistical Computing.")
+
+Possible values for the ARCH input variable include:
+- 'x86_64' (Intel, default)
+- 'arm64' (Apple Silicon)
+
+NOTE: If you change the ARCH variable, be sure to also include a corresponding 'supported_architectures' array in the Munki pkginfo.
+	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.R</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>x86_64</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/R</string>
 		<key>NAME</key>
