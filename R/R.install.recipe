@@ -3,11 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Installs the latest version of R for Mac OS X. (Also known as "The R Project for Statistical Computing.")</string>
+	<string>Installs the latest version of R for macOS. (Also known as "The R Project for Statistical Computing.")
+
+Possible values for the ARCH input variable include:
+- 'x86_64' (Intel, default)
+- 'arm64' (Apple Silicon)
+	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.install.R</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>x86_64</string>
 		<key>NAME</key>
 		<string>R</string>
 	</dict>
