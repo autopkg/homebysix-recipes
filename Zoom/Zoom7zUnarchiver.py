@@ -127,10 +127,10 @@ class Zoom7zUnarchiver(Processor):  # pylint: disable=invalid-name
                 "Guessed archive format '%s' from filename %s"
                 % (fmt, os.path.basename(archive_path))
             )
-        elif fmt not in EXTNS.keys():
+        elif fmt not in EXTNS:
             raise ProcessorError(
                 "'%s' is not valid for the 'archive_format' variable. "
-                "Must be one of %s." % (fmt, ", ".join(EXTNS.keys()))
+                "Must be one of %s." % (fmt, ", ".join(EXTNS))
             )
 
         if fmt == "zip":
