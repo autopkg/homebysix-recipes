@@ -12,9 +12,18 @@
 		<string>Cocktail-10.7</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>This recipe is deprecated. Please use the new Cocktail.download, Cocktail.pkg, or Cocktail.munki recipes for versions of Cocktail that support macOS Yosemite and above.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
