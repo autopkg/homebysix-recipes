@@ -3,13 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release of Cocktail (for Yosemite).</string>
+	<string>Downloads the latest version of a particular MAJOR_VERSION of Cocktail.
+
+MAJOR_VERSION should correspond to a macOS release version. Supported values include:
+- 12 for Monterey (default)
+- 11 for Big Sur
+- 10.15 for Catalina
+- 10.14 for Mojave
+- 10.13 for High Sierra
+- 10.12 for Sierra
+- 10.11 for El Capitan
+- 10.10 for Yosemite
+
+This recipe does not support older major versions than Yosemite.
+	</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.Cocktail-10.10</string>
+	<string>com.github.homebysix.download.Cocktail</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>10.10</string>
+		<string>12</string>
 		<key>NAME</key>
 		<string>Cocktail</string>
 	</dict>
@@ -44,6 +57,17 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Cocktail.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>

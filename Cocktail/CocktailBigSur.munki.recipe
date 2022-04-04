@@ -24,6 +24,10 @@
 			<string>Kristofer Szymanski</string>
 			<key>display_name</key>
 			<string>Cocktail</string>
+			<key>maximum_os_version</key>
+			<string>%MAJOR_VERSION%.99</string>
+			<key>minimum_os_version</key>
+			<string>%MAJOR_VERSION%</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -31,7 +35,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.CocktailBigSur</string>
 	<key>Process</key>

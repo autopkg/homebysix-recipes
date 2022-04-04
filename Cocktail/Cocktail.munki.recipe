@@ -3,15 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Cocktail for Mavericks and imports into Munki.</string>
+	<string>Downloads the latest version of Cocktail and imports it into Munki.
+
+See the Cocktail.download.recipe for information about selecting a MAJOR_VERSION.
+	</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.Cocktail-10.9</string>
+	<string>com.github.homebysix.munki.Cocktail</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/Cocktail</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Cocktail-10.9</string>
+		<string>Cocktail</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -19,15 +22,15 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>General maintenance and optimization utility.</string>
+			<string>Cocktail is a general purpose utility for macOS that lets you clean, repair and optimize your Mac.</string>
 			<key>developer</key>
 			<string>Maintain</string>
 			<key>display_name</key>
-			<string>Cocktail for Mavericks</string>
+			<string>Cocktail</string>
 			<key>maximum_os_version</key>
-			<string>10.9.99</string>
+			<string>%MAJOR_VERSION%.99</string>
 			<key>minimum_os_version</key>
-			<string>10.9</string>
+			<string>%MAJOR_VERSION%</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -37,25 +40,14 @@
 	<key>MinimumVersion</key>
 	<string>1.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Cocktail-10.9</string>
+	<string>com.github.homebysix.download.Cocktail</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
