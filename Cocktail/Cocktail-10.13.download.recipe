@@ -10,28 +10,25 @@
 	<string>com.github.homebysix.download.Cocktail-10.13</string>
 	<key>Input</key>
 	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>10.13</string>
 		<key>NAME</key>
 		<string>Cocktail</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>https://www.maintain.se/downloads/sparkle/highsierra/highsierra.xml</string>
+				<key>major_version</key>
+				<string>%MAJOR_VERSION%</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>CocktailReleasesInfoProvider</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>%NAME%-%version%.zip</string>
-			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
@@ -42,23 +39,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Cocktail.app</string>
+				<string>%pathname%/Cocktail.app</string>
 				<key>requirement</key>
-				<string>identifier "com.maintain.cocktail.highsierra" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "49Q84U5WS2"</string>
+				<string>identifier "%bundle_id%" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "%cert_leaf_ou%"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>

@@ -21,9 +21,13 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>General maintenance and optimization utility.</string>
+			<string>Cocktail is a general purpose utility for macOS that lets you clean, repair and optimize your Mac.</string>
 			<key>developer</key>
-			<string>Kristofer Szymanski</string>
+			<string>Maintain</string>
+			<key>maximum_os_version</key>
+			<string>%MAJOR_VERSION%.99</string>
+			<key>minimum_os_version</key>
+			<string>%MAJOR_VERSION%</string>
 			<key>display_name</key>
 			<string>Cocktail</string>
 			<key>name</key>
@@ -33,7 +37,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Cocktail-10.14</string>
 	<key>Process</key>
@@ -41,19 +45,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>

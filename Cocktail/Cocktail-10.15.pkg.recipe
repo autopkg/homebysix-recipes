@@ -12,7 +12,7 @@
 		<string>Cocktail</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Cocktail-10.15</string>
 	<key>Process</key>
@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Cocktail.app</string>
+				<string>%pathname%/Cocktail.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
