@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of CCleaner and creates a package.</string>
 	<key>Identifier</key>
@@ -14,14 +12,21 @@
 		<string>CCleaner</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.CCleaner</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Processor</key>
-			<string>AppPkgCreator</string>
+			<string>PkgCopier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>source_pkg</key>
+				<string>%pathname%/Install CCleaner.pkg</string>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+			</dict>
 		</dict>
 	</array>
 </dict>
