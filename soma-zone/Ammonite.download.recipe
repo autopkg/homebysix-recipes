@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(Ammonite-[\d\.]+\.tar\.bz2)</string>
+				<string>(Ammonite-[\d\.]+\.tar\.xz)</string>
 				<key>url</key>
 				<string>https://www.soma-zone.com/download/</string>
 			</dict>
@@ -46,10 +46,21 @@
 			<dict>
 				<key>archive_path</key>
 				<string>%pathname%</string>
+				<key>decompressor</key>
+				<string>%RECIPE_DIR%/xz</string>
+			</dict>
+			<key>Processor</key>
+			<string>XZUnarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%decompressed_path%</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/</string>
 				<key>purge_destination</key>
-				<true/>
+				<true />
 			</dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>

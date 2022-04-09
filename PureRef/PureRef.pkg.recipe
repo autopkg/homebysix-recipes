@@ -22,6 +22,11 @@
 		<dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>version</key>
+				<string>%version%</string>
+			</dict>
 		</dict>
 	</array>
 </dict>

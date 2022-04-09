@@ -5,7 +5,12 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of PureRef and imports it into Munki.</string>
+	<string>Downloads the latest version of PureRef and imports it into Munki.
+
+WARNING: As of version 1.11.1, PureRef does not contain a usable version key in the Info.plist.
+The version of the app may be determinable using the `strings` tool, but I haven't adjusted this
+recipe to try that yet. In the meantime, I suggest using an `installs` array to prevent looping.
+	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.PureRef</string>
 	<key>Input</key>
@@ -38,6 +43,18 @@
 	<string>com.github.homebysix.download.PureRef</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
