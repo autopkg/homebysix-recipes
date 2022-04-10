@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 # Copyright 2019 Armin Briegel and 2022 Elliot Jordan
 # based on LZMADecompress by Nick McSpadden 2013
@@ -16,6 +17,7 @@
 # limitations under the License.
 
 import subprocess
+
 from autopkglib import Processor, ProcessorError
 
 __all__ = ["XZUnarchiver"]
@@ -40,6 +42,7 @@ class XZUnarchiver(Processor):
     __doc__ = description
 
     def decompress_the_file(self):
+        """Call the xz binary to decompress the archive."""
         file = self.env.get("archive_path")
         if not file:
             raise ProcessorError("archive_path not found: %s" % (file))
@@ -47,9 +50,7 @@ class XZUnarchiver(Processor):
         if not xz:
             raise ProcessorError("xz binary not found: %s" % (xz))
         cmd = [xz, "-k", "-f", "--decompress", file]
-        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        (output, errors) = proc.communicate()
-        return errors
+        _ = subprocess.run(cmd, check=False)
 
     def main(self):
         """Does nothing except decompresses the file"""
