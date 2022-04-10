@@ -24,17 +24,11 @@ from glob import glob
 from autopkglib import ProcessorError  # pylint: disable=import-error
 from autopkglib.DmgMounter import DmgMounter  # pylint: disable=import-error
 from autopkglib.PkgCreator import PkgCreator  # pylint: disable=import-error
-
-# PyLint cannot properly find names inside Cocoa libraries, so issues bogus
-# No name 'Foo' in module 'Bar' warnings. Disable them.
-# pylint: disable=E0611
-from Foundation import (
+from Foundation import (  # pylint: disable=E0611
     NSData,
     NSPropertyListMutableContainers,
     NSPropertyListSerialization,
 )
-
-# pylint: enable=E0611
 
 # Disable PyLint complaining about 'invalid' camelCase names
 # pylint: disable=C0103
