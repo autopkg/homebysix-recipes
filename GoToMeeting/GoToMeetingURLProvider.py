@@ -21,7 +21,13 @@ import os
 import socket
 
 # pylint: disable=unused-import
-from autopkglib import Processor, ProcessorError, URLGetter, is_mac  # noqa: F401
+from autopkglib import (  # noqa: F401
+    APLooseVersion,
+    Processor,
+    ProcessorError,
+    URLGetter,
+    is_mac,
+)
 
 __all__ = ["GoToMeetingURLProvider"]
 
@@ -30,10 +36,9 @@ HOSTNAME = "builds.cdn.getgo.com"
 # workaround for 10.12.x SNI issue
 if is_mac():
     import platform
-    from distutils.version import LooseVersion
 
     # the following check is mac specific:
-    if LooseVersion(platform.mac_ver()[0]) < LooseVersion("10.13.0"):
+    if APLooseVersion(platform.mac_ver()[0]) < APLooseVersion("10.13.0"):
         # pylint: disable=no-member
         HOSTNAME = socket.gethostbyname_ex("builds.cdn.getgo.com")[0]
 

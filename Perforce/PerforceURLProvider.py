@@ -15,10 +15,9 @@
 # limitations under the License.
 
 import re
-from distutils.version import LooseVersion
 
 # pylint: disable=unused-import
-from autopkglib import ProcessorError, URLGetter
+from autopkglib import APLooseVersion, ProcessorError, URLGetter
 
 __all__ = ["PerforceURLProvider"]
 
@@ -88,7 +87,7 @@ class PerforceURLProvider(URLGetter):
         # Sort "r"-prefixed versions in reverse LooseVersion order before continuing.
         if path[0] == r"r[\d\.]+/":
             links = sorted(
-                links, key=lambda x: LooseVersion(x.lstrip("r")), reverse=True
+                links, key=lambda x: APLooseVersion(x.lstrip("r")), reverse=True
             )
 
         # Recursively search each link in the directory listing.

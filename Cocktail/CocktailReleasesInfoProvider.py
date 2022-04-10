@@ -15,7 +15,7 @@
 # limitations under the License.
 
 
-from autopkglib import URLGetter, APLooseVersion  # noqa: F401
+from autopkglib import APLooseVersion, URLGetter  # noqa: F401
 
 __all__ = ["CocktailReleasesInfoProvider"]
 
