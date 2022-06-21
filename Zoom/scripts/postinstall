@@ -35,6 +35,20 @@ need_load=0
 need_update_sig=0
 use_sig_file=0
 
+# autoupdate daemon variables
+LOG_PATH=/Library/Logs/zoomusinstall.log
+ZOOM_PATH="$2"/zoom.us.app
+
+SrcDaemonHelperPath="$app_path"/Contents/Library/LaunchServices/us.zoom.ZoomDaemon
+DestToolDirectory="/Library/PrivilegedHelperTools/"
+DestDaemonHelperPath="$DestToolDirectory"us.zoom.ZoomDaemon
+TmpDaemonHelperPath="$DestDaemonHelperPath".tmp
+
+DestPlistDirectory="/Library/LaunchDaemons/"
+DestDaemonHelperPlistPath="$DestPlistDirectory"us.zoom.ZoomDaemon.plist
+
+DaemonIdentifier=us.zoom.ZoomDaemon
+
 #################################
 # use audio device plugin
 AudioPluginPath="/Library/Audio/Plug-Ins/HAL"
@@ -176,6 +190,125 @@ else
     echo "ext stat: $st" >> "$LOG_PATH"
     echo "parent id: $PPID, $$" >> "$LOG_PATH"
 fi
+
+###########################
+#verify codesign
+function verify_codesign() 
+{
+    echo "verify codesign########################### start">>$LOG_PATH
+    filePath="$1"
+    echo "verify codesign filePath=$filePath">>$LOG_PATH
+    codesign -v --verbose=4  -R="anchor apple generic and certificate leaf[subject.OU] = BJ4HAAB9B3 and certificate leaf[subject.CN] = \"Developer ID Application: Zoom Video Communications, Inc. (BJ4HAAB9B3)\" " "$filePath">>$LOG_PATH
+    verifyRes=$?
+    echo "verifyRes = $verifyRes" >> $LOG_PATH
+    echo "verify codesign########################### end">>$LOG_PATH
+    return $verifyRes
+}
+
+#################################
+# install autoupdate daemon
+
+function installDaemon()
+{
+    echo "----------- installDaemon start ------------" >> $LOG_PATH
+    #copy helper tool
+    if [[ -f "$SrcDaemonHelperPath" ]]; then
+        
+        if [[ -d "$DestToolDirectory" ]]; then
+            echo "$DestToolDirectory exist"  >> $LOG_PATH   
+        else 
+            echo "create $DestToolDirectory" >> $LOG_PATH
+            mkdir -p "$DestToolDirectory"
+        fi
+
+        if [[ -f  "$TmpDaemonHelperPath" ]]; then
+            rm "$TmpDaemonHelperPath"
+        fi
+
+        cp -f "$SrcDaemonHelperPath" "$TmpDaemonHelperPath"
+        chmod 544 "$TmpDaemonHelperPath"
+
+        verify_codesign "$TmpDaemonHelperPath"
+        verifyHelperToolResult=$?
+        if [[ $verifyHelperToolResult != 0 ]]; then
+            echo "verify daemon helper codesign failed" >> $LOG_PATH
+            rm "$TmpDaemonHelperPath"
+            exit 1
+        fi
+
+        if [[ -f "$DestDaemonHelperPath" ]]; then
+            rm "$DestDaemonHelperPath"
+        fi
+
+        mv "$TmpDaemonHelperPath" "$DestDaemonHelperPath"
+        echo "copy new daemon helper success!" >> $LOG_PATH
+    else
+        echo "daemon helper not exit, daemon helper path: $SrcDaemonHelperPath" >> $LOG_PATH
+        exit 1    
+    fi
+
+    #create launchd plist
+    echo $'<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>us.zoom.ZoomDaemon</string>
+    <key>MachServices</key>
+    <dict>
+        <key>us.zoom.ZoomDaemon</key>
+        <true/>
+    </dict>
+    <key>Program</key>
+    <string>/Library/PrivilegedHelperTools/us.zoom.ZoomDaemon</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Library/PrivilegedHelperTools/us.zoom.ZoomDaemon</string>
+    </array>
+</dict>
+</plist>' > us.zoom.ZoomDaemon.plist
+
+    #copy launchd plist
+    if [[ -f us.zoom.ZoomDaemon.plist ]]; then
+        
+        if [[ -d "$DestPlistDirectory" ]]; then
+            echo "$DestPlistDirectory exist"  >> $LOG_PATH   
+        else 
+            echo "create $DestPlistDirectory" >> $LOG_PATH
+            mkdir -p "$DestPlistDirectory"
+        fi
+
+        copyplist=$(cp -f us.zoom.ZoomDaemon.plist "$DestDaemonHelperPlistPath")
+        ret=$?
+        if [ $ret -eq 0 ] ; then
+            chmod 644 "$DestDaemonHelperPlistPath"
+            sudo launchctl load "$DestDaemonHelperPlistPath"
+            launchinfo=$(sudo launchctl list $DaemonIdentifier 2>&1)
+        else
+            echo "copyPlist failed" >> $LOG_PATH
+            exit 1
+        fi
+        echo "check plist status: $copyplist, $ret, $launchinfo" >> $LOG_PATH
+        
+    else
+        echo "daemon helper plist not exit" >> $LOG_PATH
+        exit 1    
+    fi
+
+
+    echo "----------- installDaemon end ------------" >> $LOG_PATH
+}
+
+echo "======starts postinstall.sh[$(date)]==========" >> $LOG_PATH
+argv=()
+argv[0]="$1"
+argv[1]="$ZOOM_PATH"
+echo "ZOOM_PATH = $ZOOM_PATH  , params2=$2" >> $LOG_PATH
+config_app "${argv[@]}"
+
+installDaemon
+
+
 #################################
 #audio device end
 
@@ -184,7 +317,7 @@ function removePluginsInUserFolder
    # Loop through all users with UIDs over 500
     for name in $(/usr/bin/dscl /Local/Default list /Users UniqueID | /usr/bin/awk '$2 > 500 {print $1}'); do
         # Determine home directory of user
-        userHome="$(/usr/bin/dscl /Local/Default read /Users/$name NFSHomeDirectory | /usr/bin/awk '{print $2}')"
+        userHome="$(/usr/bin/dscl /Local/Default read /Users/"$name" NFSHomeDirectory | /usr/bin/awk '{print $2}')"
 
         if [[ -d "$userHome/Library/Application Support/zoom.us/Plugins" ]] ; then
             /bin/rm -rf "$userHome/Library/Application Support/zoom.us/Plugins"
