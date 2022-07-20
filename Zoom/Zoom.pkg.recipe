@@ -12,6 +12,8 @@
 		<string>us.zoom.xos</string>
 		<key>NAME</key>
 		<string>Zoom</string>
+		<key>VERSIONTYPE</key>
+		<string>CFBundleVersion</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.1</string>
@@ -62,7 +64,7 @@
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/zoom.us.app/Contents/Info.plist</string>
 				<key>plist_keys</key>
 				<dict>
-					<key>CFBundleVersion</key>
+					<key>%VERSIONTYPE%</key>
 					<string>version</string>
 					<key>LSMinimumSystemVersion</key>
 					<string>min_os_version</string>
