@@ -75,7 +75,6 @@ class Zoom7zUnarchiver(Processor):  # pylint: disable=invalid-name
 
     def get_archive_format(self, archive_path):
         """Guess archive format based on filename extension."""
-        # pylint: disable=no-self-use
         for format_str, extns in EXTNS.items():
             for extn in extns:
                 if archive_path.endswith(extn):
