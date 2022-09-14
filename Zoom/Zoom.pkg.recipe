@@ -64,6 +64,8 @@
 				<dict>
 					<key>CFBundleVersion</key>
 					<string>version</string>
+					<key>CFBundleShortVersionString</key>
+					<string>jamfversion</string>
 					<key>LSMinimumSystemVersion</key>
 					<string>min_os_version</string>
 				</dict>
