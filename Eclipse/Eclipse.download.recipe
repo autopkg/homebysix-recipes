@@ -3,7 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of Eclipse.</string>
+	<string>Downloads the current release version of Eclipse.
+
+Use the ARCHITECTURE input variable to specify whether you want to download the
+Intel ("x86_64") or Apple Silicon ("aarch64") version of Eclipse.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Eclipse</string>
 	<key>Input</key>
