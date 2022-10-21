@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# pylint: disable=no-self-use, no-else-raise, invalid-name
+# pylint: disable=no-else-raise, invalid-name
 #
 # Based on AppDmgVersioner, Copyright 2010 Per Olofsson
 # Adapted to use Foundation, 2020 Graham Pugh

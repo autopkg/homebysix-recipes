@@ -3,11 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of Eclipse.</string>
+	<string>Downloads the current release version of Eclipse.
+
+Use the ARCHITECTURE input variable to specify whether you want to download the
+Intel ("x86_64") or Apple Silicon ("aarch64") version of Eclipse.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Eclipse</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCHITECTURE</key>
+		<string>x86_64</string>
 		<key>NAME</key>
 		<string>Eclipse</string>
 		<key>SELECTION</key>
@@ -23,31 +28,31 @@
 				<key>options</key>
 				<dict>
 					<key>Eclipse IDE for Automotive Software Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-automotive[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-automotive[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse IDE for C/C++ Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-cpp[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-cpp[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse IDE for Eclipse Committers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-committers[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-committers[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse IDE for Java Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-java[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-java[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse IDE for Java EE Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-jee[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-jee[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse IDE for Java and DSL Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-dsl[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-dsl[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse IDE for Java and Report Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-reporting[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-reporting[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse Modeling Tools</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-modeling[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-modeling[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse for PHP Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-php[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-php[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse for Parallel Application Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-parallel[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-parallel[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse for RCP and RAP Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-rcp[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-rcp[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse for Scout Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-scout[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-scout[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse for Testers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-testing[\w-]+macosx-cocoa-x86_64\.dmg)</string>
+					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-testing[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 				</dict>
 				<key>selection</key>
 				<string>%SELECTION%</string>

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/local/autopkg/python
 # -*- coding: utf-8 -*-
 
 # Copyright 2019 Armin Briegel and 2022 Elliot Jordan
