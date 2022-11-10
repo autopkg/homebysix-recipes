@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Description</key>
+		<string>Downloads the latest version of R for macOS. (Also known as "The R Project for Statistical Computing.")
+
+Downloads both the ARM and Intel builds.
+		</string>
+		<key>Identifier</key>
+		<string>com.github.homebysix.download.R-Universal</string>
+		<key>Input</key>
+		<dict>
+			<key>ARM_ARCHITECTURE</key>
+			<string>arm64</string>
+			<key>INTEL_ARCHITECTURE</key>
+			<string>x86_64</string>
+			<key>NAME</key>
+			<string>R</string>
+		</dict>
+		<key>MinimumVersion</key>
+		<string>0.6.0</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>architecture</key>
+					<string>%ARM_ARCHITECTURE%</string>
+				</dict>
+				<key>Processor</key>
+				<string>RProjectURLProvider</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>prefetch_filename</key>
+					<string>True</string>
+				</dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+				<key>Arguments</key>
+				<dict>
+					<key>arm_path</key>
+					<string>%pathname%</string>
+					<key>arm_version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>architecture</key>
+					<string>%INTEL_ARCHITECTURE%</string>
+				</dict>
+				<key>Processor</key>
+				<string>RProjectURLProvider</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>prefetch_filename</key>
+					<string>True</string>
+				</dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+				<key>Arguments</key>
+				<dict>
+					<key>intel_path</key>
+					<string>%pathname%</string>
+					<key>intel_version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>expected_authority_names</key>
+					<array>
+						<string>Developer ID Installer: Simon Urbanek (VZLD955F6P)</string>
+						<string>Developer ID Certification Authority</string>
+						<string>Apple Root CA</string>
+					</array>
+					<key>input_path</key>
+					<string>%arm_path%</string>
+				</dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<dict>
+					<key>expected_authority_names</key>
+					<array>
+						<string>Developer ID Installer: Simon Urbanek (VZLD955F6P)</string>
+						<string>Developer ID Certification Authority</string>
+						<string>Apple Root CA</string>
+					</array>
+					<key>input_path</key>
+					<string>%intel_path%</string>
+				</dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+			</dict>
+		</array>
+	</dict>
+</plist>
