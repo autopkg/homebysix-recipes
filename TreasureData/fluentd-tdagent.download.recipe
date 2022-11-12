@@ -3,13 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the Treasure Data "td-agent" disk image, which is a stable distribution package for the fluentd-tdagent log collector (https://www.fluentd.org/faqs).</string>
+	<string>Downloads the Treasure Data "td-agent" disk image, which is a stable distribution package for the fluentd-tdagent log collector (https://www.fluentd.org/faqs).
+
+Acceptable values for PLATFORM_ARCH include:
+- 'x86_64': Downloads the Intel version of Td-Agent. (This is the default.)
+- 'arm64': Downloads the Apple Silicon version of Td-Agent.
+
+NOTE: The Intel build will function with Rosetta2, but separate packaging is
+ideal to support Apple Silicon Macs.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.fluentd-tdagent</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>tdagent</string>
+		<key>PLATFORM_ARCH</key>
+		<string>x86_64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0</string>
@@ -19,11 +28,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>/macosx/td-agent-([\d\.-]+)\.dmg"</string>
+				<string>/macosx/td-agent-([\d\.-]+)\-%PLATFORM_ARCH%.dmg"</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>https://td-agent-package-browser.herokuapp.com/3/macosx</string>
+				<string>https://td-agent-package-browser.herokuapp.com/4/macosx</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -32,9 +41,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%-%PLATFORM_ARCH%.dmg</string>
 				<key>url</key>
-				<string>https://packages.treasuredata.com/3/macosx/td-agent-%version%.dmg</string>
+				<string>https://s3.amazonaws.com/packages.treasuredata.com/4/macosx/td-agent-%version%-%PLATFORM_ARCH%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
