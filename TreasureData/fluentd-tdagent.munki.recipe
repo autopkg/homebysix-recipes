@@ -3,7 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the Treasure Data "td-agent" disk image, which is a stable distribution package for the tdagent log collector (https://www.fluentd.org/faqs), and imports the package into Munki.</string>
+	<string>Downloads the Treasure Data "td-agent" disk image, which is a stable distribution package for the tdagent log collector (https://www.fluentd.org/faqs), and imports the package into Munki.
+
+Acceptable values for PLATFORM_ARCH include:
+- 'x86_64': Downloads the Intel version of Td-Agent. (This is the default.)
+- 'arm64': Downloads the Apple Silicon version of Td-Agent.
+
+NOTE: The Intel build will function with Rosetta2, but separate packaging is
+ideal to support Apple Silicon Macs.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.fluentd-tdagent</string>
 	<key>Input</key>
@@ -12,6 +19,8 @@
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>tdagent</string>
+		<key>PLATFORM_ARCH</key>
+		<string>x86_64</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -26,6 +35,10 @@
 			<string>Fluentd (td-agent)</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>supported_architectures</key>
+			<array>
+				<string>%PLATFORM_ARCH%</string>
+			</array>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
