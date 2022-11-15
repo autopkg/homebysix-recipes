@@ -21,11 +21,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>\/updates\/neofinder\.([\d\.]+)\.zip</string>
+				<string>\/updates\/neofinder-mac.([\d\.]+)\.zip</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>https://www.cdfinder.de/en/downloads.html</string>
+				<string>https://www.cdfinder.de/download.html</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -34,7 +34,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://www.wfs-apps.de/updates/neofinder.%version%.zip</string>
+				<string>https://www.wfs-apps.de/updates/neofinder-mac.%version%.zip</string>
+				<key>filename</key>
+				<string>%NAME%-%version%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
