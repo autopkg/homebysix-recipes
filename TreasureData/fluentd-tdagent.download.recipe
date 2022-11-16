@@ -41,7 +41,7 @@ ideal to support Apple Silicon Macs.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%PLATFORM_ARCH%.dmg</string>
+				<string>%NAME%-%PLATFORM_ARCH%-%version%.dmg</string>
 				<key>url</key>
 				<string>https://s3.amazonaws.com/packages.treasuredata.com/4/macosx/td-agent-%version%-%PLATFORM_ARCH%.dmg</string>
 			</dict>
