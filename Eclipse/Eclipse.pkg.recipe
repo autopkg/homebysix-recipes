@@ -95,7 +95,7 @@
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
 					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
+					<string>%NAME%-%ARCHITECTURE%-%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
