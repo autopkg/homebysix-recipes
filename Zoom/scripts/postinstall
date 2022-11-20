@@ -193,7 +193,7 @@ fi
 
 ###########################
 #verify codesign
-function verify_codesign() 
+function verify_codesign()
 {
     echo "verify codesign########################### start">>$LOG_PATH
     filePath="$1"
@@ -213,10 +213,10 @@ function installDaemon()
     echo "----------- installDaemon start ------------" >> $LOG_PATH
     #copy helper tool
     if [[ -f "$SrcDaemonHelperPath" ]]; then
-        
+
         if [[ -d "$DestToolDirectory" ]]; then
-            echo "$DestToolDirectory exist"  >> $LOG_PATH   
-        else 
+            echo "$DestToolDirectory exist"  >> $LOG_PATH
+        else
             echo "create $DestToolDirectory" >> $LOG_PATH
             mkdir -p "$DestToolDirectory"
         fi
@@ -244,7 +244,7 @@ function installDaemon()
         echo "copy new daemon helper success!" >> $LOG_PATH
     else
         echo "daemon helper not exit, daemon helper path: $SrcDaemonHelperPath" >> $LOG_PATH
-        exit 1    
+        exit 1
     fi
 
     #create launchd plist
@@ -270,10 +270,10 @@ function installDaemon()
 
     #copy launchd plist
     if [[ -f us.zoom.ZoomDaemon.plist ]]; then
-        
+
         if [[ -d "$DestPlistDirectory" ]]; then
-            echo "$DestPlistDirectory exist"  >> $LOG_PATH   
-        else 
+            echo "$DestPlistDirectory exist"  >> $LOG_PATH
+        else
             echo "create $DestPlistDirectory" >> $LOG_PATH
             mkdir -p "$DestPlistDirectory"
         fi
@@ -289,10 +289,10 @@ function installDaemon()
             exit 1
         fi
         echo "check plist status: $copyplist, $ret, $launchinfo" >> $LOG_PATH
-        
+
     else
         echo "daemon helper plist not exit" >> $LOG_PATH
-        exit 1    
+        exit 1
     fi
 
 
