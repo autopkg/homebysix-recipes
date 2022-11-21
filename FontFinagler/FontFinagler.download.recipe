@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>https://www.markdouma.com/fontfinagler/version.xml</string>
+				<string>https://www.markdouma.com/fontfinagler/version.php</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
