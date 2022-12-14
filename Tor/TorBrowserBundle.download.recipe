@@ -3,17 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Tor Browser.
-
-The LANGUAGE input variable is en-US by default. If you'd like to download Tor Browser in a different language, refer to the download links listed here:
-https://www.torproject.org/download/languages/
-</string>
+	<string>Downloads the latest version of Tor Browser.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.TorBrowserBundle</string>
 	<key>Input</key>
 	<dict>
-		<key>LANGUAGE</key>
-		<string>en-US</string>
 		<key>NAME</key>
 		<string>TorBrowserBundle</string>
 	</dict>
@@ -25,11 +19,11 @@ https://www.torproject.org/download/languages/
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="\/dist\/torbrowser\/[\d\.]+\/TorBrowser-([\d\.]+)-osx64_%LANGUAGE%\.dmg"</string>
+				<string>href="\/dist\/torbrowser\/[\d\.]+\/TorBrowser-([\d\.]+)-macos_ALL\.dmg"</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>https://www.torproject.org/download/languages/</string>
+				<string>https://www.torproject.org/download/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -40,7 +34,7 @@ https://www.torproject.org/download/languages/
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
-				<string>https://www.torproject.org/dist/torbrowser/%version%/TorBrowser-%version%-osx64_%LANGUAGE%.dmg</string>
+				<string>https://www.torproject.org/dist/torbrowser/%version%/TorBrowser-%version%-macos_ALL.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
