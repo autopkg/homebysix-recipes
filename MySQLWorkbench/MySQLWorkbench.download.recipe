@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>MySQLWorkbench</string>
 		<key>USER_AGENT</key>
-		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8</string>
+		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 13_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
