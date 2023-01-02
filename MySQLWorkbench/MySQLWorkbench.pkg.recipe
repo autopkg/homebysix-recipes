@@ -18,24 +18,6 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>mysql-workbench-community-([\d.]+)-\S+dmg</string>
-				<key>request_headers</key>
-				<dict>
-					<key>user-agent</key>
-					<string>%USER_AGENT%</string>
-				</dict>
-				<key>result_output_var_name</key>
-				<string>version</string>
-				<key>url</key>
-				<string>http://dev.mysql.com/downloads/workbench</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
 		</dict>
