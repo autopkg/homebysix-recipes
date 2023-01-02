@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(?P&lt;dmg&gt;mysql-workbench-community-\S+dmg)</string>
+				<string>(?P&lt;dmg&gt;mysql-workbench-community-(?P&lt;version&gt;[\d.]+)-\S+dmg)</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
