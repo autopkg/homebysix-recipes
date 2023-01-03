@@ -27,33 +27,31 @@ Intel ("x86_64") or Apple Silicon ("aarch64") version of Eclipse.</string>
 			<dict>
 				<key>options</key>
 				<dict>
-					<key>Eclipse IDE for Automotive Software Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-automotive[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 					<key>Eclipse IDE for C/C++ Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-cpp[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
+					<string>cpp</string>
+					<key>Eclipse IDE for Embedded C/C++ Developers</key>
+					<string>embedcpp</string>
 					<key>Eclipse IDE for Eclipse Committers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-committers[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
+					<string>committers</string>
 					<key>Eclipse IDE for Java Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-java[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse IDE for Java EE Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-jee[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
+					<string>java</string>
+					<key>Eclipse IDE for Enterprise Java and Web Developers</key>
+					<string>jee</string>
 					<key>Eclipse IDE for Java and DSL Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-dsl[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse IDE for Java and Report Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-reporting[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
+					<string>dsl</string>
 					<key>Eclipse Modeling Tools</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-modeling[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for PHP Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-php[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for Parallel Application Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-parallel[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for RCP and RAP Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-rcp[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for Scout Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-scout[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for Testers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-testing[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
+					<string>modeling</string>
+					<key>Eclipse IDE for PHP Developers</key>
+					<string>php</string>
+					<key>Eclipse IDE for RCP and RAP Developers</key>
+					<string>rcp</string>
+					<key>Eclipse IDE for Scientific Computing</key>
+					<string>parallel</string>
+					<key>Eclipse IDE for Scout Developers</key>
+					<string>scout</string>
 				</dict>
+				<key>result_output_var_name</key>
+				<string>eclipse_code</string>
 				<key>selection</key>
 				<string>%SELECTION%</string>
 			</dict>
@@ -64,7 +62,7 @@ Intel ("x86_64") or Apple Silicon ("aarch64") version of Eclipse.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>%selection%</string>
+				<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-%eclipse_code%[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
@@ -97,7 +95,7 @@ Intel ("x86_64") or Apple Silicon ("aarch64") version of Eclipse.</string>
 				<key>input_path</key>
 				<string>%pathname%/*.app</string>
 				<key>requirement</key>
-				<string>identifier "org.eclipse.platform.ide" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JCDTMS22B4</string>
+				<string>identifier "epp.package.%eclipse_code%" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JCDTMS22B4</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
