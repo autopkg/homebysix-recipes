@@ -6,17 +6,30 @@
 	<string>Downloads the current release version of Eclipse.
 
 Use the ARCHITECTURE input variable to specify whether you want to download the
-Intel ("x86_64") or Apple Silicon ("aarch64") version of Eclipse.</string>
+Intel ("x86_64") or Apple Silicon ("aarch64") version of Eclipse.
+
+Use the ECLIPSE_CODE input variable to specify the IDE version.
+Eclipse IDE for C/C++ Developers: cpp
+Eclipse IDE for Embedded C/C++ Developers: embedcpp
+Eclipse IDE for Eclipse Committers: committers
+Eclipse IDE for Java Developers: java
+Eclipse IDE for Enterprise Java and Web Developers: jee
+Eclipse IDE for Java and DSL Developers: dsl
+Eclipse Modeling Tools: modeling
+Eclipse IDE for PHP Developers: php
+Eclipse IDE for RCP and RAP Developers: rcp
+Eclipse IDE for Scientific Computing: parallel
+Eclipse IDE for Scout Developers: scout</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Eclipse</string>
 	<key>Input</key>
 	<dict>
 		<key>ARCHITECTURE</key>
 		<string>x86_64</string>
+		<key>ECLIPSE_CODE</key>
+		<string>java</string>
 		<key>NAME</key>
 		<string>Eclipse</string>
-		<key>SELECTION</key>
-		<string>Eclipse IDE for Java Developers</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.1</string>
@@ -25,46 +38,8 @@ Intel ("x86_64") or Apple Silicon ("aarch64") version of Eclipse.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>options</key>
-				<dict>
-					<key>Eclipse IDE for Automotive Software Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-automotive[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse IDE for C/C++ Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-cpp[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse IDE for Eclipse Committers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-committers[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse IDE for Java Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-java[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse IDE for Java EE Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-jee[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse IDE for Java and DSL Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-dsl[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse IDE for Java and Report Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-reporting[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse Modeling Tools</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-modeling[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for PHP Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-php[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for Parallel Application Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-parallel[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for RCP and RAP Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-rcp[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for Scout Developers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-scout[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-					<key>Eclipse for Testers</key>
-					<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-testing[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
-				</dict>
-				<key>selection</key>
-				<string>%SELECTION%</string>
-			</dict>
-			<key>Processor</key>
-			<string>OptionSelector</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>re_pattern</key>
-				<string>%selection%</string>
+				<string>\/downloads\/download\.php\?file=([/\w-]+eclipse-%ECLIPSE_CODE%[\w-]+macosx-cocoa-%ARCHITECTURE%\.dmg)</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
@@ -97,7 +72,7 @@ Intel ("x86_64") or Apple Silicon ("aarch64") version of Eclipse.</string>
 				<key>input_path</key>
 				<string>%pathname%/*.app</string>
 				<key>requirement</key>
-				<string>identifier "org.eclipse.platform.ide" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JCDTMS22B4</string>
+				<string>identifier "epp.package.%ECLIPSE_CODE%" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JCDTMS22B4</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
