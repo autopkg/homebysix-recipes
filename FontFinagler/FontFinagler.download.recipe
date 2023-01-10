@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot), updated SparkleUrl and extended with CodeSignatureVerifier by jutonium</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Font Finagler.</string>
+	<string>Downloads the latest version of Font Finagler as a package and verifies its signature.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.FontFinagler</string>
 	<key>Input</key>
 	<dict>
+		<key>FILENAME</key>
+		<string>%NAME%</string>
 		<key>NAME</key>
 		<string>Font Finagler</string>
 	</dict>
@@ -21,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>https://www.markdouma.com/fontfinagler/version.php</string>
+				<string>https://markdouma.com/fontfinagler/packageVersion.php</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
@@ -30,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.zip</string>
+				<string>%FILENAME%-%version%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -38,6 +40,21 @@
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Mark Douma (YP47SDZM4G)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 	</array>
 </dict>
