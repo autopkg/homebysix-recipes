@@ -43,6 +43,29 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>uninstall_method</key>
+					<string>uninstall_script</string>
+					<key>uninstall_script</key>
+					<string>#!/bin/bash
+rm -rf "/Applications/Font Finagler.app"
+rm -rf "/Library/LaunchDaemons/com.markdouma.finaglerd.plist"
+rm -rf "/Library/PrivilegedHelperTools/com.markdouma.finaglerd"
+rm -rf "/usr/local/bin/finagler"
+rm -rf "/usr/local/share/man/man8/finagler.8"
+pkgutil --forget "com.markdouma.pkg.FontFinagler"
+
+exit
+</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
