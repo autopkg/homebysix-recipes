@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot) and updated to use a downloaded pkg by jutonium.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Font Finagler and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.FontFinagler</string>
 	<key>Input</key>
 	<dict>
+		<key>FILENAME</key>
+		<string>%NAME%</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
@@ -41,34 +43,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>additional_pkginfo</key>
 				<dict>
-					<key>version</key>
-					<string>%version%</string>
+					<key>uninstall_method</key>
+					<string>uninstall_script</string>
+					<key>uninstall_script</key>
+					<string>#!/bin/bash
+rm -rf "/Applications/Font Finagler.app"
+rm -rf "/Library/LaunchDaemons/com.markdouma.finaglerd.plist"
+rm -rf "/Library/PrivilegedHelperTools/com.markdouma.finaglerd"
+rm -rf "/usr/local/bin/finagler"
+rm -rf "/usr/local/share/man/man8/finagler.8"
+pkgutil --forget "com.markdouma.pkg.FontFinagler"
+
+exit
+</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
@@ -78,11 +67,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>version_comparison_key</key>
-				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
