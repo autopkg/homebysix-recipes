@@ -5,13 +5,19 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of duet.</string>
+	<string>Downloads the latest version of duet.
+
+To download the latest version of duet (macOS 12.3 and above) set DOWNLOAD_VERSION to "3"
+
+To download the latest legacy version of duet (macOS 10.9 - 12.2) set DOWNLOAD_VERSION to "2"</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.duet</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>duet</string>
+		<key>DOWNLOAD_VERSION</key>
+		<string>3</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -20,17 +26,23 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>https://updates.duetdisplay.com/checkMacUpdates</string>
+				<key>re_pattern</key>
+				<string>(https://duetdownload\.com/Mac/%DOWNLOAD_VERSION%_[0-9]+/duet-([0-9]+(-[0-9]+)+)\.zip)</string>
+				<key>result_output_var_name</key>
+				<string>DOWNLOAD_URL</string>
+				<key>url</key>
+				<string>https://www.duetdisplay.com/#download</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.zip</string>
+				<string>%NAME%.zip</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

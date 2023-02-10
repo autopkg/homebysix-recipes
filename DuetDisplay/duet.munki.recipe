@@ -5,7 +5,9 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of duet and imports it into Munki.</string>
+	<string>Downloads the latest version of duet and imports it into Munki.
+
+If downloading the latest legacy version of duet (macOS 10.9 - 12.2) set maximum_os_version to 12.2 otherwise please leave blank.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.duet</string>
 	<key>Input</key>
@@ -28,6 +30,8 @@
 			<string>duet</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>maximum_os_version</key>
+			<string></string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>

@@ -11,11 +11,15 @@ For major version 16, set the PLATFORM_ARCH in your override to either "intel" o
 
 For major version 17, set the PLATFORM_ARCH in your override to "image"
 
+Set the DERIVE_MIN_OS variable to a non-empty string to set the minimum_os_version via MunkiInstallsItemsCreator. This requires a minimum AutoPkg version of 2.7 please update if you're not already running it.
+
 This recipe differs from the one in keeleysam-recipes because it offers code signature verification, does not require a ParallelsURLProvider processor, and also includes pkg and install recipes.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.ParallelsDesktop</string>
 	<key>Input</key>
 	<dict>
+		<key>DERIVE_MIN_OS</key>
+		<string>YES</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
@@ -32,14 +36,12 @@ This recipe differs from the one in keeleysam-recipes because it offers code sig
 			<string>Parallels, Inc.</string>
 			<key>display_name</key>
 			<string>Parallels Desktop</string>
-			<key>minimum_os_version</key>
-			<string>10.10</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>preuninstall_script</key>
 			<string>#!/bin/bash
 if [ -f /usr/local/bin/prlsrvctl ]; then
-    /usr/local/bin/prlsrvctl deactivate-license
+	/usr/local/bin/prlsrvctl deactivate-license
 fi
 exit 0
 </string>
@@ -56,14 +58,14 @@ lib_files="/Library/Parallels/"
 
 if [ -d "${app_Bundle}" ]
 then
-    /bin/echo "Found ${app_Bundle}, removing..."
-    /bin/rm -rf "${app_Bundle}"
+	/bin/echo "Found ${app_Bundle}, removing..."
+	/bin/rm -rf "${app_Bundle}"
 fi
 
 if [ -d "${lib_files}" ]
 then
-    /bin/echo "Found ${lib_files}, removing..."
-    /bin/rm -rf "${lib_files}"
+	/bin/echo "Found ${lib_files}, removing..."
+	/bin/rm -rf "${lib_files}"
 fi
 
 # Remove the pkg receipt
@@ -75,7 +77,7 @@ pkgutil --forget "${pkgReceipt}"
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>2.7</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.pkg.ParallelsDesktop</string>
 	<key>Process</key>
@@ -102,6 +104,8 @@ pkgutil --forget "${pkgReceipt}"
 				<array>
 					<string>/Applications/Parallels Desktop.app</string>
 				</array>
+				<key>derive_minimum_os_version</key>
+				<string>%DERIVE_MIN_OS%</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiInstallsItemsCreator</string>
