@@ -7,9 +7,9 @@
 	<key>Description</key>
 	<string>Downloads the latest version of duet.
 
-To download the latest version of duet (macOS 12.3 and above) set DOWNLOAD_VERSION to "3"
+To download the latest version of duet (macOS 12.3 and above) set DOWNLOAD_VERSION to "AppleSilicon" - Please note the "AppleSilicon" version is Universal.
 
-To download the latest legacy version of duet (macOS 10.9 - 12.2) set DOWNLOAD_VERSION to "2"</string>
+To download the latest legacy version of duet (macOS 10.9 - 12.2) set DOWNLOAD_VERSION to "legacyMac"</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.duet</string>
 	<key>Input</key>
@@ -17,7 +17,7 @@ To download the latest legacy version of duet (macOS 10.9 - 12.2) set DOWNLOAD_V
 		<key>NAME</key>
 		<string>duet</string>
 		<key>DOWNLOAD_VERSION</key>
-		<string>3</string>
+		<string>AppleSilicon</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -26,23 +26,10 @@ To download the latest legacy version of duet (macOS 10.9 - 12.2) set DOWNLOAD_V
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>(https://duetdownload\.com/Mac/%DOWNLOAD_VERSION%_[0-9]+/duet-([0-9]+(-[0-9]+)+)\.zip)</string>
-				<key>result_output_var_name</key>
-				<string>DOWNLOAD_URL</string>
-				<key>url</key>
-				<string>https://www.duetdisplay.com/#download</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://updates.duetdisplay.com/%DOWNLOAD_VERSION%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
