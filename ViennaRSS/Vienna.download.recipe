@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>Vienna\d{1,2}\.\d{1,2}\.\d{1,2}\.tar\.gz</string>
+				<string>Vienna\d{1,2}\.\d{1,2}\.\d{1,2}\.(tgz|tar\.gz)</string>
 				<key>github_repo</key>
 				<string>ViennaRSS/vienna-rss</string>
 			</dict>
