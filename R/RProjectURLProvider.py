@@ -53,8 +53,8 @@ class RProjectURLProvider(URLGetter):
 
         # Prepare regular expression
         if arch == "x86_64":
-            pattern = r'base\/(?P<file>R-(?P<vers>[\d.]+)\.pkg)">R-[\d.]+\.pkg</a>'
-            url_base = "https://cran.r-project.org/bin/macosx/base/"
+            pattern = r'base\/(?P<file>R-(?P<vers>[\d.]+)-x86_64\.pkg)">R-[\d.]+-x86_64\.pkg</a>'
+            url_base = "https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/"
         elif arch == "arm64":
             pattern = r'base\/(?P<file>R-(?P<vers>[\d.]+)-arm64\.pkg)">R-[\d.]+-arm64\.pkg</a>'
             url_base = "https://cran.r-project.org/bin/macosx/big-sur-arm64/base/"
