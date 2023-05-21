@@ -3,7 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of MySQLWorkbench.</string>
+	<string>Downloads the latest version of MySQLWorkbench.
+	
+Set the ARCH input variable based on the desired architecture:
+- "x86_64" (default) - Intel
+- "arm64" - Apple Silicon
+</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.MySQLWorkbench</string>
 	<key>Input</key>
@@ -11,7 +16,9 @@
 		<key>NAME</key>
 		<string>MySQLWorkbench</string>
 		<key>USER_AGENT</key>
-		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8</string>
+		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15</string>
+		<key>ARCH</key>
+		<string>x86_64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -21,7 +28,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(?P&lt;dmg&gt;mysql-workbench-community-(?P&lt;version&gt;[\d.]+)-\S+dmg)</string>
+				<string>(?P&lt;dmg&gt;mysql-workbench-community-(?P&lt;version&gt;[\d\.]+)-macos-%ARCH%\.dmg)</string>
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
@@ -37,7 +44,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%-%ARCH%-%version%.dmg</string>
 				<key>url</key>
 				<string>https://dev.mysql.com/get/Downloads/MySQLGUITools/%dmg%</string>
 			</dict>
