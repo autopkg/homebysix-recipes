@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest Escrow Buddy and imports into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.EscrowBuddy</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/Escrow Buddy</string>
+		<key>NAME</key>
+		<string>Escrow Buddy</string>
+		<key>pathname</key>
+		<string>%pathname%</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array/>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>description</key>
+			<string>Escrow Buddy is a tool used by MDM administrators to ensure a valid FileVault recovery key is escrowed for your Mac.</string>
+			<key>developer</key>
+			<string>Netflix</string>
+			<key>display_name</key>
+			<string>Escrow Buddy</string>
+			<key>minimum_os_version</key>
+			<string>10.14.4</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+			<key>uninstall_method</key>
+			<string>uninstall_script</string>
+			<key>uninstall_script</key>
+			<string>#!/bin/bash
+
+AuthDBTeardown() {
+    # Create temporary directory for storage of authorization database files
+    # Using hyphen to prevent escape issues in PlistBuddy commands
+    EB_DIR="${TMPDIR:=/private/tmp}/com.netflix.Escrow-Buddy"
+    mkdir -pv "$EB_DIR"
+    AUTH_DB="$EB_DIR/auth.db"
+
+    # Output current loginwindow auth database
+    echo "Reading system.login.console section of authorization database..."
+    /usr/bin/security authorizationdb read system.login.console &gt; "$AUTH_DB"
+    if [[ ! -f "$AUTH_DB" ]]; then
+        echo "ERROR: Unable to save the current authorization database."
+        exit 1
+    fi
+
+    # Check current loginwindow auth database for desired entry
+    if ! grep -q '&lt;string&gt;Escrow Buddy:Invoke,privileged&lt;/string&gt;' "$AUTH_DB"; then
+        echo "Escrow Buddy is not configured in the loginwindow authorization database."
+        return
+    fi
+
+    # Create a backup copy
+    cp "$AUTH_DB" "$AUTH_DB.backup"
+
+    echo "Removing Escrow Buddy from authorization database..."
+    INDEX=$(/usr/libexec/PlistBuddy -c "Print :mechanisms:" "$AUTH_DB" 2&gt;/dev/null | grep -n "Escrow Buddy:Invoke,privileged" | awk -F ":" '{print $1}')
+    if [[ -z $INDEX ]]; then
+        echo "ERROR: Unable to index current loginwindow authorization database."
+        exit 1
+    fi
+
+    # Subtract 2 from the index to account for PlistBuddy output format
+    INDEX=$((INDEX-2))
+
+    # Remove Escrow Buddy mechanism
+    /usr/libexec/PlistBuddy -c "Delete :mechanisms:$INDEX" "$AUTH_DB"
+
+    # Save authorization database changes
+    if ! security authorizationdb write system.login.console &lt; "$AUTH_DB"; then
+        echo "ERROR: Unable to save changes to authorization database."
+        exit 1
+    fi
+}
+
+# If in-bundle AuthDB teardown script exists on disk, prefer using that
+echo "Removing Escrow Buddy from authorization database..."
+"/Library/Security/SecurityAgentPlugins/Escrow Buddy.bundle/Contents/Resources/AuthDBTeardown.sh" || AuthDBTeardown
+
+echo "Deleting Escrow Buddy bundle..."
+rm -rf "/Library/Security/SecurityAgentPlugins/Escrow Buddy.bundle"
+
+echo "Forgetting receipt..."
+pkgutil --forget "com.netflix.Escrow-Buddy" 2&gt;/dev/null
+
+echo "Escrow Buddy successfully uninstalled."
+</string>
+			<key>uninstallable</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.EscrowBuddy</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>

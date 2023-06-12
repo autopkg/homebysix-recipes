@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>This recipe does nothing, since Escrow Buddy is already downloaded as a pkg.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.pkg.EscrowBuddy</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Escrow Buddy</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.EscrowBuddy</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source_pkg</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
