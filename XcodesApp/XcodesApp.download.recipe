@@ -20,11 +20,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>https://robotsandpencils.github.io/XcodesApp/appcast.xml</string>
+				<key>github_repo</key>
+				<string>XcodesOrg/XcodesApp</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>GitHubReleasesInfoProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
