@@ -8,30 +8,33 @@
 This recipe differs from the one in keeleysam-recipes because it offers code signature verification, does not require a ParallelsURLProvider processor, and also includes pkg and install recipes.
 
 Input variable tips:
-- For major versions 10 through 15 and 18, leave the PLATFORM_ARCH blank in your override.
+- For major versions 10 through 15 or 17 through 18, leave the PLATFORM_ARCH blank in your override.
 - For major version 16, set the PLATFORM_ARCH in your override to either "intel" or "m1" depending on your desired architecture.
-- For major version 17, set the PLATFORM_ARCH in your override to "image".
 </string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.ParallelsDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>15</string>
+		<string>18</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
 		<key>PLATFORM_ARCH</key>
 		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.4</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>re_flags</key>
+				<array>
+					<string>IGNORECASE</string>
+				</array>
 				<key>re_pattern</key>
-				<string>(https.*?%MAJOR_VERSION%(.*?)(?=\?|\"))</string>
+				<string>(file|DMG)\": \"(?P&lt;url_version&gt;https.*)\"[\n\s\}\,]*\"name\": \"Parallels Desktop %MAJOR_VERSION% for Mac( Image|( with (Apple )?%PLATFORM_ARCH% (chip|processor)))?\"</string>
 				<key>result_output_var_name</key>
 				<string>url_version</string>
 				<key>url</key>
@@ -44,9 +47,9 @@ Input variable tips:
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%-%MAJOR_VERSION%%PLATFORM_ARCH%.dmg</string>
 				<key>url</key>
-				<string>%url_version%%PLATFORM_ARCH%</string>
+				<string>%url_version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
