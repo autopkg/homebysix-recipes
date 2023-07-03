@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 10 through 18.
+	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION and imports it into Munki. This recipe has been tested with major versions 10 through 18.
 
 This recipe differs from the one in keeleysam-recipes because it offers code signature verification, does not require a ParallelsURLProvider processor, and also includes pkg and install recipes.
 
