@@ -34,11 +34,24 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>var key = "(.+)";</string>
+				<string>"%version%",\s+"(.+)",\s+\[</string>
 				<key>result_output_var_name</key>
 				<string>download_key</string>
 				<key>url</key>
 				<string>https://www.pureref.com/download.php</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(.+)</string>
+				<key>result_output_var_name</key>
+				<string>download_key</string>
+				<key>url</key>
+				<string>https://www.pureref.com/expirekey.php?downloadKey=%download_key%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
