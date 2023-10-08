@@ -12,6 +12,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>EBS</string>
+		<key>MAJOR_VERSION</key>
+		<string>3</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -21,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>EBS_([\d\.]+)_Install.dmg</string>
+				<string>EBS_(%MAJOR_VERSION%\.[\d\.]+)_Install.dmg</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
