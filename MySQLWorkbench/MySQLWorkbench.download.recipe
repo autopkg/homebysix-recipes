@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the latest version of MySQLWorkbench.
-	
+
 Set the ARCH input variable based on the desired architecture:
 - "x86_64" (default) - Intel
 - "arm64" - Apple Silicon
