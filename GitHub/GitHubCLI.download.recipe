@@ -3,14 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of the GitHub command line tool.</string>
+	<string>Downloads the latest version of the GitHub command line tool.
+
+Valid options for ARCH input variable are "amd64" for Intel (defualt) or "arm64" for Apple Silicon.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.GitHubCLI</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>GitHub CLI</string>
-		<!-- valid options for mac are amd64 or arm64 for Apple Silicon -->
 		<key>ARCH</key>
 		<string>amd64</string>
 	</dict>
