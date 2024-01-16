@@ -17,6 +17,13 @@ For the older "ezeep Desktop" app, use the ezeepDesktop recipes.</string>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>ezeep Print App</string>
+		<key>pkg_ids_set_optional_true</key>
+		<array>
+			<string>com.thinprint.ezeep.printapp.logging</string>
+			<string>com.thinprint.ezeep.printapp.printerdriver</string>
+			<string>com.ThinPrint.TPAutoConnect.PPDGen</string>
+			<string>com.ThinPrint.TPAutoConnect</string>
+		</array>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -49,6 +56,18 @@ For the older "ezeep Desktop" app, use the ezeepDesktop recipes.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
 				<string>%found_filename%</string>
 				<key>repo_subdirectory</key>
@@ -56,6 +75,15 @@ For the older "ezeep Desktop" app, use the ezeepDesktop recipes.</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkginfo_repo_path</key>
+				<string>%pkginfo_repo_path%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiOptionalReceiptEditor</string>
 		</dict>
 	</array>
 </dict>
