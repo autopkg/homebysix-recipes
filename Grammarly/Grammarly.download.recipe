@@ -14,23 +14,16 @@
 		<string>Grammarly</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>2.3</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>https://download-mac.grammarly.com/appcast.xml</string>
-			</dict>
-			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://download-mac.grammarly.com/Grammarly.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
