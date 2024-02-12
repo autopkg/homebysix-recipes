@@ -12,8 +12,6 @@
 		<string>Autodesk Fusion 360</string>
 		<key>USER_AGENT</key>
 		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30</string>
-		<key>DOWNLOAD_URL</key>
-		<string>https://dl.appstreaming.autodesk.com/production/installers/Autodesk%20Fusion%20Admin%20Install.pkg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -30,7 +28,7 @@
 					<string>%USER_AGENT%</string>
 				</dict>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://dl.appstreaming.autodesk.com/production/installers/Autodesk%20Fusion%20Admin%20Install.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
