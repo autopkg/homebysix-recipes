@@ -18,6 +18,10 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
