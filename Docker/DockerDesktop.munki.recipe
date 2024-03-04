@@ -28,6 +28,55 @@
 			<string>Docker</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/zsh
+
+currentUser="$(/usr/sbin/scutil &lt;&lt;&lt; "show State:/Users/ConsoleUser" | /usr/bin/awk '/Name :/ { print $3 }')"
+
+if	[ "${currentUser}" = "loginwindow" ]; then
+	echo "No user logged in, skipping Docker setup."
+	exit 1
+else
+	"/Applications/Docker.app/Contents/MacOS/install" --accept-license --user "${currentUser}"
+fi
+			</string>
+			<key>postuninstall_script</key>
+			<string>#!/bin/zsh
+
+/bin/launchctl bootout system /Library/LaunchDaemons/com.docker.socket.plist
+/bin/rm -f /Library/LaunchDaemons/com.docker.socket.plist
+/bin/rm -f /private/var/run/docker.sock
+
+/bin/rm -f /usr/local/bin/com.docker.cli
+/bin/rm -f /usr/local/bin/docker
+/bin/rm -f /usr/local/bin/docker-compose
+/bin/rm -f /usr/local/bin/docker-compose-v1
+/bin/rm -f /usr/local/bin/docker-credential-desktop
+/bin/rm -f /usr/local/bin/docker-credential-ecr-login
+/bin/rm -f /usr/local/bin/docker-credential-osxkeychain
+/bin/rm -f /usr/local/bin/docker-index
+/bin/rm -f /usr/local/bin/hub-tool
+/bin/rm -f /usr/local/bin/kubectl
+/bin/rm -f /usr/local/bin/kubectl-docker
+/bin/rm -f /usr/local/bin/vpnkit
+
+# These files are only installed if the user has tried to bind to a privileged port, they are not part of a default installation.
+if [ -f /Library/LaunchDaemons/com.docker.vmnetd.plist ]; then
+/bin/launchctl bootout system /Library/LaunchDaemons/com.docker.vmnetd.plist
+/bin/rm -f /Library/LaunchDaemons/com.docker.vmnetd.plist
+/bin/rm -f /Library/PrivilegedHelperTools/com.docker.vmnetd
+fi
+			</string>
+			<key>preinstall_script</key>
+			<string>#!/bin/zsh
+
+currentUser="$(/usr/sbin/scutil &lt;&lt;&lt; "show State:/Users/ConsoleUser" | /usr/bin/awk '/Name :/ { print $3 }')"
+
+if	[ "${currentUser}" = "loginwindow" ]; then
+	echo "No user logged in, skipping Docker install."
+	exit 1
+fi
+			</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
