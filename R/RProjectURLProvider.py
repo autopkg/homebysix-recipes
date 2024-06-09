@@ -52,6 +52,8 @@ class RProjectURLProvider(URLGetter):
             raise ProcessorError("Architecture must be one of: x86_64, arm64")
 
         # Prepare regular expression
+        pattern = r""
+        url_base = ""
         if arch == "x86_64":
             pattern = r'base\/(?P<file>R-(?P<vers>[\d.]+)-x86_64\.pkg)">R-[\d.]+-x86_64\.pkg</a>'
             url_base = "https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/"
