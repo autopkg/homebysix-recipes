@@ -6,7 +6,7 @@
 	<string>Created with Recipe Robot v2.3.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of GitButler.
-	
+
 Valid strings for ARCH input variable include:
 - x86_64: Download for Intel-based Macs (default)
 - aarch64: Download for Apple Silicon-based Macs
