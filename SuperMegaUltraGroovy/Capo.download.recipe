@@ -23,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>http://capoapp.com/download.php?v=latest</string>
+				<string>https://capoapp.com/download.php?v=latest</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
