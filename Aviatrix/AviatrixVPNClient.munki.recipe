@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.3.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Aviatrix VPN Client and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.AviatrixVPNClient</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>AviatrixVPNClient</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Aviatrix VPN Client.app</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Aviatrix VPN Client is a cloud-based virtual private network solution that uses OpenVPN.</string>
+			<key>developer</key>
+			<string>Aviatrix Systems</string>
+			<key>display_name</key>
+			<string>Aviatrix VPN Client</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>preuninstall_script</key>
+			<string>#!/bin/bash
+# Unload daemon
+DAEMON_ID="aviatrix.vpn.client.rp"
+if /bin/launchctl print "system/$DAEMON_ID" &amp;&gt;/dev/null; then
+    /bin/launchctl bootout "system/$DAEMON_ID"
+fi
+</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.AviatrixVPNClient</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
