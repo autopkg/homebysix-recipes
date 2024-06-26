@@ -53,13 +53,27 @@ RELEASES = {
         "filename": "Cocktail15ME.dmg",
         "bundle_id": "com.maintain.cocktail.monterey15",
     },
+    "13": {
+        "filename": "Cocktail16VE.dmg",
+        "bundle_id": "com.maintain.cocktail.ventura165",
+    },
+    "14": {
+        "filename": "Cocktail17SE.dmg",
+        # Bundle ID says Ventura but it's the correct one for the Sonoma edition
+        "bundle_id": "com.maintain.cocktail.ventura165",
+    },
+    # Expected late 2024
+    # "15": {
+    #     "filename": "Cocktail18SE.dmg",
+    #     "bundle_id": "com.maintain.cocktail.ventura165",
+    # },
 }
 
 # Base URL for downloading releases
 BASE_URL = "https://www.maintain.se/downloads/"
 
 # Default major version if none is provided
-DEFAULT_MAJOR_VERSION = "12"
+DEFAULT_MAJOR_VERSION = "14"
 
 
 class CocktailReleasesInfoProvider(URLGetter):
