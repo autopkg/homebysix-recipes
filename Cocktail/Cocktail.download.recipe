@@ -6,7 +6,9 @@
 	<string>Downloads the latest version of a particular MAJOR_VERSION of Cocktail.
 
 MAJOR_VERSION should correspond to a macOS release version. Supported values include:
-- 12 for Monterey (default)
+- 14 for Sonoma (default)
+- 13 for Ventura
+- 12 for Monterey
 - 11 for Big Sur
 - 10.15 for Catalina
 - 10.14 for Mojave
@@ -22,7 +24,7 @@ This recipe does not support older major versions than Yosemite.
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>12</string>
+		<string>14</string>
 		<key>NAME</key>
 		<string>Cocktail</string>
 	</dict>
