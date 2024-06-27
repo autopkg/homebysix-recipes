@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of the GitHub command line tool and imports it into Munki.</string>
+	<string>Downloads the latest version of the GitHub command line tool and imports it into Munki.
+	
+Valid options for SUPPORTED_ARCH input variable are "x86_64" for Intel (defualt) or "arm64" for Apple Silicon.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.GitHubCLI</string>
 	<key>Input</key>
@@ -12,6 +14,8 @@
 		<string>apps/GitHub</string>
 		<key>NAME</key>
 		<string>GitHub CLI</string>
+		<key>SUPPORTED_ARCH</key>
+		<string>x86_64</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -26,6 +30,10 @@
 			<string>GitHub CLI</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>supported_architectures</key>
+			<array>
+				<string>%SUPPORTED_ARCH%</string>
+			</array>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
