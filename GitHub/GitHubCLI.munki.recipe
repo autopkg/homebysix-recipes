@@ -41,6 +41,19 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>find</key>
+				<string>amd64</string>
+				<key>input_string</key>
+				<string>%ARCH%</string>
+				<key>replace</key>
+				<string>x86_64</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>faux_root</key>
 				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 				<key>installs_item_paths</key>
@@ -52,6 +65,16 @@
 			<string>MunkiInstallsItemsCreator</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>supported_architectures</key>
+						<array>
+							<string>%output_string%</string>
+						</array>
+				</dict>
+			</dict>
 			<key>Processor</key>
 			<string>MunkiPkginfoMerger</string>
 		</dict>
