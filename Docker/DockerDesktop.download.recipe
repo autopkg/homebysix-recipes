@@ -28,11 +28,24 @@ required to support Apple Silicon Macs.</string>
 	<array>
 		<dict>
 			<key>Arguments</key>
+				<dict>
+				<key>re_pattern</key>
+				<string>https://desktop\.docker\.com/mac/main/%PLATFORM_ARCH%/[A-Za-z0-9]+/Docker\.dmg</string>
+				<key>result_output_var_name</key>
+				<string>DOWNLOAD_URL</string>
+				<key>url</key>
+				<string>https://docs.docker.com/desktop/release-notes/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%-%PLATFORM_ARCH%.dmg</string>
 				<key>url</key>
-				<string>https://desktop.docker.com/mac/main/%PLATFORM_ARCH%/Docker.dmg</string>
+				<string>%DOWNLOAD_URL%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
