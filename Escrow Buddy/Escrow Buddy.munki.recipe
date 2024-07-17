@@ -112,6 +112,49 @@ echo "Escrow Buddy successfully uninstalled."
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>installcheck_script</key>
+					<string>#!/bin/zsh
+
+# Exit codes
+PROCEED_WITH_INSTALL=0
+INSTALL_NOT_NEEDED=1
+
+# Check whether mechanism is present in the authorization database
+DBENTRY="&lt;string&gt;Escrow Buddy:Invoke,privileged&lt;/string&gt;"
+if ! /usr/bin/security authorizationdb read system.login.console 2&gt;/dev/null | grep -q "$DBENTRY"; then
+    exit $PROCEED_WITH_INSTALL
+fi
+
+# Check whether receipt is present
+if [[ ! -f "/var/db/receipts/com.netflix.Escrow-Buddy.plist" ]]; then
+    exit $PROCEED_WITH_INSTALL
+fi
+
+# Check whether bundle is present
+if [[ ! -d "/Library/Security/SecurityAgentPlugins/Escrow Buddy.bundle" ]]; then
+    exit $PROCEED_WITH_INSTALL
+fi
+
+# Check whether bundle is up to date
+autoload is-at-least
+INSTALLED_VERSION=$(defaults read "/Library/Security/SecurityAgentPlugins/Escrow Buddy.bundle/Contents/Info.plist" CFBundleShortVersionString)
+OFFERED_VERSION="%version%"
+if ! is-at-least "$OFFERED_VERSION" "$INSTALLED_VERSION"; then
+    exit $PROCEED_WITH_INSTALL
+fi
+
+exit $INSTALL_NOT_NEEDED
+</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
