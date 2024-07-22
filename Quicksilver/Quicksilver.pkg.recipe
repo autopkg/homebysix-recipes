@@ -20,15 +20,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%pathname%</string>
+				<key>input_plist_path</key>
+				<string>%pathname%/Quicksilver.app/Contents/Info.plist</string>
 			</dict>
 			<key>Processor</key>
-			<string>FoundationDmgVersioner</string>
+			<string>Versioner</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>FoundationPkgCreator</string>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
