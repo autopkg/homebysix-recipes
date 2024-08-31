@@ -1,0 +1,4 @@
+#!/bin/bash
+# Remove old BitTorrent Sync app, now called Resilio Sync
+rm -rf "$3/Applications/BitTorrent Sync.app"
+exit 0
