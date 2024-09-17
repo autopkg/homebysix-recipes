@@ -62,11 +62,10 @@ RELEASES = {
         # Bundle ID says Ventura but it's the correct one for the Sonoma edition
         "bundle_id": "com.maintain.cocktail.ventura165",
     },
-    # Expected late 2024
-    # "15": {
-    #     "filename": "Cocktail18SE.dmg",
-    #     "bundle_id": "com.maintain.cocktail.ventura165",
-    # },
+    "15": {
+        "filename": "Cocktail18SE.dmg",
+        "bundle_id": "com.maintain.cocktail.sequoia",
+    },
 }
 
 # Base URL for downloading releases
