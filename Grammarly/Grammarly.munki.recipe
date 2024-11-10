@@ -58,7 +58,7 @@
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Grammarly Desktop.app/Contents/Info.plist</string>
 				<key>plist_keys</key>
 				<dict>
-					<key>CFBundleVersion</key>
+					<key>CFBundleShortVersionString</key>
 					<string>version</string>
 				</dict>
 			</dict>
@@ -96,7 +96,7 @@
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 				<key>version_comparison_key</key>
-				<string>CFBundleVersion</string>
+				<string>CFBundleShortVersionString</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
