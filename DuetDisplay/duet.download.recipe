@@ -5,19 +5,13 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of duet.
-
-To download the latest version of duet (macOS 12.3 and above) set DOWNLOAD_VERSION to "AppleSilicon" - Please note the "AppleSilicon" version is Universal.
-
-To download the latest legacy version of duet (macOS 10.9 - 12.2) set DOWNLOAD_VERSION to "legacyMac"</string>
+	<string>Downloads the latest version of duet.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.duet</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>duet</string>
-		<key>DOWNLOAD_VERSION</key>
-		<string>AppleSilicon</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -27,9 +21,9 @@ To download the latest legacy version of duet (macOS 10.9 - 12.2) set DOWNLOAD_V
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.zip</string>
+				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://updates.duetdisplay.com/%DOWNLOAD_VERSION%</string>
+				<string>https://updates.duetdisplay.com/AppleSilicon</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -41,21 +35,8 @@ To download the latest legacy version of duet (macOS 10.9 - 12.2) set DOWNLOAD_V
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/duet.app</string>
+				<string>%pathname%/duet.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.kairos.duetMac" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = J6L96W8A86)</string>
 			</dict>
