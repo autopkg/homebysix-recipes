@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/slack</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>nebula</string>
 		<key>pkginfo</key>
