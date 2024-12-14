@@ -1,3 +1,0 @@
-#!/bin/bash
-# Remove any existing 1.x version of "Blue Jeans.app"
-/bin/rm -rf "/Applications/Blue Jeans.app"
