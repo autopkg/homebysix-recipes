@@ -15,8 +15,6 @@ Set the ARCH input variable based on the desired architecture:
 	<dict>
 		<key>NAME</key>
 		<string>MySQLWorkbench</string>
-		<key>USER_AGENT</key>
-		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15</string>
 		<key>ARCH</key>
 		<string>x86_64</string>
 	</dict>
@@ -32,7 +30,7 @@ Set the ARCH input variable based on the desired architecture:
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
-					<string>%USER_AGENT%</string>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36</string>
 				</dict>
 				<key>url</key>
 				<string>https://dev.mysql.com/downloads/workbench</string>

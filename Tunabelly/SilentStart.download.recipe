@@ -12,8 +12,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Silent Start</string>
-		<key>USER_AGENT</key>
-		<string>Mozilla/5.0</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -22,11 +20,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_request_headers</key>
-				<dict>
-					<key>user-agent</key>
-					<string>%USER_AGENT%</string>
-				</dict>
 				<key>appcast_url</key>
 				<string>https://www.tunabellysoftware.com/resources/sparkle/silentstart.xml</string>
 			</dict>
@@ -38,11 +31,6 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%-%version%.zip</string>
-				<key>request_headers</key>
-				<dict>
-					<key>user-agent</key>
-					<string>%USER_AGENT%</string>
-				</dict>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
