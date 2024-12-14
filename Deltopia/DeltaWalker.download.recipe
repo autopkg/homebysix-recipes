@@ -3,15 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of DeltaWalker.</string>
+	<string>Downloads the latest version of DeltaWalker.
+	
+Valid values for ARCH include:
+- x64 (default; Intel)
+- aarch64 (Apple Silicon)
+</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.DeltaWalker</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>DeltaWalker</string>
-		<key>USER_AGENT</key>
-		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.2 Safari/605.1.15</string>
+		<key>ARCH</key>
+		<string>x64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -21,21 +26,21 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="(https:\/\/s3\.amazonaws\.com\/deltawalker\/DeltaWalker-[\d\.]+\.dmg)"</string>
-				<key>request_headers</key>
-				<dict>
-					<key>user-agent</key>
-					<string>%USER_AGENT%</string>
-				</dict>
+				<string>href="(https://s3.amazonaws.com/deltawalker/DeltaWalker-(?P&lt;version&gt;[\d\.]+)_%ARCH%.dmg)"</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>https://www.deltawalker.com/download.jsp</string>
+				<string>https://www.deltawalker.com/download</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%-%ARCH%.dmg</string>
+			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
