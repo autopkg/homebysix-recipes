@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of Geometer's Sketchpad 5</string>
+	<string>Downloads the current release version of Geometer's Sketchpad 5.
+	
+Not using CodeSignatureVerifier because version 5.06 resource envelope is obsolete (version 1 signature).</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.GSP5</string>
 	<key>Input</key>
@@ -19,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://gsp5.s3.amazonaws.com/GSP5.dmg</string>
+				<string>https://sketchpad.keycurriculum.com/key-s3/gsp5/GSP5.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
