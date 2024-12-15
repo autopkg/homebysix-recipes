@@ -19,9 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>desktop/mac/production/([\d\.]+)/VyprVPN</string>
-				<key>result_output_var_name</key>
-				<string>version</string>
+				<string>desktop/mac/production/(?P&lt;longversion&gt;[\d\.]+)/VyprVPN_v(?P&lt;shortversion&gt;[\d\.]+).dmg</string>
 				<key>url</key>
 				<string>https://www.vyprvpn.com/vpn-apps/vpn-for-mac</string>
 			</dict>
@@ -32,9 +30,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>VyprVPN-%version%.dmg</string>
+				<string>VyprVPN-%longversion%.dmg</string>
 				<key>url</key>
-				<string>https://www.goldenfrog.com/downloads/vyprvpn/desktop/mac/production/%version%/VyprVPN_v%version%.dmg</string>
+				<string>https://www.vyprvpn.com/downloads/vyprvpn/desktop/mac/production/%longversion%/VyprVPN_v%shortversion%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -53,6 +51,17 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/VyprVPN.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
