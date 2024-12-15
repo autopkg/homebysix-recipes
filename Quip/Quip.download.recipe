@@ -23,7 +23,7 @@
 				<key>request_headers</key>
 				<dict>
 					<key>user-agent</key>
-					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0)</string>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36</string>
 				</dict>
 				<key>url</key>
 				<string>https://quip.com/downloads/auto</string>

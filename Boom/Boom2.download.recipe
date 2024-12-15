@@ -18,6 +18,15 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The Boom 2 recipes are deprecated and will be removed. Consider updating to the Boom 3D recipes in this repo or in the ahousseini-recipes repo.</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>

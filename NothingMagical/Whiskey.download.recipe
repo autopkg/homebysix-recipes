@@ -20,6 +20,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>The usewhiskey.com website is down as of December 2024. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>

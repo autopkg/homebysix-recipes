@@ -12,6 +12,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>Tinderbox</string>
+		<key>MAJOR_VERSION</key>
+		<string>10</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -49,9 +51,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Tinderbox 9.app</string>
+				<string>%pathname%/Tinderbox %MAJOR_VERSION%.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.eastgate.Tinderbox-9" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = M5YSX9CC6H)</string>
+				<string>anchor apple generic and identifier "com.eastgate.Tinderbox-%MAJOR_VERSION%" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = M5YSX9CC6H)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -60,7 +62,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Tinderbox 9.app/Contents/Info.plist</string>
+				<string>%pathname%/Tinderbox %MAJOR_VERSION%.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

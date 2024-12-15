@@ -20,6 +20,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Delicious Monster's website is no longer online as of December 2024. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>DeliciousLibrary3.zip</string>
 				<key>url</key>

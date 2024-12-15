@@ -8,8 +8,8 @@
 	<string>com.github.homebysix.download.Mellel</string>
 	<key>Input</key>
 	<dict>
-		<key>APPNAME</key>
-		<string>Mellel 5.app</string>
+		<key>MAJOR_VERSION</key>
+		<string>6</string>
 		<key>NAME</key>
 		<string>Mellel</string>
 	</dict>
@@ -47,9 +47,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/%APPNAME%</string>
+				<string>%pathname%/Mellel %MAJOR_VERSION%.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.redlex.mellel5" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = DS2QH574BD)</string>
+				<string>anchor apple generic and identifier "com.redlex.mellel%MAJOR_VERSION%" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = MKZZ6CG2N9)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -58,7 +58,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/%APPNAME%/Contents/Info.plist</string>
+				<string>%pathname%/Mellel %MAJOR_VERSION%.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

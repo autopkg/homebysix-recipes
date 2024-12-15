@@ -20,6 +20,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>As of December 2024, LiveSurface Context appears to be downloadable only via the Mac App Store. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>re_pattern</key>
 				<string>&lt;span&gt;Context ([\d\.]+)&lt;/span&gt;</string>
 				<key>result_output_var_name</key>

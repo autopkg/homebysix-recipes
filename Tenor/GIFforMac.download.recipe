@@ -20,6 +20,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>The Tenor app is no longer available as of December 2024. This recipe is deprecated and will be removed.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>appcast_url</key>
 				<string>https://media.tenor.co/mac/gif_for_mac_appcast.xml</string>
 			</dict>

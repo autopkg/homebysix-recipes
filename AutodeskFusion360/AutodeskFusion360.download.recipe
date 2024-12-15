@@ -10,8 +10,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Autodesk Fusion 360</string>
-		<key>USER_AGENT</key>
-		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -22,11 +20,6 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.pkg</string>
-				<key>request_headers</key>
-				<dict>
-					<key>user-agent</key>
-					<string>%USER_AGENT%</string>
-				</dict>
 				<key>url</key>
 				<string>https://dl.appstreaming.autodesk.com/production/installers/Autodesk%20Fusion%20Admin%20Install.pkg</string>
 			</dict>
