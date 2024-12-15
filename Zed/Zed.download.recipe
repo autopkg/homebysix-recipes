@@ -2,10 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.3.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Zed.</string>
+	<string>Downloads the latest version of Zed.
+	
+Valid values for ARCH include:
+- x86_64 (default, Intel)
+- aarch64 (Apple Silicon)
+
+Valid values for BRANCH include:
+- stable (default)
+- preview
+</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Zed</string>
 	<key>Input</key>
@@ -14,6 +21,8 @@
 		<string>Zed</string>
 		<key>BRANCH</key>
 		<string>stable</string>
+		<key>ARCH</key>
+		<string>x86_64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -23,11 +32,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>/api/releases/%BRANCH%/([\d\.]+)/Zed.dmg</string>
+				<string>/api/releases/%BRANCH%/([\d\.]+)/Zed-%ARCH%.dmg</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
-				<string>https://zed.dev/download</string>
+				<string>https://zed.dev/releases/%BRANCH%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -36,9 +45,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<string>%NAME%-%version%-%ARCH%.dmg</string>
 				<key>url</key>
-				<string>https://zed.dev/api/releases/stable/%version%/Zed.dmg</string>
+				<string>https://zed.dev/api/releases/%BRANCH%/%version%/Zed-%ARCH%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
