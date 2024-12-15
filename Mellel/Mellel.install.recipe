@@ -8,8 +8,6 @@
 	<string>com.github.homebysix.install.Mellel</string>
 	<key>Input</key>
 	<dict>
-		<key>APPNAME</key>
-		<string>Mellel 5.app</string>
 		<key>NAME</key>
 		<string>Mellel</string>
 	</dict>
@@ -30,7 +28,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>%APPNAME%</string>
+						<string>Mellel %MAJOR_VERSION%.app</string>
 					</dict>
 				</array>
 			</dict>
