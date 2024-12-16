@@ -22,6 +22,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Legacy Cocktail recipes for 10.10 through 10.15 are deprecated and will be removed. If you still require this recipe, consider switching to the new recipes based on Cocktail.download and overriding MAJOR_VERSION to "10.14".</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>major_version</key>
 				<string>%MAJOR_VERSION%</string>
 			</dict>
