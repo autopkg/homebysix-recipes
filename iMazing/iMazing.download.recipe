@@ -5,13 +5,17 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of iMazing.</string>
+	<string>Downloads the latest version of iMazing.
+	
+Tested with MAJOR_VERSION 2 and 3.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.iMazing</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>iMazing</string>
+		<key>MAJOR_VERSION</key>
+		<string>2</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -21,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>https://downloads.imazing.com/com.DigiDNA.iMazing2Mac.xml</string>
+				<string>https://downloads.imazing.com/com.DigiDNA.iMazing%MAJOR_VERSION%Mac.xml</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
@@ -45,7 +49,7 @@
 				<key>input_path</key>
 				<string>%pathname%/iMazing.app</string>
 				<key>requirement</key>
-				<string>identifier "com.DigiDNA.iMazing2Mac" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = J5PR93692Y</string>
+				<string>identifier "com.DigiDNA.iMazing%MAJOR_VERSION%Mac" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = J5PR93692Y</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
