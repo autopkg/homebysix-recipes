@@ -12,7 +12,7 @@
 		<string>Kite</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 <dict>
@@ -22,7 +22,7 @@
     <dict>
         <key>warning_message</key>
         <string>Kite development ceased in 2022. (Details: https://web.archive.org/web/20241210091357/https://www.kite.com/blog/product/kite-is-saying-farewell/)
-		
+
 This recipe is deprecated and will be removed in the future.</string>
     </dict>
 </dict>

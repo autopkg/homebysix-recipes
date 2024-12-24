@@ -19,7 +19,7 @@ upgrade from the old app from developer Peer Assembly.</string>
 		<string>Tokens</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

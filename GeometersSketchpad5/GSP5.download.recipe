@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the current release version of Geometer's Sketchpad 5.
-	
+
 Not using CodeSignatureVerifier because version 5.06 resource envelope is obsolete (version 1 signature).</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.GSP5</string>

@@ -69,9 +69,9 @@ class RProjectURLProvider(URLGetter):
 
         # Set URL and version in environment
         self.env["url"] = url_base + m.groupdict()["file"]
-        self.output("Found url: %s" % self.env["url"])
+        self.output(f"Found url: {self.env['url']}")
         self.env["version"] = m.groupdict()["vers"]
-        self.output("Found version: %s" % self.env["version"])
+        self.output(f"Found version: {self.env['version']}")
 
 
 if __name__ == "__main__":

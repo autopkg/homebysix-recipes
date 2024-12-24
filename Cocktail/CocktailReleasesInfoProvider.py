@@ -83,7 +83,7 @@ class CocktailReleasesInfoProvider(URLGetter):
         "major_version": {
             "required": False,
             "description": "Major version of macOS for which to download a "
-            "compatible Cocktail release. Default is %s" % DEFAULT_MAJOR_VERSION,
+            f"compatible Cocktail release. Default is {DEFAULT_MAJOR_VERSION}.",
         }
     }
     output_variables = {
@@ -107,7 +107,7 @@ class CocktailReleasesInfoProvider(URLGetter):
 
         # Determine and set output variables
         self.env["url"] = BASE_URL + RELEASES[major_version]["filename"]
-        self.output("Found URL: %s" % self.env["url"])
+        self.output(f"Found URL: {self.env['url']}")
         self.env["bundle_id"] = RELEASES[major_version]["bundle_id"]
 
         # Determine and set code signature verification cert leaf

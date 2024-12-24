@@ -71,11 +71,11 @@ class PerforceURLProvider(URLGetter):
         # Add trailing slash to prevent constant 301 redirects.
         if not url.endswith("/"):
             url = url + "/"
-        self.output("Searching %s for %s" % (url, path[0]))
+        self.output(f"Searching {url} for {path[0]}")
 
         # Get content of directory listing and parse for links matching path regex.
         html = self.download(url, text=True)
-        link_pattern = re.compile('<a href="(%s)">' % path[0])
+        link_pattern = re.compile(f'<a href="({path[0]})">')
         links = re.findall(link_pattern, html)
         if len(links) == 0:
             # No match, toss back to parent caller and continue recursing.
@@ -105,10 +105,10 @@ class PerforceURLProvider(URLGetter):
         url = self.recurse_subdirs(info["path"], BASE_URL + "/" + info["start"])
         if not url:
             raise ProcessorError(
-                "Did not find a matching download URL for %s." % self.env["product"]
+                f"Did not find a matching download URL for {self.env['product']}."
             )
         self.env["url"] = url
-        self.output("Found url: %s" % self.env["url"])
+        self.output(f"Found url: {self.env['url']}")
 
 
 if __name__ == "__main__":

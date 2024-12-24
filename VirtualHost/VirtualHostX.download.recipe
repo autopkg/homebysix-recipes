@@ -14,7 +14,7 @@
 		<string>VirtualHostX</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

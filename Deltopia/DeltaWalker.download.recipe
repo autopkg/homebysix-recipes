@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the latest version of DeltaWalker.
-	
+
 Valid values for ARCH include:
 - x64 (default; Intel)
 - aarch64 (Apple Silicon)
