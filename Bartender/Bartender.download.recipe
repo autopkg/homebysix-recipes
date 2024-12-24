@@ -11,7 +11,7 @@ Specify which major version you want in the MAJOR_VERSION input variable. Suppor
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>4</string>
+		<string>5</string>
 		<key>NAME</key>
 		<string>Bartender</string>
 	</dict>
