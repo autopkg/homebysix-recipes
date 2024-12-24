@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the latest version of Zed.
-	
+
 Valid values for ARCH include:
 - x86_64 (default, Intel)
 - aarch64 (Apple Silicon)
