@@ -38,19 +38,19 @@ AUTOPKG_CACHE = os.path.expanduser("~/Library/AutoPkg/Cache")
 
 def check_recipe(relpath, recipe):
     """Parse the recipe and make sure it's valid."""
-    assert_is_instance(recipe, dict, "{}: recipe is not a dict".format(relpath))
-    assert_in("Identifier", recipe, "{}: no Identifier key".format(relpath))
+    assert_is_instance(recipe, dict, f"{relpath}: recipe is not a dict")
+    assert_in("Identifier", recipe, f"{relpath}: no Identifier key")
     assert_true(
         recipe["Identifier"].startswith(IDENTIFIER_PREFIX)
         or recipe["Identifier"] in IDENTIFIER_EXEMPTIONS,
-        "{}: does not start with {}".format(relpath, IDENTIFIER_PREFIX),
+        f"{relpath}: does not start with {IDENTIFIER_PREFIX}",
     )
-    assert_in("Input", recipe, "{}: no Input key".format(relpath))
-    assert_in("Process", recipe, "{}: no Process key".format(relpath))
+    assert_in("Input", recipe, f"{relpath}: no Input key")
+    assert_in("Process", recipe, f"{relpath}: no Process key")
     assert_not_in(
         "ParentRecipeTrustInfo",
         recipe,
-        "{}: has ParentRecipeTrustInfo key".format(relpath),
+        f"{relpath}: has ParentRecipeTrustInfo key",
     )
 
 
@@ -67,32 +67,42 @@ def run_recipe(relpath, recipe):
     # Skip any recipe that contains certain processors
     for proc_exc in PROCESSOR_EXCEPTIONS:
         if proc_exc in [x["Processor"] for x in recipe.get("Process", [{}])]:
-            print("Skipping due to %s." % proc_exc)
+            print(f"Skipping due to {proc_exc}.")
             return
 
-    retcode = subprocess.call(
+    proc = subprocess.run(
         [
             AUTOPKG,
             "info",
             relpath,
             "--pull",
             "--quiet",
-        ]
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
     )
     assert_equal(
-        retcode, 0, "{}: autopkg info exited with code {}".format(relpath, retcode)
+        proc.returncode,
+        0,
+        f"{relpath}: autopkg info exited with code {proc.returncode}",
     )
-    retcode = subprocess.call(
+    proc = subprocess.run(
         [
             AUTOPKG,
             "run",
             relpath,
             "--report-plist=test/report.plist",
             "--quiet",
-        ]
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
     )
     assert_equal(
-        retcode, 0, "{}: autopkg run exited with code {}".format(relpath, retcode)
+        proc.returncode,
+        0,
+        f"{relpath}: autopkg run exited with code {proc.returncode}",
     )
 
 
@@ -120,9 +130,7 @@ def test_functional():
 
     # Check and run each recipe we found.
     for index, recipe_path in enumerate(recipe_paths):
-        print(
-            "Testing {} ({} of {})...".format(recipe_path, index + 1, len(recipe_paths))
-        )
+        print(f"Testing {recipe_path} ({index + 1} of {len(recipe_paths)})...")
         with open(recipe_path, "rb") as infile:
             recipe = plistlib.load(infile)
         yield check_recipe, recipe_path, recipe

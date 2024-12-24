@@ -16,8 +16,7 @@
 
 import os
 import re
-import shlex
-from subprocess import PIPE, Popen
+import subprocess
 
 from autopkglib import Processor, ProcessorError  # noqa: F401
 
@@ -47,31 +46,27 @@ class BinaryFileVersioner(Processor):  # pylint: disable=invalid-name
         if not os.path.isfile("/bin/launchctl"):
             raise ProcessorError("/bin/launchctl is not present on this Mac.")
 
-        cmd = "/bin/launchctl plist __TEXT,__info_plist '{}'".format(
-            self.env["input_file_path"]
-        )
-        with Popen(
-            shlex.split(cmd.strip()), stdin=PIPE, stdout=PIPE, stderr=PIPE, text=True
-        ) as proc:
-            out, err = proc.communicate()
-            exitcode = proc.returncode
-
-        if exitcode != 0:
-            raise ProcessorError("/bin/launchctl failed with error: {}".format(err))
+        cmd = [
+            "/bin/launchctl",
+            "plist",
+            "__TEXT,__info_plist",
+            self.env["input_file_path"],
+        ]
+        proc = subprocess.run(cmd, check=False, capture_output=True, text=True)
+        if proc.returncode != 0:
+            raise ProcessorError(f"/bin/launchctl failed with error: {proc.stderr}")
 
         version_key = self.env.get("plist_version_key", "CFBundleShortVersionString")
-        pattern = '"{}" = "(.*)";'.format(version_key)
-        match = re.search(pattern, out)
+        pattern = f'"{version_key}" = "(.*)";'
+        match = re.search(pattern, proc.stdout)
 
         if match:
             self.env["version"] = match.group(1)
-            self.output("Found version: {}".format(self.env["version"]))
+            self.output(f"Found version: {self.env['version']}")
         else:
             raise ProcessorError(
-                "Unable to find a {} key in {}.".format(
-                    self.env.get("plist_version_key", "CFBundleShortVersionString"),
-                    self.env["input_file_path"],
-                )
+                f"Unable to find a {self.env.get('plist_version_key', 'CFBundleShortVersionString')} "
+                f"key in {self.env['input_file_path']}."
             )
 
 

@@ -100,9 +100,7 @@ class Zoom7zUnarchiver(Processor):  # pylint: disable=invalid-name
             try:
                 os.makedirs(destination_path)
             except OSError as err:
-                raise ProcessorError(
-                    "Can't create %s: %s" % (destination_path, err.strerror)
-                )
+                raise ProcessorError(f"Can't create {destination_path}: {err.strerror}")
         elif self.env.get("purge_destination"):
             for entry in os.listdir(destination_path):
                 path = os.path.join(destination_path, entry)
@@ -112,24 +110,22 @@ class Zoom7zUnarchiver(Processor):  # pylint: disable=invalid-name
                     else:
                         os.unlink(path)
                 except OSError as err:
-                    raise ProcessorError("Can't remove %s: %s" % (path, err.strerror))
+                    raise ProcessorError(f"Can't remove {path}: {err.strerror}")
 
         fmt = self.env.get("archive_format")
         if fmt is None:
             fmt = self.get_archive_format(archive_path)
             if not fmt:
                 raise ProcessorError(
-                    "Can't guess archive format for filename %s"
-                    % os.path.basename(archive_path)
+                    f"Can't guess archive format for filename {os.path.basename(archive_path)}"
                 )
             self.output(
-                "Guessed archive format '%s' from filename %s"
-                % (fmt, os.path.basename(archive_path))
+                f"Guessed archive format '{fmt}' from filename {os.path.basename(archive_path)}"
             )
         elif fmt not in EXTNS:
             raise ProcessorError(
-                "'%s' is not valid for the 'archive_format' variable. "
-                "Must be one of %s." % (fmt, ", ".join(EXTNS))
+                f"'{fmt}' is not valid for the 'archive_format' variable. "
+                f"Must be one of {', '.join(EXTNS)}."
             )
 
         if fmt == "zip":
@@ -158,23 +154,13 @@ class Zoom7zUnarchiver(Processor):  # pylint: disable=invalid-name
                 cmd.append("-j")
 
         # Call the shell command.
-        try:
-            with subprocess.Popen(
-                cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-            ) as proc:
-                _, stderr = proc.communicate()
-        except OSError as err:
-            raise ProcessorError(
-                "%s execution failed with error code %d: %s"
-                % (os.path.basename(cmd[0]), err.errno, err.strerror)
-            )
+        proc = subprocess.run(cmd, check=False, capture_output=True, text=True)
         if proc.returncode != 0:
             raise ProcessorError(
-                "Unarchiving %s with %s failed: %s"
-                % (archive_path, os.path.basename(cmd[0]), stderr)
+                f"Unarchiving {archive_path} with {os.path.basename(cmd[0])} failed: {proc.stderr}"
             )
 
-        self.output("Unarchived %s to %s" % (archive_path, destination_path))
+        self.output(f"Unarchived {archive_path} to {destination_path}")
 
 
 if __name__ == "__main__":

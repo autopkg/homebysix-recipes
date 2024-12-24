@@ -53,7 +53,7 @@ class GoToMeetingURLProvider(URLGetter):
         "base_url": {
             "required": False,
             "description": "URL for the GoToMeeting "
-            "releases JSON feed. Default is %s" % BASE_URL,
+            f"releases JSON feed. Default is {BASE_URL}.",
         }
     }
     output_variables = {
@@ -108,9 +108,9 @@ class GoToMeetingURLProvider(URLGetter):
         base_url = self.env.get("base_url", BASE_URL)
         g2m_url, g2m_build = self.get_g2m_info(base_url)
         self.env["url"] = g2m_url
-        self.output("Found URL: %s" % self.env["url"])
+        self.output(f"Found URL: {self.env['url']}")
         self.env["build"] = g2m_build
-        self.output("Build number: %s" % self.env["build"])
+        self.output(f"Build number: {self.env['build']}")
 
 
 if __name__ == "__main__":

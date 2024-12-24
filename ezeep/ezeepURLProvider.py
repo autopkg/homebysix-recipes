@@ -88,9 +88,9 @@ class ezeepURLProvider(URLGetter):
 
         # Set URL and version in environment
         self.env["url"] = json.loads(response).get("url")
-        self.output("Found url: %s" % self.env["url"])
+        self.output(f"Found url: {self.env['url']}")
         self.env["version"] = json.loads(response).get("version")
-        self.output("Found version: %s" % self.env["version"])
+        self.output(f"Found version: {self.env['version']}")
 
 
 if __name__ == "__main__":

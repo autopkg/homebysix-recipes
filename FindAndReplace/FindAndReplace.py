@@ -53,7 +53,7 @@ class FindAndReplace(Processor):
         input_string = self.env["input_string"]
         find = self.env["find"]
         replace = self.env["replace"]
-        self.output('Replacing "%s" with "%s" in "%s".' % (find, replace, input_string))
+        self.output(f'Replacing "{find}" with "{replace}" in "{input_string}".')
         self.env["output_string"] = self.env["input_string"].replace(find, replace)
 
 

@@ -55,7 +55,7 @@ class VersionSplitter(Processor):  # pylint: disable=invalid-name
         split_on = self.env.get("split_on", " ")
         index = self.env.get("index", 0)
         self.env["version"] = self.env["version"].split(split_on)[index]
-        self.output("Split version: {}".format(self.env["version"]))
+        self.output(f"Split version: {self.env['version']}")
 
 
 if __name__ == "__main__":

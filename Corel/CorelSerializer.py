@@ -52,10 +52,7 @@ class CorelSerializer(Processor):
         """Return the product code and DTA file installed path for this Corel
         product by parsing the License.plist file in the Registration bundle."""
 
-        license_path = (
-            "%s/plugins/Registration.bundle/Contents/Resources/License.plist"
-            % self.env["RECIPE_CACHE_DIR"]
-        )
+        license_path = f"{self.env['RECIPE_CACHE_DIR']}/plugins/Registration.bundle/Contents/Resources/License.plist"
         with open(license_path, "rb") as openfile:
             license_info = plistlib.load(openfile)
         return license_info["ProductID"], license_info["DTAFileInstalledPath"]
@@ -65,7 +62,7 @@ class CorelSerializer(Processor):
 
         if not os.path.isfile(self.env["flat_pkg_path"]):
             raise ProcessorError(
-                "Provided flat_pkg_path does not exist: %s" % self.env["flat_pkg_path"]
+                f"Provided flat_pkg_path does not exist: {self.env['flat_pkg_path']}"
             )
 
         create_dta = os.path.join(self.env["RECIPE_CACHE_DIR"], "plugins", "create_dta")
@@ -78,7 +75,7 @@ class CorelSerializer(Processor):
         self.env["dta_path"] = dta_path
         self.env["dta_installed_path"] = dta_installed_path
         self.env["product_code"] = product_code
-        self.output("Serialized DTA file: %s" % dta_path)
+        self.output(f"Serialized DTA file: {dta_path}")
 
 
 if __name__ == "__main__":
