@@ -12,9 +12,18 @@
 		<string>jss_helper</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>PythonJSS, which jss_helper requires, is no longer maintained. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
