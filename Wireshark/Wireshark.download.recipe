@@ -8,6 +8,8 @@
 Acceptable values for the ARCH input variable include:
 - Intel (default): Downloads Wireshark for Macs with Intel processors.
 - Arm: Downloads Wireshark for Macs with Apple Silicon processors.
+
+For automated development builds of Wireshark, see the WiresharkDev recipes in justinrummel-recipes.
 	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Wireshark</string>
