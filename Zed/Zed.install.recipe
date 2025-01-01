@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Zed</string>
+	<string>com.github.dataJAR-recipes.download.Zed</string>
 	<key>Process</key>
 	<array>
 		<dict>
