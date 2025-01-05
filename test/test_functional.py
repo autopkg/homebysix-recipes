@@ -1,10 +1,7 @@
-# -*- coding: utf-8 -*-
-
 """test_functional.py.
 
 Functional tests for homebysix-recipes.
 """
-
 
 import os
 import plistlib

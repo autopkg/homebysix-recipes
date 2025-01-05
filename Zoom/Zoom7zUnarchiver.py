@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2010 Per Olofsson
 # Updated as draft by Yoann Gini in 2017 to support 7z file format for Zoom

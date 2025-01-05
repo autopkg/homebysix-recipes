@@ -47,3 +47,8 @@ repos:
     rev: v3.3.3
     hooks:
       - id: pylint
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.19.1
+    hooks:
+      - id: pyupgrade
+        args: ["--py38-plus"]
