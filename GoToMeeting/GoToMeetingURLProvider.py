@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2015-2020 Elliot Jordan
 # Based on original processor by Nick Gamewell
