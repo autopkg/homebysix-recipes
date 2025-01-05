@@ -70,7 +70,7 @@ class GoToMeetingURLProvider(URLGetter):
         meta_path = os.path.join(download_dir, "meta")
         try:
             os.makedirs(download_dir)
-        except os.error:
+        except OSError:
             # Directory already exists
             pass
 
