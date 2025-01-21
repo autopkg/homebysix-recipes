@@ -5,13 +5,16 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.3.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Setup Manager.</string>
+	<string>Downloads the latest version of Jamf Setup Manager.
+If you wish to download a pre-release version if it is the most recent, set INCL_PRERELEASES to any non-empty value.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.JamfSetupManager</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>JamfSetupManager</string>
+		<key>INCL_PRERELEASES</key>
+		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -22,16 +25,13 @@
 			<dict>
 				<key>github_repo</key>
 				<string>Jamf-Concepts/Setup-Manager</string>
+				<key>include_prereleases</key>
+				<string>%INCL_PRERELEASES%</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>%NAME%-%version%.pkg</string>
-			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
