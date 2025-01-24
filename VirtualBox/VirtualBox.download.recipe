@@ -3,13 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of VirtualBox</string>
+	<string>Downloads the current release version of VirtualBox
+
+To download Apple Silicon use: "macOSArm64" in the DOWNLOAD_ARCH variable
+To download Intel use: "OSX" in the DOWNLOAD_ARCH variable</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.VirtualBox</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>VirtualBox</string>
+		<key>DOWNLOAD_ARCH</key>
+		<string>OSX</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -19,7 +24,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>comment</key>
-				<string>Example: https://download.virtualbox.org/virtualbox/4.3.10/VirtualBox-4.3.10-93012-OSX.dmg</string>
+				<string>Example: https://download.virtualbox.org/virtualbox/4.3.10/VirtualBox-4.3.10-93012-%DOWNLOAD_ARCH%.dmg</string>
 				<key>re_pattern</key>
 				<string>https://download\.virtualbox\.org/virtualbox/.*?/VirtualBox-.*?-OSX.dmg</string>
 				<key>url</key>
