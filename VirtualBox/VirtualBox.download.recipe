@@ -24,9 +24,9 @@ To download Intel use: "OSX" in the DOWNLOAD_ARCH variable</string>
 			<key>Arguments</key>
 			<dict>
 				<key>comment</key>
-				<string>Example: https://download.virtualbox.org/virtualbox/4.3.10/VirtualBox-4.3.10-93012-%DOWNLOAD_ARCH%.dmg</string>
+				<string>Example: https://download.virtualbox.org/virtualbox/4.3.10/VirtualBox-4.3.10-93012-OSX.dmg</string>
 				<key>re_pattern</key>
-				<string>https://download\.virtualbox\.org/virtualbox/.*?/VirtualBox-.*?-OSX.dmg</string>
+				<string>https://download\.virtualbox\.org/virtualbox/.*?/VirtualBox-.*?-%DOWNLOAD_ARCH%.dmg</string>
 				<key>url</key>
 				<string>https://www.virtualbox.org/wiki/Downloads</string>
 			</dict>
