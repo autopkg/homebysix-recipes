@@ -33,7 +33,7 @@ Set the ARCH input variable based on the desired architecture:
 					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36</string>
 				</dict>
 				<key>url</key>
-				<string>https://dev.mysql.com/downloads/workbench</string>
+				<string>https://dev.mysql.com/downloads/workbench/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -44,7 +44,7 @@ Set the ARCH input variable based on the desired architecture:
 				<key>filename</key>
 				<string>%NAME%-%ARCH%-%version%.dmg</string>
 				<key>url</key>
-				<string>https://dev.mysql.com/get/Downloads/MySQLGUITools/%dmg%</string>
+				<string>https://cdn.mysql.com/Downloads/MySQLGUITools/%dmg%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
