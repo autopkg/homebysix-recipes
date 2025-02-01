@@ -27,13 +27,8 @@ Set the ARCH input variable based on the desired architecture:
 			<dict>
 				<key>re_pattern</key>
 				<string>(?P&lt;dmg&gt;mysql-workbench-community-(?P&lt;version&gt;[\d\.]+)-macos-%ARCH%\.dmg)</string>
-				<key>request_headers</key>
-				<dict>
-					<key>user-agent</key>
-					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36</string>
-				</dict>
 				<key>url</key>
-				<string>https://dev.mysql.com/downloads/workbench/</string>
+				<string>https://dev.mysql.com/downloads/workbench/?tpl=files&amp;os=33</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
