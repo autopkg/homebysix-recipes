@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Inkscape and builds a package.</string>
+	<string>Downloads the latest version of Inkscape and builds a package.
+If you need to deploy both Intel and Apple Silicon versions of this app, use the NAME input variable
+in your override to add architecture information to your package name (e.g., Inkscape-Intel).</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.Inkscape</string>
 	<key>Input</key>
@@ -31,6 +33,11 @@
 			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
 		</dict>
