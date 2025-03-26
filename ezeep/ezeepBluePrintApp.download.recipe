@@ -26,7 +26,7 @@ For the older "ezeep Desktop" app, use the ezeepDesktop recipes.</string>
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://ezeep.io/blueappmac</string>
+				<string>https://ezeep.io/macos</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
