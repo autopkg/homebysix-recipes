@@ -52,7 +52,7 @@ For the older "ezeep Desktop" app, use the ezeepDesktop recipes.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pattern</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/ezeep Blue Print App Mac */ezeep Print App.pkg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/ezeep Print App.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileFinder</string>
@@ -62,7 +62,7 @@ For the older "ezeep Desktop" app, use the ezeepDesktop recipes.</string>
 			<dict>
 				<key>expected_authority_names</key>
 				<array>
-					<string>Developer ID Installer: Cortado AG (E6SHW9T26D)</string>
+					<string>Developer ID Installer: Cortado Holding AG (E6SHW9T26D)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
