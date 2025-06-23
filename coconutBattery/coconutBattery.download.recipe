@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>https://coconut-flavour.com/updates/coconutBattery.xml</string>
+				<string>https://coconut-flavour.com/updates/coconutBattery_4.xml</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
