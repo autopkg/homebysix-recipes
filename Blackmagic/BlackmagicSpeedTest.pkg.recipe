@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Blackmagic Desktop Video, extracts the Blackmagic Speed Test app and creates a package for installing it.
+    
+    Unlike the BlackmagicSpeedTest recipes in jessepeterson-recipes, this recipe does not deploy the Mac App Store version of the Speed Test app.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.pkg.BlackmagicSpeedTest</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>BlackmagicSpeedTest</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.dataJAR-recipes.download.Blackmagic Desktop Video</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/dv-unpacked</string>
+				<key>flat_pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Blackmagic_Desktop_Video_%version%.dmg/Install Desktop Video %version%.pkg</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/st-unpacked</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/dv-unpacked/DiskSpeedTest.pkg/Payload</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>mode</key>
+				<string>u+x</string>
+				<key>resource_path</key>
+				<string>%RECIPE_CACHE_DIR%/st-unpacked/Applications/Blackmagic Disk Speed Test.app/Contents/PlugIns/styles</string>
+			</dict>
+			<key>Comment</key>
+			<string>The styles directory is non-user-executable which causes issues copying or overwriting the app bundle. The ChangeModeOwner processor fixes this.</string>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.commonprocessors/ChangeModeOwner</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>app_path</key>
+				<string>%RECIPE_CACHE_DIR%/st-unpacked/Applications/Blackmagic Disk Speed Test.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>AppPkgCreator</string>
+		</dict>
+	</array>
+</dict>
+</plist>
