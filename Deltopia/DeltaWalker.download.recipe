@@ -26,7 +26,7 @@ Valid values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="(https://s3.amazonaws.com/deltawalker/DeltaWalker-(?P&lt;version&gt;[\d\.]+)_%ARCH%.dmg)"</string>
+				<string>href="(https://\S+\.amazonaws\.com/DeltaWalker-(?P&lt;version&gt;[\d\.]+)_%ARCH%\.dmg)"</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
