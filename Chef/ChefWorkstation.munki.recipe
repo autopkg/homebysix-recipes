@@ -20,6 +20,8 @@
 			</array>
 			<key>category</key>
 			<string>Development</string>
+			<key>description</key>
+			<string>Chef Workstation is Chef's modern developer tool kit that includes Chef Infra, InSpec and Habitat plus a host of resources, helpers and testing tools for infrastructure automation and application and security testing.</string>
 			<key>developer</key>
 			<string>Chef</string>
 			<key>display_name</key>
