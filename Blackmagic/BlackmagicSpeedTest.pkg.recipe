@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the latest version of Blackmagic Desktop Video, extracts the Blackmagic Speed Test app and creates a package for installing it.
-    
+
     Unlike the BlackmagicSpeedTest recipes in jessepeterson-recipes, this recipe does not deploy the Mac App Store version of the Speed Test app.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.pkg.BlackmagicSpeedTest</string>
