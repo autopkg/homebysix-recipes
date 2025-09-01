@@ -5,11 +5,16 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of WordPress.com.</string>
+	<string>Downloads the latest version of WordPress.com.
+
+To download Apple Silicon use: "-silicon" in the DOWNLOAD_ARCH variable
+To download Intel leave the DOWNLOAD_ARCH variable empty</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.WordPress.com</string>
 	<key>Input</key>
 	<dict>
+		<key>DOWNLOAD_ARCH</key>
+		<string>-silicon</string>
 		<key>NAME</key>
 		<string>WordPress.com</string>
 	</dict>
@@ -21,11 +26,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(rest/v[\d\.]+/desktop/osx/download\?type=dmg)</string>
+				<string>(rest/v[\d\.]+/desktop/osx%DOWNLOAD_ARCH%/download\?type=dmg)</string>
 				<key>result_output_var_name</key>
 				<string>download_path</string>
 				<key>url</key>
-				<string>https://apps.wordpress.com/d/osx/</string>
+				<string>https://apps.wordpress.com/d/osx%DOWNLOAD_ARCH%/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
