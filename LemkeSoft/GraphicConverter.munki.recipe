@@ -25,7 +25,7 @@ The MAJOR_VERSION input variable can be overridden to select the major version o
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>GraphicConverter is a powerful image editing and conversion tool for macOS.</string>
 			<key>developer</key>
 			<string>Thorsten Lemke</string>
 			<key>display_name</key>
