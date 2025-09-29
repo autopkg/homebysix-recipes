@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>A new productivity-focused web browser.</string>
+			<string>Productivity-focused web browser featuring split views and a vertical sidebar with spaces.</string>
 			<key>developer</key>
 			<string>The Browser Company of New York</string>
 			<key>display_name</key>
