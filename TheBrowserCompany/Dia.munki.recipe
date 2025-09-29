@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.3.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.4.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Arc and imports it into Munki.</string>
+	<string>Downloads the latest version of Dia and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.Arc</string>
+	<string>com.github.homebysix.munki.Dia</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Arc</string>
+		<string>Dia</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,39 +21,30 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>A new productivity-focused web browser.</string>
+			<string>AI-first browser from the creators of Arc.</string>
 			<key>developer</key>
 			<string>The Browser Company of New York</string>
 			<key>display_name</key>
-			<string>Arc</string>
+			<string>Dia</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
 			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Arc</string>
+	<string>com.github.homebysix.download.Dia</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
