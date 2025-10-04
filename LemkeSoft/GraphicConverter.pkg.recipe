@@ -41,8 +41,6 @@ The MAJOR_VERSION input variable can be overridden to select the major version o
 					</array>
 					<key>id</key>
 					<string>com.lemkesoft.graphicconverter%MAJOR_VERSION%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>

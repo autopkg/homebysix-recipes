@@ -98,8 +98,6 @@
 					</array>
 					<key>id</key>
 					<string>com.slack.nebula</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>nebula-%version%</string>
 					<key>pkgroot</key>

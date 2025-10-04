@@ -167,8 +167,6 @@ installer -tgt "$3" -pkg "$3/private/tmp/%product_code%.pkg" -applyChoiceChanges
 				<dict>
 					<key>id</key>
 					<string>%PKG_ID%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
 					<key>pkgname</key>
