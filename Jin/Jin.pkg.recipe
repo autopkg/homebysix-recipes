@@ -79,8 +79,6 @@
 					</array>
 					<key>id</key>
 					<string>%PKG_ID%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
 					<key>pkgname</key>

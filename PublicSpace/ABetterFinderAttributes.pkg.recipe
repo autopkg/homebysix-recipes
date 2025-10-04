@@ -39,8 +39,6 @@ The MAJOR_VERSION input variable can be overridden to determine which version of
 					</array>
 					<key>id</key>
 					<string>net.publicspace.abfa%MAJOR_VERSION%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>

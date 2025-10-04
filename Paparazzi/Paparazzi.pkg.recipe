@@ -75,8 +75,6 @@ NOTE: Cannot use AppPkgCreator for this recipe because the exclamation point in 
 					</array>
 					<key>id</key>
 					<string>%BUNDLE_ID%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>

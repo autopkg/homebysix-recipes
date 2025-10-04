@@ -71,8 +71,6 @@
 					</array>
 					<key>id</key>
 					<string>com.bohemiancoding.sketch3</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>scripts</key>
