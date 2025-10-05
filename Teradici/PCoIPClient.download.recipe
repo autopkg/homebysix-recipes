@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>PCoIPClient</string>
 		<key>DOWNLOAD_URL</key>
-		<string>https://dl.teradici.com/DeAdBCiUYInHcSTy/pcoip-client/raw/names/pcoip-client-dmg/versions/latest/pcoip-client_latest.dmg</string>
+		<string>https://dl.anyware.hp.com/DeAdBCiUYInHcSTy/pcoip-client/raw/names/pcoip-client-dmg/versions/latest/pcoip-client_latest.dmg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
