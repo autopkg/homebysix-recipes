@@ -13,10 +13,10 @@ Valid values for ARCH include:
 	<string>com.github.homebysix.download.DeltaWalker</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>DeltaWalker</string>
 		<key>ARCH</key>
 		<string>x64</string>
+		<key>NAME</key>
+		<string>DeltaWalker</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>

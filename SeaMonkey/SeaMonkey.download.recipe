@@ -10,10 +10,10 @@
 	<string>com.github.homebysix.download.SeaMonkey</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>SeaMonkey</string>
 		<key>LOCALE</key>
 		<string>en-US</string>
+		<key>NAME</key>
+		<string>SeaMonkey</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>

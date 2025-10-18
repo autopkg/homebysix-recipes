@@ -28,7 +28,7 @@ required to support Apple Silicon Macs.</string>
 	<array>
 		<dict>
 			<key>Arguments</key>
-				<dict>
+			<dict>
 				<key>re_pattern</key>
 				<string>https://desktop\.docker\.com/mac/main/%PLATFORM_ARCH%/[A-Za-z0-9]+/Docker\.dmg</string>
 				<key>result_output_var_name</key>

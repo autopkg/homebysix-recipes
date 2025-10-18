@@ -11,10 +11,10 @@ If you wish to download a pre-release version if it is the most recent, set INCL
 	<string>com.github.homebysix.download.JamfSetupManager</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>JamfSetupManager</string>
 		<key>INCL_PRERELEASES</key>
 		<string></string>
+		<key>NAME</key>
+		<string>JamfSetupManager</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>

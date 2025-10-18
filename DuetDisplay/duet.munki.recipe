@@ -26,10 +26,10 @@
 			<string>Rahul Dewan</string>
 			<key>display_name</key>
 			<string>duet</string>
-			<key>name</key>
-			<string>%NAME%</string>
 			<key>maximum_os_version</key>
 			<string></string>
+			<key>name</key>
+			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>

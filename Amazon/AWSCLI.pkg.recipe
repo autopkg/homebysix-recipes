@@ -21,8 +21,6 @@ Tags are used since contents of pkg don't have easily parse-able version, probab
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
 			<key>Arguments</key>
 			<dict>
 				<key>Comment</key>
@@ -33,18 +31,20 @@ Tags are used since contents of pkg don't have easily parse-able version, probab
 				<string>version</string>
 				<key>url</key>
 				<string>https://api.github.com/repos/aws/aws-cli/tags</string>
-			 </dict>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgCopier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>source_pkg</key>
-				<string>%pathname%</string>
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%pathname%</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
 		</dict>
 	</array>
 </dict>

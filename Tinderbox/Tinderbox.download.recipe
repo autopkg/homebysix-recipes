@@ -10,10 +10,10 @@
 	<string>com.github.homebysix.download.Tinderbox</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Tinderbox</string>
 		<key>MAJOR_VERSION</key>
 		<string>10</string>
+		<key>NAME</key>
+		<string>Tinderbox</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>

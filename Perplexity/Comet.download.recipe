@@ -15,10 +15,10 @@ Valid values for ARCH include:
 	<string>com.github.homebysix.download.Comet</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Comet</string>
 		<key>ARCH</key>
 		<string>arm64</string>
+		<key>NAME</key>
+		<string>Comet</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>

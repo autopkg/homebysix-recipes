@@ -11,10 +11,10 @@ To download Intel use: "OSX" in the DOWNLOAD_ARCH variable</string>
 	<string>com.github.homebysix.download.VirtualBox</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>VirtualBox</string>
 		<key>DOWNLOAD_ARCH</key>
 		<string>OSX</string>
+		<key>NAME</key>
+		<string>VirtualBox</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>

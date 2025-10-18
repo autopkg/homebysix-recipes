@@ -15,19 +15,19 @@
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>re_pattern</key>
-                <string>assets\\/support\\/files\\/(?P&lt;fileid&gt;\d+)\\/en\\/Mini_Config_v(?P&lt;version&gt;[\d\.]+)_macOS\.zip</string>
-                <key>url</key>
-                <string>https://www.aja.com/products/mini-config-software#support</string>
-                <key>result_output_var_name</key>
-                <string>filepath</string>
-            </dict>
-        </dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>assets\\/support\\/files\\/(?P&lt;fileid&gt;\d+)\\/en\\/Mini_Config_v(?P&lt;version&gt;[\d\.]+)_macOS\.zip</string>
+				<key>result_output_var_name</key>
+				<string>filepath</string>
+				<key>url</key>
+				<string>https://www.aja.com/products/mini-config-software#support</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
