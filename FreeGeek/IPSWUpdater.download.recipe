@@ -20,10 +20,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>re_pattern</key>
+				<string>url=(https://ipsw\.app/download/IPSWUpdater-v\d+\.zip)"</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+				<key>url</key>
+				<string>https://ipsw.app/download/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.zip</string>
-				<key>url</key>
-				<string>https://ipsw.app/download/IPSWUpdater-v202509251.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
