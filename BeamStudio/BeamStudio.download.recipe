@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.4.2 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Beam Studio.
+
+Tested values for CHANNEL include:
+- stable (default)
+- latest (beta)
+
+Tested values for ARCH include:
+- mac (default, Intel)
+- mac-arm64 (Apple Silicon)
+</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.BeamStudio</string>
+	<key>Input</key>
+	<dict>
+		<key>ARCH</key>
+		<string>mac</string>
+		<key>CHANNEL</key>
+		<string>stable</string>
+		<key>NAME</key>
+		<string>Beam Studio</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>"(https://beamstudio\.s3-ap-northeast-1\.amazonaws\.com/%ARCH%/Beam\+Studio\+[\d\.]+(\-beta)?\.dmg)"</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+				<key>url</key>
+				<string>https://id.flux3dp.com/api/check-update?key=beamstudio-%CHANNEL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%ARCH%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Beam Studio.app</string>
+				<key>requirement</key>
+				<string>identifier "com.flux3dp.beam-studio-flux" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "4Y92JWKV94"</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Beam Studio.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
+</plist>

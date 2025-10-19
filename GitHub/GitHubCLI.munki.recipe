@@ -70,9 +70,9 @@
 				<key>additional_pkginfo</key>
 				<dict>
 					<key>supported_architectures</key>
-						<array>
-							<string>%output_string%</string>
-						</array>
+					<array>
+						<string>%output_string%</string>
+					</array>
 				</dict>
 			</dict>
 			<key>Processor</key>

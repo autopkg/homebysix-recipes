@@ -10,37 +10,37 @@
 	<string>com.github.homebysix.download.Epic</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>EpicPrivacyBrowser</string>
 		<key>ARCH</key>
 		<string>x86_64</string>
+		<key>NAME</key>
+		<string>EpicPrivacyBrowser</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Comment</key>
-			<string>Conditionally replace architecture to match vendor's URL.</string>
 			<key>Arguments</key>
 			<dict>
-				<key>input_string</key>
-				<string>%ARCH%</string>
 				<key>find</key>
 				<string>x86_64</string>
+				<key>input_string</key>
+				<string>%ARCH%</string>
 				<key>replace</key>
 				<string></string>
 			</dict>
+			<key>Comment</key>
+			<string>Conditionally replace architecture to match vendor's URL.</string>
 			<key>Processor</key>
 			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_string</key>
-				<string>%output_string%</string>
 				<key>find</key>
 				<string>arm64</string>
+				<key>input_string</key>
+				<string>%output_string%</string>
 				<key>replace</key>
 				<string>arm</string>
 			</dict>

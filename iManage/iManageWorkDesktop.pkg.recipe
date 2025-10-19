@@ -22,10 +22,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source_pkg</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/iManage Work Desktop for Mac.sparkle_interactive.pkg</string>
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/iManage Work Desktop for Mac.sparkle_interactive.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCopier</string>

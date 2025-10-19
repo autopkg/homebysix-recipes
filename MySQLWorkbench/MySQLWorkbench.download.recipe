@@ -13,10 +13,10 @@ Set the ARCH input variable based on the desired architecture:
 	<string>com.github.homebysix.download.MySQLWorkbench</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>MySQLWorkbench</string>
 		<key>ARCH</key>
 		<string>x86_64</string>
+		<key>NAME</key>
+		<string>MySQLWorkbench</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
