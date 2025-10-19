@@ -10,10 +10,10 @@
 	<string>com.github.homebysix.download.Base</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Base</string>
 		<key>MAJOR_VERSION</key>
 		<string>3</string>
+		<key>NAME</key>
+		<string>Base</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>

@@ -19,12 +19,12 @@ Tested values for ARCH include:
 	<string>com.github.homebysix.download.BeamStudio</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Beam Studio</string>
-		<key>CHANNEL</key>
-		<string>stable</string>
 		<key>ARCH</key>
 		<string>mac</string>
+		<key>CHANNEL</key>
+		<string>stable</string>
+		<key>NAME</key>
+		<string>Beam Studio</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
