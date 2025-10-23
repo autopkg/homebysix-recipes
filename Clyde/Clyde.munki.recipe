@@ -21,9 +21,9 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Prevent your Mac from being stolen.</string>
+			<string>Get a notification when your Mac is being stolen.</string>
 			<key>developer</key>
-			<string>mansidaknoor@gmail.com</string>
+			<string>Mansidak Singh</string>
 			<key>display_name</key>
 			<string>Clyde</string>
 			<key>name</key>
