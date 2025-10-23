@@ -15,10 +15,10 @@ Tested values for ARCH include:
 	<string>com.github.homebysix.download.Gramps</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Gramps</string>
 		<key>ARCH</key>
 		<string>Arm</string>
+		<key>NAME</key>
+		<string>Gramps</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
