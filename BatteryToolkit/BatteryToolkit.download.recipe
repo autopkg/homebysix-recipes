@@ -20,10 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>github_repo</key>
-				<string>mhaeuser/Battery-Toolkit</string>
 				<key>asset_regex</key>
 				<string>Battery-Toolkit-[\d\.]+\.zip</string>
+				<key>github_repo</key>
+				<string>mhaeuser/Battery-Toolkit</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
