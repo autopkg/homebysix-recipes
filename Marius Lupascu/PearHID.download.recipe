@@ -3,22 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.4.2 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.4.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Restfox.
-
-Tested values for ARCH include:
-- arm64 (Apple Silicon, default)
-- x64 (Intel)
-	</string>
+	<string>Downloads the latest version of PearHID.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.Restfox</string>
+	<string>com.github.homebysix.download.PearHID</string>
 	<key>Input</key>
 	<dict>
-		<key>ARCH</key>
-		<string>arm64</string>
 		<key>NAME</key>
-		<string>Restfox</string>
+		<string>PearHID</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -28,9 +21,9 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>Restfox-darwin-%ARCH%-.*\.zip$</string>
+				<string>.*\.dmg$</string>
 				<key>github_repo</key>
-				<string>flawiddsouza/Restfox</string>
+				<string>alienator88/PearHID</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
@@ -39,7 +32,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.zip</string>
+				<string>%NAME%-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -51,23 +44,10 @@ Tested values for ARCH include:
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Restfox.app</string>
+				<string>%pathname%/PearHID.app</string>
 				<key>requirement</key>
-				<string>identifier "com.electron.restfox" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y46L589C5C</string>
+				<string>anchor apple generic and identifier "com.alienator88.PearHID" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BK8443AXLU)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -76,7 +56,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Restfox.app/Contents/Info.plist</string>
+				<string>%pathname%/PearHID.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
