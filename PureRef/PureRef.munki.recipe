@@ -35,6 +35,8 @@ recipe to try that yet. In the meantime, I suggest using an `installs` array to 
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
