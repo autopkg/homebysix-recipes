@@ -21,9 +21,9 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>Things is the award-winning personal task manager that helps you plan your day, manage your projects, and make real progress toward your goals.</string>
 			<key>developer</key>
-			<string>Cultured Code GmbH &amp; Co. KG</string>
+			<string>Cultured Code</string>
 			<key>display_name</key>
 			<string>Things3</string>
 			<key>name</key>

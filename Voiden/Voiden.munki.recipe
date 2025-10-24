@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>Voiden.md is an offline-first, Git-native API workspace that unifies specs, docs, tests, and mocks using programmable Markdown blocks.</string>
 			<key>developer</key>
 			<string>APYHUB B.V</string>
 			<key>display_name</key>

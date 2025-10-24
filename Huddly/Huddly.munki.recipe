@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>The Huddly Connect app allows you to precisely control your camera's field of view on video calls.</string>
 			<key>developer</key>
 			<string>Huddly AS</string>
 			<key>display_name</key>
