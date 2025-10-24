@@ -3,34 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.4.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of CleanMyMac 3.</string>
+	<string>Downloads the latest version of CleanMyMac X.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.CleanMyMac3</string>
+	<string>com.github.homebysix.download.CleanMyMacX</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>CleanMyMac 3</string>
+		<string>CleanMyMac X</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.1</string>
+	<string>2.3</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>warning_message</key>
-				<string>Consider switching to the CleanMyMac X recipes in this repo (homebysix-recipes). This CleanMyMac3 recipe is deprecated and will be removed in the future.</string>
-			</dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>appcast_url</key>
-				<string>https://updates.devmate.com/com.macpaw.CleanMyMac3.xml</string>
+				<string>https://updateinfo.devmate.com/com.macpaw.CleanMyMac4/updates.xml</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
@@ -54,7 +45,7 @@
 				<key>archive_path</key>
 				<string>%pathname%</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
@@ -65,9 +56,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/CleanMyMac 3.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/CleanMyMac X.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.macpaw.CleanMyMac3" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = S8EX82NJP6)</string>
+				<string>anchor apple generic and identifier "com.macpaw.CleanMyMac4" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = S8EX82NJP6)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
