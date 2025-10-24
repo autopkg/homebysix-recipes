@@ -35,6 +35,8 @@ This set of recipes differs from the ones provided by macvfx-recipes in the foll
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>

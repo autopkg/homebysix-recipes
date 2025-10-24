@@ -39,6 +39,8 @@ For Apple Silicon use: "arm64" in the SUPPORTED_ARCH variable</string>
 			</array>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>

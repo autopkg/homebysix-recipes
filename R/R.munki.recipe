@@ -37,6 +37,8 @@ NOTE: If you change the ARCH variable, be sure to also include a corresponding '
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>

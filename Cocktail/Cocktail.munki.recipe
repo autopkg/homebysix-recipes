@@ -35,6 +35,8 @@ See the Cocktail.download.recipe for information about selecting a MAJOR_VERSION
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>

@@ -37,6 +37,8 @@ For the newer "ezeep Blue" app, use the ezeepBluePrintApp recipes.</string>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
