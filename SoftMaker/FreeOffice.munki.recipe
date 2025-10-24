@@ -3,29 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.4.2 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.4.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Things3 and imports it into Munki.</string>
+	<string>Downloads the latest version of FreeOffice and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.Things3</string>
+	<string>com.github.homebysix.munki.FreeOffice</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Things3</string>
+		<string>FreeOffice</string>
 		<key>pkginfo</key>
 		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Presentations Free %MAJOR_VERSION%.app</string>
+				<string>TextMaker Free %MAJOR_VERSION%.app</string>
+				<string>PlanMaker Free %MAJOR_VERSION%.app</string>
+			</array>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Things is the award-winning personal task manager that helps you plan your day, manage your projects, and make real progress toward your goals.</string>
+			<string>FreeOffice 2024 is a full-featured Office suite with a word processor, a spreadsheet program and presentation software.</string>
 			<key>developer</key>
-			<string>Cultured Code</string>
+			<string>SoftMaker Software</string>
 			<key>display_name</key>
-			<string>Things3</string>
+			<string>FreeOffice</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,27 +41,30 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Things3</string>
+	<string>com.github.homebysix.download.FreeOffice</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
 			</dict>
 			<key>Processor</key>
-			<string>DmgCreator</string>
+			<string>MunkiPkginfoMerger</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>version_comparison_key</key>
+				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

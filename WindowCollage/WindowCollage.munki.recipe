@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.4.2 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.4.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Huddly and imports it into Munki.</string>
+	<string>Downloads the latest version of Window Collage and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.Huddly</string>
+	<string>com.github.homebysix.munki.WindowCollage</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Huddly</string>
+		<string>Window Collage</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,11 +21,11 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>The Huddly Connect app allows you to precisely control your camera's field of view on video calls.</string>
+			<string>Split the screen into your favorite layout, placing several windows in the best way to fit your work habits when you multitask.</string>
 			<key>developer</key>
-			<string>Huddly AS</string>
+			<string>jiaying ning</string>
 			<key>display_name</key>
-			<string>Huddly</string>
+			<string>Window Collage</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,7 +35,7 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Huddly</string>
+	<string>com.github.homebysix.download.WindowCollage</string>
 	<key>Process</key>
 	<array>
 		<dict>
