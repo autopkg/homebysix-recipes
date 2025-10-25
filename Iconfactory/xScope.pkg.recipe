@@ -39,8 +39,6 @@
 					</array>
 					<key>id</key>
 					<string>%BUNDLE_ID%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
@@ -51,6 +49,17 @@
 			</dict>
 			<key>Processor</key>
 			<string>PkgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 	</array>
 </dict>

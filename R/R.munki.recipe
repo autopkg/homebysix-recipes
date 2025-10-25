@@ -37,6 +37,8 @@ NOTE: If you change the ARCH variable, be sure to also include a corresponding '
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
@@ -48,10 +50,10 @@ NOTE: If you change the ARCH variable, be sure to also include a corresponding '
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>flat_pkg_path</key>
-				<string>%pathname%</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>FlatPkgUnpacker</string>
@@ -59,10 +61,10 @@ NOTE: If you change the ARCH variable, be sure to also include a corresponding '
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/R-app.pkg/Payload</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/Applications</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked/R-app.pkg/Payload</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgPayloadUnpacker</string>
@@ -70,10 +72,10 @@ NOTE: If you change the ARCH variable, be sure to also include a corresponding '
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked/R-fw.pkg/Payload</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/Library/Frameworks</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked/R-fw.pkg/Payload</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgPayloadUnpacker</string>
@@ -93,8 +95,8 @@ NOTE: If you change the ARCH variable, be sure to also include a corresponding '
 			<string>PlistReader</string>
 		</dict>
 		<dict>
-			 <key>Arguments</key>
-			 <dict>
+			<key>Arguments</key>
+			<dict>
 				<key>additional_pkginfo</key>
 				<dict>
 					<key>minimum_os_version</key>

@@ -43,7 +43,7 @@ Use the ECLIPSE_CODE input variable to specify the IDE version.
 				<key>result_output_var_name</key>
 				<string>match</string>
 				<key>url</key>
-				<string>https://eclipse.org/downloads/eclipse-packages/</string>
+				<string>https://www.eclipse.org/downloads/packages/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>

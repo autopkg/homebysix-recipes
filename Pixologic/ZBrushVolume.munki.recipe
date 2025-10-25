@@ -33,6 +33,8 @@ https://github.com/autopkg/jazzace-recipes/blob/master/Pixologic/ZBrushVolume.pk
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>

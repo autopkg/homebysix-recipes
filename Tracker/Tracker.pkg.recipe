@@ -80,8 +80,6 @@ The Tracker app requires Apple's legacy Java 6 installer. The pkg installer gene
 					</array>
 					<key>id</key>
 					<string>org.opensourcephysics.cabrillo.tracker</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>

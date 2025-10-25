@@ -13,10 +13,10 @@ Valid values for ARCH include:
 	<string>com.github.homebysix.download.DeltaWalker</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>DeltaWalker</string>
 		<key>ARCH</key>
 		<string>x64</string>
+		<key>NAME</key>
+		<string>DeltaWalker</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
@@ -26,7 +26,7 @@ Valid values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="(https://s3.amazonaws.com/deltawalker/DeltaWalker-(?P&lt;version&gt;[\d\.]+)_%ARCH%.dmg)"</string>
+				<string>href="(https://\S+\.amazonaws\.com/DeltaWalker-(?P&lt;version&gt;[\d\.]+)_%ARCH%\.dmg)"</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>

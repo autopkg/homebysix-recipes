@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>Emailchemy is a tool for converting email formats and importing them into various applications.</string>
 			<key>developer</key>
 			<string>Weird Kid Software LLC</string>
 			<key>display_name</key>
@@ -29,6 +29,8 @@
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
 			<true/>
 		</dict>
 	</dict>

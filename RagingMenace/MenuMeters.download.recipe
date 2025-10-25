@@ -16,13 +16,13 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
 			<key>Arguments</key>
 			<dict>
 				<key>warning_message</key>
 				<string>MenuMeters by Raging Menace is not compatible with recent macOS versions (details: https://ragingmenace.com/software/menumeters/index.html#requirement). There is a fork of MenuMeters by yujitach that runs on newer macOS versions, and recipes for the yujitach version are available in the kevinmcox-recipes repo. This recipe is deprecated and will be removed in the future.</string>
 			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

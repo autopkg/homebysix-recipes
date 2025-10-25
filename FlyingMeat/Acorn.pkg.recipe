@@ -41,8 +41,6 @@ The BUNDLE_ID variable may need to be changed when a new major version is releas
 					</array>
 					<key>id</key>
 					<string>%BUNDLE_ID%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>

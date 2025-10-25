@@ -19,59 +19,28 @@ from autopkglib import APLooseVersion, URLGetter  # noqa: F401
 __all__ = ["CocktailReleasesInfoProvider"]
 
 # Information about available Cocktail releases
+ID_BASE = "com.maintain.cocktail"
 RELEASES = {
-    "10.10": {
-        "filename": "Cocktail8YE.dmg",
-        "bundle_id": "com.maintain.cocktail.yosemite",
-    },
-    "10.11": {
-        "filename": "Cocktail9ECE.dmg",
-        "bundle_id": "com.maintain.cocktail.elcapitan",
-    },
-    "10.12": {
-        "filename": "Cocktail10SE.dmg",
-        "bundle_id": "com.maintain.cocktail.sierra",
-    },
-    "10.13": {
-        "filename": "Cocktail11HSE.dmg",
-        "bundle_id": "com.maintain.cocktail.highsierra",
-    },
-    "10.14": {
-        "filename": "Cocktail12ME.dmg",
-        "bundle_id": "com.maintain.cocktail.mojave12",
-    },
-    "10.15": {
-        "filename": "Cocktail13CE.dmg",
-        "bundle_id": "com.maintain.cocktail.catalina13",
-    },
-    "11": {
-        "filename": "Cocktail14BSE.dmg",
-        "bundle_id": "com.maintain.cocktail.bigsur14",
-    },
-    "12": {
-        "filename": "Cocktail15ME.dmg",
-        "bundle_id": "com.maintain.cocktail.monterey15",
-    },
-    "13": {
-        "filename": "Cocktail16VE.dmg",
-        "bundle_id": "com.maintain.cocktail.ventura165",
-    },
-    "14": {
-        "filename": "Cocktail17SE.dmg",
-        # Bundle ID says Ventura but it's the correct one for the Sonoma edition
-        "bundle_id": "com.maintain.cocktail.ventura165",
-    },
-    "15": {
-        "filename": "Cocktail18SE.dmg",
-        "bundle_id": "com.maintain.cocktail.sequoia",
-    },
+    "10.10": {"filename": "Cocktail8YE.dmg", "bundle_id": f"{ID_BASE}.yosemite"},
+    "10.11": {"filename": "Cocktail9ECE.dmg", "bundle_id": f"{ID_BASE}.elcapitan"},
+    "10.12": {"filename": "Cocktail10SE.dmg", "bundle_id": f"{ID_BASE}.sierra"},
+    "10.13": {"filename": "Cocktail11HSE.dmg", "bundle_id": f"{ID_BASE}.highsierra"},
+    "10.14": {"filename": "Cocktail12ME.dmg", "bundle_id": f"{ID_BASE}.mojave12"},
+    "10.15": {"filename": "Cocktail13CE.dmg", "bundle_id": f"{ID_BASE}.catalina13"},
+    "11": {"filename": "Cocktail14BSE.dmg", "bundle_id": f"{ID_BASE}.bigsur14"},
+    "12": {"filename": "Cocktail15ME.dmg", "bundle_id": f"{ID_BASE}.monterey15"},
+    "13": {"filename": "Cocktail16VE.dmg", "bundle_id": f"{ID_BASE}.ventura165"},
+    # Bundle ID says Ventura but it's the correct one for the Sonoma edition
+    "14": {"filename": "Cocktail17SE.dmg", "bundle_id": f"{ID_BASE}.ventura165"},
+    "15": {"filename": "Cocktail18SE.dmg", "bundle_id": f"{ID_BASE}.sequoia"},
+    "26": {"filename": "Cocktail19TE.dmg", "bundle_id": f"{ID_BASE}.tahoe"},
 }
 
 # Base URL for downloading releases
 BASE_URL = "https://www.maintain.se/downloads/"
 
 # Default major version if none is provided
-DEFAULT_MAJOR_VERSION = "14"
+DEFAULT_MAJOR_VERSION = "26"
 
 
 class CocktailReleasesInfoProvider(URLGetter):

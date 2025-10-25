@@ -33,10 +33,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://www.wfs-apps.de/updates/neofinder-mac.%version%.zip</string>
 				<key>filename</key>
 				<string>%NAME%-%version%.zip</string>
+				<key>url</key>
+				<string>https://www.wfs-apps.de/updates/neofinder-mac.%version%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

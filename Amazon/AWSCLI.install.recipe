@@ -15,13 +15,13 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>Installer</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
 				<string>%pathname%</string>
 			</dict>
+			<key>Processor</key>
+			<string>Installer</string>
 		</dict>
 	</array>
 </dict>

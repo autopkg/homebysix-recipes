@@ -30,6 +30,8 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
@@ -41,15 +43,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_path</key>
-				<string>%pathname%</string>
-				<key>repo_subdirectory</key>
-				<string>%MUNKI_REPO_SUBDIR%</string>
 				<key>additional_makepkginfo_options</key>
 				<array>
 					<string>--pkgvers</string>
 					<string>%version%</string>
 				</array>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>

@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Renamer</string>
 		<key>URL</key>
-		<string>http://creativebe.com/download/renamer</string>
+		<string>https://creativebe.com/download/renamer</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>

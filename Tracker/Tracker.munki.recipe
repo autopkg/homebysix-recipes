@@ -32,6 +32,8 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
@@ -49,7 +51,7 @@
 					<array>
 						<dict>
 							<key>path</key>
-							<string>/Applications/Tracker.app/Contents/Java/tracker-%version%.jar</string>
+							<string>/Applications/Tracker.app/Contents/app/tracker-%version%.jar</string>
 							<key>type</key>
 							<string>file</string>
 						</dict>

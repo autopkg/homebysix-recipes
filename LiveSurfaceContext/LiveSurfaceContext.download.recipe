@@ -20,32 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>warning_message</key>
-				<string>As of December 2024, LiveSurface Context appears to be downloadable only via the Mac App Store. This recipe is deprecated and will be removed in the future.</string>
-			</dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>&lt;span&gt;Context ([\d\.]+)&lt;/span&gt;</string>
-				<key>result_output_var_name</key>
-				<string>version</string>
-				<key>url</key>
-				<string>https://www.livesurface.com/contextdownload.php</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.zip</string>
+				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://1528758543.rsc.cdn77.org/94775618/releases/LiveSurface_Context_%version%.zip</string>
+				<string>https://account.livesurface.com/download/v2/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -71,12 +49,21 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/LiveSurface Context.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/LiveSurface.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.livesurface.context" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FG45YG578J)</string>
+				<string>identifier "com.livesurface.LiveSurface" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FG45YG578J</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/LiveSurface.app/Contents/Info.plist</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>

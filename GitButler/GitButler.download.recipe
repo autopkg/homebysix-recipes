@@ -15,10 +15,10 @@ Valid strings for ARCH input variable include:
 	<string>com.github.homebysix.download.GitButler</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>GitButler</string>
 		<key>ARCH</key>
 		<string>x86_64</string>
+		<key>NAME</key>
+		<string>GitButler</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>

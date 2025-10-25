@@ -23,12 +23,14 @@
 			<key>description</key>
 			<string>Quick and effective file search tool.</string>
 			<key>developer</key>
-			<string>Houdah Software s.a r.l.</string>
+			<string>Houdah Software</string>
 			<key>display_name</key>
 			<string>Tembo</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
 			<true/>
 		</dict>
 	</dict>

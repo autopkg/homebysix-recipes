@@ -476,8 +476,6 @@ InstallSet: 'Client'
 					</array>
 					<key>id</key>
 					<string>com.perforce.HelixALMClient</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
 					<key>pkgname</key>
