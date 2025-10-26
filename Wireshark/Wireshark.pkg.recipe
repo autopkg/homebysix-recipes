@@ -71,9 +71,9 @@
 					<string>org.wireshark.Wireshark.pkg</string>
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
+					<key>pkgname</key>
+					<string>%NAME%-%ARCH%-%version%</string>
 				</dict>
-				<key>pkgname</key>
-				<string>%NAME%-%ARCH%-%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCreator</string>
