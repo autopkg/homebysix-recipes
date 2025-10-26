@@ -5,18 +5,12 @@
 	<key>Description</key>
 	<string>Downloads the latest stable version of Wireshark.
 
-Acceptable values for the ARCH input variable include:
-- Intel (default): Downloads Wireshark for Macs with Intel processors.
-- Arm: Downloads Wireshark for Macs with Apple Silicon processors.
-
 For automated development builds of Wireshark, see the WiresharkDev recipes in justinrummel-recipes.
 	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Wireshark</string>
 	<key>Input</key>
 	<dict>
-		<key>ARCH</key>
-		<string>Intel</string>
 		<key>NAME</key>
 		<string>Wireshark</string>
 	</dict>
@@ -28,7 +22,7 @@ For automated development builds of Wireshark, see the WiresharkDev recipes in j
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>Wireshark[%]20([\d\.]+)[%]20%ARCH%[%]2064.dmg</string>
+				<string>Wireshark%20([\d\.]+)\.dmg</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
@@ -41,9 +35,9 @@ For automated development builds of Wireshark, see the WiresharkDev recipes in j
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%ARCH%-%version%.dmg</string>
+				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
-				<string>https://www.wireshark.org/download/osx/Wireshark%20%version%%20%ARCH%%2064.dmg</string>
+				<string>https://2.na.dl.wireshark.org/osx/Wireshark%20%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

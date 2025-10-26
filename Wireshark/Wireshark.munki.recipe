@@ -3,11 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Builds Wireshark and imports into a Munki repo.
-
-If using the ARCH input variable to download the Apple Silicon version of Wireshark, be sure to also
-add the supported_architectures array to your pkginfo below.
-	</string>
+	<string>Builds Wireshark and imports into a Munki repo.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.Wireshark</string>
 	<key>Input</key>
