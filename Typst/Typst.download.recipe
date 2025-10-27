@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of the Typst command line tool.
 
-Valid options for ARCH input variable are "amd64" for Intel (defualt) or "arm64" for Apple Silicon.</string>
+Valid options for ARCH input variable are "aarch64" for Apple Silicon (default) or "x86_64" for Intel.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Typst</string>
 	<key>Input</key>
