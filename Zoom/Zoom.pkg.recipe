@@ -23,9 +23,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded</string>
+				<string>%RECIPE_CACHE_DIR%/FlatPkgUnpacker</string>
 				<key>flat_pkg_path</key>
 				<string>%pathname%</string>
+				<key>purge_destination</key>
+				<true/>
 			</dict>
 			<key>Processor</key>
 			<string>FlatPkgUnpacker</string>
@@ -34,9 +36,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded</string>
+				<string>%RECIPE_CACHE_DIR%/PkgPayloadUnpacker</string>
 				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/expanded/zoomus.pkg/Payload</string>
+				<string>%RECIPE_CACHE_DIR%/FlatPkgUnpacker/zoomus.pkg/Payload</string>
+				<key>purge_destination</key>
+				<true/>
 			</dict>
 			<key>Processor</key>
 			<string>PkgPayloadUnpacker</string>
@@ -75,9 +79,11 @@
 			<dict>
 				<key>path_list</key>
 				<array>
-					<string>%RECIPE_CACHE_DIR%/expanded</string>
+					<string>%RECIPE_CACHE_DIR%/FlatPkgUnpacker</string>
 				</array>
 			</dict>
+			<key>Comment</key>
+			<string>Cleans up resources from FlatPkgUnpacker processor run (leaves PkgPayloadUnpacker resources for child recipes).</string>
 			<key>Processor</key>
 			<string>PathDeleter</string>
 		</dict>
