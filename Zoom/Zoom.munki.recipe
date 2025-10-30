@@ -52,7 +52,7 @@ rm -rf /Applications/zoom.us.app
 			<key>Arguments</key>
 			<dict>
 				<key>faux_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<string>%RECIPE_CACHE_DIR%/PkgPayloadUnpacker</string>
 				<key>installs_item_paths</key>
 				<array>
 					<string>/Applications/zoom.us.app</string>
@@ -91,6 +91,19 @@ rm -rf /Applications/zoom.us.app
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/PkgPayloadUnpacker</string>
+				</array>
+			</dict>
+			<key>Comment</key>
+			<string>Cleans up resources from PkgPayloadUnpacker processor run in Zoom.pkg.recipe.</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 	</array>
 </dict>
