@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.GoogleChat</string>
+	<string>com.github.apizz.download.hangoutschat</string>
 	<key>Process</key>
 	<array>
 		<dict>
