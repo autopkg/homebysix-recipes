@@ -17,7 +17,7 @@ Tags are used since contents of pkg don't have easily parse-able version, probab
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.AWSCLI</string>
+	<string>com.github.valdore86.download.AWSCLI</string>
 	<key>Process</key>
 	<array>
 		<dict>
