@@ -1,16 +1,8 @@
 # homebysix-recipes tests
 
-These modules use `nose` to test various recipes in the repo.
+These modules use `unittest` to test various recipes in the repo.
 
 ## Requirements
-
-You'll need Python 3. (Note: AutoPkg's included Python 3 does not include `nose`, so it's recommended to use a separate Python 3. Homebrew is one way to get that.)
-
-    brew install python3
-
-You'll need the `nose` testing tool.
-
-    pip3 install nose --user
 
 You'll also need a few repos that contain required parent recipes:
 
@@ -35,6 +27,6 @@ Make sure your working directory is the __homebysix-recipes__ folder (the clone 
 
 Once you've met the above requirements, run the tests with this command:
 
-    python3 -m nose --verbose --nocapture test
+    /usr/local/autopkg/python -m unittest test.test_functional -v
 
 Full testing takes about 30-45 minutes to run, depending on your internet connection speed.
