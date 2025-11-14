@@ -5,7 +5,11 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Bartender.
 
-Specify which major version you want in the MAJOR_VERSION input variable. Supported values are 3 or 4.</string>
+Specify which major version you want in the MAJOR_VERSION input variable. Supported values are 3, 4, or 5.
+
+Note that the code signing requirement changed in Bartender 5. Use the TEAM_ID input variable to specify
+the appropriate team identifier for previous versions.
+</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Bartender</string>
 	<key>Input</key>
@@ -14,6 +18,8 @@ Specify which major version you want in the MAJOR_VERSION input variable. Suppor
 		<string>5</string>
 		<key>NAME</key>
 		<string>Bartender</string>
+		<key>TEAM_ID</key>
+		<string>8DD663WDX4</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.3</string>
@@ -75,7 +81,7 @@ Specify which major version you want in the MAJOR_VERSION input variable. Suppor
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Bartender %MAJOR_VERSION%.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.surteesstudios.Bartender" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "24J875RH8J")</string>
+				<string>anchor apple generic and identifier "com.surteesstudios.Bartender" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "%TEAM_ID%")</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
