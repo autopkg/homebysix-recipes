@@ -20,6 +20,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>asset_regex</key>
+				<string>.+\.zip$</string>
 				<key>github_repo</key>
 				<string>amebalabs/TRex</string>
 			</dict>
