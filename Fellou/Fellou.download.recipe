@@ -28,7 +28,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>"(https://fellou\.s3\.\S+\.amazonaws\.com/FellouPC/Fellou\S+-%ARCH%\.dmg)"</string>
+				<string>"(https://fellou\.s3\.\S+\.amazonaws\.com/FellouPC/mac/Fellou\S+-%ARCH%\.dmg)"</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
