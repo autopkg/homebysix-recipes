@@ -17,10 +17,10 @@ Tested values for ARCH include:
 	<dict>
 		<key>APP_FILENAME</key>
 		<string>peergos</string>
-		<key>NAME</key>
-		<string>Peergos</string>
 		<key>ARCH</key>
 		<string>amd64</string>
+		<key>NAME</key>
+		<string>Peergos</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
