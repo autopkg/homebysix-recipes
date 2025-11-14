@@ -11,13 +11,17 @@ You'll also need a few repos that contain required parent recipes:
         eholtam-recipes \
         foigus-recipes \
         gerardkok-recipes \
+        grahampugh-recipes \
         hansen-m-recipes \
         jaharmi-recipes \
         jessepeterson-recipes \
         jleggat-recipes \
         jps3-recipes \
         keeleysam-recipes \
-        rustymyers-recipes
+        peetinc-recipes \
+        rustymyers-recipes \
+        timsutton-recipes \
+        valdore86-recipes
 
 Make sure your working directory is the __homebysix-recipes__ folder (the clone you made with `git clone`, not the clone in your ~/Library/AutoPkg/RecipeRepos folder).
 
