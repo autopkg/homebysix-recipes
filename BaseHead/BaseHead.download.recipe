@@ -19,9 +19,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(?P&lt;url&gt;https://storage\.googleapis\.com/.+/Install%20BaseHead%20Mac%20v(?P&lt;version&gt;[\d\.]+)\.pkg)</string>
+				<string>(?P&lt;url&gt;https://s3\..+/Install%20BaseHead%20Mac%20v(?P&lt;version&gt;[\d\.]+)\.pkg)</string>
 				<key>url</key>
-				<string>https://baseheadinc.com/index.php/downloads-mac/</string>
+				<string>https://baseheadinc.com/downloads-mac/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
