@@ -14,23 +14,23 @@
 		<string>Clarify</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>https://s3.amazonaws.com/files.clarify-it.com/v2/updaters/release/appcast.xml</string>
+				<key>warning_message</key>
+				<string>Clarify is no longer available for sale as of Feb 2018 (details: https://www.clarify-it.com/blog/the-future-of-clarify). This recipe is deprecated and will be removed in the future.</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>DeprecationWarning</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%-%version%.zip</string>
+				<key>url</key>
+				<string>https://www.clarify-it.com/download/mac/Clarify.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -62,6 +62,17 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Clarify.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>

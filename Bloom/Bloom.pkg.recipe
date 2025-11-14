@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.4.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Bloom and creates a package.</string>
 	<key>Identifier</key>
@@ -20,11 +20,6 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Bloom.app</string>
-			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
 		</dict>

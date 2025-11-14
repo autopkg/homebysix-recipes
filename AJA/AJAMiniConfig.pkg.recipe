@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/unzipped/Mini_Config_v%version%_macOS/AJA_Mini-Config-%version%.dmg/AJA Mini-Config.app</string>
+				<string>%found_filename%/AJA Mini-Config.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
