@@ -56,6 +56,20 @@
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
 		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>info_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/TunnelBear.app</string>
+				<key>plist_keys</key>
+				<dict>
+					<key>CFBundleShortVersionString</key>
+					<string>version</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
+		</dict>
 	</array>
 </dict>
 </plist>
