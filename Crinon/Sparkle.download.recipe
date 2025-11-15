@@ -3,27 +3,36 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Endurance.</string>
+	<string>Downloads the latest version of Sparkle.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.Endurance</string>
+	<string>com.github.homebysix.download.Sparkle</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Endurance</string>
+		<string>Sparkle</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.0</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>The Sparkle app has been renamed to Sitely (details: https://sitely.app/blog/welcome-to-sitely-5.6.html). Please switch to the Sitely recipes in this repo. This Sparkle recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://enduranceapp.com/download</string>
+				<string>https://sparkleapp.com/update/Sparkle.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -49,9 +58,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Endurance.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Sparkle.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.MagnetismStudios.endurance" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = W4464244GE)</string>
+				<string>anchor apple generic and identifier "eu.riverdesign.sparkle" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "8W892L9Q36")</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -60,7 +69,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Endurance.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Sparkle.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

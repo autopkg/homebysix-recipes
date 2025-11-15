@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Numi and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -30,12 +30,10 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
-			<key>unattended_uninstall</key>
-			<true/>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>2.3</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.Numi</string>
 	<key>Process</key>

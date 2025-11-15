@@ -20,11 +20,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>appcast_url</key>
-				<string>http://gmask.clockwise.ee/check_update/</string>
+				<key>asset_regex</key>
+				<string>.+\.zip$</string>
+				<key>github_repo</key>
+				<string>2ndalpha/gasmask</string>
 			</dict>
 			<key>Processor</key>
-			<string>SparkleUpdateInfoProvider</string>
+			<string>GitHubReleasesInfoProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

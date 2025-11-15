@@ -27,6 +27,15 @@ Valid values for ARCH include:
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Tabl browser website is no longer online as of November 2025. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>re_pattern</key>
 				<string>"(?P&lt;filename&gt;Tabl-(?P&lt;version&gt;[\d\.]+)-mac-%ARCH%\.dmg)"</string>
 				<key>url</key>

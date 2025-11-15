@@ -5,26 +5,21 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Numi and creates a package.</string>
+	<string>Downloads the latest version of Sitely and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.Numi</string>
+	<string>com.github.homebysix.pkg.Sitely</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Numi</string>
+		<string>Sitely</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Numi</string>
+	<string>com.github.homebysix.download.Sitely</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Numi.app</string>
-			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
 		</dict>

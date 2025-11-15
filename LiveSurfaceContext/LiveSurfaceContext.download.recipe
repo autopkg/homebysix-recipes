@@ -23,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://account.livesurface.com/download/v2/</string>
+				<string>https://account.livesurface.com/download</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
