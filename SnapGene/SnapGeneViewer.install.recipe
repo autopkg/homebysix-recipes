@@ -30,7 +30,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>SnapGene Viewer.app</string>
+						<string>SnapGene.app</string>
 					</dict>
 				</array>
 			</dict>
