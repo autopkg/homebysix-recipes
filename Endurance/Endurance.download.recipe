@@ -20,23 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>href="https://enduranceapp.com/downloads/Endurance([\d\.]+).zip"</string>
-				<key>result_output_var_name</key>
-				<string>version</string>
-				<key>url</key>
-				<string>https://enduranceapp.com/</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.zip</string>
+				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://enduranceapp.com/downloads/Endurance%version%.zip</string>
+				<string>https://enduranceapp.com/download</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -68,6 +55,17 @@
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Endurance.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
