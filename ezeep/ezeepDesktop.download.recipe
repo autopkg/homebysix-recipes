@@ -17,9 +17,18 @@ For the newer "ezeep Blue" app, use the ezeepBluePrintApp recipes.</string>
 		<string>ezeep</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>ezeep Desktop is no longer available for download. Consider switching to the ezeepBluePrintApp family of recipes in this repo. This ezeep Desktop recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>ezeepURLProvider</string>
