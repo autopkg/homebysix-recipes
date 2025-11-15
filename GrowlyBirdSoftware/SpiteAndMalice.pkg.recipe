@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Spite &amp; Malice and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.Spite&amp;Malice</string>
+	<string>com.github.homebysix.pkg.SpiteAndMalice</string>
 	<key>Input</key>
 	<dict>
 		<key>APP_FILENAME</key>
@@ -18,7 +18,7 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Spite&amp;Malice</string>
+	<string>com.github.homebysix.download.SpiteAndMalice</string>
 	<key>Process</key>
 	<array>
 		<dict>
