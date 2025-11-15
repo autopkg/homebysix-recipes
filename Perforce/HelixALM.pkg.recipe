@@ -22,21 +22,19 @@ WARNING: This recipe is a work in progress and has not been tested as of Novembe
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked1</string>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked1/ttclientinstall.app/**/InstData/Resource1.zip</string>
 			</dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
+			<string>FileFinder</string>
 			<key>_Comment</key>
-			<string>Unpack downloaded zip file.</string>
+			<string>Find installer resources zip file.</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpacked1/ttclientinstall.app/Contents/Resources/ttclientinstall.app/Contents/Resources/Java/Disk1/InstData/Resource1.zip</string>
+				<string>%found_filename%</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked2</string>
 			</dict>
