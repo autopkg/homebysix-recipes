@@ -13,10 +13,10 @@ Tested values for ARCH include:
 	<string>com.github.homebysix.download.Antigravity</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Antigravity</string>
 		<key>ARCH</key>
 		<string>arm</string>
+		<key>NAME</key>
+		<string>Antigravity</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>

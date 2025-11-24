@@ -3,22 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.4.2 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Kiro.
-
-Tested values for ARCH include:
-- arm64 (default, Apple Silicon)
-- x64 (Intel)
-	</string>
+	<string>Downloads the latest version of Vowen.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.Kiro</string>
+	<string>com.github.homebysix.download.Vowen</string>
 	<key>Input</key>
 	<dict>
 		<key>ARCH</key>
 		<string>arm64</string>
 		<key>NAME</key>
-		<string>Kiro</string>
+		<string>Vowen</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -28,11 +23,11 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>https://prod\.download\.desktop\.kiro\.dev/releases/stable/darwin-%ARCH%/signed/[\d\.]+/kiro-ide-([\d\.]+)-stable-darwin-%ARCH%\.dmg</string>
+				<string>https://assets\.vowen\.ai/Vowen-[\d\.]+-%ARCH%-mac\.zip</string>
 				<key>result_output_var_name</key>
-				<string>version</string>
+				<string>url</string>
 				<key>url</key>
-				<string>https://prod.download.desktop.kiro.dev/stable/metadata-dmg-darwin-%ARCH%-stable.json</string>
+				<string>https://vowen.ai</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -41,9 +36,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%ARCH%-%version%.dmg</string>
-				<key>url</key>
-				<string>https://prod.download.desktop.kiro.dev/releases/stable/darwin-%ARCH%/signed/%version%/kiro-ide-%version%-stable-darwin-%ARCH%.dmg</string>
+				<string>%NAME%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -55,10 +48,23 @@ Tested values for ARCH include:
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Kiro.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Vowen.app</string>
 				<key>requirement</key>
-				<string>identifier "dev.kiro.desktop" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "94KV3E626L"</string>
+				<string>identifier "com.vowen.app" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = CXM994NF22</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -67,7 +73,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Kiro.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Vowen.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
