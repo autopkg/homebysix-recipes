@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: v1.21.1
+    rev: v1.22.0
     hooks:
       - id: check-autopkg-recipes
         args: ["--recipe-prefix=com.github.homebysix.", "--strict", "--"]
@@ -8,6 +8,7 @@ repos:
       - id: forbid-autopkg-overrides
         exclude: ^Corel\/
       - id: forbid-autopkg-trust-info
+      - id: format-xml-plist
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
