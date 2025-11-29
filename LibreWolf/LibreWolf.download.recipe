@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.4.2 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of LibreWolf.
+
+Tested values for ARCH include:
+- x86_64 (default, Intel)
+- arm64 (Apple Silicon)
+
+Only tested with "macos" PLATFORM value.
+	</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.LibreWolf</string>
+	<key>Input</key>
+	<dict>
+		<key>ARCH</key>
+		<string>x86_64</string>
+		<key>NAME</key>
+		<string>LibreWolf</string>
+		<key>PLATFORM</key>
+		<string>macos</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>&gt;https://gitlab.com/librewolf-community/browser/bsys6/-/releases/(?P&lt;version&gt;[\d\.]+-\d+)&lt;</string>
+				<key>url</key>
+				<string>https://gitlab.com/librewolf-community/browser/bsys6/-/releases.atom</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.dmg</string>
+				<key>url</key>
+				<string>https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/%version%/librewolf-%version%-%PLATFORM%-%ARCH%-package.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
