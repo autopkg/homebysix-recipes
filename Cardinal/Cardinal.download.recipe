@@ -30,7 +30,7 @@ Tested values for ARCH include:
 				<key>asset_regex</key>
 				<string>.*\.dmg$</string>
 				<key>github_repo</key>
-				<string>ldm0/cardinal</string>
+				<string>cardisoft/cardinal</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
