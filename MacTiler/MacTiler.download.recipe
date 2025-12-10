@@ -3,22 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.4.3 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.4.2 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Cardinal.
-
-Tested values for ARCH include:
-- x64 (default, Intel)
-- aarch64 (Apple Silicon)
-</string>
+	<string>Downloads the latest version of MacTiler.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.Cardinal</string>
+	<string>com.github.homebysix.download.MacTiler</string>
 	<key>Input</key>
 	<dict>
-		<key>ARCH</key>
-		<string>x64</string>
 		<key>NAME</key>
-		<string>Cardinal</string>
+		<string>MacTiler</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -27,19 +20,10 @@ Tested values for ARCH include:
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>asset_regex</key>
-				<string>.*\.dmg$</string>
-				<key>github_repo</key>
-				<string>cardisoft/cardinal</string>
-			</dict>
-			<key>Processor</key>
-			<string>GitHubReleasesInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://mactiler.com/download/MacTiler-latest.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -52,9 +36,9 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Cardinal.app</string>
+				<string>%pathname%/MacTiler.app</string>
 				<key>requirement</key>
-				<string>identifier "com.cardinal.one" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "53692XKS3X"</string>
+				<string>identifier "com.mactiler.app" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "545FH37GD8"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -63,7 +47,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Cardinal.app/Contents/Info.plist</string>
+				<string>%pathname%/MacTiler.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
