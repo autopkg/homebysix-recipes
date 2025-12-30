@@ -5,7 +5,7 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of TahoeElectronDetector.</string>
+	<string>Downloads the latest version of TahoeElectronDetector, which detects issues with Electron apps that slow down macOS Tahoe versions prior to 26.2.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.TahoeElectronDetector</string>
 	<key>Input</key>
