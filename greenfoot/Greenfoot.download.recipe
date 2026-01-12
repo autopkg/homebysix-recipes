@@ -3,11 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of Greenfoot</string>
+	<string>Downloads the current release version of Greenfoot
+
+To download Apple Silicon use: "aarch64" in the DOWNLOAD_ARCH variable
+To download Intel use: "x64" in the DOWNLOAD_ARCH variable</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Greenfoot</string>
 	<key>Input</key>
 	<dict>
+		<key>DOWNLOAD_ARCH</key>
+		<string>aarch64</string>
 		<key>NAME</key>
 		<string>Greenfoot</string>
 	</dict>
@@ -19,7 +24,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>https://www.greenfoot.org/download/files/Greenfoot-mac-[\S]+.dmg</string>
+				<string>https://www.greenfoot.org/download/files/Greenfoot-mac-%DOWNLOAD_ARCH%-[A-Za-z0-9]+.dmg</string>
 				<key>url</key>
 				<string>https://www.greenfoot.org/download</string>
 			</dict>

@@ -5,7 +5,10 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.3.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Greenfoot and imports it into Munki.</string>
+	<string>Downloads the latest version of Greenfoot and imports it into Munki.
+
+For Intel use: "x86_64" in the SUPPORTED_ARCH variable
+For Apple Silicon use: "arm64" in the SUPPORTED_ARCH variable</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.munki.greenfoot</string>
 	<key>Input</key>
@@ -14,6 +17,8 @@
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Greenfoot</string>
+		<key>SUPPORTED_ARCH</key>
+		<string>arm64</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -28,6 +33,10 @@
 			<string>Greenfoot</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>supported_architectures</key>
+			<array>
+				<string>%SUPPORTED_ARCH%</string>
+			</array>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
