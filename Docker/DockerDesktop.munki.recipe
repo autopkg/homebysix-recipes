@@ -28,6 +28,100 @@
 			<string>Docker</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
+
+# This is to allow for installation without admin credentials being needed.
+# https://docs.docker.com/desktop/setup/install/mac-install/#installer-flags
+# https://docs.docker.com/desktop/setup/install/mac-permission-requirements/
+
+# Get current console user
+CONSOLE_USER=$(/usr/bin/stat -f%Su /dev/console)
+
+if [ "$CONSOLE_USER" != "root" ] &amp;&amp; [ -n "$CONSOLE_USER" ]; then
+	echo "Installing Docker Desktop for user: $CONSOLE_USER"
+	/Applications/Docker.app/Contents/MacOS/install --accept-license --user="$CONSOLE_USER"
+else
+	echo "No user logged in, cannot complete Docker Desktop installation"
+	exit 1
+fi
+
+exit 0</string>
+			<key>postuninstall_script</key>
+			<string>#!/bin/bash
+
+# Remove system-level Docker Desktop files that could be left over after running /Applications/Docker.app/Contents/MacOS/uninstall
+# https://docs.docker.com/desktop/uninstall/#from-the-cli
+# https://docs.docker.com/desktop/setup/install/mac-permission-requirements/
+# https://docs.docker.com/desktop/setup/install/mac-install/
+
+
+# Exit on any error
+set -e
+
+echo "Starting Docker Desktop system-level cleanup..."
+
+# Array of system-wide Docker files to clean up
+DOCKER_PATHS=(
+	"/Library/Application Support/com.docker.docker"
+	"/Library/LaunchDaemons/com.docker.socket.plist"
+	"/Library/LaunchDaemons/com.docker.vmnetd.plist"
+	"/Library/Logs/com.docker.dockerd.log"
+	"/Library/Logs/Docker Desktop"
+	"/Library/PrivilegedHelperTools/com.docker.hyperkit"
+	"/Library/PrivilegedHelperTools/com.docker.socket"
+	"/Library/PrivilegedHelperTools/com.docker.vmnetd"
+	"/private/var/run/docker.sock"
+	"/private/var/tmp/com.docker.vmnetd.socket"
+	"/usr/local/bin/docker-compose"
+	"/usr/local/bin/docker-credential-desktop"
+	"/usr/local/bin/docker-credential-ecr-login"
+	"/usr/local/bin/docker-credential-osxkeychain"
+	"/usr/local/bin/docker"
+	"/usr/local/bin/hyperkit"
+	"/usr/local/bin/kubectl.docker"
+	"/usr/local/bin/kubectl"
+	"/usr/local/bin/vpnkit"
+)
+
+# Function to remove a files if they exists
+safe_remove() {
+	if [ -e "$1" ]; then
+		echo "Removing: $1"
+		rm -rf "$1"
+	fi
+}
+
+# Clean up system-wide Docker files
+for path in "${DOCKER_PATHS[@]}"; do
+	safe_remove "$path"
+done
+
+echo "Docker Desktop system-level cleanup complete!"
+
+exit 0</string>
+			<key>preuninstall_script</key>
+			<string>#!/bin/bash
+
+# Call the vendors uninstall binary - closes the app, removes system files and unloads launch daemon.
+# https://docs.docker.com/desktop/uninstall/#from-the-cli
+
+# Run the uninstall binary
+/Applications/Docker.app/Contents/MacOS/uninstall
+
+# Remove Docker-related host entries
+# /Volumes/Docker/Docker.app/Contents/MacOS/install --help
+
+# remove-kube-host removes kubernetes.docker.internal from /etc/hosts
+/Applications/Docker.app/Contents/MacOS/install remove-kube-host
+
+# unregisters the startup task for the docker socket symlink
+/Applications/Docker.app/Contents/MacOS/install remove-socket-symlink-on-startup
+
+# Removes the vmnetd privileged process used for port binding
+/Applications/Docker.app/Contents/MacOS/install remove-vmnetd
+
+exit 0</string>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
@@ -40,6 +134,59 @@
 	<string>com.github.homebysix.download.DockerDesktop</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>installcheck_script</key>
+					<string>#!/bin/bash
+
+# Install Check Script to ensure install only happens with a logged in user. This is to allow for installation without admin credentials being needed.
+# https://docs.docker.com/desktop/setup/install/mac-permission-requirements/
+# https://docs.docker.com/desktop/setup/install/mac-install/
+
+# Target version
+TARGET_VERSION="%version%"
+
+# Get current console user
+CONSOLE_USER=$(/usr/bin/stat -f%Su /dev/console)
+
+# Check if we're at login window or no user logged in
+if [ "$CONSOLE_USER" = "root" ] || [ -z "$CONSOLE_USER" ]; then
+	echo "No user logged in or at login window. Deferring installation."
+	exit 1
+fi
+
+# Check if Docker.app exists
+if [ -d "/Applications/Docker.app" ]; then
+	# Get current version from Docker.app
+	CURRENT_VERSION=$(/usr/bin/defaults read "/Applications/Docker.app/Contents/Info.plist" CFBundleShortVersionString 2&gt;/dev/null)
+
+	if [ -n "$CURRENT_VERSION" ]; then
+		echo "Current Docker version: $CURRENT_VERSION"
+
+		# Compare versions
+		if [[ "$CURRENT_VERSION" = "$TARGET_VERSION" ]]; then
+			echo "Docker is already at version $TARGET_VERSION"
+			exit 1
+		elif [[ "$CURRENT_VERSION" &gt; "$TARGET_VERSION" ]]; then
+			echo "Current Docker version ($CURRENT_VERSION) is newer than $TARGET_VERSION"
+			exit 1
+		fi
+	fi
+fi
+
+echo "User $CONSOLE_USER is logged in and Docker needs updating. OK to proceed with installation."
+
+exit 0</string>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
