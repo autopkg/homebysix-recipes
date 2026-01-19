@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Lume.
+
+As of this recipe's creation, the only available ARCH is "arm64".
+	</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.Lume</string>
+	<key>Input</key>
+	<dict>
+		<key>ARCH</key>
+		<string>arm64</string>
+		<key>NAME</key>
+		<string>Lume</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.7.6</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>lume-[\d\.]+-darwin-%ARCH%\.pkg\.tar\.gz</string>
+				<key>github_repo</key>
+				<string>trycua/cua</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Cua AI, Inc. (YCK386LBJ7)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/lume.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>lume-v</string>
+				<key>input_string</key>
+				<string>%version%</string>
+				<key>replace</key>
+				<string></string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+			</dict>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
+		</dict>
+	</array>
+</dict>
+</plist>

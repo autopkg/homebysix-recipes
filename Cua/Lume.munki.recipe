@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Imports Lume into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.Lume</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps</string>
+		<key>NAME</key>
+		<string>Lume</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Developer</string>
+			<key>description</key>
+			<string>Lume is a VM runtime for building AI agents, running CI/CD pipelines, and automating macOS. It uses Apple's native Virtualization Framework to run macOS and Linux VMs at near-native speed on Apple Silicon.</string>
+			<key>developer</key>
+			<string>Cua AI</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+			<key>version_script</key>
+			<string>#!/bin/bash
+/usr/local/bin/lume --version</string>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.7.6</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.Lume</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/lume.pkg</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
