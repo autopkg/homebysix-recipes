@@ -100,6 +100,25 @@ done
 echo "Docker Desktop system-level cleanup complete!"
 
 exit 0</string>
+			<key>preinstall_script</key>
+			<string>#!/bin/bash
+
+# Install Check Script to ensure install only happens with a logged in user. This is to allow for installation without admin credentials being needed.
+# https://docs.docker.com/desktop/setup/install/mac-permission-requirements/
+# https://docs.docker.com/desktop/setup/install/mac-install/
+
+# Get current console user
+CONSOLE_USER=$(/usr/bin/stat -f%Su /dev/console)
+
+# Check if we're at login window or no user logged in
+if [ "$CONSOLE_USER" = "root" ] || [ -z "$CONSOLE_USER" ]; then
+echo "No user logged in or at login window. Deferring installation."
+exit 1
+fi
+
+echo "User $CONSOLE_USER is logged in and Docker needs updating. OK to proceed with installation."
+
+exit 0</string>
 			<key>preuninstall_script</key>
 			<string>#!/bin/bash
 
@@ -134,59 +153,6 @@ exit 0</string>
 	<string>com.github.homebysix.download.DockerDesktop</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>additional_pkginfo</key>
-				<dict>
-					<key>installcheck_script</key>
-					<string>#!/bin/bash
-
-# Install Check Script to ensure install only happens with a logged in user. This is to allow for installation without admin credentials being needed.
-# https://docs.docker.com/desktop/setup/install/mac-permission-requirements/
-# https://docs.docker.com/desktop/setup/install/mac-install/
-
-# Target version
-TARGET_VERSION="%version%"
-
-# Get current console user
-CONSOLE_USER=$(/usr/bin/stat -f%Su /dev/console)
-
-# Check if we're at login window or no user logged in
-if [ "$CONSOLE_USER" = "root" ] || [ -z "$CONSOLE_USER" ]; then
-	echo "No user logged in or at login window. Deferring installation."
-	exit 1
-fi
-
-# Check if Docker.app exists
-if [ -d "/Applications/Docker.app" ]; then
-	# Get current version from Docker.app
-	CURRENT_VERSION=$(/usr/bin/defaults read "/Applications/Docker.app/Contents/Info.plist" CFBundleShortVersionString 2&gt;/dev/null)
-
-	if [ -n "$CURRENT_VERSION" ]; then
-		echo "Current Docker version: $CURRENT_VERSION"
-
-		# Compare versions
-		if [[ "$CURRENT_VERSION" = "$TARGET_VERSION" ]]; then
-			echo "Docker is already at version $TARGET_VERSION"
-			exit 1
-		elif [[ "$CURRENT_VERSION" &gt; "$TARGET_VERSION" ]]; then
-			echo "Current Docker version ($CURRENT_VERSION) is newer than $TARGET_VERSION"
-			exit 1
-		fi
-	fi
-fi
-
-echo "User $CONSOLE_USER is logged in and Docker needs updating. OK to proceed with installation."
-
-exit 0</string>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
