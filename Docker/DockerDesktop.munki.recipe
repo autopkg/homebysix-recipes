@@ -107,9 +107,6 @@ exit 0</string>
 # https://docs.docker.com/desktop/setup/install/mac-permission-requirements/
 # https://docs.docker.com/desktop/setup/install/mac-install/
 
-# Target version
-TARGET_VERSION="%version%"
-
 # Get current console user
 CONSOLE_USER=$(/usr/bin/stat -f%Su /dev/console)
 
