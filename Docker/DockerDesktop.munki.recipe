@@ -56,9 +56,6 @@ exit 0</string>
 # https://docs.docker.com/desktop/setup/install/mac-install/
 
 
-# Exit on any error
-set -e
-
 echo "Starting Docker Desktop system-level cleanup..."
 
 # Array of system-wide Docker files to clean up
