@@ -14,7 +14,7 @@
 		<string>Sidebar</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>2.3</string>
+	<string>2.7.6</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -25,6 +25,23 @@
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>%2520</string>
+				<key>input_string</key>
+				<string>%url%</string>
+				<key>replace</key>
+				<string>%20</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+			</dict>
+			<key>Comment</key>
+			<string>The Sparkle feed contains a double-encoded download URL, so we must manually fix the spaces here.</string>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
