@@ -5,13 +5,13 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of PingStalker.</string>
+	<string>Downloads the latest version of NetViews.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.download.PingStalker</string>
+	<string>com.github.homebysix.download.NetViews</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>PingStalker</string>
+		<string>NetViews</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -20,17 +20,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>warning_message</key>
-				<string>PingStalker has changed its name to NetViews. Please switch to the NetViews recipes in this repo. This recipe is deprecated and will be removed in the future.</string>
-			</dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>appcast_url</key>
-				<string>https://www.pingstalker.com/appcast.xml</string>
+				<string>https://www.netviews.app/appcast.xml</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
@@ -65,7 +56,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/PingStalker.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/NetViews.app</string>
 				<key>requirement</key>
 				<string>anchor apple generic and identifier "com.bmmup.PingStalker" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = CTH3T35GRZ)</string>
 			</dict>
