@@ -12,8 +12,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Renamer</string>
-		<key>URL</key>
-		<string>https://creativebe.com/download/renamer</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
@@ -25,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>%URL%</string>
+				<string>https://incrediblebee.com/download/renamer-7</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
