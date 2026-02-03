@@ -5,15 +5,15 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Vowen and imports it into Munki.</string>
+	<string>Downloads the latest version of NetViews and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.munki.Vowen</string>
+	<string>com.github.homebysix.munki.NetViews</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Vowen</string>
+		<string>NetViews</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,11 +21,11 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>A free, privacy-first AI that turns your voice into text, actions, and everyday automation, all offline.</string>
+			<string>Ultimate toolkit for network discovery, live host monitoring, in-depth port analysis, Wi-Fi insights, and more.</string>
 			<key>developer</key>
-			<string>Ghouse Mohamed</string>
+			<string>William Bushong</string>
 			<key>display_name</key>
-			<string>Vowen</string>
+			<string>NetViews</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,14 +35,25 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Vowen</string>
+	<string>com.github.homebysix.download.NetViews</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
-				<string>%pathname%</string>
+				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>

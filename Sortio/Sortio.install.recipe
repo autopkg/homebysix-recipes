@@ -5,28 +5,37 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Renamer and creates a package.</string>
+	<string>Installs the latest version of Sortio.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.Renamer</string>
+	<string>com.github.homebysix.install.Sortio</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Renamer</string>
+		<string>Sortio</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Renamer</string>
+	<string>com.github.homebysix.download.Sortio</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>app_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Renamer.app</string>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+				<key>items_to_copy</key>
+				<array>
+					<dict>
+						<key>destination_path</key>
+						<string>/Applications</string>
+						<key>source_item</key>
+						<string>Sortio.app</string>
+					</dict>
+				</array>
 			</dict>
 			<key>Processor</key>
-			<string>AppPkgCreator</string>
+			<string>InstallFromDMG</string>
 		</dict>
 	</array>
 </dict>

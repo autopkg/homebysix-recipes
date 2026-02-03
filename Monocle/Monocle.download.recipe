@@ -20,6 +20,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>Monocle releases are now being provided by Gumroad, and downloads cannot be automated. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>appcast_url</key>
 				<string>https://heyiam.dk/updates/monocle/appcast.xml</string>
 			</dict>
