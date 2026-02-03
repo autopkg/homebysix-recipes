@@ -30,7 +30,7 @@ NOTE: A Universal app appears to download regardless of ARCH value. Tested value
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>LocationUri":"(https://app-cms-repo\.ecosia-browser\.net/[a-f0-9-]+/build/[\d\.]+/EcosiaBrowser-[\d\.]+\.dmg)"</string>
+				<string>LocationUri":"(https://browser\.ecosia\.org/[0-9a-f\-]+/build/[\d\.]+/EcosiaBrowser-[\d\.]+_uni\.dmg)"</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
