@@ -10,6 +10,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>Papers</string>
+		<key>PLATFORM_ARCH</key>
+		<string>x64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -19,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>Papers_Setup_([\d\.]+)-x64\.dmg</string>
+				<string>Papers_Setup_([\d\.]+)-%PLATFORM_ARCH%\.dmg</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
