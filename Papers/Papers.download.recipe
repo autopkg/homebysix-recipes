@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Papers.</string>
+	<string>Downloads the latest version of Papers.
+		Supported values for PLATFORM_ARCH include:
+		- arm64 (Apple Silicon)
+		- x64 (Intel, default)
+	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Papers</string>
 	<key>Input</key>
