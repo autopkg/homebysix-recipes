@@ -101,6 +101,8 @@ NOTE: If you change the ARCH variable, be sure to also include a corresponding '
 				<dict>
 					<key>minimum_os_version</key>
 					<string>%min_os_ver%</string>
+					<key>version</key>
+					<string>%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
