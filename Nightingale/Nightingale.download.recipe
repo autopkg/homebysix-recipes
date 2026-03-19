@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Nightingale.
+
+Tested values for ARCH include:
+- "aarch64" (Apple Silicon, default)
+- "x86_64" (Intel)
+</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.Nightingale</string>
+	<key>Input</key>
+	<dict>
+		<key>ARCH</key>
+		<string>aarch64</string>
+		<key>NAME</key>
+		<string>Nightingale</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>nightingale-%ARCH%-apple-darwin\.tar\.gz$</string>
+				<key>github_repo</key>
+				<string>rzru/nightingale</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%-%ARCH%.tgz</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
