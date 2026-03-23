@@ -10,10 +10,10 @@
 	<string>com.github.homebysix.munki.Papers</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Papers</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>Papers</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
