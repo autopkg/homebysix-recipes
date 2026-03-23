@@ -10,10 +10,10 @@
 	<string>com.github.homebysix.munki.Papers</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Papers</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -44,7 +44,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%pathname%</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.dmg</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
