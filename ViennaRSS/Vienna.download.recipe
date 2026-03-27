@@ -27,8 +27,8 @@
 			<string>SparkleUpdateInfoProvider</string>
 		</dict>
 		<dict>
-    		<key>Processor</key>
-    		<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
+			<key>Processor</key>
+			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
