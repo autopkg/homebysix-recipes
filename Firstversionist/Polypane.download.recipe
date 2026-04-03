@@ -5,13 +5,15 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.3.3 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Polypane.</string>
+	<string>Downloads the latest version of Polypane. ARCH may be set to "universal" (default), "arm64", or blank for Intel-only.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Polypane</string>
 	<key>Input</key>
 	<dict>
 		<key>APP_FILENAME</key>
 		<string>polypane</string>
+		<key>ARCH</key>
+		<string>universal</string>
 		<key>NAME</key>
 		<string>Polypane</string>
 	</dict>
@@ -23,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>.*\.dmg$</string>
+				<string>Polypane-[\d.]+-?%ARCH%\.dmg$</string>
 				<key>github_repo</key>
 				<string>firstversionist/polypane</string>
 			</dict>
