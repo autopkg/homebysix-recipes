@@ -37,11 +37,11 @@ As of this recipe's creation, the only available ARCH is "arm64".
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
+			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
+			<string>Unarchiver</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
