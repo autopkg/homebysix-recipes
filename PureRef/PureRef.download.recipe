@@ -20,17 +20,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>warning_message</key>
-				<string>Help wanted maintaining this recipe (details: https://github.com/autopkg/homebysix-recipes/issues/669). This recipe may be removed in the future if download automation cannot be maintained.</string>
-			</dict>
-			<key>Processor</key>
-			<string>DeprecationWarning</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>re_pattern</key>
 				<string>&lt;option (selected )?value="([\d\.]+)"&gt;</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15</string>
+				</dict>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
@@ -44,6 +40,11 @@
 			<dict>
 				<key>re_pattern</key>
 				<string>"%version%",\s+"(.+)",\s+\[</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15</string>
+				</dict>
 				<key>result_output_var_name</key>
 				<string>download_key</string>
 				<key>url</key>
@@ -57,6 +58,11 @@
 			<dict>
 				<key>re_pattern</key>
 				<string>(.+)</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15</string>
+				</dict>
 				<key>result_output_var_name</key>
 				<string>download_key</string>
 				<key>url</key>
@@ -70,6 +76,11 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15</string>
+				</dict>
 				<key>url</key>
 				<string>https://www.pureref.com/files/build.php?build=OSX64.dmg&amp;version=%version%&amp;downloadKey=%download_key%</string>
 			</dict>
