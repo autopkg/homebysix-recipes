@@ -8,10 +8,10 @@
 	<string>com.github.homebysix.download.HerokuCLI</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>HerokuCLI</string>
 		<key>DOWNLOAD_URL</key>
 		<string>https://cli-assets.heroku.com/heroku.pkg</string>
+		<key>NAME</key>
+		<string>HerokuCLI</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -20,10 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
 				<key>filename</key>
 				<string>%NAME%.pkg</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -35,14 +35,14 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%pathname%</string>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: Heroku INC (XRYSPKFC96)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
