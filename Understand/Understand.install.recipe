@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Postbox and creates a package.</string>
+	<string>Downloads and installs the latest version of Understand.</string>
 	<key>Identifier</key>
-	<string>com.github.homebysix.pkg.Postbox</string>
+	<string>com.github.homebysix.install.Understand</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Postbox</string>
+		<string>Understand</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.download.Postbox</string>
+	<string>com.github.homebysix.download.Understand</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -22,13 +22,18 @@
 			<dict>
 				<key>dmg_path</key>
 				<string>%pathname%</string>
+				<key>items_to_copy</key>
+				<array>
+					<dict>
+						<key>destination_path</key>
+						<string>/Applications</string>
+						<key>source_item</key>
+						<string>Understand.app</string>
+					</dict>
+				</array>
 			</dict>
 			<key>Processor</key>
-			<string>AppDmgVersioner</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>AppPkgCreator</string>
+			<string>InstallFromDMG</string>
 		</dict>
 	</array>
 </dict>
