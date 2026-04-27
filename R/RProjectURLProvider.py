@@ -58,7 +58,7 @@ class RProjectURLProvider(URLGetter):
             url_base = "https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/"
         elif arch == "arm64":
             pattern = r'base\/(?P<file>R-(?P<vers>[\d.]+)-arm64\.pkg)">R-[\d.]+-arm64\.pkg</a>'
-            url_base = "https://cran.r-project.org/bin/macosx/big-sur-arm64/base/"
+            url_base = "https://cran.r-project.org/bin/macosx/sonoma-arm64/base/"
 
         # Get and parse download page contents
         download_page_html = self.download(DL_PAGE, text=True)
