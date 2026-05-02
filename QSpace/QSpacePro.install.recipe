@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Installs the latest version of QSpace Pro.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.install.QSpacePro</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>QSpace Pro</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.QSpacePro</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+				<key>items_to_copy</key>
+				<array>
+					<dict>
+						<key>destination_path</key>
+						<string>/Applications</string>
+						<key>source_item</key>
+						<string>QSpace Pro.app</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>InstallFromDMG</string>
+		</dict>
+	</array>
+</dict>
+</plist>
