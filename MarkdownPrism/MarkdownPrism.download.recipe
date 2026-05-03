@@ -43,7 +43,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Markdown Prism.app</string>
+				<string>%pathname%/MarkdownPrism.app</string>
 				<key>requirement</key>
 				<string>identifier "com.markdownprism.app" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = XGJ87M8ZZR</string>
 			</dict>
@@ -54,7 +54,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Markdown Prism.app/Contents/Info.plist</string>
+				<string>%pathname%/MarkdownPrism.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

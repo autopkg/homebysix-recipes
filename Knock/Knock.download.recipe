@@ -34,7 +34,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>knockv([\d\.]+)\.dmg</string>
+				<string>knock-v([\d\.]+)\.dmg</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 				<key>url</key>
@@ -49,7 +49,7 @@
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
-				<string>https://www.tryknock.app/knockv%version%.dmg</string>
+				<string>https://www.tryknock.app/knock-v%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

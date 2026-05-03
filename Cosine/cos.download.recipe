@@ -24,7 +24,7 @@ As of this writing, the only supported value for ARCH is "arm64".
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>version "v([0-9.]+)"</string>
+				<string>version "([0-9.]+)"</string>
 				<key>url</key>
 				<string>https://raw.githubusercontent.com/CosineAI/homebrew-tap/refs/heads/main/Formula/cos.rb</string>
 			</dict>
@@ -35,9 +35,9 @@ As of this writing, the only supported value for ARCH is "arm64".
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-v%match%-%ARCH%.zip</string>
+				<string>%NAME%-%match%-%ARCH%.zip</string>
 				<key>url</key>
-				<string>https://software.cosine.sh/cli/release/v%match%/cos-darwin-%ARCH%.zip</string>
+				<string>https://software.cosine.sh/cli/release/%match%/cos-darwin-%ARCH%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

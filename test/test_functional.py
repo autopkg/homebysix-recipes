@@ -9,6 +9,8 @@ import shutil
 import subprocess
 import unittest
 
+import yaml
+
 # Desired identifier prefix, with few exceptions.
 IDENTIFIER_PREFIX = "com.github.homebysix."
 IDENTIFIER_EXEMPTIONS = (
@@ -39,7 +41,9 @@ class RecipeTester(unittest.TestCase):
             f"{relpath}: does not start with {IDENTIFIER_PREFIX}",
         )
         self.assertIn("Input", recipe, f"{relpath}: no Input key")
-        self.assertIn("Process", recipe, f"{relpath}: no Process key")
+        # Recipes with a ParentRecipe inherit Process from the parent.
+        if "ParentRecipe" not in recipe:
+            self.assertIn("Process", recipe, f"{relpath}: no Process key")
         self.assertNotIn(
             "ParentRecipeTrustInfo",
             recipe,
@@ -125,8 +129,12 @@ class RecipeTester(unittest.TestCase):
                     print(
                         f"Testing {recipe_path} ({index + 1} of {len(recipe_paths)})..."
                     )
-                    with open(recipe_path, "rb") as infile:
-                        recipe = plistlib.load(infile)
+                    if recipe_path.endswith(".yaml"):
+                        with open(recipe_path, encoding="utf-8") as infile:
+                            recipe = yaml.safe_load(infile)
+                    else:
+                        with open(recipe_path, "rb") as infile:
+                            recipe = plistlib.load(infile)
                     self.check_recipe(recipe_path, recipe)
                     self.clear_cache(recipe["Identifier"])
                     self.run_recipe(recipe_path, recipe)

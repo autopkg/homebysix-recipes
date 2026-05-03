@@ -1,3 +1,6 @@
 *.pyc
+__pycache__/
 .DS_Store
 test/report.plist
+*.local.json
+*.local.md

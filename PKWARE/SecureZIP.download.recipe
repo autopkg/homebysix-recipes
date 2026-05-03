@@ -20,6 +20,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>PKWARE has moved SecureZIP downloads behind a Salesforce community login, so AutoPkg can no longer fetch the installer. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>re_pattern</key>
 				<string>https://pkwaredownloads\.blob\.core\.windows\.net/securezip/SecureZIP-([\d\.]+)\.pkg</string>
 				<key>result_output_var_name</key>
