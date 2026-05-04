@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of the ownCloud Desktop Client installer package.
+
+Set ARCH to "arm64" (default) or "x86_64" to target Apple Silicon or Intel respectively.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.ownCloudDesktopClient</string>
+	<key>Input</key>
+	<dict>
+		<key>ARCH</key>
+		<string>arm64</string>
+		<key>NAME</key>
+		<string>ownCloudDesktopClient</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>href="(https://download\.owncloud\.com/desktop/ownCloud/[A-Za-z0-9]+/([0-9]+(\.[0-9]+)+)/mac/ownCloud-([0-9]+(\.[0-9]+)+)-%ARCH%\.pkg)"</string>
+				<key>result_output_var_name</key>
+				<string>DOWNLOAD_URL</string>
+				<key>url</key>
+				<string>https://owncloud.com/desktop-app/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.pkg</string>
+				<key>request_headers</key>
+				<dict>
+					<key>Referer</key>
+					<string>https://owncloud.com/</string>
+					<key>user-agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15</string>
+				</dict>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: ownCloud GmbH (4AP2STM4H5)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
