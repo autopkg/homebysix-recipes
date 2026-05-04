@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Notepad++, an independent open-source community port of Notepad++ to macOS (universal binary).</string>
+	<string>Downloads the latest version of Notepad++, an independent open-source community port of the unrelated Notepad++ editor to macOS.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.NotepadPlusPlus</string>
 	<key>Input</key>
@@ -15,6 +15,15 @@
 	<string>2.3</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>NOTE: This app is NOT related to Notepad++ or its author, who has objected to the use of the app's name as a trademark infringement. Use/deploy this app with caution. Details: https://notepad-plus-plus.org/news/npp-trademark-infringement/</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
