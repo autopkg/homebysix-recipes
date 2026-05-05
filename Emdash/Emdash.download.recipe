@@ -27,19 +27,10 @@ Tested values for ARCH include:
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>asset_regex</key>
-				<string>.*-%ARCH%\.dmg$</string>
-				<key>github_repo</key>
-				<string>generalaction/emdash</string>
-			</dict>
-			<key>Processor</key>
-			<string>GitHubReleasesInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%-%ARCH%.dmg</string>
+				<string>%NAME%-%ARCH%.dmg</string>
+				<key>url</key>
+				<string>https://releases.emdash.sh/emdash-%ARCH%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -54,7 +45,7 @@ Tested values for ARCH include:
 				<key>input_path</key>
 				<string>%pathname%/Emdash.app</string>
 				<key>requirement</key>
-				<string>identifier "com.emdash" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2AZ6648627"</string>
+				<string>identifier "com.emdash.stable" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2AZ6648627"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
