@@ -5,13 +5,13 @@
 	<key>Description</key>
 	<string>Downloads the latest version of A Better Finder Attributes.
 
-The MAJOR_VERSION input variable can be overridden to determine which version of the app is retrieved. Possible values are 6 (default) or 5.</string>
+The MAJOR_VERSION input variable can be overridden to determine which version of the app is retrieved. Possible values are 7 (default), 6, or 5.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.ABetterFinderAttributes</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>6</string>
+		<string>7</string>
 		<key>NAME</key>
 		<string>A Better Finder Attributes</string>
 	</dict>

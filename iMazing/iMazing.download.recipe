@@ -13,7 +13,7 @@ Tested with MAJOR_VERSION 2 and 3.</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>2</string>
+		<string>3</string>
 		<key>NAME</key>
 		<string>iMazing</string>
 	</dict>

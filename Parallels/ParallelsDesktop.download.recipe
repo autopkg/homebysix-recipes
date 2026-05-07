@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 10 through 18.
+	<string>Downloads the major version of Parallels Desktop specified by MAJOR_VERSION. This recipe has been tested with major versions 10 through 20.
 
 This recipe differs from the one in keeleysam-recipes because it offers code signature verification, does not require a ParallelsURLProvider processor, and also includes pkg and install recipes.
 
 Input variable tips:
-- For major versions 10 through 15 or 17 through 18, leave the PLATFORM_ARCH blank in your override.
+- For major versions 10 through 15 or 17 through 20, leave the PLATFORM_ARCH blank in your override.
 - For major version 16, set the PLATFORM_ARCH in your override to either "intel" or "m1" depending on your desired architecture.
 </string>
 	<key>Identifier</key>
@@ -16,7 +16,7 @@ Input variable tips:
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>18</string>
+		<string>20</string>
 		<key>NAME</key>
 		<string>Parallels Desktop</string>
 		<key>PLATFORM_ARCH</key>

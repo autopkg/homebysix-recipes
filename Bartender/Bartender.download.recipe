@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Bartender.
 
-Specify which major version you want in the MAJOR_VERSION input variable. Supported values are 3, 4, or 5.
+Specify which major version you want in the MAJOR_VERSION input variable. Supported values are 3, 4, 5, or 6.
 
 Note that the code signing requirement changed in Bartender 5. Use the TEAM_ID input variable to specify
 the appropriate team identifier for previous versions.
@@ -15,7 +15,7 @@ the appropriate team identifier for previous versions.
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>5</string>
+		<string>6</string>
 		<key>NAME</key>
 		<string>Bartender</string>
 		<key>TEAM_ID</key>

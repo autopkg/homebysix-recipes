@@ -7,13 +7,13 @@
 
 Temporarily disabled code signature verification due to errors in included Sparkle framework.
 
-The MAJOR_VERSION input variable can be overridden to determine which version of the app is retrieved. Possible values are 10 (default), 9, or 8.</string>
+The MAJOR_VERSION input variable can be overridden to determine which version of the app is retrieved. Possible values are 12 (default), 11, 10, 9, or 8.</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.ABetterFinderRename</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>10</string>
+		<string>12</string>
 		<key>NAME</key>
 		<string>A Better Finder Rename</string>
 	</dict>
