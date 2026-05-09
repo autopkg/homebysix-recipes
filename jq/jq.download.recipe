@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the current release of jq for macOS.
+
+Tested values for ARCH include:
+- arm64 (Apple Silicon, default)
+- amd64 (Intel)
+
+NOTE: These recipes are distinct from the "JQUniversal" alternatives in rtrouton-recipes because
+these recipes fetch a single architecture directly from the upstream GitHub releases, which may be
+more efficient for some uses (e.g. importing to Munki).
+</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.jq</string>
+	<key>Input</key>
+	<dict>
+		<key>ARCH</key>
+		<string>arm64</string>
+		<key>NAME</key>
+		<string>jq</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>jq-macos-%ARCH%$</string>
+				<key>github_repo</key>
+				<string>jqlang/jq</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%ARCH%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>index</key>
+				<integer>1</integer>
+				<key>split_on</key>
+				<string>-</string>
+				<key>version</key>
+				<string>%version%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
