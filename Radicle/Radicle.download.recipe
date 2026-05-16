@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v2.4.2 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Radicle.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.Radicle</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Radicle</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://files.radicle.dev/releases/radicle-desktop/latest/radicle-desktop-aarch64.dmg</string>
+				<key>url-Comment</key>
+				<string>Apple Silicon is the only supported architecture.</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
