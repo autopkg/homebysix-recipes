@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of GitHub Copilot CLI and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.GitHubCopilotCLI</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/GitHub</string>
+		<key>NAME</key>
+		<string>GitHubCopilotCLI</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Developer</string>
+			<key>description</key>
+			<string>AI-powered terminal tool that brings GitHub Copilot's coding agent directly to your terminal, with built-in integration for repositories, issues, and pull requests. Installs to /usr/local/bin/copilot.</string>
+			<key>developer</key>
+			<string>GitHub, Inc.</string>
+			<key>display_name</key>
+			<string>GitHub Copilot CLI</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.4.1</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.pkg.GitHubCopilotCLI</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>faux_root</key>
+				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+				<key>installs_item_paths</key>
+				<array>
+					<string>/usr/local/bin/copilot</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiInstallsItemsCreator</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
