@@ -5,11 +5,20 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of RV. This recipe differs from the version in ygini-recipes because it downloads the latest "RV" app instead of the older "RV64" app.</string>
+	<string>Downloads the latest version of RV. This recipe differs from the version in ygini-recipes because it downloads the latest "RV" app instead of the older "RV64" app.
+
+Use the ARCH input variable to specify the architecture to download.
+Values at the time of writing are:
+
+- "" (empty string, Intel, default)
+- "-ARM64" (Apple Silicon)
+	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.RV</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string></string>
 		<key>NAME</key>
 		<string>RV</string>
 	</dict>
@@ -23,7 +32,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://sg-software.ems.autodesk.com/deploy/rv/Current_Release/MacOS-release.dmg</string>
+				<string>https://sg-software.ems.autodesk.com/deploy/rv/Current_Release/MacOS%ARCH%-release.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
