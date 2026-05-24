@@ -39,7 +39,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(https://edgedl\.me\.gvt1\.com/edgedl/release2/[^/]+/antigravity/stable/[^/]+/darwin-%ARCH%/Antigravity\.dmg)</string>
+				<string>(https://edgedl\.me\.gvt1\.com/edgedl/release2/[^/]+/antigravity/stable/[^/]+/darwin-%ARCH%/Antigravity(%20IDE)?\.dmg)</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
@@ -65,9 +65,9 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Antigravity.app</string>
+				<string>%pathname%/Antigravity IDE.app</string>
 				<key>requirement</key>
-				<string>identifier "com.google.antigravity" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = EQHXZ8M8AV</string>
+				<string>identifier "com.google.antigravity-ide" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = EQHXZ8M8AV</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -76,7 +76,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Antigravity.app/Contents/Info.plist</string>
+				<string>%pathname%/Antigravity IDE.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
