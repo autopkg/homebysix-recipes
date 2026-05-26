@@ -24,7 +24,11 @@ Run `autopkg search <AppName>.download` (chains start at `.download`; filters no
 
 From the vendor page, note: download URL (or appcast / GH releases), developer, description, display name.
 
+**Short-circuit for conventional apps.** If early signals show a straightforward macOS app — a GitHub repo with DMG/ZIP/PKG release assets, a direct download URL, or a Sparkle appcast — stop investigating and pass that input straight to Recipe Robot (step 3). RR is built to handle these cases; there's no value in downloading and inspecting the artifact yourself first. Save the bandwidth and time. Only dig deeper (HEAD checks, page scraping, JS inspection) when the source is ambiguous, gated, or RR fails.
+
 **Validate URLs with HEAD only** (`curl -sIL <url>`), never a full download. Apps can be huge; Recipe Robot will do its own fetch. Only download to `/tmp/` and inspect by hand (`plutil -p`, `codesign -dvvv`, `codesign -d -r-`) if Recipe Robot fails. Never inspect inside the repo.
+
+**Never guess or fabricate domains.** When WebFetch returns a relative URL (e.g. `/App-1.0.dmg`), resolve it against the domain you actually fetched — do not invent a plausible-sounding alternative domain. The summarizer model behind WebFetch can hallucinate domains. Always HEAD-validate the full URL before using it.
 
 **Non-fit signals — surface early and ask before building:**
 - **Mac App Store-only** (vendor page's only download link is `apps.apple.com/app/...`, or page says "available on the Mac App Store"). AutoPkg's normal pipeline can't fetch MAS apps — they require an authenticated Apple ID via `mas` CLI or `nmcspadden-recipes`' `AppStoreApp` processor, and redistribution through munki/pkg is licensing-constrained. Default: skip.
