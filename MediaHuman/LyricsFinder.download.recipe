@@ -41,6 +41,8 @@
 				<string>%pathname%/LyricsFinder.app</string>
 				<key>requirement</key>
 				<string>identifier "com.mediahuman.Lyrics Finder" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "3EULEE7KQ5"</string>
+				<key>strict_verification</key>
+				<false/>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>

@@ -59,6 +59,8 @@
 				<string>%RECIPE_CACHE_DIR%/%NAME%/QuickDrawViewer.app</string>
 				<key>requirement</key>
 				<string>identifier "net.codiferes.wiesmann.QuickDrawViewer" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: matthias.wiesmann@a3.epfl.ch (SNV4TDQ3V3)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+				<key>strict_verification</key>
+				<false/>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
