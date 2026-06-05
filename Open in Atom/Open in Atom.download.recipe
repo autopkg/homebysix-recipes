@@ -59,6 +59,8 @@
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Open in Atom.app</string>
 				<key>requirement</key>
 				<string>identifier "com.apple.ScriptEditor.id.Open-in-Atom" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Christopher Dzombak (JC7TCLR787)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+				<key>strict_verification</key>
+				<false/>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
