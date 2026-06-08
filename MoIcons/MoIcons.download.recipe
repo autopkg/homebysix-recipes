@@ -5,7 +5,7 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.5.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Icon Maker.</string>
+	<string>Downloads the latest version of MoIcons (formerly distributed as Icon Maker).</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.IconMaker</string>
 	<key>Input</key>
@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>github_repo</key>
-				<string>TeamDev-IP/MoBrowser-App-Icon-Maker</string>
+				<string>mo-browser-apps/icons</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
@@ -43,9 +43,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Icon Maker.app</string>
+				<string>%pathname%/MoIcons.app</string>
 				<key>requirement</key>
-				<string>identifier "com.teamdev.IconMaker" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = K436KHQ6D5</string>
+				<string>identifier "com.teamdev.MoIcons" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = K436KHQ6D5</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -54,7 +54,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Icon Maker.app/Contents/Info.plist</string>
+				<string>%pathname%/MoIcons.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
