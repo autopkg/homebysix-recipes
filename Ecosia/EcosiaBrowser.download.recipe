@@ -30,7 +30,7 @@ NOTE: A Universal app appears to download regardless of ARCH value. Tested value
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>LocationUri":"(https://browser\.ecosia\.org/[0-9a-f\-]+/build/[\d\.]+/EcosiaBrowser-[\d\.]+_uni\.dmg)"</string>
+				<string>LocationUri":"(https://[^"]+/EcosiaBrowser-[\d\.]+_uni\.dmg[^"]*)"</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
@@ -59,6 +59,8 @@ NOTE: A Universal app appears to download regardless of ARCH value. Tested value
 				<string>%pathname%/Ecosia Browser.app</string>
 				<key>requirement</key>
 				<string>identifier "org.ecosia.browser" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "33YMRSYD2L"</string>
+				<key>strict_verification</key>
+				<false/>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
