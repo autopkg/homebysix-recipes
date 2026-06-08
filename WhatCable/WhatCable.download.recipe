@@ -20,6 +20,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>asset_regex</key>
+				<string>^WhatCable\.zip$</string>
 				<key>github_repo</key>
 				<string>darrylmorley/whatcable</string>
 			</dict>
@@ -58,7 +60,7 @@
 				<key>input_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/WhatCable.app</string>
 				<key>requirement</key>
-				<string>identifier "com.bitmoor.whatcable" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = M4RUJ7W6MP</string>
+				<string>identifier "uk.whatcable.whatcable" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = M4RUJ7W6MP</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
