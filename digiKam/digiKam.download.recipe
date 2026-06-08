@@ -43,7 +43,7 @@ Tested values for ARCH include:
 				<key>result_output_var_name</key>
 				<string>filename</string>
 				<key>url</key>
-				<string>https://download.kde.org/stable/digikam/8.8.0/?C=M;O=D</string>
+				<string>https://download.kde.org/stable/digikam/%version%/?C=M;O=D</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
