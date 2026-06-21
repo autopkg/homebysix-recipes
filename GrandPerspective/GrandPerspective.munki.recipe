@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>GrandPerspective is a utility application for Mac OS X that graphically displays the disk usage of a file system.</string>
+			<string>Disk usage visualization tool.</string>
 			<key>developer</key>
 			<string></string>
 			<key>display_name</key>

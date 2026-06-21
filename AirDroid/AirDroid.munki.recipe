@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Cloud-based SMS and file management between OS X and Android.</string>
+			<string>Cloud-based SMS and file management for Android devices.</string>
 			<key>developer</key>
 			<string>Xiamen Tongbu Networks Co., Ltd.</string>
 			<key>display_name</key>

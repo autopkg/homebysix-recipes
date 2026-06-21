@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>Open-source terminal SSH manager and SSH config editor in Rust. Fuzzy search hundreds of hosts, sync from 16 clouds, transfer files, manage Docker and Podman over SSH, sign short-lived Vault SSH certs and expose an MCP server for AI agents. Installs to /usr/local/bin/purple.</string>
+			<string>Open-source terminal SSH manager and configuration editor.</string>
 			<key>developer</key>
 			<string>Eric Kochen</string>
 			<key>display_name</key>

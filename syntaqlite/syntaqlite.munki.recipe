@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>A parser, formatter, validator, and language server for SQLite SQL. Built on SQLite's own grammar and tokenizer. Installs to /usr/local/bin/syntaqlite.</string>
+			<string>SQLite SQL parser, formatter, validator, and language server.</string>
 			<key>developer</key>
 			<string>Lalit Maganti</string>
 			<key>display_name</key>

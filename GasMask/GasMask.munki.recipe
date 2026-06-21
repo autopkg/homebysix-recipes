@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Hosts file manager for OS X</string>
+			<string>Hosts file manager for macOS.</string>
 			<key>developer</key>
 			<string>Siim Raud</string>
 			<key>display_name</key>

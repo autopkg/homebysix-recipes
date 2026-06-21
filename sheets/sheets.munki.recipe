@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>A Terminal based spreadsheet tool. Installs to /usr/local/bin/sheets.</string>
+			<string>Terminal-based spreadsheet tool.</string>
 			<key>developer</key>
 			<string>Maas Lalani</string>
 			<key>display_name</key>

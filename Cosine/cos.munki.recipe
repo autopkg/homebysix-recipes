@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>The Cosine CLI tool for AI-powered development workflows. Installs to /usr/local/bin/cos.</string>
+			<string>CLI tool for AI-powered development workflows.</string>
 			<key>developer</key>
 			<string>CosineAI</string>
 			<key>display_name</key>

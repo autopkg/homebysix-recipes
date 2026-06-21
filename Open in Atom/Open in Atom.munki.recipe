@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>An "Open Directory in Atom" button for your OS X Finder toolbar.</string>
+			<string>Finder toolbar button for opening directories in Atom.</string>
 			<key>developer</key>
 			<string>Christopher Dzombak</string>
 			<key>display_name</key>

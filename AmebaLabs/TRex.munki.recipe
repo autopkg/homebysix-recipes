@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Copy any text on your screen, stop retyping.</string>
+			<string>Text recognition and OCR utility.</string>
 			<key>developer</key>
 			<string>Ameba Labs</string>
 			<key>display_name</key>

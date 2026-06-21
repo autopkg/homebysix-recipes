@@ -19,7 +19,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>CocoaTADS is a port of the HTML TADS interpreter to Mac OS X.</string>
+			<string>Port of HTML TADS interpreter for macOS.</string>
 			<key>developer</key>
 			<string>CharlesSoft</string>
 			<key>display_name</key>

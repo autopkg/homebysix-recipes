@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>Multi-game agent development platform for strategic games. Installs to /usr/local/bin/aoe.</string>
+			<string>Multi-game agent development platform for strategic games.</string>
 			<key>developer</key>
 			<string>NJ Brake</string>
 			<key>display_name</key>

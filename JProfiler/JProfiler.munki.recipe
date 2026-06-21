@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>JProfiler is the industry's most comprehensive all-in one Java profiler that helps resolve performance bottlenecks, pin down memory leaks and understand threading issues.</string>
+			<string>Java profiling tool for performance and memory analysis.</string>
 			<key>developer</key>
 			<string>ej-technologies</string>
 			<key>display_name</key>

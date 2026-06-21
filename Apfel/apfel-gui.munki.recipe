@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>Native debugging interface for apfel with chat, request/response inspection, and on-device speech features. Installs to /usr/local/bin/apfel-gui with MCP companions in /usr/local/lib/apfel-gui/mcp/.</string>
+			<string>Native debugging interface for apfel with chat and request inspection.</string>
 			<key>developer</key>
 			<string>Arthur Ficial</string>
 			<key>display_name</key>

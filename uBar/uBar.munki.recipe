@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Full featured and customizable replacement for the built-in OS X dock.</string>
+			<string>Customizable replacement for the macOS Dock.</string>
 			<key>developer</key>
 			<string>Brawer Canada Inc.</string>
 			<key>display_name</key>

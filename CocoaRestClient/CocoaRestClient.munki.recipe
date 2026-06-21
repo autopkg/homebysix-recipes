@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>A free, native Apple OS X app for testing HTTP/REST endpoints.</string>
+			<string>Native HTTP and REST endpoint testing tool.</string>
 			<key>developer</key>
 			<string>Mike Mattozzi</string>
 			<key>display_name</key>

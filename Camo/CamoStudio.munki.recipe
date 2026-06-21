@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Look amazing on video calls. Use your smartphone or tablet as a pro webcam and get powerful effects and adjustments for Zoom, Meet, and more.</string>
+			<string>Webcam utility using smartphone or tablet as camera source.</string>
 			<key>developer</key>
 			<string>Reincubate</string>
 			<key>display_name</key>

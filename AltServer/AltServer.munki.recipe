@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Discover apps that push the boundaries of iOS with this alternative to Apple's App Store.</string>
+			<string>iOS app sideloading tool for macOS.</string>
 			<key>developer</key>
 			<string>Yvette Testut</string>
 			<key>display_name</key>

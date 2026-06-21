@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Moves makes it easier than ever to position your windows juuust right.</string>
+			<string>Window management and positioning utility.</string>
 			<key>developer</key>
 			<string>Mikkel Malmberg</string>
 			<key>display_name</key>
