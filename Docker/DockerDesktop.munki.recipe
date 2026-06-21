@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Automates deployment of containerized applications.</string>
+			<string>Platform for developing and running containerized applications.</string>
 			<key>developer</key>
 			<string>Docker</string>
 			<key>display_name</key>
