@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>OrcaSlicer: an open source Next-Gen Slicing Software for Precision 3D Prints. Produces G-code for 3D printers including Bambu, Prusa, Voron, VzBot, RatRig, and Creality.</string>
+			<string>Open source 3D printing slicer for generating G-code.</string>
 			<key>developer</key>
 			<string>Li Jiang</string>
 			<key>display_name</key>

@@ -17,7 +17,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Fusion 360 is the first 3D CAD, CAM, and CAE tool of its kind. It connects your entire product development process in a single cloud-based platform that works on both Mac and PC.</string>
+			<string>3D CAD, CAM, and CAE platform for product development.</string>
 			<key>developer</key>
 			<string>Autodesk Inc</string>
 			<key>display_name</key>

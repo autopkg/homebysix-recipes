@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>FlashSpace is a blazingly fast virtual workspace manager for macOS.</string>
+			<string>Virtual workspace manager for macOS.</string>
 			<key>developer</key>
 			<string>Wojciech Kulik</string>
 			<key>display_name</key>

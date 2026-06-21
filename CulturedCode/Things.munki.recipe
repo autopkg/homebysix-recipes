@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Things is the award-winning personal task manager that helps you plan your day, manage your projects, and make real progress toward your goals.</string>
+			<string>Personal task manager and project planner.</string>
 			<key>developer</key>
 			<string>Cultured Code</string>
 			<key>display_name</key>
