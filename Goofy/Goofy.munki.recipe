@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>OS X client for Facebook Messenger.</string>
+			<string>Facebook Messenger client for macOS.</string>
 			<key>developer</key>
 			<string>Daniel Buechele</string>
 			<key>display_name</key>

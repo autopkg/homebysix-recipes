@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>A Mac OS X utility to visualise QuickDraw (PICT) files. It allows exporting to PDF format.</string>
+			<string>QuickDraw (PICT) file viewer and PDF exporter.</string>
 			<key>developer</key>
 			<string>matthias.wiesmann@a3.epfl.ch</string>
 			<key>display_name</key>

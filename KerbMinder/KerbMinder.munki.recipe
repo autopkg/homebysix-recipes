@@ -25,7 +25,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>KerbMinder is a tool for Mac OS X that keeps a logged-in user's Kerberos ticket current by attempting to renew or refresh it automatically any time the network state changes.</string>
+			<string>Automatic Kerberos ticket renewal and refresh utility.</string>
 			<key>developer</key>
 			<string>Peter Bukowinski</string>
 			<key>display_name</key>

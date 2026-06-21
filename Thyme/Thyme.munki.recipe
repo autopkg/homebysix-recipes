@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>A timer for OS X.</string>
+			<string>Timer for macOS.</string>
 			<key>developer</key>
 			<string>João Moreno</string>
 			<key>display_name</key>

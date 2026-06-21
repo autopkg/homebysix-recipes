@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Monolingual is a program for removing unnecessary language resources from Mac OS X.</string>
+			<string>Language resource removal utility for macOS.</string>
 			<key>developer</key>
 			<string>Ingmar Stein</string>
 			<key>display_name</key>

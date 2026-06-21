@@ -19,7 +19,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>InstallPKG is a wrapper to the 'installer' tool on Mac OS X systems. The functionality is focused on allowing you to quickly and easily install multiple packages to the current boot drive.</string>
+			<string>Wrapper for the macOS installer tool to install multiple packages.</string>
 			<key>developer</key>
 			<string>henri</string>
 			<key>display_name</key>
