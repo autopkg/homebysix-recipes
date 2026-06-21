@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Utilities</string>
 			<key>description</key>
-			<string>A better WHOIS lookup tool with interactive TUI, tech stack detection, and RDAP-first lookups. Installs to /usr/local/bin/quien.</string>
+			<string>WHOIS lookup tool with interactive TUI and tech stack detection.</string>
 			<key>developer</key>
 			<string>Ben Word</string>
 			<key>display_name</key>

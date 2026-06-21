@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Utilities</string>
 			<key>description</key>
-			<string>A terminal file organizer for the desktop. Installs to /usr/local/bin/chloe.</string>
+			<string>Terminal file organizer.</string>
 			<key>developer</key>
 			<string>Kevin Edry</string>
 			<key>display_name</key>

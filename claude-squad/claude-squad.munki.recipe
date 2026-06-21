@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>AI-powered development tool for managing Claude sessions and automating workflows. Installs to /usr/local/bin/claude-squad.</string>
+			<string>AI-powered development tool for managing Claude sessions and workflows.</string>
 			<key>developer</key>
 			<string>SMTG AI</string>
 			<key>display_name</key>

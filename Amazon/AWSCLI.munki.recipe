@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services, symlinked into your path at /usr/local/bin/aws</string>
+			<string>Command line interface for managing AWS services.</string>
 			<key>developer</key>
 			<string>Amazon Web Services</string>
 			<key>display_name</key>

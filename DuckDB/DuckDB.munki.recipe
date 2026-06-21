@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>DuckDB is a fast in-process analytical database. This installs the CLI to /usr/local/bin/duckdb.</string>
+			<string>In-process analytical database.</string>
 			<key>developer</key>
 			<string>Stichting DuckDB Foundation</string>
 			<key>display_name</key>

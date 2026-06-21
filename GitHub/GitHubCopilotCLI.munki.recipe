@@ -21,7 +21,7 @@
 			<key>category</key>
 			<string>Developer</string>
 			<key>description</key>
-			<string>AI-powered terminal tool that brings GitHub Copilot's coding agent directly to your terminal, with built-in integration for repositories, issues, and pull requests. Installs to /usr/local/bin/copilot.</string>
+			<string>AI coding agent for terminal with repository and issue integration.</string>
 			<key>developer</key>
 			<string>GitHub, Inc.</string>
 			<key>display_name</key>
