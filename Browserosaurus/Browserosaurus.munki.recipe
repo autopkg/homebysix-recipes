@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>🦖 The browser prompter for macOS</string>
+			<string>Browser prompter for macOS.</string>
 			<key>developer</key>
 			<string>Will Stone</string>
 			<key>display_name</key>
