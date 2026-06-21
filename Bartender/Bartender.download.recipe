@@ -22,7 +22,7 @@ the appropriate team identifier for previous versions.
 		<string>24J875RH8J</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.3</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -30,6 +30,8 @@ the appropriate team identifier for previous versions.
 			<dict>
 				<key>appcast_url</key>
 				<string>https://www.macbartender.com/B2/updates/AppcastB%MAJOR_VERSION%.xml</string>
+				<key>urlencode_path_component</key>
+				<false/>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
@@ -37,23 +39,10 @@ the appropriate team identifier for previous versions.
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>find</key>
-				<string>%2520</string>
-				<key>input_string</key>
-				<string>%url%</string>
-				<key>replace</key>
-				<string>%20</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
 				<string>%NAME%-%version%.zip</string>
 				<key>url</key>
-				<string>%output_string%</string>
+				<string>%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

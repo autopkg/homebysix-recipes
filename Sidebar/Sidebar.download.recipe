@@ -22,26 +22,11 @@
 			<dict>
 				<key>appcast_url</key>
 				<string>https://download.sidebarapp.net/appcast.xml</string>
+				<key>urlencode_path_component</key>
+				<false/>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>find</key>
-				<string>%2520</string>
-				<key>input_string</key>
-				<string>%url%</string>
-				<key>replace</key>
-				<string>%20</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
-			</dict>
-			<key>Comment</key>
-			<string>The Sparkle feed contains a double-encoded download URL, so we must manually fix the spaces here.</string>
-			<key>Processor</key>
-			<string>FindAndReplace</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
