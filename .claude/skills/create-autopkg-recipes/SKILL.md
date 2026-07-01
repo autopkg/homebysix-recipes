@@ -14,108 +14,65 @@ user-invocable: true
 
 # Create AutoPkg Recipes
 
-Scaffold recipes for a macOS app following the current repo's conventions. E2E test the download and pkg before handing off.
+Scaffold recipes for a macOS app following repo conventions. E2E test download+pkg before handing off.
 
-## 1. Check for existing recipes
+## 1. Check for duplicates
 
-Run `autopkg search <AppName>.download` (chains start at `.download`; filters noise). Try vendor-prefixed variants too (e.g. `Google<AppName>.download`). If anything matches — in any repo — surface it and ask before building. Don't duplicate.
+`autopkg search <AppName>.download` (try vendor-prefixed variants too, e.g. `Google<AppName>`). Any match, any repo → surface and ask before building.
 
-## 2. Gather metadata — no full download
+## 2. Gather metadata
 
-From the vendor page, note: download URL (or appcast / GH releases), developer, description, display name.
+Note: download URL / appcast / GH releases, developer, description, display name. Don't fully download — HEAD only (`curl -sIL`); let Recipe Robot fetch. Never fabricate a domain from a relative URL — resolve against the domain actually fetched.
 
-**Short-circuit for conventional apps.** If early signals show a straightforward macOS app — a GitHub repo with DMG/ZIP/PKG release assets, a direct download URL, or a Sparkle appcast — stop investigating and pass that input straight to Recipe Robot (step 3). RR is built to handle these cases; there's no value in downloading and inspecting the artifact yourself first. Save the bandwidth and time. Only dig deeper (HEAD checks, page scraping, JS inspection) when the source is ambiguous, gated, or RR fails.
+If it's a normal GitHub-releases / direct-URL / Sparkle app, skip straight to step 3 — don't pre-inspect.
 
-**Validate URLs with HEAD only** (`curl -sIL <url>`), never a full download. Apps can be huge; Recipe Robot will do its own fetch. Only download to `/tmp/` and inspect by hand (`plutil -p`, `codesign -dvvv`, `codesign -d -r-`) if Recipe Robot fails. Never inspect inside the repo.
+**Skip signals (ask first, don't silently build or drop):** Mac App Store-only; paid-only with no public trial DMG; TestFlight/beta-only; source-only (no prebuilt binary).
 
-**Never guess or fabricate domains.** When WebFetch returns a relative URL (e.g. `/App-1.0.dmg`), resolve it against the domain you actually fetched — do not invent a plausible-sounding alternative domain. The summarizer model behind WebFetch can hallucinate domains. Always HEAD-validate the full URL before using it.
-
-**Non-fit signals — surface early and ask before building:**
-- **Mac App Store-only** (vendor page's only download link is `apps.apple.com/app/...`, or page says "available on the Mac App Store"). AutoPkg's normal pipeline can't fetch MAS apps — they require an authenticated Apple ID via `mas` CLI or `nmcspadden-recipes`' `AppStoreApp` processor, and redistribution through munki/pkg is licensing-constrained. Default: skip.
-- **Paid-only with no trial build** (download gated behind purchase/login, no public DMG). `CodeSignatureVerifier` can't be wired up without an artifact to inspect. Default: skip unless the user has a licensed download URL to provide.
-- **TestFlight / beta-only**. Not redistributable.
-- **Source-only / build-from-source** (vendor instructs `git clone` + `make`; no pre-built DMG/ZIP/PKG, no GitHub releases). No vendor binary to fetch or signature to verify. Default: skip.
-
-Surface the signal and ask; don't silently proceed.
-
-## 3. Prefer Recipe Robot
+## 3. Recipe Robot
 
 `/Applications/Recipe Robot.app/Contents/Resources/scripts/recipe-robot <input>`
 
-**Accepts:** direct download URL; Sparkle appcast (`.xml`/`.rss`/`.php` or `appcast` in URL); GitHub / BitBucket / SourceForge project URL; Dropbox shared link; local `.app` (reads `SUFeedURL` from Info.plist), `.pkg`, `.dmg`, or archive (`.zip` etc.). For local files without a known source, RR falls back to the `kMDItemWhereFroms` xattr to find the download URL. **Rejects** marketing pages and existing `.recipe` files — for a marketing page, find the actual download/appcast/repo URL behind it.
+Accepts: direct download URL, Sparkle appcast, GitHub/BitBucket/SourceForge project URL, Dropbox link, local `.app`/`.pkg`/`.dmg`/archive. Rejects marketing pages and existing `.recipe` files — find the real download/appcast/repo URL instead.
 
-- Config error → ask user to run `--configure` and wait.
-- "Recipes exist" and detection is wrong → re-run with `--ignore-existing`. Don't use reflexively.
-- **Version-pinned URL** (e.g. `/v1.2.3/App.dmg`): run RR to scaffold, then prepend a `URLTextSearcher` targeting a stable page to capture the current URL, wire its output into `URLDownloader`. Otherwise the recipe pins forever.
-- **Modernizing old recipes**: copy the URL from the existing `.download`, run RR with `--ignore-existing`, then diff+merge into the existing recipes. Don't wholesale replace — preserves customizations while picking up new conventions (e.g. `AppPkgCreator`).
+- Config error → ask user to run `--configure`.
+- False "recipe exists" match → `--ignore-existing` (don't use reflexively).
+- Version-pinned URL (e.g. `/v1.2.3/App.dmg`) → prepend `URLTextSearcher` against a stable page to capture the current URL.
+- Modernizing an old recipe → run RR with `--ignore-existing`, diff+merge into the existing recipes rather than replacing.
 
-If RR isn't installed, hand-author by modeling after a repo recipe matching your delivery format (DMG/ZIP/PKG/appcast/GH releases/direct URL).
+No RR installed → hand-author, modeling after a repo recipe with the same delivery format.
 
-### 3a. Gated/API-driven downloads
+**Gated/API-driven downloads** (HEAD returns HTML/4xx, JS-triggered download): hand-author chained `URLTextSearcher` steps to extract the real URL, feed into `URLDownloader` via `result_output_var_name: url`. Examples: `Ecosia/EcosiaBrowser.download.recipe`, `Google/Antigravity.download.recipe`.
 
-Signs: HEAD returns HTML or 4xx; download button triggers an XHR; JS required. RR can't handle these — hand-author with chained `URLTextSearcher` steps extracting the real URL (and intermediate tokens), feeding `URLDownloader` via `result_output_var_name: url`. References:
-- `Ecosia/EcosiaBrowser.download.recipe` — single `URLTextSearcher` against a JSON-like API.
-- `Google/Antigravity.download.recipe` — two chained: HTML page → JS bundle name → DMG URL inside JS source.
+**Structured APIs** (tracks/locales/channels, avoids duplicated regex across recipes): custom processor `<Vendor><Purpose>InfoProvider.py` subclassing `autopkglib.URLGetter`. Example: `Cocktail/CocktailReleasesInfoProvider.py`. For one URL behind an API, `URLTextSearcher` is enough.
 
-Scrape JS sources as strings; don't try to execute.
+## 4. Conventions
 
-### 3b. Custom processors for structured APIs
-
-When an API returns structured data (tracks/locales/OS-keyed bundle IDs/channels) and multiple recipes would otherwise duplicate regex logic, write a custom processor instead:
-- Name: `<Vendor><Purpose>InfoProvider.py` or `<Vendor>URLProvider.py`.
-- Subclass `autopkglib.URLGetter`.
-- Clean `input_variables` (defaults) + `output_variables` (`url`, `version`, `bundle_id`).
-- Keep per-release mapping in a module-level dict.
-
-Reference: `Cocktail/CocktailReleasesInfoProvider.py`. For a single URL behind an API, `URLTextSearcher` is fine — don't over-engineer.
-
-## 4. Repo conventions
-
-- Directory named after the app (or the developer, if one already exists for them).
-- Identifier namespace `com.github.homebysix.<type>.<App>`.
-- Consistent `MinimumVersion`, `Input/NAME`, `ParentRecipe`, processor order with neighbors.
-- Download recipe **always** includes `CodeSignatureVerifier` with the app's designated requirement. **Quote any `subject.OU` value that starts with a digit** (e.g. `= "7D2YX5DQ6M"`, not `= 7D2YX5DQ6M`) — the codesign requirement parser fails at runtime on unquoted digit-leading OUs even though the recipe lints fine. Recipe Robot sometimes emits the unquoted form; fix it if your Team ID starts with a digit.
+- Directory = app name (or developer, if one already exists for them).
+- Filenames: no spaces, even if `Input/NAME` has one (e.g. `TightStudio.pkg.recipe` for app "Tight Studio").
+- Identifier: `com.github.homebysix.<type>.<App>`, no spaces.
+- Match `MinimumVersion`, `Input/NAME`, `ParentRecipe`, processor order to neighbors.
+- Download recipe always has `CodeSignatureVerifier`. Quote `subject.OU` if it starts with a digit (`= "7D2YX5DQ6M"`) — unquoted fails at runtime despite linting fine.
 - ZIP with no appcast: `URLDownloader` → `EndOfCheckPhase` → `Unarchiver` → `CodeSignatureVerifier` → `Versioner`.
+- Munki `pkginfo`: set both `unattended_install` and `unattended_uninstall` to `true`. Write a factual, non-salesy one-line `description` (no marketing copy, no emojis, no blank placeholder) — verify against the app itself (mount DMG, check Info.plist, `strings` the binary) if unsure.
+- Delete the app icon `.png` RR drops next to the recipes — a local scratch file, not committed.
 - `plutil -lint` every file.
 
-### 4a. Multi-architecture apps
+**Multi-arch apps:** RR won't add an `ARCH` var. Parameterize manually (`%ARCH%` in `asset_regex`/`re_pattern`/`url`), default `Input/ARCH` to `arm64`, document alternatives in `Description`. Don't set munki `supported_architectures` from `%ARCH%` (vendor/munki naming mismatches, blocks Rosetta unnecessarily) unless the binary genuinely can't run under Rosetta.
 
-RR doesn't add an `ARCH` variable — its default regex matches multiple variants non-deterministically. Parameterize manually:
-- `GitHubReleasesInfoProvider` → `%ARCH%` in `asset_regex` (e.g. `.*-%ARCH%\.dmg$`).
-- `URLTextSearcher` → `%ARCH%` in `re_pattern` or `url`.
-- Static `URLDownloader` → `%ARCH%` in `url`.
+**Recognize, don't add unless asked:** `StopProcessingIf` after `EndOfCheckPhase` (marginal gain, download step already skips); pseudo-universal pkgs merging arch builds (prefer true universal build or two recipes); third-party aggregators (Homebrew/MacUpdate) as the binary/version source — go direct to vendor, each hop is a supply-chain trust cost.
 
-Set `Input/ARCH` default (usually `arm64`) and document alternatives in `Description` (see `Google/Antigravity.download.recipe`).
+## 5. Security — ask before proceeding
 
-**Don't pipe `%ARCH%` into munki's `supported_architectures`:**
-1. Vendor names (`x64`, `amd64`, `intel`) rarely match munki's (`x86_64`, `arm64`) — translating needs `FindAndReplace` and silently breaks targeting if wrong.
-2. `x86_64`-only blocks Rosetta 2 installs on Apple Silicon, which is usually desirable to allow. Unset (munki's default) is normally correct.
+No code signature requirement, or insecure HTTP anywhere (download/appcast). Explain the risk; proceed only on explicit yes.
 
-Set it only when the binary genuinely won't run under Rosetta (arm64-only, Intel-only kext).
-
-### 4b. Antipatterns (recognize, don't recommend)
-
-Functional but not conventions here. Don't add proactively; do them only if asked.
-- **`StopProcessingIf` after `EndOfCheckPhase`** to skip pkg/munki steps when the download is unchanged. Modest savings; AutoPkg already skips the download itself.
-- **Pseudo-universal installers** merging Intel + arm64 into one arch-conditional pkg. Prefer a true universal vendor build or two parameterized recipes — munki is arch-aware natively and Jamf can gate by smart groups. Only consider the merged form if the deployment platform can't target by arch, and flag it as a workaround.
-- **Third-party aggregator URLs** (Homebrew formulas/taps, MacUpdate, download aggregators) as the download or version source. Each intermediary is a **supply-chain trust hop** — a party who can be compromised, rewrite the binary, stop maintaining the formula, or redistribute under different terms. Every added step expands the set of parties the downstream sysadmin has to trust. Go direct to the vendor's source URL. Partial exception: scraping a Homebrew tap *only* to discover the current version string, then downloading from the vendor's own host when the vendor doesn't publish a version manifest — see `Cosine/cos.download.recipe`. Still sub-ideal; a vendor-hosted version endpoint would be strictly better. Apply the same "minimize trust hops" lens to any recipe that chains through intermediaries for the binary itself.
-
-## 5. Security gates — require explicit approval
-
-Stop and ask before proceeding if:
-- **No code signature requirement** (unsigned source or `CodeSignatureVerifier` omitted) — breaks AutoPkg's integrity check.
-- **Insecure HTTP** anywhere (download, appcast) — MITM-vulnerable.
-
-Explain the risk; proceed only on a clear yes.
-
-## 6. E2E test — download and pkg only
+## 6. E2E test
 
 ```
 autopkg run -vvq <App>/<App>.download.recipe <App>/<App>.pkg.recipe
 ```
 
-Verify fetch → unarchive → signature → version, and that pkg lands at the expected path. **Don't run** `install`/`munki`/etc — they write to `/Applications`, the munki repo, etc. Trust-info warnings on uncommitted recipes are expected.
+Don't run install/munki — they write to `/Applications`, the munki repo, etc. Trust-info warnings on uncommitted recipes are expected.
 
 ## 7. Report
 
-Summarize what was created, what ran clean, and any caveats (missing Team ID, unusual signing, dev-name mismatch, skipped tests). Don't commit or push unless asked.
+What was created, what tested clean, caveats (missing Team ID, unusual signing, dev-name mismatch, skipped tests). Don't commit or push unless asked.
