@@ -20,6 +20,11 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.pkg</string>
+				<key>request_headers</key>
+				<dict>
+					<key>User-Agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</string>
+				</dict>
 				<key>url</key>
 				<string>https://www.enpass.io/download/macos/website/stable</string>
 			</dict>
