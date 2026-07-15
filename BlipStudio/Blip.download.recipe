@@ -18,7 +18,7 @@ As of November 2025, the only UPDATE_CHANNEL that contains releases is "beta".</
 		<string>beta</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>2.3</string>
+	<string>2.7.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

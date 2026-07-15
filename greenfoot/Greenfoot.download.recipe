@@ -17,7 +17,7 @@ To download Intel use: "x64" in the DOWNLOAD_ARCH variable</string>
 		<string>Greenfoot</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.3.1</string>
+	<string>0.4.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

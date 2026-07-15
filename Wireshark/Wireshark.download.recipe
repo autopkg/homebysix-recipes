@@ -15,7 +15,7 @@ For automated development builds of Wireshark, see the WiresharkDev recipes in j
 		<string>Wireshark</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>0.4.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

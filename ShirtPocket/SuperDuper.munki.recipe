@@ -33,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.3.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.homebysix.download.SuperDuper</string>
 	<key>Process</key>

@@ -14,7 +14,7 @@
 		<string>Bill Boss</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.0.3</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -21,7 +21,7 @@ Tested values for ARCH include:
 		<string>Superset</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>2.3</string>
+	<string>2.7.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
