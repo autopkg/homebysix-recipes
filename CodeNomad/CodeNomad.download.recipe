@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of CodeNomad (Electron build).
+
+Tested values for ARCH include:
+- arm64 (default, Apple Silicon)
+- x64 (Intel)
+
+Note: CodeNomad.app is only ad-hoc signed (no Developer ID), so this recipe
+cannot use CodeSignatureVerifier.
+</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.CodeNomad</string>
+	<key>Input</key>
+	<dict>
+		<key>ARCH</key>
+		<string>arm64</string>
+		<key>NAME</key>
+		<string>CodeNomad</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.7.1</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>^CodeNomad-Electron-macos-%ARCH%-[\d.]+\.zip$</string>
+				<key>github_repo</key>
+				<string>NeuralNomadsAI/CodeNomad</string>
+				<key>latest_only</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%ARCH%-%version%.zip</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/CodeNomad.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
