@@ -19,9 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>assets\\/support\\/files\\/(?P&lt;fileid&gt;\d+)\\/en\\/Mini_Config_v(?P&lt;version&gt;[\d\.]+)_macOS\.zip</string>
-				<key>result_output_var_name</key>
-				<string>filepath</string>
+				<string>"file":"Mini_Config_v(?P&lt;version&gt;[\d\.]+)_macOS\.zip","urlpath":"https:\\/\\/www\.aja\.com\\/support\\/item-download\\/(?P&lt;fileid&gt;\d+)</string>
 				<key>url</key>
 				<string>https://www.aja.com/products/mini-config-software#support</string>
 			</dict>
@@ -34,7 +32,7 @@
 				<key>filename</key>
 				<string>%NAME%-%version%.zip</string>
 				<key>url</key>
-				<string>https://www.aja.com/assets/support/files/%fileid%/en/Mini_Config_v%version%_macOS.zip</string>
+				<string>https://www.aja.com/support/item-download/%fileid%/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
