@@ -28,24 +28,11 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>script src="main-([0-9A-Z]+)\.js"</string>
-				<key>result_output_var_name</key>
-				<string>js_name</string>
-				<key>url</key>
-				<string>https://antigravity.google/download</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
 				<string>(https://storage\.googleapis\.com/antigravity-public/antigravity-hub/[^/]+/darwin-%ARCH%/Antigravity\.dmg)</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>https://antigravity.google/main-%js_name%.js</string>
+				<string>https://antigravity.google/download</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
