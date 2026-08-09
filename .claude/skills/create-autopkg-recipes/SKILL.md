@@ -43,20 +43,25 @@ Accepts: direct download URL, Sparkle appcast, GitHub/BitBucket/SourceForge proj
 
 No RR installed → hand-author, modeling after a repo recipe with the same delivery format.
 
+**Verify RR picked the right artifact.** It occasionally grabs the wrong release asset as "the app" — e.g. a bundled helper binary (`LaunchAtLoginHelper`) instead of the real app. Check the generated `Input/NAME` and pkg identifier against the vendor's actual product name before trusting the output.
+
+**Watch for `/` in GitHub release tags.** A tag like `releases/0.8` gets embedded raw into `%version%` by `GitHubReleasesInfoProvider`, and the resulting download filename (e.g. `App-releases/0.8.dmg`) breaks `URLDownloader`'s file move. Check the release tag format when a download recipe fails with a "can't move" error.
+
 **Gated/API-driven downloads** (HEAD returns HTML/4xx, JS-triggered download): hand-author chained `URLTextSearcher` steps to extract the real URL, feed into `URLDownloader` via `result_output_var_name: url`. Examples: `Ecosia/EcosiaBrowser.download.recipe`, `Google/Antigravity.download.recipe`.
 
 **Structured APIs** (tracks/locales/channels, avoids duplicated regex across recipes): custom processor `<Vendor><Purpose>InfoProvider.py` subclassing `autopkglib.URLGetter`. Example: `Cocktail/CocktailReleasesInfoProvider.py`. For one URL behind an API, `URLTextSearcher` is enough.
 
 ## 4. Conventions
 
-- Directory = app name (or developer, if one already exists for them). Recipe Robot often uses the developer's display name instead of the app name — rename after RR if needed.
+- Directory = app name. Only use a developer-name directory when that developer genuinely has 2+ titles in the repo already — group under it in that case, otherwise keep one folder per app. Recipe Robot often defaults to the developer's display name even for a single-title app — rename after RR if so.
 - Filenames: no spaces, even if `Input/NAME` has one (e.g. `TightStudio.pkg.recipe` for app "Tight Studio").
 - Identifier: `com.github.homebysix.<type>.<App>`, no spaces.
 - Match `MinimumVersion`, `Input/NAME`, `ParentRecipe`, processor order to neighbors. `MinimumVersion` should be the highest required AutoPkg version across the recipe chain — pre-commit hooks will catch mismatches.
 - Download recipe always has `CodeSignatureVerifier`. Quote `subject.OU` if it starts with a digit (`= "7D2YX5DQ6M"`) — unquoted fails at runtime despite linting fine.
 - ZIP (no appcast): `URLDownloader` → `EndOfCheckPhase` → `Unarchiver` → `CodeSignatureVerifier` → `Versioner`.
 - ZIP (Sparkle enclosure, not DMG): also needs `Unarchiver` between `EndOfCheckPhase` and `CodeSignatureVerifier`. Inspect the enclosure URL type from the appcast before assuming DMG.
-- Munki `pkginfo`: set both `unattended_install` and `unattended_uninstall` to `true`. RR only sets `unattended_install` — manually verify both are present. Write a factual, non-salesy one-line `description` (no marketing copy, no emojis, no blank placeholder) — verify against the app itself (mount DMG, check Info.plist, `strings` the binary) if unsure.
+- Munki `pkginfo`: set both `unattended_install` and `unattended_uninstall` to `true`. RR only sets `unattended_install` — manually verify both are present. Write a factual, non-salesy, English-only one-line `description` (no marketing copy, no emojis, no blank placeholder, no leftover non-English text from a bilingual README tagline) — verify against the app itself (mount DMG, check Info.plist, `strings` the binary) if unsure.
+- `pkginfo.developer`: strip legal-entity suffixes (Inc, Ltd, LLC, Pte, OU, GmbH, etc.) that RR pulls verbatim from a GitHub org/profile name. If `developer` comes back as a raw email (git commit author or Apple Developer ID CN, e.g. `me@example.com`), resolve the real name/handle via the GitHub repo owner or profile instead of using the email as-is — this also applies to the containing directory name if RR named it after the same email.
 - Delete the app icon `.png` RR drops next to the recipes — a local scratch file, not committed.
 - `plutil -lint` every file.
 
