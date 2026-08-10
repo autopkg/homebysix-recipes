@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Open-source status companion for Claude Code and Codex on macOS and Windows. See live session state, get your-turn alerts, and download with no account or telemetry.</string>
+			<string>Open-source status companion for Claude Code, Codex, Antigravity, Grok, and Cursor. Shows live session state in the macOS notch, alerts you when a run is waiting on your turn, and computes quota and cost on-device. No account, no telemetry.</string>
 			<key>developer</key>
 			<string>Tristan Tang</string>
 			<key>display_name</key>
