@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/%NAME%</string>
+		<string>apps/%NAME%/%ARCH%</string>
 		<key>NAME</key>
 		<string>Handy</string>
 		<key>pkginfo</key>
@@ -28,6 +28,10 @@
 			<string>Handy</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>supported_architectures</key>
+			<array>
+				<string>%ARCH%</string>
+			</array>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
