@@ -6,29 +6,54 @@
 	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Handy.
-
-Tested values for ARCH include:
-- x64 (default, Intel)
-- aarch64 (Apple Silicon)
-</string>
+		Set ARCH to either:
+		- arm64 (default, Apple Silicon)
+		- x86_64 (Intel)
+	</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Handy</string>
 	<key>Input</key>
 	<dict>
 		<key>ARCH</key>
-		<string>x64</string>
+		<string>arm64</string>
 		<key>NAME</key>
 		<string>Handy</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>2.3</string>
+	<string>2.9</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>find</key>
+				<string>arm64</string>
+				<key>input_string</key>
+				<string>%ARCH%</string>
+				<key>replace</key>
+				<string>aarch64</string>
+			</dict>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>x86_64</string>
+				<key>input_string</key>
+				<string>%output_string%</string>
+				<key>replace</key>
+				<string>x64</string>
+			</dict>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>asset_regex</key>
-				<string>.*_%ARCH%\.dmg$</string>
+				<string>.*_%output_string%\.dmg$</string>
 				<key>github_repo</key>
 				<string>cjpais/Handy</string>
 			</dict>
@@ -36,6 +61,11 @@ Tested values for ARCH include:
 			<string>GitHubReleasesInfoProvider</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%ARCH%-%version%.dmg</string>
+			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
