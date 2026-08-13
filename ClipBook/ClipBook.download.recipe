@@ -41,7 +41,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%-%ARCH%.dmg</string>
+				<string>%NAME%-%ARCH%.dmg</string>
 				<key>url</key>
 				<string>https://f005.backblazeb2.com/%filepath%</string>
 			</dict>

@@ -80,7 +80,7 @@
 					<key>id</key>
 					<string>com.github.retlehs.quien</string>
 					<key>pkgname</key>
-					<string>quien-%version%-%ARCH%</string>
+					<string>quien-%ARCH%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 					<key>version</key>

@@ -80,7 +80,7 @@
 					<key>id</key>
 					<string>com.github.LalitMaganti.syntaqlite</string>
 					<key>pkgname</key>
-					<string>syntaqlite-%version%-%ARCH%</string>
+					<string>syntaqlite-%ARCH%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 					<key>version</key>

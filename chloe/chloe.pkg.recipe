@@ -80,7 +80,7 @@
 					<key>id</key>
 					<string>com.github.kevinedry.chloe</string>
 					<key>pkgname</key>
-					<string>chloe-%version%-%ARCH%</string>
+					<string>chloe-%ARCH%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 					<key>version</key>

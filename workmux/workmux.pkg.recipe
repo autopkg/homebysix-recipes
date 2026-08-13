@@ -73,7 +73,7 @@
 					<key>id</key>
 					<string>com.github.raine.workmux</string>
 					<key>pkgname</key>
-					<string>workmux-%version%-%ARCH%</string>
+					<string>workmux-%ARCH%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 					<key>version</key>
