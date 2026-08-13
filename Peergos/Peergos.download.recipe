@@ -41,7 +41,7 @@ Tested values for ARCH include:
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%-%ARCH%.pkg</string>
+				<string>%NAME%-%ARCH%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

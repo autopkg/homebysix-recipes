@@ -97,7 +97,7 @@
 					<key>id</key>
 					<string>com.github.arthur-ficial.apfel</string>
 					<key>pkgname</key>
-					<string>apfel-%version%-%ARCH%</string>
+					<string>apfel-%ARCH%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 					<key>version</key>

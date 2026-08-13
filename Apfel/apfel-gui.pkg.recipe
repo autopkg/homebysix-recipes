@@ -95,7 +95,7 @@
 					<key>id</key>
 					<string>com.github.arthur-ficial.apfel-gui</string>
 					<key>pkgname</key>
-					<string>apfel-gui-%version%-%ARCH%</string>
+					<string>apfel-gui-%ARCH%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 					<key>version</key>

@@ -71,7 +71,7 @@
 					<key>id</key>
 					<string>%PKG_ID%</string>
 					<key>pkgname</key>
-					<string>%NAME%-%version%-%ARCH%</string>
+					<string>%NAME%-%ARCH%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 					<key>version</key>
