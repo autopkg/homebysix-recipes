@@ -14,29 +14,16 @@
 		<string>AppZapper</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>/download\.php\?file=(appzapper\d+\.zip)</string>
-				<key>result_output_var_name</key>
-				<string>filepath</string>
-				<key>url</key>
-				<string>https://www.appzapper.com</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://appzapper.com/download.php?file=%filepath%</string>
+				<string>https://appzapper.com/downloads/latest.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -48,6 +35,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>USE_PYTHON_NATIVE_EXTRACTOR</key>
+				<true/>
 				<key>archive_path</key>
 				<string>%pathname%</string>
 				<key>destination_path</key>

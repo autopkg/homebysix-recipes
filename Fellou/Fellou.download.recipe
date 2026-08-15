@@ -27,6 +27,15 @@ Tested values for ARCH include:
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>warning_message</key>
+				<string>As of August 2026, Fellou's download URLs are broken. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>re_pattern</key>
 				<string>"(https://fellou\.s3\.\S+\.amazonaws\.com/FellouPC/mac/Fellou\S+-%ARCH%\.dmg)"</string>
 				<key>result_output_var_name</key>

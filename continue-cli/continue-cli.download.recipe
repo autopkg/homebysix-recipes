@@ -14,9 +14,18 @@
 		<string>continue-cli</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>As of August 2026, the continuedev/continue-cli GitHub repository no longer exists (404, no redirect); Continue CLI is now distributed via npm as @continuedev/cli. This recipe is deprecated.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>

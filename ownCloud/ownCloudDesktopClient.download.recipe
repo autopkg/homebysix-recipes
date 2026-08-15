@@ -23,7 +23,7 @@ Set ARCH to "arm64" (default) or "x86_64" to target Apple Silicon or Intel respe
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="(https://download\.owncloud\.com/desktop/ownCloud/[A-Za-z0-9]+/([0-9]+(\.[0-9]+)+)/mac/ownCloud-([0-9]+(\.[0-9]+)+)-%ARCH%\.pkg)"</string>
+				<string>href="(https://download\.owncloud\.com/desktop/ownCloud/[A-Za-z0-9]+/[0-9]+(?:\.[0-9]+)+/mac/ownCloud-[0-9]+(?:\.[0-9]+)+-%ARCH%\.pkg)(?:\.tbz)?"</string>
 				<key>result_output_var_name</key>
 				<string>DOWNLOAD_URL</string>
 				<key>url</key>

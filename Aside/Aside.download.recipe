@@ -20,21 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>(https://releases\.aside\.com/dev-updater/Aside-[\d.]+\.dmg)</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
-				<key>url</key>
-				<string>https://aside.com/download</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://aside.com/api/download/macos</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
