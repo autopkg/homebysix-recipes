@@ -23,7 +23,7 @@
 				<key>asset_regex</key>
 				<string>.*\.zip</string>
 				<key>github_repo</key>
-				<string>stonerl/Thaw</string>
+				<string>thaw-app/Thaw</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

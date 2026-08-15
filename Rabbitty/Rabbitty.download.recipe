@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Download Rabbitty, an AI-powered terminal application.
 
-Rabbitty currently only publishes prerelease/beta builds on GitHub. Set INCLUDE_PRERELEASES to a non-empty string to download prereleases from GitHub (required at this time, since no stable release exists).
+As of August 2026, Rabbitty only publishes prerelease/beta builds on GitHub. Set INCLUDE_PRERELEASES to a non-empty string in an override to download prereleases.
 </string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Rabbitty</string>

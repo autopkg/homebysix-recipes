@@ -30,7 +30,7 @@ Only supported ARCH is arm64.
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>https://vowen.ai</string>
+				<string>https://vowen.ai/mac/download/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
