@@ -1,86 +1,63 @@
 ---
 name: create-autopkg-recipes
-description: |
-  Create AutoPkg recipes (download, pkg, munki, install, etc.) for a macOS app
-  from a vendor URL. Use whenever the user asks to create, generate, scaffold,
-  or add AutoPkg recipes for an app.
-  Keywords:
-  - AutoPkg, autopkg
-  - .download.recipe, .pkg.recipe, .munki.recipe, .install.recipe
-  - Recipe Robot, recipe-robot
-  - homebysix-recipes, Munki, pkg
+description: >-
+  Create AutoPkg recipes for macOS apps from vendor URLs. Use when asked to create, generate, scaffold, or add .download.recipe, .pkg.recipe, .munki.recipe, or .install.recipe files.
 user-invocable: true
 ---
 
 # Create AutoPkg Recipes
 
-Scaffold recipes for a macOS app following repo conventions. E2E test download+pkg before handing off.
+Create the smallest complete recipe family supported by the request, following neighboring recipes.
 
-## 1. Check for duplicates
+## 1. Preflight
 
-`autopkg search <AppName>.download` (try vendor-prefixed variants too, e.g. `Google<AppName>`). Any match, any repo → surface and ask before building.
+- Deduplicate the input URLs.
+- Search AutoPkg for existing recipes and inspect the checkout directly. Search both `.recipe` and `.recipe.yaml`; the local search index may be stale.
+- If the product already has recipes, report them and ask before adding or changing duplicates.
+- Ask before proceeding with Mac App Store-only, paid-without-public-trial, TestFlight/beta-only, source-only, web-only, gated-without-public-binary, dead/404, or ad-hoc/unsigned products.
 
-## 2. Gather metadata
+## 2. Find the artifact
 
-Note: download URL / appcast / GH releases, developer, description, display name. Don't fully download — HEAD only (`curl -sIL`); let Recipe Robot fetch. Never fabricate a domain from a relative URL — resolve against the domain actually fetched.
+Identify the stable direct download, Sparkle appcast, or GitHub/Bitbucket/SourceForge project URL. Never invent a domain when resolving relative URLs.
 
-**GitHub Pages sites** (e.g. `*.github.io`) often return an HTML shell with content loaded via JS. For these, a full `curl` against the page is fine — also check the sibling GitHub repo's releases with `gh` (`gh release list -R <owner>/<repo>`) as a shortcut for version and asset info.
+Use HEAD first, then GET with redirects when HEAD is unsupported. Inspect redirects, `Content-Disposition`, content type, release assets, and appcast data. Do not use aggregators as the artifact source.
 
-If it's a normal GitHub-releases / direct-URL / Sparkle app, skip straight to step 3 — don't pre-inspect.
+For GitHub releases, prefer the repository URL with `GitHubReleasesInfoProvider` and a precise `asset_regex`; avoid feeding a direct release asset URL to Recipe Robot when it may classify it as a repository.
 
-**Skip signals (ask first, don't silently build or drop):** Mac App Store-only; paid-only with no public trial DMG; TestFlight/beta-only; source-only (no prebuilt binary).
+Verify the selected artifact is the actual app, not a helper or unrelated asset. Inspect `Info.plist` and `codesign` metadata when determining bundle ID, version, architecture, and Team ID.
 
-## 3. Recipe Robot
+## 3. Generate
 
-`/Applications/Recipe Robot.app/Contents/Resources/scripts/recipe-robot <input>`
+Use Recipe Robot for a stable binary URL, appcast, or repository URL. Configure it before running if required. Use `--ignore-existing` only for a confirmed false-positive match. If Recipe Robot is unavailable or produces an incorrect artifact, hand-author the recipes using a nearby recipe as the template.
 
-Accepts: direct download URL, Sparkle appcast, GitHub/BitBucket/SourceForge project URL, Dropbox link, local `.app`/`.pkg`/`.dmg`/archive. Rejects marketing pages and existing `.recipe` files — find the real download/appcast/repo URL instead.
-
-- Config error → ask user to run `--configure`.
-- False "recipe exists" match → `--ignore-existing` (don't use reflexively).
-- Version-pinned URL (e.g. `/v1.2.3/App.dmg`) → prepend `URLTextSearcher` against a stable page to capture the current URL.
-- Modernizing an old recipe → run RR with `--ignore-existing`, diff+merge into the existing recipes rather than replacing.
-
-No RR installed → hand-author, modeling after a repo recipe with the same delivery format.
-
-**Verify RR picked the right artifact.** It occasionally grabs the wrong release asset as "the app" — e.g. a bundled helper binary (`LaunchAtLoginHelper`) instead of the real app. Check the generated `Input/NAME` and pkg identifier against the vendor's actual product name before trusting the output.
-
-**Watch for `/` in GitHub release tags.** A tag like `releases/0.8` gets embedded raw into `%version%` by `GitHubReleasesInfoProvider`, and the resulting download filename (e.g. `App-releases/0.8.dmg`) breaks `URLDownloader`'s file move. Check the release tag format when a download recipe fails with a "can't move" error.
-
-**Gated/API-driven downloads** (HEAD returns HTML/4xx, JS-triggered download): hand-author chained `URLTextSearcher` steps to extract the real URL, feed into `URLDownloader` via `result_output_var_name: url`. Examples: `Ecosia/EcosiaBrowser.download.recipe`, `Google/Antigravity.download.recipe`.
-
-**Structured APIs** (tracks/locales/channels, avoids duplicated regex across recipes): custom processor `<Vendor><Purpose>InfoProvider.py` subclassing `autopkglib.URLGetter`. Example: `Cocktail/CocktailReleasesInfoProvider.py`. For one URL behind an API, `URLTextSearcher` is enough.
+Honor the requested format. For plist output, use `.recipe` filenames and finish with `plutil -convert xml1`; do not leave duplicate YAML variants.
 
 ## 4. Conventions
 
-- Directory = app name. Only use a developer-name directory when that developer genuinely has 2+ titles in the repo already — group under it in that case, otherwise keep one folder per app. Recipe Robot often defaults to the developer's display name even for a single-title app — rename after RR if so.
-- Filenames: no spaces, even if `Input/NAME` has one (e.g. `TightStudio.pkg.recipe` for app "Tight Studio").
-- Identifier: `com.github.homebysix.<type>.<App>`, no spaces.
-- Match `MinimumVersion`, `Input/NAME`, `ParentRecipe`, processor order to neighbors. `MinimumVersion` should be the highest required AutoPkg version across the recipe chain — pre-commit hooks will catch mismatches.
-- Download recipe always has `CodeSignatureVerifier`. Quote `subject.OU` if it starts with a digit (`= "7D2YX5DQ6M"`) — unquoted fails at runtime despite linting fine.
-- ZIP (no appcast): `URLDownloader` → `EndOfCheckPhase` → `Unarchiver` → `CodeSignatureVerifier` → `Versioner`.
-- ZIP (Sparkle enclosure, not DMG): also needs `Unarchiver` between `EndOfCheckPhase` and `CodeSignatureVerifier`. Inspect the enclosure URL type from the appcast before assuming DMG.
-- Munki `pkginfo`: set both `unattended_install` and `unattended_uninstall` to `true`. RR only sets `unattended_install` — manually verify both are present. Write a factual, non-salesy, English-only one-line `description` (no marketing copy, no emojis, no blank placeholder, no leftover non-English text from a bilingual README tagline) — verify against the app itself (mount DMG, check Info.plist, `strings` the binary) if unsure.
-- `pkginfo.developer`: strip legal-entity suffixes (Inc, Ltd, LLC, Pte, OU, GmbH, etc.) that RR pulls verbatim from a GitHub org/profile name. If `developer` comes back as a raw email (git commit author or Apple Developer ID CN, e.g. `me@example.com`), resolve the real name/handle via the GitHub repo owner or profile instead of using the email as-is — this also applies to the containing directory name if RR named it after the same email.
-- Delete the app icon `.png` RR drops next to the recipes — a local scratch file, not committed.
-- `plutil -lint` every file.
+- Use one directory per app. Use a developer directory only when grouping multiple products from that developer.
+- Recipe filenames contain no spaces.
+- Use `com.github.homebysix.<type>.<App>` identifiers.
+- Match neighboring `MinimumVersion`, inputs, processor order, and parent identifiers.
+- Download recipes must include `CodeSignatureVerifier` with HTTPS sources and a concrete requirement. Quote a numeric-leading Team ID.
+- For DMGs, prefer `%pathname%/App.app`; AutoPkg’s DMG-aware processors mount the image. Avoid passing temporary paths returned by a `FileFinder` mount to later processors.
+- For ZIPs, use `URLDownloader`, `EndOfCheckPhase`, `Unarchiver`, `CodeSignatureVerifier`, then `Versioner`.
+- Parameterize real architecture variants with `ARCH`; default to the vendor’s current architecture and document alternatives.
+- Munki metadata must include both `unattended_install` and `unattended_uninstall`, a factual one-line description, and a cleaned developer name.
+- Remove generated icon scratch files.
 
-**Multi-arch apps:** RR won't add an `ARCH` var. Parameterize manually (`%ARCH%` in `asset_regex`/`re_pattern`/`url`), default `Input/ARCH` to `arm64`, document alternatives in `Description`. Don't set munki `supported_architectures` from `%ARCH%` (vendor/munki naming mismatches, blocks Rosetta unnecessarily) unless the binary genuinely can't run under Rosetta.
+## 5. Validate
 
-**Recognize, don't add unless asked:** `StopProcessingIf` after `EndOfCheckPhase` (marginal gain, download step already skips); pseudo-universal pkgs merging arch builds (prefer true universal build or two recipes); third-party aggregators (Homebrew/MacUpdate) as the binary/version source — go direct to vendor, each hop is a supply-chain trust cost.
+Run:
 
-## 5. Security — ask before proceeding
-
-No code signature requirement, or insecure HTTP anywhere (download/appcast). Explain the risk; proceed only on explicit yes.
-
-## 6. E2E test
-
-```
+```bash
+find <new-directories> -name '*.recipe' -exec plutil -convert xml1 {} \;
+find <new-directories> -name '*.recipe' -exec plutil -lint {} \;
+pre-commit run check-autopkg-recipes --files <new-files>
 autopkg run -vvq <App>/<App>.download.recipe <App>/<App>.pkg.recipe
 ```
 
-Don't run install/munki — they write to `/Applications`, the munki repo, etc. Trust-info warnings on uncommitted recipes are expected.
+Do not run install or Munki recipes during validation. If disk-image mounting is blocked by the execution environment, distinguish that environment failure from a recipe failure and rerun the same bounded test in an allowed environment.
 
-## 7. Report
+## 6. Report
 
-What was created, what tested clean, caveats (missing Team ID, unusual signing, dev-name mismatch, skipped tests). Don't commit or push unless asked.
+List created files, validation results, source/signing/architecture caveats, and skipped products requiring approval or better source data. Do not commit or push unless asked.
