@@ -5,13 +5,20 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.5.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of ChatGPT (formerly Codex).</string>
+	<string>Downloads the latest version of ChatGPT (formerly Codex).
+
+Supported values for PLATFORM_ARCH include:
+- "" (Apple Silicon, default)
+- "-latest-x64" (Intel)
+</string>
 	<key>Identifier</key>
 	<string>com.github.homebysix.download.Codex</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>Codex</string>
+		<key>PLATFORM_ARCH</key>
+		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -21,9 +28,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%%PLATFORM_ARCH%.dmg</string>
 				<key>url</key>
-				<string>https://persistent.oaistatic.com/codex-app-prod/ChatGPT.dmg</string>
+				<string>https://persistent.oaistatic.com/codex-app-prod/ChatGPT%PLATFORM_ARCH%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
