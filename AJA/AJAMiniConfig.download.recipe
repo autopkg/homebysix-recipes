@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>"file":"Mini_Config_v(?P&lt;version&gt;[\d\.]+)_macOS\.zip","urlpath":"https:\\/\\/www\.aja\.com\\/support\\/item-download\\/(?P&lt;fileid&gt;\d+)</string>
+				<string>/support/item-download/(?P&lt;fileid&gt;\d+)/Mini_Config_v(?P&lt;version&gt;[\d\.]+)_macOS\.zip"</string>
 				<key>url</key>
 				<string>https://www.aja.com/products/mini-config-software#support</string>
 			</dict>
