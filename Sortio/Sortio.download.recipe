@@ -47,7 +47,7 @@
 				<key>input_path</key>
 				<string>%pathname%/Sortio.app</string>
 				<key>requirement</key>
-				<string>identifier "sortio.Sortio" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = RX8MBS3Y97</string>
+				<string>identifier "com.sortio.direct" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = RX8MBS3Y97</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
