@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of PhotoCraft.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.PhotoCraft</string>
+	<key>Input</key>
+	<dict>
+		<key>APP_NAME</key>
+		<string>PhotoCraft.app</string>
+		<key>ASSET_REGEX</key>
+		<string>^photocraft-[0-9.]+-macos-universal\.dmg$</string>
+		<key>BUNDLE_ID</key>
+		<string>ai.storyteller.photocraft</string>
+		<key>GITHUB_REPO</key>
+		<string>storytold/photocraft</string>
+		<key>NAME</key>
+		<string>PhotoCraft</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.7.1</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.ArtCraftProduct</string>
+</dict>
+</plist>
