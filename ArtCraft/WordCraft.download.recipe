@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of WordCraft.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.WordCraft</string>
+	<key>Input</key>
+	<dict>
+		<key>APP_NAME</key>
+		<string>WordCraft.app</string>
+		<key>ASSET_REGEX</key>
+		<string>^wordcraft-[0-9.]+-macos-universal\.dmg$</string>
+		<key>BUNDLE_ID</key>
+		<string>ai.storyteller.wordcraft</string>
+		<key>GITHUB_REPO</key>
+		<string>storytold/wordcraft</string>
+		<key>NAME</key>
+		<string>WordCraft</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.7.1</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.download.ArtCraftProduct</string>
+</dict>
+</plist>
