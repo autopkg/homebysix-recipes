@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of an ArtCraft app. This is an abstract base recipe intended to be overridden.</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.download.ArtCraftProduct</string>
+	<key>Input</key>
+	<dict>
+		<key>APP_NAME</key>
+		<string>ArtCraftProduct.app</string>
+		<key>ASSET_REGEX</key>
+		<string></string>
+		<key>BUNDLE_ID</key>
+		<string></string>
+		<key>GITHUB_REPO</key>
+		<string></string>
+		<key>NAME</key>
+		<string>ArtCraftProduct</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.7.1</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>%ASSET_REGEX%</string>
+				<key>github_repo</key>
+				<string>%GITHUB_REPO%</string>
+				<key>latest_only</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/%APP_NAME%</string>
+				<key>requirement</key>
+				<string>identifier "%BUNDLE_ID%" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "DJ6XS33FX8"</string>
+				<key>strict_verification</key>
+				<false/>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/%APP_NAME%/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
