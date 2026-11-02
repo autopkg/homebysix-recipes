@@ -20,10 +20,19 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>asset_regex</key>
+				<string>^Cork\.zip$</string>
+				<key>github_repo</key>
+				<string>buresdv/Cork</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
-				<string>%NAME%.zip</string>
-				<key>url</key>
-				<string>https://corkmac.app/RLS/latest/Cork.zip</string>
+				<string>%NAME%-%version%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
