@@ -28,6 +28,14 @@
 			<string>Herdr</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>requires</key>
+			<array>
+				<string>HerdrCore</string>
+			</array>
+			<key>supported_architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
@@ -40,6 +48,27 @@
 	<string>com.github.homebysix.download.Herdr</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>app_path</key>
+				<string>%pathname%/Herdr.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.dataJAR-recipes.Shared Processors/GetBinaryMinimumOSVersion</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>minimum_os_version</key>
+					<string>%min_os_ver%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
