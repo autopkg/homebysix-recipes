@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of herdr-core and imports it into Munki. The supported_architectures pkginfo value assumes the default ARCH of aarch64 (arm64); if you override ARCH to x86_64, also override supported_architectures to x86_64. The minimum OS version is read from the binary by the dataJAR-recipes GetBinaryMinimumOSVersion shared processor (the dataJAR-recipes repo must be added).</string>
+	<key>Identifier</key>
+	<string>com.github.homebysix.munki.HerdrCore</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/Herdr</string>
+		<key>NAME</key>
+		<string>HerdrCore</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>herdr-core (hc) is the background terminal runtime that Herdr requires. Installs herdr-core and hc into /usr/local/bin.</string>
+			<key>developer</key>
+			<string>Herdr</string>
+			<key>display_name</key>
+			<string>herdr-core</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>supported_architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.pkg.HerdrCore</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>app_path</key>
+				<string>%RECIPE_CACHE_DIR%/unzipped/herdr-core</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.dataJAR-recipes.Shared Processors/GetBinaryMinimumOSVersion</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>minimum_os_version</key>
+					<string>%min_os_ver%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pkg_path%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
